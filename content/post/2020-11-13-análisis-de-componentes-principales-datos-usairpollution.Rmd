@@ -1,0 +1,496 @@
+---
+title: Análisis de Componentes Principales - datos `USairpollution`
+author: Alberto Torrejón Valenzuela
+date: '2020-11-13'
+slug: análisis-de-componentes-principales-datos-usairpollution
+categories:
+  - Estadística
+tags:
+  - Minería Estadística
+  - ACP
+  - Ejemplo
+  - R
+description: 'Ejemplo de aplicación del Análisis de Componentes Principales a datos reales.'
+output:
+  blogdown::html_page:
+      toc: TRUE
+---
+
+```{r setup, echo=FALSE, warning = FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+options(max.print="75")
+opts_chunk$set(echo=TRUE,
+               cache=FALSE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE)
+opts_knit$set(width=75)
+```
+
+# Ejemplo `USairpollution`
+
+Los paquetes de R que vamos a emplear son:
+
+```{r}
+# Lectura de datos
+library(readr)
+# Manipulación de datos
+library(tidyverse)
+library(magrittr)
+# Gráficos
+library(ggplot2)
+library(ggforce)
+library(ggthemes)
+```
+
+Los datos se pueden encontar en el paquete `HSAUR3`.
+
+```{r, eval=FALSE}
+data("USairpollution", package="HSAUR3")
+```
+
+También se pueden cargar desde el directorio de trabajo.
+
+```{r}
+aire.dat <- read_table2("Datos/datosaire.txt")
+aire.dat %>% head()
+```
+
+Las variables recogidas en la base de datos son las siguientes:
+
+- `Ciudad`: nombre de la ciudad de EE.UU.
+- `SO2`: contenido de SO2 del aire en microgramos por metro cúbico.
+- `Temp`: temperatura media anual en grados Fahrenheit.
+- `Empresas`: número de empresas manufactureras que emplean 20 o más trabajadores.
+- `Pob`: tamaño de la población (censo de 1970) en miles.
+- `Viento`: velocidad media anual del viento en millas por hora.
+- `Precip`: precipitación media anual en pulgadas.
+- `Dias`: número medio de días con precipitación al año
+
+Guardamos la variable `Ciudad` como nombres de la matriz y la quitamos para tener una matriz de datos numéricos. Es mejor usar el formato `tibble` en los datos que el `dataframe` por cuestiones de uso del paquete `tidyverse`, no obstante está modificación no es estrictamente necesaria para el buen desarrollo del ejercicio aunque la efectuaremos.  
+
+```{r}
+aire.dat <- aire.dat %>% as.tibble() %>% column_to_rownames("Ciudad")
+```
+
+Podemos realizar un estudio descriptivo de los datos para observar la singularidad de estos y advertir posibles anomalías. Además, complementaremos el análisis descriptivo con gráficos ilustrativos usando el paquete `ggplot2`, para lo que necesitaremos a menudo realizar una transformación, pivotado, de los datos para adecuarlos a la sintaxis del paquete e incluso emplear el paquete [`forcast`](https://forcats.tidyverse.org/) para mejorar la visualización de los gráficos.
+
+- **Análisis descriptivo.**
+
+```{r}
+aire.dat %>% summary()
+```
+
+- **Diagrama de cajas.**
+
+```{r}
+aire.dat %>%
+  pivot_longer(everything(),names_to = "item",values_to = "valor") %>% 
+  mutate(item = fct_reorder(item, valor, .fun='median')) %>%
+  ggplot(aes(x=item, y=valor, fill=item)) +
+    geom_boxplot() + theme_pander() + 
+    theme(legend.position = "none") +
+    xlab("") + ylab("")
+```
+
+- **Gráfico de dispersión de parejas de variables**. Se puede hacer llamando a la función `pairs()` implementada en R base pero para seguir con la sintaxis del paquete `ggplot2` encontramos una opción en el paquete `GGally` que proporciona mucha más información con menor código.
+
+```{r}
+library(GGally)
+aire.dat %>% 
+  ggpairs() + theme_pander() + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+```
+
+Los gráficos sugieren que pueden existir algunos valores atípicos en nuestra muestra. Por otra parte, en el diagrama de cajas podemos observar que las variables se miden en escalas bastante diferentes (unidades y rango de valores bastante diferentes), por lo que parece mejor trabajar con las variables estandarizadas. Además, encontramos que existen relaciones de colinealidad entre variables como por ejemplo entre `Empresas` y `Pob`. De hecho, como se comentaba en el desarrollo teórico anterior, para poder deducir conclusiones válidas del **ACP** es fundamental que exista correlación entre variables. Veamos si se cumple estudiando el determinante de la matriz de correlaciones. 
+
+- **Estudio de la correlación**. Vamos a calcular la matriz de correlaciones, proyectar una visualización de esta reccurriendo al `heatmap` (se usará el paquete `corrplot`) y computar el determinante de la matriz. 
+
+```{r}
+R=cor(aire.dat)
+round(R,2)
+library(corrplot)
+R %>%  corrplot(method = "square")
+det(R)
+```
+
+El determinante de la matriz de correlaciones: un determinante muy bajo indicará altas intercorrelaciones entre las variables, pero no debe ser cero (matriz no singular), pues esto indicaría que algunas de las variables son linealmente dependientes y no se podrían realizar ciertos cálculos. 
+
+En nuestra matriz, dado que `det(R)` está cerca de cero, existe colinealidad y el *ACP* es apropiado para tratar con este conjunto de datos.
+
+### ACP con `princomp`
+
+**ORDEN:**
+
+- `princomp(formula, data = NULL, subset, na.action, ...)`
+- `princomp(x, cor = FALSE, scores = TRUE, covmat = NULL, subset = rep(TRUE, nrow(as.matrix(x))), ...)`
+
+**ARGUMENTOS:**
+
+- `formula`: fórmula sin variable respuesta, sólo con variables numéricas. Por ej.: `~ varX1 + varX2 + varX3`. 
+- `data`: un marco de datos opcional que contenga las variables de la fórmula.
+- `subset`: un vector opcional para seleccionar las filas (observaciones) de la matriz de datos.
+- `x`: matriz o marco de datos que proporciona los datos que proporciona los datos para el ACP.
+- `cor`: Valor lógico (`T/F`) indicando si se usa la matriz de correlación (`T`) o la matriz de covarianzas (`F`). Dado que debemos considerar las variables estandarizadas, o equivalentemente la matriz de correlación, `cor = TRUE`.
+- `scores`: Valor lógico (`T/F`) indicando si las puntuaciones de cada c.p. deben ser calculadas.
+
+**RESULTADOS:** Crea un objeto `princomp` que recoge la siguiente información:
+
+- `sdev`: desviaciones estándar de las comp.principales.
+- `loadings`: matriz de cargas (es decir, matriz de autovectores).
+- `center`: las medias.
+- `scaling`: la escala aplicada a cada variable.
+- `n.obs`: número de observaciones.
+- `scores`: Si se ha solicitado, las puntuaciones de los datos en las c.p.
+
+```{r}
+pca <- princomp(aire.dat, cor = TRUE)
+pca
+pca %>% str()
+pca %>% summary()
+```
+
+La función de resumen en el objeto de resultado nos da la desviación estándar, la proporción de varianza explicada por cada componente principal y la proporción acumulada de varianza explicada. Recuérdese que la varianza del $i$-ésimo PC es el $i$-ésimo valor propio: $\hat\sigma_{Y_i}^2 = \hat\lambda_i$.
+
+Podemos construir nuestro propio resumen. 
+
+```{r}
+resumen_name <- paste0("CP",1:7)
+resumen_eign <- pca$sdev^2
+resumen_CP <- tibble(CP = resumen_name, Eigen = resumen_eign) %>% 
+  mutate(Percentage = 100*Eigen/sum(Eigen),
+         `Cumulative Percentage` = cumsum(Percentage))
+
+resumen_CP %>%
+  mutate_at(2:4, round, 2) %>% 
+  kable()
+```
+
+Comprobamos que los valores propios de la matriz $\mathbf{\hat R}$ concuerden con la varianza de los componentes principales.
+
+```{r}
+eigen(R)$values
+```
+
+#### Selección del número de componentes
+
+Podemos ver la variablidad explicada por cada componente construyendo un gráfico de autovalores o [**scree plot**](https://en.wikipedia.org/wiki/Scree_plot#:~:text=In%20multivariate%20statistics%2C%20a%20scree,principal%20component%20analysis%20(PCA).). Esto nos facilitará ver con qué componentes principales nos quedaremos siguiendo uno de los criterios anteriormente expuestos.
+
+```{r}
+resumen_CP %>% 
+  ggplot(aes(x = CP, y = Eigen)) + 
+  geom_bar(stat="identity",width=0.01) + 
+  geom_point() + theme_pander() +
+  geom_hline(yintercept=1, linetype="dashed", color = "red")
+```
+
+Para observar la variablidad explicada por cada CP existe una opción en el paquete de R base es llamando a `plot` directamente. 
+
+```{r}
+plot(pca, col = "lightblue")
+```
+
+Tanto el resumen del **ACP** como ambos dibujos sugieren que en nuestro caso nos deberíamos de quedar con **3** componentes.
+
+#### Estudio de las componentes
+
+- **Cargas (_loadings_) de cada CP**. Las conseguimos llamando a la orden `loadings` del paquete estadístico de R base. Las cargas pequeñas no se imprimen convencionalmente (siendo reemplazadas por espacios), para destacar los patrones de las cargas más grandes. 
+
+```{r}
+pca %>% loadings()
+```
+
+Recuérdese que las cargas son los coeficientes $\underline{\hat e}_i$ que definen cada componente principal, $Y_i = \underline{\hat e}_i'\underline{X}$. Así tenemos por ejemplo que la CP1 es 
+
+$$Y_1 = 0.41 SO2 - 0.315 Temp + 0.54Empresas + 0.488 Pob + 0.250 Viento + 0.26 Dias$$ 
+
+y así con las demás. Las cargas coinciden con los autovectores de la matriz $\mathbf{R}$. Comprobamos la relación (solo para $Y_1$, $Y_2$ e $Y_3$).
+
+```{r}
+eigen(R)$vectors %>% 
+  as.tibble() %>% 
+  select(1:3) %>% 
+  round(3) %>% 
+  kable()
+```
+
+Coinciden salvo signo.^[**¿Por qué la interpretación es la misma aunque cambie el signo?** El **ACP** proporciona vectores principales que apuntan en las mejores direcciones para proyectar sus datos en términos de varianza o error al cuadrado, ignorando el signo. Un vector principal que apunta en la dirección opuesta también es una solución válida para **ACP** pero le dará componentes principales con el signo opuesto. Informalmente, se puede decir que $Variables \ originales \approx Cargas \times Puntuaciones$. Desde aquí podemos ver que si se cambia el signo de sus puntuaciones y de sus cargas, entonces esto no tendrá influencia en el resultado (o interpretación), porque $-1\times-1 = 1$, idem si se cambia el de la CP y solo uno de las cargas o puntuaciones. Solo para proporcionar una mayor relevancia matemática, las direcciones en las que actúan los componentes principales corresponden a los autovectores del sistema. Si obtiene un CP positivo o negativo, solo significa que se está proyectando en un vector propio que apunta en un sentido ó $180^\circ$ en el otro. Un autovector para una matriz (transformación lineal) $A$ se define como cualquier vector $v\neq0$ que satisfaga $Av = \lambda v$. Si $v$ es un autovector, cualquier múltiplo escalar $\hat{v}=\alpha v$ también funcionará $(\alpha \neq 0)$: $$\begin{align} A v = \lambda v & \iff \alpha A v = \alpha \lambda v \\ & \iff A \hat v = \lambda \hat v \end{align}$$ Esto incluye que se pueda eligir $\alpha = -1$. Si $v$ es un autovector, también lo es $-v$. Digamos que el algoritmo **ACP** garantiza que $\| v \|=1$. Todavía tienes dos posibilidades porque si tomas la intersección de una línea que pasa por el origen y el círculo unitario, obtienes dos puntos. La conclusión es que para cada componente de **ACP**, el signo de sus puntuaciones y de sus cargas es arbitrario. Además como se comentó en el desarrollo teórico las distancias se siguen manteniedo. Se puede modificar el signo de forma manual para adecuarlo a sus datos. En R, como se dice en la documentación de los signos de las columnas de las cargas y las puntuaciones son *arbitrarios*, por lo que pueden diferir entre diferentes programas para el ACP, e incluso entre diferentes compilaciones de R. Seguramente en el algoritmo programado el signo del autovector se elija de forma aleatoria y por eso puede cambiar al replicarse en otro momento. **`fix_sign = TRUE` alivia eso**.]
+
+- **Correlación entre las variables originales $X_i$ y las CP.**
+
+La relación de correlación viene dada por $$r_{X_i,Y_j} = \hat{e}_{ij}\sqrt{\hat\lambda_j}.$$ Se pueden calcular de forma sencilla con la siguiente orden. Nos quedaremos con las dos primeras para posteriormente  estudiar una representación gráfica de estas. 
+
+```{r}
+correlations <- loadings(pca)%*%diag(pca$sdev) 
+
+corr_tibble <- correlations %>% 
+  set_colnames(paste0("CP",1:7)) %>% 
+  as.tibble() %>% mutate(nombre = rownames(correlations))
+corr_tibble
+
+corr_tibble %>% 
+  select(c(1:2,8)) %>% 
+  ggplot(aes(CP1,CP2,label=nombre)) + 
+    xlim(-1,1) + ylim(-1,1) +
+    geom_label() + 
+    geom_hline(yintercept = -0.5, linetype="dashed", color = "red") +
+    geom_hline(yintercept = 0.5, linetype="dashed", color = "red") +
+    geom_vline(xintercept = -0.5, linetype="dashed", color = "red") +
+    geom_vline(xintercept = 0.5, linetype="dashed", color = "red") + 
+    theme_pander()
+```
+
+Este gráfico muestra cuáles de las variables originales están más fuertemente correlacionadas con las dos primeras CP. Podemos considerar más correladas aquellas que se encuentren fuera del cuadrado $[-.5,.5]\times[-.5,.5]$ (o también estudiar el valor absoluto). De nuevo, el gráfico puede verse rotado por la cuestión antes explicada del signo de los autovectores, pero la interpretación sigue siendo la misma. 
+
+Un gráfico al que se recurre para el estudio de la correlación entre variables y CP es el **Círculo de Correlación**. Se puede emplear el paquete `FactoMineR` como se indica en los apuntes. Otra opción es recurrir al paquete `factoextra` que hace un wrapper a funciones de `ggplot2`. 
+
+```{r}
+library(factoextra)
+fviz_pca_var(pca, col.var = "salmon", 
+             ggtheme = theme_pander())
+```
+
+El **círculo de correlación** es un gráfico de $r_{X_i,Y_1}$ versus $r_{X_i,Y_2}$. Este gráfico muestra cuáles de las variables originales están más estrechamente correlacionadas con las PC, es decir, aquellas que están cerca de la periferia del círculo de radio 1. Con este gráfico también se puede observar la contribución de cada variable a las dos primeras componentes.
+
+El argumento `col.var` puede ser una variable continua o una variable factorial. Los valores posibles incluyen: *cos2*, *contrib*, *coord*, *x* o *y*. 
+
+En este caso, los colores de los individuos/variables se controlan automáticamente por sus cualidades de representación (*cos2*), contribuciones (*contrib*), coordenadas ($x^2 + y^2$, *coord*), valores x (*x*) o valores de y (*y*). Si se especifica solo un color es usado como único tono. 
+
+- *cos2*: representa la calidad de representación de las variables y se calcula como las coordenadas cuadradas: $var.cos2 = var.coord \times var.coord$. Para una variable dada, la suma del *cos2* en todos los componentes principales es igual a uno. Si una variable está perfectamente representada por solo dos componentes principales ($Dim.1$ y $Dim.2$), la suma del *cos2* en estas dos CP es igual a uno. En este caso las variables se posicionarán en el círculo de correlaciones.Para algunas de las variables, se pueden requerir más de 2 componentes para representar perfectamente los datos. En este caso, las variables se colocan dentro del círculo de correlaciones.
+
+```{r}
+fviz_cos2(pca, choice = "var", axes = 1:2,
+             color = "salmon", fill = "cornflowerblue",
+             ggtheme = theme_pander())
+```
+
+- *contrib*: contiene las contribuciones (en porcentaje) de las variables a los componentes principales. La contribución de una variable (var) a un componente principal dado es (en porcentaje): $(var.cos2 \times 100) / (cos2 \ \text{total del componente})$. Las variables que están correlacionadas con CP1 (es decir, $Dim.1$) y CP2 (es decir, $Dim.2$) son las más importantes para explicar la variabilidad en el conjunto de datos. Las variables que no se correlacionan con ningún CP o que se correlacionan con las últimas dimensiones son variables de baja contribución y podrían eliminarse para simplificar el análisis general.
+
+Es posible utilizar la función `corrplot` para resaltar las variables que más contribuyen a cada CP - dimensión:
+
+```{r}
+var <- get_pca_var(pca)
+var$contrib %>% round(3)
+corrplot(var$contrib, is.corr=FALSE)
+```
+
+Cada cuadrado es un valor, círculos más oscuros y más grandes corresponden a valores más altos. La contribución total a CP1 y CP2 se obtiene con el siguiente código R:
+
+```{r}
+fviz_contrib(pca, choice = "var", axes = 1:2, top = 10,
+             color = "salmon", fill = "cornflowerblue",
+             ggtheme = theme_pander())
+```
+
+La línea roja discontinua en el gráfico indica la contribución promedio esperada. Si la contribución de las variables fuera uniforme, el valor esperado sería 1/longitud (variables) = $1/10$ = $10\%$. Para un componente dado, una variable con una contribución mayor que este límite podría considerarse importante para contribuir al componente. Lo que sugiere que las variables `Temp` y `Viento` no contribuyen mucho a las dos primeras componentes. No obstante en el apartado de selección de componentes se acordó que serían 3 las CP a elegir. 
+
+```{r}
+fviz_contrib(pca, choice = "var", axes = 1:3, top = 10,
+             color = "salmon", fill = "cornflowerblue",
+             ggtheme = theme_pander())
+```
+
+Lo que modifica la interpretación anterior. 
+
+Aquí se muestra el círculo de correlación indicando la contribución de las variables a las 2 primeras CP. 
+
+```{r}
+fviz_pca_var(pca, col.var = "coord",
+   gradient.cols = c("orange", "red", "blue"),
+   ggtheme = theme_pander())
+```
+
+- **Gráfico de las puntuaciones** 
+
+Las **puntuaciones** son los valores de las CP en las unidades de muestra. 
+
+```{r}
+pca$scores %>% head() %>% kable()
+```
+
+Podemos representarlas para la CP1 y la CP2. Se podría hacer recurriendo al paquete base de R con `plot()` o empleando el paquete `ggplot`, pero aprovechando que se ha introducido el paquete `factoextra` se usará la función `fviz_pca_ind()` que permite usar las herramientas de `ggplot` de forma más intuitiva. 
+
+```{r}
+fviz_pca_ind(pca, col.ind = "cornflowerblue", 
+             gradient.cols = c("#00AFBB", "#E7B800", "#FC4E07"),
+             repel = TRUE, ggtheme = theme_pander())
+```
+
+Este gráfico es útil para detectar valores atípicos en el caso multivariado. En este ejemplo, **Chicago** y **Phoenix** pueden ser valores atípicos. El gráfico puede verse rotado de nuevo al replicarlo como se explicó anteriormente.
+
+- **Biplot**
+
+Todo lo anterior se puede agrupar fácilmente en un gráfico conjunto que se conoce como `biplot`. En el paquete `factoextra` se encuentra la orden `fviz_pca_biplot` que permite construir este gráfico de forma intuitiva y haciendo uso del motor de `ggplot2`. 
+
+```{r}
+fviz_pca_biplot(pca,
+                col.var = "red", # Variables color
+                col.ind = "cornflowerblue",  # Individuals color
+                repel = TRUE, ggtheme = theme_pander())
+```
+
+Tenga en cuenta que el `biplot` solo puede ser útil cuando hay un número bajo de variables e individuos en el conjunto de datos; de lo contrario, la trama final sería ilegible. Tenga en cuenta también que las coordenadas de los individuos y las variables no se construyen en el mismo espacio. Por lo tanto, en el biplot, debe centrarse principalmente en la dirección de las variables, pero no en sus posiciones absolutas en el gráfico.
+
+En términos generales, un biplot se puede interpretar de la siguiente manera:
+
+- Un individuo que está en el mismo lado de una variable dada tiene un valor alto para esta variable.
+- Un individuo que está en el lado opuesto de una variable dada tiene un valor bajo para esta variable.
+
+A continuación, comprobamos que la variabilidad de la PC disminuye
+
+$$\hat\lambda_1 \geq \hat\lambda_2 \geq \cdots \geq \hat\lambda_7$$
+
+```{r}
+pca$scores
+
+pca$scores %>% 
+  as.tibble() %>%
+  pivot_longer(everything(),names_to = "item",values_to = "valor") %>% 
+  ggplot(aes(x=item, y=valor, fill=item)) +
+    geom_boxplot() + theme_pander() + 
+    theme(legend.position = "none") +
+    xlab("") + ylab("")
+```
+
+Podemos usar el comando `boxplot` para detectar los valores atípicos en nuestros datos. 
+
+```{r, fig.show='hide'}
+boxPCA = boxplot(pca$scores)
+outliers = boxPCA$out
+outliers
+component=boxPCA$group
+component
+```
+
+Se puede comprobar que los valores atípicos detectados por CP1 y CP2 corresponden a `Chicago`, `Phoenix` y `Alburquerque`.
+
+### Ampliación - Usando `tidymodels`
+
+```{r}
+library(tidymodels)
+```
+
+**¿Porque `tidymodels`?** 
+
+**R** es un software de licencia abierta que cuenta con una comunidad activa que es a la vez desarrolladora y explotadora de los paquetes disponibles para su uso. Desde hace un tiempo, un grupo de estos miembros, entre los que cabe destacar a [Hadley Wickham](http://hadley.nz/) o [Julia Silge](https://juliasilge.com/about/) entre otros, llevan centrando sus esfuerzos en organizar y facilitar el uso de R como herramienta creando el [**tidyverso**](https://www.tidyverse.org/), *mundo ordenado*. A esta iniciativa se están uniendo otros muchos desarrolladores que dejan de actualizar sus paquetes para integrarlos en los que se están desarrollando, quedando estos desfasados y en algunos casos desactualizados para nuevas versiones de R.
+
+![](/post/2020-11-13-análisis-de-componentes-principales-datos-usairpollution_files/tidyverse.png){width=50% height=75%}
+
+Esta idea bajo la cual se construye el paquete [`tidymodels`](https://www.tidymodels.org/), donde se están recogiendo los principales modelos de aprendizaje e incorporándolos en un flujo de trabajo que facilite su programación y análisis. 
+
+<center>![](/post/2020-11-13-análisis-de-componentes-principales-datos-usairpollution_files/tidymodels.png)</center>
+
+Este apartado pretende mostrar los pasos para construir un [análisis de componentes principales](https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales) - **PCA** - con el paquete `tidymodels` sobre los datos de `USairpollution` descritos en el apartado anterior. No nos detendremos tanto en las conclusiones y las interpretaciones de los resultados debido a que se han expuesto en el apartado anterior, así como nos preocuparemos del código necesario. 
+
+Seguimos trabajando con los mismos datos.
+
+```{r}
+aire.dat
+```
+
+En primer lugar, para usar `tidymodels`, debemos definir un pipeline, es decir, una serie de pasos de análisis que queremos realizar. Para ello empleamos el paquete R [`recipes`](https://recipes.tidymodels.org/).
+
+```{r}
+pca_recipe <- recipe(~., data = aire.dat)
+```
+
+Como el ACP es un algoritmo de aprendizaje no supervisado no habrá que realizar la partición del conjunto de datos característico de los modelos de aprendizaje supervisado. No obstante, si que habrá que preprocesar los datos para adecuarlos al ACP escalando los datos. Y finalmente, especificamos que queremos hacer PCA usando `step_pca()`.
+
+```{r}
+pca_trans <- pca_recipe %>%
+  step_center(all_numeric()) %>% # center the data
+  step_scale(all_numeric()) %>% # center the data
+  step_pca(all_numeric()) # pca on all numeric variables
+pca_trans
+```
+
+Ahora estamos listos para el análisis. Usaremos la receta que construimos hasta ahora como argumento para la función `prep()`, "preparar".
+
+```{r}
+pca_estimates <- prep(pca_trans)
+pca_estimates
+pca_estimates %>% names()
+```
+
+Nuestros resultados de los pasos de la receta de ACP están disponibles en `steps`. En nuestro caso usamos tres pasos, dos para normalizar los datos y uno para hacer ACP. Por lo tanto, el objeto `steps` es una lista de tamaño tres, donde los dos primeros elementos contienen detalles sobre nuestros pasos de normalización y el tercer elemento contiene los resultados de ACP. Revisemos el tercer paso.
+
+```{r}
+pca_tidy <- pca_estimates$steps[[3]]
+pca_tidy
+```
+
+Vemos que las cargas de cada CP quedan guardadas en el argumento `res`. Si las comparamos con las obtenidas en `princomp` vemos que coinciden salvo signo de nuevo. 
+
+```{r}
+paste("TIDYMODELS")
+pca_tidy$res$rotation %>% round(3)
+paste("PRINCOMP")
+pca$loadings
+```
+
+Accediendo al tercer elemento podemos obtener las desviaciones estándar del análisis de ACP y utilizarlas para calcular el porcentaje de variación explicado por cada CP. Para dar la varianza elevamos al cuadrado, que coinciden con los autovalores de $\mathbf{\hat R}$.
+
+```{r}
+sdev <- pca_estimates$steps[[3]]$res$sdev
+percent_variation <- 100*sdev^2 / sum(sdev^2)
+var_df <- tibble(CP = paste0("PC",1:length(sdev))) %>% 
+  mutate(Var = sdev^2,
+         Per_explained = percent_variation, 
+         Cumulative_Per_Explained = cumsum(Per_explained))
+var_df %>% kable()
+```
+
+Ahora podemos construir el gráfico el scree plot que muestra y de forma similar el del porcentaje variabilidad explicada por cada CP.
+
+```{r}
+var_df %>%
+  mutate(CP = fct_inorder(CP)) %>%
+  ggplot(aes(x = CP, y = Var)) +
+  geom_bar(stat="identity",width=0.01) + 
+  geom_point() +
+  geom_hline(yintercept=1, linetype="dashed", color = "red") + 
+  theme_pander() 
+  
+var_df %>%
+  mutate(CP = fct_inorder(CP)) %>%
+  ggplot(aes(x = CP, y = Per_explained)) +
+  geom_col(fill = "cornflowerblue", color = "red") + 
+  ylab("Variablidad explicada") + theme_pander() 
+```
+
+Echemos un vistazo a los componentes principales calculados por nuestra receta. El paquete de `recipes` de `tidymodels` tiene una función llamada `juice`, "jugo", que devolverá los resultados de una receta creada por `prep`.
+
+```{r}
+juice(pca_estimates) 
+```
+
+Podemos usar los resultados de juice para hacer un diagrama de ACP estándar, un diagrama de dispersión con la CP1 en el eje $x$ y la CP2 en el eje $y$ para ver la estructura en los datos.
+
+```{r}
+juice(pca_estimates) %>%
+  ggplot(aes(PC1, PC2, label = rownames(aire.dat))) +
+  geom_point(color="salmon", alpha = 0.7, size = 2,show.legend = FALSE) +
+  geom_text(check_overlap = TRUE) + 
+  labs(title="PCA with Tidymodels") + theme_pander() 
+```
+
+Obviamente el uso de tidymodels supone en ocasiones un mayor esfuerzo en cuanto a código se refiere y que sea una perspectiva novedosa también influye en su comprensión y manejabilidad. No obstante, se sigue un proceso estructurado lo que facilitará su entendimiento a largo plazo y, como se comentaba anteriormente, la comunidad lleva tiempo mostrando interés en metodologías como está que seguramente terminarán imperando en la minería de datos y programación estadística. 
+
+# Referencias 
+
+- [Making sense of principal component analysis, eigenvectors & eigenvalues](https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/150978#150978)
+
+- [PCA - Principal Component Analysis Essentials](http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/112-pca-principal-component-analysis-essentials/)
+
+- [Visualize Principal Component Analysis](https://rpkgs.datanovia.com/factoextra/reference/fviz_pca.html)
+
+- Sobre ACP con tidymodels:
+  + [Python and R Tips - PCA with tidymodels](https://cmdlinetips.com/2020/06/pca-with-tidymodels-in-r/)
+
+- Sobre el signo de las CP:
+  + [Does the sign of scores or of loadings in PCA or FA have a meaning? May I reverse the sign?](https://stats.stackexchange.com/questions/88880/does-the-sign-of-scores-or-of-loadings-in-pca-or-fa-have-a-meaning-may-i-revers)
+  + [Reverse the sign of PCA](https://stats.stackexchange.com/questions/269428/reverse-the-sign-of-pca)
+

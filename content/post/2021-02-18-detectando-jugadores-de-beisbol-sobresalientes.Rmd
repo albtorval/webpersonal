@@ -1,0 +1,241 @@
+---
+title: Detectando jugadores de béisbol sobresalientes
+author: Alberto Torrejón Valenzuela
+date: '2021-02-18'
+categories:
+  - Estadística
+  - Estadística deportiva
+tags:
+  - ACP
+  - Xaringan
+  - Béisbol
+slug: detectando-jugadores-de-beisbol-sobresalientes
+description: Análisis de componentes principales y béisbol
+mathjax: local
+output:
+  blogdown::html_page:
+    toc: no
+# draft: true
+---
+
+```{r setup, echo=FALSE, warning = FALSE, cache=FALSE}
+library(knitr)
+library(rmdformats)
+
+## Global options
+options(max.print="75")
+opts_chunk$set(echo=TRUE,
+               cache=FALSE,
+               prompt=FALSE,
+               tidy=TRUE,
+               comment=NA,
+               message=FALSE,
+               warning=FALSE,
+               fig.align = 'center')
+opts_knit$set(width=75)
+```
+
+![](/post/2021-02-18-detectando-jugadores-de-beisbol-sobresalientes_files/baseball.jpeg){width=50% height=35%}
+
+> *"El poder de la estadística en el béisbol es que, a diferencia del precio de la vivienda o la inflación, toma vida"*. Bill James.
+
+
+<center><iframe width="560" height="315" src="https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1" frameborder="0"></iframe></center>
+
+<center>
+[DIAPOSITIVAS](https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1)
+</center>
+
+```{r}
+# Manipulación de datos
+library(tidyverse)
+library(magrittr)
+# Gráficos
+library(ggplot2)
+library(ggthemes)
+library(gridExtra)
+# Tabla
+library(kableExtra)
+```
+
+<div class="just">
+A principios de la década de 2000, Billy Beane y Paul DePodesta trabajaron para los Oakland Athletics, un equipo de la MLB estadounidense, revolucionando el mundo del deporte y de la estadística deportiva. Sentaron las bases en el béisbol de lo que más tarde se extendería a otros deportes como el baloncesto o el fútbol y que en la actualidad está causando gran furor en el mundo deportivo. Aplicaron a la hora de constuir su plantilla de jugadores, para lo que disponían de un presupuesto ajustado, los conceptos que años atrás curiosos del juego, como Bill James entre otros, habían formulado mientras se planteaban si el béisbol era un juego que se podía descrifrar con datos y estadística. 
+</div>
+
+<div class="just">
+Como no es el objetivo de este ejercicio, no se explicará en profundidad ni el juego del béisbol, que tiene su interés, ni se hará un desarrollo de las [estadísticas](https://en.wikipedia.org/wiki/Baseball_statistics) recogidas por la sabermetría. Para lo que nos concierne, la sabermetría recoge un cuantioso número de estadísticas para cada jugador  reduciendo el potencial del jugador, y por tanto del equipo, a los números. Todos estos estadísticos se calculan teniendo en cuenta los 4 elementos básicos del juego: el pitcheo o lanzamiento, el hit o golpeo, el strike y el run o carrera, estudiando todas las posibles variables y para las distintas posiciones del juego. El hecho de que en su mayoría estas estadísticas sean combinaciones lineales ponderadas de estás 4 variables sugiere que podría existir relación entre algunas, lo que invita a estudiar una posible reducción de la dimensionalidad. Como ejemplo se pueden mostrar dos ampliamente conocidas como son el porcentaje en base y el slug. 
+</div>
+
+**Porcentaje en base** o **promedio de bateo**.
+
+$$OBP = \frac{H+BB+HBP}{AB+BB+HBP+SF}$$
+
+donde:
+
+- $H \equiv hits$
+- $BB \equiv bolas\ por\ base$
+- $HBP \equiv hit \ by \ pitch$
+- $AB \equiv at \ bat$
+- $SF \equiv sacrifice \ fly$
+
+**Slug.**
+
+$$SLG = \frac{1B + 2 \times 2B + 3 \times 3B + 4 \times HR}{AB}$$
+
+donde:
+
+- $1B \equiv \# \ de \ singles$
+- $2B \equiv \# \ de \ dobles$
+- $3B \equiv \# \ de \ triples$
+- $HR \equiv \# \ de \ homeruns$
+
+## API `baseballr`
+
+<div class="just">Otro problema muy generalizado en el mundo de la estadística deportiva es que cada vez más el acceso a las bases de datos queda restringido por la monetización de la información. No obstante, hay numerosas páginas webs que se dedican de forma altruista a recoger estos datos. El paquete [`baseballr`](http://billpetti.github.io/baseballr/) extrae la información de sitios web, como FanGraphs.com, Baseball-Reference.com y baseballsavant.com. También incluye funciones para calcular métricas, como wOBA, FIP y consistencia a nivel de equipo en períodos de tiempo personalizados.
+</div>
+
+```{r}
+library(devtools)
+# DESCOMENTAR LA SIGUIENTE LÍNEA PARA REPLICAR
+# install_github("BillPetti/baseballr") 
+library(baseballr)
+```
+
+Vamos a analizar a los bateadores. Obtenemos la información de los estadísticos de los bateadores en la temporada 2020 como se sigue:
+
+```{r}
+bateadores <- daily_batter_bref("2020-06-23", "2020-09-27")
+bateadores %>% summary() %>% .[,1:15]
+bateadores %>% head() %>% .[,1:10]
+# Comprobación de que los jugadores no se repiten:
+bateadores %>% nrow() == length(bateadores %$% unique(Name))
+```
+
+Restringimos nuestra matriz de datos a aquellas variables numéricas.
+
+```{r}
+bateadores %>% names()
+bateadores <- bateadores %>%
+  dplyr::select(-c(bbref_id,season,Age,Level,Team)) %>% 
+  column_to_rownames('Name')
+```
+
+Hay valores perdidos en las variables `BA`, `OBP`, `SLG` y `OPS`. Como no es objetivo del ejercicio, vamos a eliminar a estos individuos de nuestra muestra, aunque se podrían imputar.
+
+```{r}
+bateadores %>% dplyr::select(BA,OBP,SLG,OPS) %>% summary()
+missing_ids <- list()
+missing_cols <- c("BA","OBP","SLG","OPS")
+for (i in 1:length(missing_cols)){
+  missing_ids[[i]] <- bateadores[,missing_cols[i]] %>% is.na() %>% which()
+}
+deleted_obs <- c(missing_ids[[1]],missing_ids[[2]],missing_ids[[3]],missing_ids[[4]]) %>% unique()
+cat("Las observaciones que tiene valores perdidos son:",deleted_obs)
+bateadores <- bateadores %>% slice(-deleted_obs)
+```
+
+Construimos el diagrama de cajas y bigotes.
+
+```{r}
+bateadores %>% pivot_longer(everything(), names_to = "item", values_to = "valor") %>% 
+    mutate(item = fct_reorder(item, valor, .fun = "median")) %>% ggplot(aes(x = item, 
+    y = valor, fill = item)) + geom_boxplot() + xlab("") + ylab("") + theme_pander() + 
+    theme(legend.position = "none")
+```
+
+<div class="just">
+El gráfico sugiere que existen valores atípicos en nuestra muestra. También podemos observar que las variables se miden en escalas bastante diferentes (unidades y rango de valores bastante diferentes), sobre todo las variables `AB` y `PA`, por lo que trabajaremos con las variables estandarizadas.
+</div>
+
+<div class="just">
+Faltaría estudiar la correlación de las variables, caso en el que el ACP arroja unos resultados más fiables. Calcularemos el determinante de la matriz de correlación y visualizaremos el mapa de calor con ayuda del paquete corrpot.
+</div>
+
+```{r}
+library(corrplot)
+R_bateadores <- cor(bateadores)
+R_bateadores %>% corrplot(method = "square")
+R_bateadores %>% det()
+```
+
+En nuestra matriz, dado que `det(R)` está cerca de cero, existe colinealidad y el ACP es apropiado para tratar con este conjunto de datos. Ahora ya estamos en condiciones de realizar nuestro Análisis de Componentes Principales.
+
+## ACP
+
+Se usará la función `princomp`. Se indica `cor=TRUE` para trabajar con las variables estandarizadas. 
+
+```{r}
+pca_beisbol <- princomp(bateadores, cor = TRUE)
+pca_beisbol
+```
+
+Resumen del resultado.
+
+```{r}
+resumen_name <- paste0("CP", 1:24)
+resumen_eign <- pca_beisbol$sdev^2
+resumen_CP <- tibble(CP = resumen_name, Eigen = resumen_eign) %>% 
+  mutate(Percentage = 100 *Eigen/sum(Eigen), 
+         `Cumulative Percentage` = cumsum(Percentage))
+resumen_CP %>% mutate_at(2:4, round, 2) %>% kable()
+```
+
+En nuestro caso la primera componente principal ya explica más de la mitad de la variabilidad total, $53.20\%$ de los datos. Veamos cuántas componentes seleccionaríamos observando el **scree plot**.
+
+```{r}
+resumen_CP %>% ggplot(aes(x = fct_reorder(CP, -Eigen), y = Eigen)) + 
+  geom_bar(stat = "identity", width = 0.01) + 
+  geom_point() + 
+  geom_hline(yintercept = 1, linetype = "dashed", color = "red") + 
+  theme_pander() + xlab("") + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
+```
+
+Si seguimos la regla de **regla de Kaiser-Guttman** seleccionaríamos $4$ componentes. Si decidiésemos tomar aquellas que expliquen más del $80\%$ de la variabilidad total nos quedaríamos con $6$ componentes. 
+
+Observemos la matriz de cargas de las componentes y las puntuaciones de cada individuo que se calculan en el ACP.
+
+```{r}
+pca_beisbol %$% loadings %>% .[,1:6] %>% kable() %>% scroll_box(width = "100%", height = "500px")
+pca_beisbol %$% scores   %>% .[,1:6] %>% kable() %>% scroll_box(width = "100%", height = "500px")
+```
+
+Visualizaremos el círculo de correlación.
+
+```{r}
+library(factoextra)
+fviz_pca_var(pca_beisbol, col.var = "salmon", ggtheme = theme_pander())
+```
+
+<div class="just">
+Se observa que, con respecto de la CP1 todas las variables están positivamente correlacionales, mientras que con respecto a la de la segunda se mantiene la asociación que se advirtió en el gráfico de correlaciones, estando las variables `BA`, `OBP`, `SLG` y `OPS` correlacionadas negativamente con esta componente. 
+</div>
+
+Por último, como nos hemos quedado con las $4$ CP primeras, vamos a representar los ${4\choose2} = \frac{24}{4} = 6$ gráficos de dispersión de las puntuaciones de los individuos. 
+
+```{r}
+puntuaciones_4 <- pca_beisbol %$% scores %>% .[,1:4]
+nombre_jugadores <- rownames(puntuaciones_4)
+puntuaciones_4 <-  puntuaciones_4 %>% as.tibble() 
+
+q1 <- puntuaciones_4 %>%  
+  ggplot(aes(x = Comp.1, y = Comp.2, label = nombre_jugadores)) + geom_text() + theme_pander()
+q2 <- puntuaciones_4 %>%  
+  ggplot(aes(x = Comp.1, y = Comp.3, label = nombre_jugadores)) + geom_text() + theme_pander()
+q3 <- puntuaciones_4 %>%  
+  ggplot(aes(x = Comp.1, y = Comp.4, label = nombre_jugadores)) + geom_text() + theme_pander()
+q4 <- puntuaciones_4 %>%  
+  ggplot(aes(x = Comp.2, y = Comp.3, label = nombre_jugadores)) + geom_text() + theme_pander()
+q5 <- puntuaciones_4 %>%  
+  ggplot(aes(x = Comp.2, y = Comp.4, label = nombre_jugadores)) + geom_text() + theme_pander()
+q6 <- puntuaciones_4 %>%  
+  ggplot(aes(x = Comp.3, y = Comp.4, label = nombre_jugadores)) + geom_text() + theme_pander()
+q1; q2; q3; q4; q5; q6
+```
+
+En nuestros datos, con las componentes principales que hemos construido, los jugadores `Adalberto Mondesi`, `Bryce Harper`, `Juan Soto` y `Freddie Freeman` pueden considerarse valores atípicos.
+
+<div class="just">
+Y ahora, para terminar el ejercicio, traemos a colación la frase de Bill James anterior: *"El poder de la estadística en el béisbol es que, a diferencia del precio de la vivienda o la inflación, toma vida"*. Y es que resulta que `Freddie Freeman`, uno de nuestros outliers, ha sido elegido **Most Valuable Player** (MVP) de su liga en la temporada 2020, lo que encaja con los resultados obtenidos. El resto de jugadores atípicos también han sido los mejores en los rankings de alguna o varias de estás métricas.
+</div>
+
+![](/post/2021-02-18-detectando-jugadores-de-beisbol-sobresalientes_files/mvp.png){width=75% height=75%}

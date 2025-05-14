@@ -1,0 +1,32 @@
+---
+title: Aracena
+author: Alberto Torrejón Valenzuela
+date: '2021-11-05'
+slug: aracena
+categories:
+  - poemas
+tags:
+  - Amor
+  - Ella
+description: ''
+---
+
+<center>
+**Aracena**
+
+![](/text/2021-11-05-aracena_files/Ana.JPG){width=75%}
+
+Se confunde con las sabanas, <br>
+la piel de mi amada, <br>
+aquella junto a mí, <br>
+la niña de porcelana. <br>
+El gallo canta la mañana, <br>
+el caos espera, <br>
+mas queda junto a mí, <br>
+ángel de mi guarda. <br>
+Fácil es blandir espada, <br>
+si me proteges, <br>
+si quedas junto a mi, <br>
+al menos por esta mañana...
+
+</center>

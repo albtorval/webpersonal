@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HTML on Alberto Torrejón Valenzuela</title>
+    <link>/tags/html.html</link>
+    <description>Recent content in HTML on Alberto Torrejón Valenzuela</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Thu, 30 Jul 2020 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/html/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>RMarkdown y Hugo para crear un sitio web</title>
+      <link>/post/2020/07/30/rmarkdown-y-hugo-para-crear-una-p%C3%A1gina-web.html</link>
+      <pubDate>Thu, 30 Jul 2020 00:00:00 +0000</pubDate>
+      <guid>/post/2020/07/30/rmarkdown-y-hugo-para-crear-una-p%C3%A1gina-web.html</guid>
+      <description>&lt;div id=&#34;nuevo-sitio-web&#34; class=&#34;section level3&#34;&gt;&#xA;&lt;h3&gt;&lt;svg aria-hidden=&#34;true&#34; role=&#34;img&#34; viewBox=&#34;0 0 581 512&#34; style=&#34;height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;&#34;&gt;&lt;path d=&#34;M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z&#34;/&gt;&lt;/svg&gt; Nuevo sitio web&lt;/h3&gt;&#xA;&lt;ol style=&#34;list-style-type: decimal&#34;&gt;&#xA;&lt;li&gt;&lt;p&gt;Elija cuidadosamente un tema en &lt;a href=&#34;http://themes.gohugo.io&#34; class=&#34;uri&#34;&gt;http://themes.gohugo.io&lt;/a&gt; y busque el enlace a su repositorio de &lt;code&gt;GitHub&lt;/code&gt;, que tiene la forma &lt;code&gt;https://github.com/user/repo&lt;/code&gt;.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

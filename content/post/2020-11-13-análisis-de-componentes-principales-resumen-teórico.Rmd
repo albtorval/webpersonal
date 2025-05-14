@@ -1,0 +1,218 @@
+---
+title: Análisis de Componentes Principales - resumen teórico
+author: Alberto Torrejón Valenzuela
+date: '2020-11-13'
+slug: análisis-de-componentes-principales-resumen-teórico
+categories:
+  - Estadística
+tags:
+  - Minería Estadística
+  - R
+  - ACP
+description: 'Resumen teórico sobre el análisis de componentes principales'
+mathjax: local
+output:
+  blogdown::html_page:
+      toc: TRUE
+---
+
+# Análisis de Componentes Principales - ACP
+
+En está técnica de aprendizaje no supervisado/reducción de la dimensionalidad se parte de $p$ variables **correlacionadas** (que miden información común) se plantea como objetivo transformar el conjunto original en otro conjunto de $m<p$ nuevas variables incorreladas entre sí (que no tenga repetición o redundancia en la información) llamado conjunto de **componentes principales**, que son combinaciones lineales de las $p$ originales.
+
+La hipótesis de correlación es fundamental. Si las variables originales están incorreladas, entonces carece de sentido calcular unos componentes principales. Si se hiciera, se obtendrían las mismas variables pero reordenadas de mayor a menor varianza. La hipótesis de normalidad de los datos no es necesaria, aunque si se cumple la interpretación de los resultados proporciona mayor información. 
+
+## Formalización 
+
+Dado un vector aleatorio $p$-dimensional de variables aleatorias **continuas** $$\underline{X} = (X_1, ..., X_p)'.$$
+
+Queremos transformarlo en otro vector $\underline{Y} = (Y_1, ..., Y_p)'$ donde las $Y_i$ son combinaciones lineales de $X_1,...,X_p$ en orden descendente de importancia. Luego seleccionaremos las $m<p$ componentes que superen un determinado umbral de importancia.
+
+Se supone que:
+
+- $\exists \ \underline{\mu} = E[\underline{X}] = (\mu_1,...,\mu_p)'$ **vector de medias**, donde $\mu_i = E[X_i].$
+- $\exists \ \mathbf{\Sigma}$ **matriz de covarianzas** de $\underline{X}$ dada por:
+
+$$\mathbf{\Sigma} = Cov(\underline{X}) = \begin{pmatrix}
+\sigma_{11} & ... & \sigma_{1p} \\ 
+\vdots & \ddots & \vdots \\ 
+\sigma_{p1} & ... & \sigma_{pp}
+\end{pmatrix}.$$ con 
+
+- $\sigma_{ij} = Cov(X_i, X_j) = E[(X_i-\mu_i)(X_j-\mu_j)].$
+- $\sigma_{ii} = Cov(X_i,X_i) = Var(X_i).$
+
+**Notación:** $\underline{X} \sim (\underline\mu, \mathbf{\Sigma}).$
+
+Por otra parte, se define la **matriz de correlaciones** como
+
+$$\mathbf{R} = \begin{pmatrix}
+\rho_{11} & ... & \rho_{1p} \\ 
+\vdots & \ddots  & \vdots \\ 
+\rho_{p1} & ... & \rho_{pp}
+\end{pmatrix}$$
+
+donde 
+
+- $\rho_{jj} = 1 \quad \forall i=1,...,p$.
+- $\rho_{jk} = \frac{\sigma_{jk}}{\sigma_j \sigma_k} \ $ si $\ j\neq k$.
+
+Si $\rho_{ij}^2 = 0$ significa que las variables $X_i$ y $X_j$ están incorreladas. Por el contrario, si $\rho_{ij}^2 = 1$ entonces existe una dependencia lineal entre ellas $(X_i = a + bX_j \quad a,b\in \mathbb{R})$. 
+
+En forma matricial se tiene que $\mathbf{R} =  \Delta^{-1}\mathbf{\Sigma}\Delta^{-1}$ con $\Delta = diag\{\sigma_1,\cdots,\sigma_p\}$. 
+
+Otro concepto importante en la formalización será la **estandarización** de las variables, adimensionar las variables para facilitar su estudio. Se consigue considerando la variable centrada por su media y escalada por su varianza:
+
+$$\underline{X}_{(s)} = \begin{bmatrix}
+\frac{X_1-\mu_1}{\sigma_1}\\ 
+\vdots \\ 
+\frac{X_p-\mu_p}{\sigma_p}
+\end{bmatrix} = \Delta^{-1}(\underline{X}-\underline\mu).$$
+
+Se cumple la siguiente relación $\mathbf{R} = \mathbf{\Sigma}_{(s)} = \mathbf{R}_{(s)}$
+
+```{definition}
+La $j$-ésima **Componente Principal** (PC), $Y_j$, se define como la combinación lineal:
+
+$$
+\begin{align}
+  Y_j & =  t_{j1}X_1 + ... + t_{jp}X_p \\
+      & = \underline{t}_j' \underline{X}
+\end{align} \\
+$$
+
+donde $\underline{t}_j' = (t_{j1},..., t_{jp})' \quad t_{ij} \in \mathbb{R}$ 
+```
+
+A continuación se presentan algunas propiedades de estas tranformaciones lineales. 
+
+```{proposition}
+Sea $\underline{X} \sim (\underline\mu, \bf\Sigma)$, 
+
+
+\begin{align}
+E[Y_j] & = E[\underline{t}_j'\underline{X}] = \underline{t}_j'\underline\mu \\
+Var(Y_j) & = Var(\underline{t}_j'\underline{X}) = \underline{t}_j' \mathbf{\Sigma} \underline{t}_j \\
+Cov(Y_i,Y_j) & = Cov(\underline{t}_i'\underline{X},\underline{t}_j'\underline{X}) = \underline{t}_i' \mathbf{\Sigma} \underline{t}_j
+\end{align}
+```
+
+Para demostrar esta proposición es necesario recurrir a las formas matriciales cuadráticas. $\mathbf{\Sigma} \in \mathcal{M}^{p\times p}$ **simétrica** y **semidefinida positiva**, por lo que por el teorema espectral podemos dar una representación de la matriz en términos de sus autovalores que son reales y positivos, 
+
+$$\lambda_1 \geq \lambda_2 \geq  \cdots \geq \lambda_p \geq 0.$$ 
+
+La suma total de todos los autovalores es $p$. Los autovectores que pertenecen a los autovalores más grandes indican los principal dirección de los datos. Sea $\underline{e}_i$ el autovector unitario, $||\underline{e}_i||^2 = 1$, asociado a $\lambda_i$. Los autovectores son **ortogonales**, $\underline{e}_i'\underline{e}_j = 0$, si $i\neq j$. Sea $E_{p\times p} = [\underline{e}_1,\underline{e}_2,\cdots,\underline{e}_p]$, $E$ es ortogonal ya que $\mathbf{E}'\mathbf{E} = \mathbf{E}\mathbf{E}' = I.$ De hecho tenemos el siguiente resultado
+
+```{theorem}
+**(Teorema de la descomposición espectral)**
+
+$$\mathbf\Sigma =  \mathbf{E} \mathbf\Lambda \mathbf{E}' = \sum_{i=1}^p \lambda_i \underline{e}_i \underline{e}_i'$$
+
+donde $\mathbf\Lambda = diag\{\lambda_1,\cdots,\lambda_p\}$, con $\lambda_i$ autovalores.
+
+Además:
+
+1. $\mathbf{E}' \mathbf\Sigma \mathbf{E} = \mathbf\Lambda$ 
+2. $tr(\mathbf\Sigma) = tr(\mathbf\Lambda) = \sum_{j=1}^p \lambda_j$
+
+```
+
+## Cálculo de las Componentes Principales
+
+La primera componente principal $Y_1 = t_{11}X_1 + ... + t_{1p}X_p$ con $t_{1i} \in \mathbb{R}$ es aquella cuya varianza $var[Y_1] = \underline{t}_1' \mathbf{\Sigma} \underline{t}_1$ es máxima. Se impone la condición de que los autovectores sean unitarios para acotar los valores, i.e. $\underline{t}_1'\underline{t}_1 = 1$. Luego se ha de resolver el siguiente problema:
+
+Obtener $\underline{t}_1 = (t_{11}, \cdots , t_{1p})$ tal que: 
+
+$$\begin{align} & max(\underline{t}_1' \mathbf{\Sigma} \underline{t}_1) \\ & s.a.: \\ & \underline{t}_1'\underline{t}_1 = 1 \end{align}$$
+
+Aplicando el *Método de los Multiplicadores de Lagrange*, véase la resolución [aquí](http://halweb.uc3m.es/esp/Personal/personas/jmmarin/esp/AMult/tema3am.pdf), $\underline{t}_1$ es el vector propio unitario correspondiente al valor propio más grande $\lambda_1$ de la matriz de covarianza $\mathbf{\Sigma}$.
+
+La segunda componente principal tiene que capturar la mayor parte de la variabilidad no capturada por $Y_1$, por lo que $Y_2$ debe estar incorrelada con $Y_1$, i.e. $Cov(Y_2,Y_1) = \underline{t}_2' \mathbf{\Sigma} \underline{t}_1 = 0$. Luego para obtener $\underline{t}_2 = (t_{21}, \cdots , t_{2p})$ resolvemos:
+
+$$\begin{align} & max(\underline{t}_2' \mathbf{\Sigma} \underline{t}_2) \\ & s.a.: \\ & \underline{t}_2'\underline{t}_2 = 1 \\ & \underline{t}_2' \mathbf{\Sigma} \underline{t}_1 = 0 \end{align}$$
+$t_2$ es el vector propio unitario correspondiente al segundo valor propio más grande $\lambda_2$ de la matriz de covarianza $\mathbf{\Sigma}$. Y de está forma, suponiendo que el resto de componentes están incorreladas con las anteriores se van calculando el resto de componentes. La $j$-ésima componente principal será el resultado de 
+
+$$\begin{align} & max(\underline{t}_j' \mathbf{\Sigma} \underline{t}_j) \\ & s.a.: \\ & \underline{t}_j'\underline{t}_j = 1 \\ & \underline{t}_j' \mathbf\Sigma \underline{t}_h = 0 \quad h = 1,...,j-1 \end{align}$$
+Véase el **Teorema de la $j$-ésima componente principal**.
+
+**<u>Propiedades</u>**
+
+1. $Var[Y_j] = \lambda_j$.
+2. Las PC están incorreladas.
+3. $Var[Y_1] \leq Var[Y_2] \leq \cdots \leq Var[Y_p]$.
+
+## Componentes principales en la práctica
+
+Dada una realización muestral de tamaño $n$ del vector aleatorio $\underline{X}$ se tiene la siguiente notación:
+
+$$\mathbf{X}_{n\times p} = \begin{pmatrix}
+x_{11} & ... & x_{1p} \\ 
+\vdots & \ddots  & \vdots \\ 
+x_{n1} & ... & x_{np}
+\end{pmatrix} = 
+\underbrace{\begin{pmatrix}
+\underline{x}_1 \\ 
+\vdots \\ 
+\underline{x}_n
+\end{pmatrix}}_\text{muestra individuos} = \underbrace{\begin{pmatrix}
+\underline{x}_{(1)}, ... , \underline{x}_{(p)} 
+\end{pmatrix}}_\text{muestra variables}$$
+
+En la práctica, la técnica de las CP debe aplicarse reemplazando las características de la población por sus respectivos estimadores, es decir $\mu \rightarrow \hat\mu = \overline{\underline{x}}$ y $\mathbf{\Sigma} \rightarrow \mathbf{\hat{\Sigma}}$ con 
+
+- $\overline{\underline{x}} = (\overline{x}_1,...,\overline{x}_p)'.$
+- $\mathbf{\hat{\Sigma}} = \frac{1}{n-1}\sum_{i=1}^n(\underline{x}_i - \overline{\underline{x}})(\underline{x}_i - \overline{\underline{x}})'.$
+
+Como $\mathbf{\hat\Sigma}$ sigue siendo una marriz $p\times p$ simétrica y semidefinida positiva se aplican los mismos resultados anteriores de forma que se tiene que la $i$-ésima CP muestral será $Y_i = \underline{\hat e}_i'\underline{X}$ para $i=1,...,p$. Las $\underline{\hat e}_i$ son conocidas como **cargas** - *loadings* - que son los coeficientes que definen cada componente principal. Al final del proceso las variables originales $\underline{X}$ se habrán tranformado en otras nuevas $\underline{Y}$. 
+
+$$\underline{X} = \begin{pmatrix} X_1 \\ \vdots \\ X_p \end{pmatrix} \rightarrow \underline{Y} =  \begin{pmatrix} \underline{\hat e}_1'\underline{X} \\ \vdots \\ \underline{\hat e}_p'\underline{X} \end{pmatrix}$$
+Las conocidas como **puntuaciones** - *scores* - se recogen en la matriz 
+
+$$ \mathbf{Y} = \begin{pmatrix}
+\underline{x}_1'\underline{\hat{e}}_1 & \cdots  & \underline{x}_1'\underline{\hat{e}}_p \\ 
+\vdots & \ddots  & \vdots \\ 
+\underline{x}_n'\underline{\hat{e}}_1 & \cdots  & \underline{x}_n'\underline{\hat{e}}_p
+\end{pmatrix} = \mathbf{X\hat{E}}$$
+
+```{proposition}
+Dado que $\mathbf{X\hat{E}}$ es una matriz ortogonal, las distancias entre los datos originales y los datos transformados concuerdan
+
+$$d^2(y_i, y_j) = d^2(x_i, x_j)$$
+
+**Observación**: Esta propiedad es útil para detectar valores atípicos y grupos mediante CP.
+```
+
+Las CP no son en general invariantes respecto a cambios de escala. Si multiplicamos una variable por un escalar obtenemos diferentes autovalores y autovectores. Esto se debe al hecho de que se realiza una descomposición de valores propios en la matriz de covarianza y no en la matriz de correlación. Se puede realizar el estudio de las CP a partir de la matriz de datos estandarizados, lo que equivale a trabajar con la matriz de correlación. Entonces, en la práctica, deberíamos considerar la matriz que contiene los datos estandarizados. 
+
+$$\begin{pmatrix}
+\frac{x_{11}-\overline{x}_1}{\hat\sigma_1} & \cdots & \frac{x_{1p}-\overline{x}_p}{\hat\sigma_p} \\ 
+\vdots & \ddots & \vdots \\ 
+\frac{x_{n1}-\overline{x}_1}{\hat\sigma_1} & \cdots & \frac{x_{np}-\overline{x}_p}{\hat\sigma_p}
+\end{pmatrix}$$
+
+Cuando las escalas de medida de las variables son muy distintas, las variables con valores más grandes tendrán más peso en el análisis. Se estandariza para que las magnitudes sean similares. La estandarización resuelve otro posible problema. Si las variabilidades de los datos originales son muy distintas, las variables con mayor varianza van a influir más en la determinación de la primera componente principal, se estandariza para evitarlo. 
+
+Para datos estandarizados se tiene que $\sum_{j=1}^p\hat\lambda_j = tr(\mathbf{\hat\Sigma}) = tr(\mathbf{\hat R}) = p$. 
+
+## Selección del número de CP
+
+La proporción de la variabilidad explicada por la $k$-ésima componente principal muestral es 
+
+$$\frac{\hat\lambda_k}{\sum_{s=1}^p\hat\lambda_s}.$$
+
+La proporción de la variablidad explicada por las $k$ primeras componentes principales muestrales es  $\frac{\sum_{s=1}^k\hat\lambda_s}{\sum_{s=1}^p\hat\lambda_s}$. La no explicada por las $k$ primeras sería $\frac{\sum_{s=k+1}^p\hat\lambda_s}{\sum_{s=1}^p\hat\lambda_s}$.
+
+<u>**Criterios**</u>
+
+Por lo general, los criterios se basan en gráficos para los valores propios - **scree plot**. Algunos criterios destacables son los siguientes:
+
+1. Elegir las $k$ primeras si $\frac{\hat\lambda_{k+1}}{\sum_{s=1}^p\hat\lambda_s} < \delta_1$ ó $\frac{\sum_{s=k+1}^p\hat\lambda_{s}}{\sum_{s=1}^p\hat\lambda_s} < \delta_2$ con $\delta_1,\delta_2$ elegidos correctamente.
+2. Retener las componentes suficientes hasta que expliquen un determinado porcentaje de la variabilidad total, 80%.
+3. **Regla de Kaiser-Guttman**. Aquellas cuyos autovalores sean mayores que la media $\frac{\sum_{s=1}^p\hat\lambda_s}{p}$. La media es 1 si las CP se calculan sobre las variables estandarizadas.
+
+
+# Referencias 
+
+- Apuntes de la asignatura de Minería Estadística de Datos del Máster Universitario en Matemáticas de la Universidad de Sevilla por la profesora Inmaculada Barranco Chamorro.
+
+- Apuntes de la asignatura de Análisis de Datos Multivariantes del Grado en Matemáticas de la universidad de Sevilla por los profesores Juan Luis Rebollo Moreno, Juan Manuel Muñoz Pichardo y Rafael Pino Mejías.

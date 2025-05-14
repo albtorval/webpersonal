@@ -1,0 +1,262 @@
+---
+title: "Home"
+self_contained: true
+---
+
+```{r echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
+library(fontawesome)
+
+```
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
+
+
+<!-- ![](images/Sujeto4.png){ width=20% height=20% } -->
+
+<div class="two-columns">
+<div>
+  <img src="images/Sujeto2.png" alt="Foto de Alberto" style="width: 150px;">
+  <!-- <img src="images/Sujeto4.png" alt="Foto de Alberto" style="width: 150px; border-radius: 50%;"> -->
+</div>
+  <!-- <div class="left"> -->
+  <!--   <img src="images/Sujeto4.png" alt="Foto de Alberto" class="foto"> -->
+  <!-- </div> -->
+  <div class="right">
+  <center><h1 class = "rocksalt"> Alberto Torrejón Valenzuela </h1></center>
+  <div class = "textslide"> "Y el niño crecía y se fortalecía, y se llenaba de sabiduría; y la gracia de *Dios* era sobre él". <br> **Lucas 2:40** </div>
+  </div>
+</div>
+
+<div class="just">
+<span class = "primerapalabra">W</span>elcome to my personal website. The purpose of this space is to support the learning I am progressively acquiring. In the **~/post** tab, you will find all the articles I write while documenting my journey, that is, writings about <span class = "salmon">mathematics</span>, <span class = "lila">statistics</span>, <span class = "fg">data analysis</span>, <span class = "salmon">operations research</span>, <span class = "dgr">game theory</span>, <span class = "db">artificial intelligence</span>...
+
+If you have arrived at this page to discuss **existentialism**, perhaps this is not the right forum. For that, you may want to go to Instagram and see for yourself if "man is a wolf to man" (*homo homini lupus*).
+However, **don't despair**. If you're not interested in reading anything that requires more effort than your own desire to read, you can also find a space to redeem yourself in the **~/texts** tab. There, you can read some of the texts I write. Good luck if you find one that rhymes. But remember, the will to read has to come from you.
+
+Finally, perhaps you're not here for any of the reasons mentioned above, and you're just reading this for some job selection process, scholarship, or something similar. In that case, I kindly ask you to forget what you have read in the previous paragraphs, check my resume in the **~/curriculum** tab, and hire me.
+
+Of course, like everything in life should, this page is subject to improvements. If you find any errors or have any advice, please feel free to contact me via the links below.
+
+Thank you very much. 
+
+Sincerely,
+
+<div class="der">
+<span class = "primerapalabra">Alberto Torrejón Valenzuela</span>
+</div>
+
+</div>
+
+<!-- <center><h1 class = "rocksalt"> Alberto Torrejón Valenzuela </h1></center> -->
+
+<!-- <div class = "textslide"> "Y el niño crecía y se fortalecía, y se llenaba de sabiduría; y la gracia de *Dios* era sobre él". <br> **Lucas 2:40** </div> -->
+
+<!-- <div class="just"> -->
+<!-- <span class = "primerapalabra">B</span>ienvenido a mi sitio web personal. El cometido de este espacio es servir de soporte para el aprendizaje que voy adquiriendo progresivamente. En la pestaña **~/post** encontrará todos aquellos artículos que escribo mientras me documento en mi aventura, es decir, escritos sobre <span class = "salmon">matemáticas</span>, <span class = "lila">estadística</span>, <span class = "fg">análisis de datos</span>, <span class = "db">inteligencia artificial</span>, <span class = "dgr">teoría de juegos</span>, <span class = "salmon">investigación operativa</span> ... -->
+
+<!-- Si ha llegado hasta esta página para hablar del **existencialismo**, quizás este no sea el foro adecuado. Para eso mejor vaya a Instagram y compruebe por sí mismo si "el hombre es un lobo para el hombre" (*homo homini lupus*).  -->
+
+<!-- No obstante, **no desespere**. Si no está usted interesado en leer nada que le suponga un esfuerzo ulterior a sus propias ganas de leer, también podrá encontrar en la pestaña de **~/textos** un espacio para redimirse. Ahí podrá leer algunos de los textos que escribo. Suerte si encuentra alguno que rime. Eso sí, las ganas de leer ha de ponerlas usted.  -->
+
+<!-- Por último, puede que usted no esté aquí por ninguno de los motivos expuestos anteriormente, que sólo esté leyendo esto para algún proceso de selección de trabajo, beca o similar. En ese caso, le pido por favor que olvide lo que ha leído en los párrafos previos, que mire mi currículum presente en la pestaña **~/currículum** y me contrate. -->
+
+<!-- Por supuesto, como todo en la vida debería, esta página está sujeta a mejoras. Si encuentra algún fallo o tiene algún consejo no dude en contactar conmigo vía **redes sociales** que abajo indico.  -->
+
+<!-- Muchas gracias. Atentamente, -->
+
+<!-- Alberto. -->
+<!-- </div> -->
+
+<!-- <center> -->
+<!-- ```{r echo = F} -->
+<!-- blogdown::shortcode('tweet', '784820493941551104') -->
+<!-- ``` -->
+<!-- </center> -->
+
+---
+
+
+### <span class="specialelite"> `r emo::ji("bust")` About me... </span>
+
+
+
+> "There is a difference between a thing and talking about a thing."
+> <div class="der">Kurt Gödel</div>
+
+<div class="just">
+
+I hold a double degree in Mathematics and Statistics, as well as a Master’s Degree in Mathematics, all from the [University of Seville](https://www.us.es/). I am currently pursuing a PhD in the [Department of Statistics and Operations Research](https://departamento.us.es/destadio/) and the [Institute of Mathematics (IMUS)](https://www.imus.us.es/) at the University of Seville under the supervision of [Justo Puerto](https://scholar.google.it/citations?user=koF66usAAAAJ&hl=en) and [Miguel A. Pozo](https://scholar.google.es/citations?user=lG5nHdsAAAAJ&hl=es).
+
+My research focuses on mathematical modeling, algorithmic development, and statistical methodologies for data analysis and decision-making problems. These range from robust statistics to location or vehicle routing problems. Specifically, I work on the development of *ordered optimization* approaches through the lens of mathematical programming. A key focus of my work is the design of fair and equitable decision-making strategies and algorithms within these frameworks.
+
+I am a member of the [Spanish Society of Statistics and Operations Research (SEIO)](https://www.seio.es/), where I serve on the editorial team of the [SEIO Bulletin](https://www.seio.es/revista-beio/), of the [Spanish Location Network (REDLOCA)](https://redloca.netlify.app/), and the [EURO Working Group on Location Analysis (EWGLA)](https://www.euro-online.org/websites/ewgla/).
+
+Beyond academic research, I actively participate in conferences, seminars, and outreach activities aimed at promoting mathematics, statistics, and operations research. I am a strong advocate for open source and maintain a special connection with the R programming language. I am one of the organizers of the [SevillaR group](https://sevillarusers.netlify.app/about/), a local node of the [R-Hispano Community](https://r-es.org/). In my free time, I write and read poetry, just like my father taught me. 
+
+My personal motto: *educación, ciencia y cultura*.
+
+</div>
+
+<div class="two-columnsC">
+<div class="leftC">
+
+<!-- <center> -->
+Gafas de alambre que encajarse <br>
+barba que acicalarse, <br>
+la imagen de un intelectual <br> 
+o de un mendigo con clase. <br>
+
+Escueto rastrero, <br>
+buscavidas sin dinero, <br>
+veces de pasajero, <br>
+a veces con miedo.<br>
+
+Si algún día lo perdéis, <br>
+no busquéis, no preocupéis. <br>
+Su camino emprendido, <br>
+su corazón en los vuestros, <br>
+se habrá ido, <br>
+y con lo puesto... <br>
+<!-- </center> -->
+
+</div>
+
+<div class="rightC">
+
+![](/images/finclases_3.JPG)
+
+</div>
+</div>
+
+<br>
+
+---
+
+### <span class="specialelite"> `r emo::ji("book")` Academic production </span>
+
+- <span class="specialelite"> **Scientific publications** </span>
+
+  + **Linear, nested, and quadratic ordered measures: Computation and incorporation into optimization problems**. *Víctor Blanco, Miguel A. Pozo, Justo Puerto, Alberto Torrejon*. ArXiv (2025) [[doi.org/10.48550/arXiv.2503.18097](https://doi.org/10.48550/arXiv.2503.18097)]
+  + **A fresh view on Least Quantile of Squares Regression based on new optimization approaches**. Expert Systems with Applications. *Justo Puerto, Alberto Torrejón*. (2025) [[doi.org/10.1016/j.eswa.2025.127705](https://doi.org/10.1016/j.eswa.2025.127705)]
+  + **The Ordered Median Tree Location Problem**. *Miguel A. Pozo, Justo Puerto, Alberto Torrejón*. Computers & Operations Research (2024) [[doi.org/10.1016/j.cor.2024.106746](https://doi.org/10.1016/j.cor.2024.106746)]
+  + **Benders decomposition for the Discrete Ordered Median Problem**. *Ivana Ljubić, Miguel A. Pozo, Justo Puerto, Alberto Torrejon*. European Journal of Operational Research (2024) [[doi.org/10.1016/j.ejor.2024.04.030](https://doi.org/10.1016/j.ejor.2024.04.030)]
+
+
+- <span class="specialelite"> **Teaching** </span>
+
+  + **Advanced Linear Models for Biology** (2024) [18 hours] — Institute of Educational Sciences, University of Seville.  
+  + **Introduction to R and Linear Models for Biology** (2024) [10 hours] — Institute of Educational Sciences, University of Seville.  
+  + [**Introduction to Statistics**](https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-de-la-salud-por-la-universidad-de-malaga/2260007) (2022–2025) [180 hours] — Health Engineering Degree, University of Málaga and University of Seville.  
+
+- <span class="specialelite"> **Research Projects Participation** </span>
+
+  + **PROYECTO ETNIAS** — *Estrategias para administración de terapias neuroprotectoras para el ictus isquémico identificado mediante biomarcadores en las ambulancias de Sevilla* [(PI21/01158)](https://www.fisevi.com/images/documentos/fichas/PI21.01158.pdf) <br> Principal researcher: Dr. Joan Montaner Villalonga  
+
+  + **Optimization on Data Science and Network Design Problems:** *Large-scale network models meet optimization and data science tools* [(PID2020-114594GB-C21)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=33871) <br>
+    Principal researchers: Prof. Justo Puerto, Prof. Víctor Blanco  
+
+  + **Challenges in Combinatorial Optimization in New Models of Complex Networks and Data Science** [(P18-FR-1422)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=30878) <br> Principal researchers: Prof. Justo Puerto, Prof. Antonio M. Rodríguez-Chía
+
+  + **New Results on Design and Optimization Problems in Complex Networks: Applications to the Design of Smart Cities** [(US-1256951)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=30367) <br> Principal researcher: Prof. Justo Puerto, Prof. José Fernando López-Blázquez
+
+- <span class="specialelite"> **Organization** </span>
+
+  + [**XLI Congreso Nacional de Estadística e Investigación Operativa**](https://seio2025.com/es/programa/viernes-13-de-junio-de-2025) (10-13/06/2025) - University of Lleida, Lleida, Spain. Organizer of a parallel session in the conference.
+
+  + [**5th Spanish Young Statisticians and Operational Researchers Meeting (SYSORM)**](https://www.imus.us.es/congresos/5SYSORM/) (05-07/11/2025) - Institute of Mathematics, University of Seville, Seville, Spain. Organizer. 
+    
+  + [**7th Congress of Young Researchers of the RSME**](https://jovenes2025.rsme.es/paralelaCD04.html) (13-17/01/2025) - Universidad del País Vasco, Bilbao, Spain. Organizer of a parallel session in the conference.
+
+  + [**III Congreso y XIV Jornadas de usuarios de R**](https://www.imus.us.es/congresos/IIIRqueR/) (06-08/11/2024) -  Institute of Mathematics, University of Seville, Seville, Spain.  Organizing member of the conference
+
+  + [**XIII International Workshop on Locational Analysis and Related Problems**](https://easychair.org/cfp/iwoloca24#:~:text=The%20XIII%20International%20Workshop%20on,SEIO%20working%20group%20on%20Location) (04-06/09/2024) - Institute of Mathematics, University of Granada, Granada, Spain. Organizer.
+
+  + [**3rd Sevilla MINLP Workshop**](https://www.imus.us.es/congresos/3sminlp/) (30–31/03/2023) — Institute of Mathematics, University of Seville, Seville, Spain. Organizer.  
+
+  + [**Seminarios PhD**](https://www.imus.us.es/#actividades/PHD) (2022–2023, full academic year) — Institute of Mathematics, University of Seville, Seville, Spain. Organizer.  
+
+  + [**Los Martes Se Investiga – LMSI**]() (2022–2023, full academic year) — Faculty of Mathematics, University of Seville, Seville, Spain. Organizer.  
+
+- <span class="specialelite"> **Awards** </span>
+
+  + **Runner-up in the XL Mathematical Olympiad of Cádiz** (February 2016). *Royal Spanish Mathematical Society*.
+
+  + [**Third prize in the II Rhetoric and Argumentation Contest**](https://youtu.be/6hY3pNP7N3c?si=QDsRqOBN49Rf7Wpl) (May 2015). *Edith Stein Institute of Philosophy*.
+
+- <span class="specialelite"> **Undergraduate projects** </span>
+
+  + [Game Theory (Bachelor's Thesis)](https://torrejonvalenzuela.com/pdf/TFG.pdf)  
+  + [Deep Reinforcement Learning and Application to Games (Master's Thesis)](https://torrejonvalenzuela.com/pdf/TFM.pdf)  
+  + [Game Theory and Artificial Intelligence Dashboard](https://albtorval.shinyapps.io/IA_Juegos_Proyecto/)
+<!-- + [Una breve introducción a CSS](http://torrejonvalenzuela.sytes.net/intro_css/) -->
+
+... not enough? Have a look to my [CV](https://torrejonvalenzuela.com/pdf/CV.pdf)
+
+---
+
+### <span class="specialelite"> `r emo::ji("speaking")` Scientific dissemination and media </span>
+
+- **Canal Sur Radio Mediodía** - [¿Qué hace un matemático de Los Barrios (Cádiz) en París?](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2164719&fbclid=IwY2xjawKRqKBleHRuA2FlbQIxMABicmlkETFFcnU5ZzdyS05PbGZEREhNAR71YWlmtCQjSjLu7iMI_svr7_kcrdF7Gbnw1eQy6jeYgKrVxQEkrSsawnrxdg_aem_mrZ8lKFrdWeZ6RVEs3rTcA) [Clip 21/04/2025 minute 38]
+- **R Consortium Blog** - [Seville R Users Group: R’s Role in Optimization Research and Stroke Prevention](http://r-consortium.org/posts/seville-r-users-group-rs-role-in-optimization-research-and-stroke-prevention/)
+- **Revista Muy Interesante** - [El MUY descubrimiento de 2025: Varios científicos y científicas se atreven a vaticinar qué ocurrirá este año en el mundo de la ciencia](IwY2xjawKRqR5leHRuA2FlbQIxMQBicmlkETFFcnU5ZzdyS05PbGZEREhNAR4NBCnuVFww9ilg4upDWFHMW9slJ0RJU478iZ9yJ6keWCLZ87JNK5eHifvTrA_aem_wLwU)
+- **Canal Sur Radio Mediodía** - [Entrevista](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2164719&fbclid=IwY2xjawKRqctleHRuA2FlbQIxMABicmlkETFFcnU5ZzdyS05PbGZEREhNAR7lyGN_vYXvMnWYaUgIQHL2RJN0pDFRKzuN1aMWBJz2a3GXLCsafbpq9ROi-A_aem_h7MxiCQl701ZLW4gPOjVXg) [Clip 18/12/24 minute 27]
+- **Diario de Sevilla** - [Alberto Torrejón: "Ejecutamos algoritmos de un modo constate"](https://www.diariodesevilla.es/entrevistas/alberto-torrejon-ejecutamos-algoritmos-constante_0_2002953741.html)
+- **II Jornada Jóvenes Investigadores Barreños**
+  + [Ayuntamiento de Los Barrios](https://prensa.ayto-losbarrios.es/la-ii-jornada-jovenes-investigadores-barrenos-se-celebrara-el-5-de-diciembre-en-el-posito/)
+  + [8 Directo](https://www.8directo.com/los-barrios/cuatro-jovenes-investigadores-barrenos-trasladan-su-experiencia-estudiantes-ies_621479_102.html)
+  + [Área Campo de Gibraltar](https://www.diarioarea.com/2024/12/03/ii-jornada-jovenes-investigadores-barrenos-para-jueves-5-diciembre/?fbclid=IwY2xjawKRqwBleHRuA2FlbQIxMQBicmlkETFFcnU5ZzdyS05PbGZEREhNAR7S1w0iFlwuAe96oCn5Sipla0iLxq4YLRCSi8C-vWQN6tcxYO9QBSAl83JQJA_aem_Ws3yaqaAkMHZyDNgtWf1wQ)
+  + [Portal de Cádiz](https://www.portaldecadiz.com/provinciacadiz/118332-inspiradoras-historias-de-jovenes-investigadores-en-los-barrios)
+  + [Radio Bahía de Giblartar](https://radiobahiagibraltar.es/la-ii-jornada-jovenes-investigadores-barrenos-para-el-jueves-5-de-diciembre/)
+  + [Iniciativa Comarcal](https://iniciativacomarcal.com/el-posito-acogera-la-ii-jornada-jovenes-investigadores-barrenos-el-5-de-diciembre/)
+- **Fundación Descubre** - [“Hace 10 años asistí como alumno a un Café con Ciencia y ahora participo para contar a los estudiantes qué es ser investigador”](https://fundaciondescubre.es/noticias/de-alumno-a-profesor-en-un-cafe-con-ciencia-para-despertar-vocaciones-cientificas/)
+- **Café con Ciencia** - [Alberto Torrejón, investigador de la Universidad de Sevilla: «Participar en un Café con Ciencia despertó mi interés por las matemáticas»](IwY2xjawKRqzRleHRuA2FlbQIxMQBicmlkETFFcnU5ZzdyS05PbGZEREhNAR647r1O3dK2qzxs10Csr59dfh0dLdiSKZxLopE_NVa73diVjEfuMI6sKzF7mQ_aem_72Paj4RHvAUpHh9rhJ6JqQ)
+- **I Jornada Jóvenes Investigadores Barreños**
+  + [Ayuntamiento de Los Barrios](https://prensa.ayto-losbarrios.es/tres-jovenes-investigadores-barrenos-trasladan-su-experiencia-academica-a-alumnos-de-bachillerato-del-municipio/)
+  + [8 Directo](https://www.8directo.com/los-barrios/jovenes-investigadores-barrenos-protagonizan-jornada-motivar-alumnos-institutos_609756_102.html)
+  + [Área Campo de Gibraltar](https://www.diarioarea.com/2023/10/24/jovenes-investigadores-barrenos-que-ensenan-a-otros-jovenes-una-jornada-pionera-en-la-comarca/)
+  + [Andalucía Información](https://andaluciainformacion.es/andalucia/1393071/los-barrios-reune-a-jovenes-investigadores-de-la-localidad-en-una-jornada-el-lunes-30/)
+- **Colaboration with QuantumFracture** - [¿Puedes Ganar Siempre a Pokémon con Matemáticas?](https://youtu.be/ciQR2jehJiI?si=iZydQbrlYQoTlp5c)
+- **Colaboration with Facultad de Matemáticas de la Universidad de Sevilla** - [Un Billar Elíptico](https://youtu.be/sZeKmyL7LdM?si=BEgNPv2enV0a703I)
+- **Invited talk at Facultad de Matemáticas de la Universidad de Sevilla** - [PiDay talk 2024](https://youtu.be/nDZO3nNE9J4?si=Nis96j4WqZ4emYb_)
+- **La Locomotora** - [Interview](https://www.twitch.tv/videos/1783768829)
+- **Podcast La Camarilla** - [La Hoguera de Kurt Gödel](https://go.ivoox.com/rf/67089001)
+
+
+  
+---
+
+
+### <span class="specialelite"> `r emo::ji("mag")` Seek and you shall find... </span>
+
+<div class="button-grid-wrapper">
+<div class="button-grid">
+  <a class="css-button-3d fblue" href="mailto:albertorrejonval@outlook.es" target="_blank"><i class="fa fa-envelope fa-2x"></i></a>
+  <a class="css-button-3d fgreen" href="https://orcid.org/0000-0001-5156-1551" target="_blank">`r fa("orcid", height = "30px")` </a>
+  <a class="css-button-3d cfblue" href=" https://scholar.google.com/citations?user=ow2Bs00AAAAJ&hl=es" target="_blank">`r fa("google-scholar", height = "30px")`</a>
+    <a class="css-button-3d teal" href="https://www.researchgate.net/profile/Alberto-Torrejon?ev=prf_overview" target="_blank">`r fa("researchgate", height = "30px")`</a>
+  <br><br>
+    <a class="css-button-3d orange" href="https://investigacion.us.es/sisius/sis_showpub.php?idpers=30026" target="_blank">`r fa("university", height = "30px")`</a>
+  <a class="css-button-3d cfblue" href="https://rpubs.com/albtorval" target="_blank">`r fa("r-project", height = "30px")`</a>
+  <a class="css-button-3d nenufar" href="https://github.com/albtorval" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+  <a class="css-button-3d green" href="https://stackoverflow.com/users/9373493/alberto-torrejon-valenzuela" target="_blank"><i class="fa fa-stack-overflow fa-2x"></i></a>
+  <br><br>
+  <a class="css-button-3d gray" href="https://x.com/albertorrejval" target="_blank"><i class="fa fa-twitter fa-2x"></i></a>
+  <a class="css-button-3d red" href="https://www.youtube.com/channel/UCKVeevNH8YhcPlIfNQv2Z9g?view_as=subscriber" target="_blank"><i class="fa fa-youtube fa-2x"></i></a>
+  <a class="css-button-3d lilon" href="https://www.linkedin.com/in/alberto-torrej%C3%B3n-valenzuela-851680174/" target="_blank"><i class="fa fa-linkedin fa-2x"></i></a>
+    <a class="css-button-3d rsalmon" href="https://www.instagram.com/albertorrejonval/?hl=es" target="_blank"><i class="fa fa-instagram fa-2x"></i></a>
+  <br><br>
+  <a class="css-button-3d nenufar" href="https://www.scopus.com/authid/detail.uri?authorId=58642969800" target="_blank">`r fa("address-book", height = "30px")`</a>
+  <a class="css-button-3d fblue" href="https://www.facebook.com/alberto.torrejonvalenzuela" target="_blank"><i class="fa fa-facebook fa-2x"></i></a>
+  <a class="css-button-3d orange" href="https://www.reddit.com/user/albtorval" target="_blank"><i class="fa fa-reddit fa-2x"></i></a>
+  <a class="css-button-3d cfblue" href="https://bsky.app/profile/albtorval.bsky.social" target="_blank">`r fa("bluesky", height = "30px")`</a>
+</div>
+</div>
+
+
+
+
+
+---
+
+### <span class="specialelite"> `r emo::ji("memo")` What else? </span>

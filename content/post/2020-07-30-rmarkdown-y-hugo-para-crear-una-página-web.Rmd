@@ -1,0 +1,50 @@
+---
+title: RMarkdown y Hugo para crear un sitio web
+author: Alberto Torrejón Valenzuela
+date: '2020-07-30'
+tags:
+  - HTML
+  - R Markdown
+slug: rmarkdown-y-hugo-para-crear-una-página-web
+---
+
+```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
+# devtools::install_github("rstudio/fontawesome")
+library(fontawesome)
+```
+
+### `r fa('r-project', fill = 'steelblue')` Nuevo sitio web
+
+1. Elija cuidadosamente un tema en <http://themes.gohugo.io> y busque el enlace a su repositorio de `GitHub`, que tiene la forma `https://github.com/user/repo`.
+
+2. Cree un nuevo proyecto en **RStudio** y escriba el código `blogdown::new_site(theme = 'user/repo')` en la consola **R**, donde `user/repo` es del enlace en el Paso 1.
+
+3. Interactúe con el nuevo sitio por un tiempo y si no le gusta, puede repetir los pasos anteriores, de lo contrario edite las opciones en `config.toml`. Si no comprende ciertas opciones, vaya a la documentación.
+
+De los directorios que se generan, los dos más relevantes son: 
+
+- `content/`. Aquí se encuentran todos los archivos que necesita manipular para que aparezcan en su sitio web.
+
+- `public/`. Aquí se encuentran todos los archivos que deberá subir a su servidor web propio.
+
+### Editar un sitio web
+
+1. Haga clic en el complemento RStudio `Server site` situado en la pestaña `Addins` para obtener una vista previa del sitio en **RStudio Viewer**. Esto solo debe hacerse una vez cada vez que abra el proyecto **RStudio** o reinicie su sesión **R**. No haga clic en el botón `knit` en la barra de herramientas de **RStudio**.
+
+2. Use el complemento `New Post` para crear una nueva publicación o página, luego comience a escribir el contenido.
+
+3. Utilice el complemento `Upload metadata` para modificar los metadatos de YAML si es necesario.
+
+### Publicar un sitio web si no está familiarizado con Git o GitHub
+
+1. Reinicie la sesión **R** y ejecute `blogdown::hugo_build()`. Debería obtener un directorio `public/` en el directorio raíz de su proyecto.
+
+2. Inicie sesión en <https://www.netlify.com> (puede usar una cuenta de **GitHub** si tiene una). Si es la primera vez que publica este sitio web, puede crear un sitio nuevo; de lo contrario, puede actualizar el sitio existente que creó la última vez. Puede arrastrar y soltar la carpeta `public/` desde su visor de archivos al área indicada en la página web de **Netlify**, donde dice "Arrastre una carpeta con un sitio estático aquí".
+
+3. Espere unos segundos a que **Netlify** implemente los archivos y le asignará un subdominio aleatorio de la forma `random-word- 12345.netlify.com`. Puede (y debe) cambiar este subdominio aleatorio a uno más significativo si aún está disponible. 
+
+Publicar un sitio web puede ser mucho más fácil si está familiarizado con Git y GitHub. Recomendamos que cree un nuevo sitio en **Netlify** desde su repositorio de GitHub que contenga los archivos de origen de su sitio web, para que pueda disfrutar de los beneficios de la implementación continua en lugar de cargar manualmente la carpeta `public/` cada vez. Con este enfoque, no necesita ejecutar `blogdown::hugo_build()` localmente, ya que el sitio web se puede construir en **Netlify** a través de Hugo. 
+
+Existen otros sitios donde puede hospedar sus directorios: [GitHub Pages](https://pages.github.com), [GitLab Pages](https://about.gitlab.com/features/pages/), ...
+
+Información obtenida de la documentación oficial de [blogdown](https://bookdown.org/yihui/blogdown/) y del [post](http://destio.us.es/calvo/post/2017-08-27-como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/#contenido-incluir-tabla-creada-con-el-paquete-dt) del profesor [Pedro Luis Luque Calvo](https://twitter.com/luque_calvo) de la Universidad de Sevilla. Para mayor profundización visitar dichos sitios.

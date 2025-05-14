@@ -1,0 +1,175 @@
+---
+title: Guía RMarkdown
+author: Alberto Torrejón Valenzuela
+date: '2020-07-30'
+slug: guía-rmd
+categories: []
+tags:
+  - R Markdown
+description: ''
+mathjax: local
+#draft: true
+#publishdate: 
+#weight: 120
+---
+
+# Uso de Markdown 
+
+<div class = "just"> En esta página voy a mostrar algunas utilidades a la hora de escribir en `markdown` que a menudo se me olvidan. Otras soluciones serían usar lenguaje **HTML** o **LaTeX** embedido en el achivo *Rmd*. Puedes encontrar más información en la [guía de referencia oficial](https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf). Esta ayuda también te será muy útil para cuando escribas un post de los desesperados en [StackOverflow](https://stackoverflow.com/) no te regañen. </div>
+
+---
+
+#### Estructura básica de un documento
+
+```
+## Título
+
+Texto
+
+### Subtítulo
+
+Este es un ejemplo de texto para una lista genérica de elementos:
+
+- Elemento 1
+- Elemento 2
+- Elemento 3
+
+Este es un ejemplo de texto que da entrada a una lista numerada:
+
+1. Elemento 1
+2. Elemento 2
+3. Elemento 3
+
+Al texto puedes darle formato como **negrita** o *cursiva*.
+```
+
+---
+
+#### Marcar expresiones
+
+- Escribir en *cursiva*: `*italic*` & `_italic_`. 
+
+- Escribir en **negrita**: `**bold**` & `__bold__`.
+
+- Escribir `código` entre $''' código '''$.
+
+Otra forma de escribir código en *Rmd* es a través de una secuencia de tres [virgulillas](https://es.wikipedia.org/wiki/Virgulilla) `~~~`, colocándola al principio y al final de este. Además podemos pedir que nos resalte el código indicando el lenguaje de programación correspondiente al principio de la primera secuencia de virgulillas: `~~~ruby`.
+
+~~~ruby
+def word_up(value)
+  self.class.from_life(name, value, type)
+end
+
+def word_down(value)
+  self.class.from_death(name, value, type)
+end
+~~~
+
+- Superíndice - R^2^: `R^2^` 
+
+- Subíndice - H~2~O: `H~2~O` 
+
+- Escribir una cita: `> Cita`
+
+> Aquí va la cita.
+
+Además las citas son anidables usando `>`, `>>`, `>>>`, etc.
+
+> Esta es la primera cita.
+>
+>> Esta cita está dentro de la anterior.
+
+---
+
+#### Introducir elementos
+
+- Enlace: `[text](url)`
+
+- Imagen: `![title](url)` 
+
+- Pie de página: `text^[footnote]` text^[footnote]
+
+- Notación matemática entre un **dolar** `$` al principio y al final para latex en línea, $S_n =\sum_{i=1}^n X_i$, o con dobles dólares para que las expresiones aparezcan independientes al texto: $$\left [- \frac{\hbar^2}{2m}\right ] + \Psi = i \hbar \frac{\partial}{\partial t} \Psi.$$
+
+Como una vez me hicieron saber, "las expresiones matemáticas han de estar debidamente puntuadas", así que tened cuidado. Gracias Mariló. 
+
+- HTML widgets y Shiny apps embedidas via `<iframe>`: <iframe> </iframe>
+
+- Lista de tareas:
+
+  + [x] Estudiar :books:.
+  + [ ] Cervezas :beer:.
+  + [ ] Dormir :zzz:.
+  
+- Las **reglas horizontales** se utilizan para separar secciones de una manera visual. Para crearlas, en una línea en blanco deberás incluir tres de los siguientes elementos: asteriscos, guiones, o guiones bajos.
+
+Es decir
+
+```
+***
+---
+___
+```
+
+También puedes separarlos mediante un espacio en blanco por pura estética.
+
+```
+* * *
+- - -
+_ _ _
+```
+
+---
+
+### Extensiones en markdown y Hugo
+
+- Sin tener que hacer uso de las expresiones de **LaTeX** podemos introducir teoremas y demostraciones en *Rmd*. Simplemente basta con usar la siguiente sintaxis: ```{theorem}` Aquí está mi teorema. Idem para indicar que se trata de una prueba.
+
+```{theorem}
+Aquí está mi teorema.
+```
+
+Otra variantes son: `lemma`, `corollary`, `proposition`, `conjecture`, `definition`, `example`, y `exercise`. Variantes de `proof` incluyen `remark` y `solution`. 
+
+Para que el texto **Teorema** aparezca en español hace falta crear un script `_bookdown.yml` en la carpeta `post` como se indica [aquí](http://destio.us.es/calvo/post/2017-08-27-como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/#algunas-curiosidades).
+
+~~~r
+language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabla '
+    eq: 'Ecuación '
+    thm: 'Teorema '
+    lem: 'Lema '
+    def: 'Definicion '
+    cor: 'Corolario '
+    prp: 'Proposición '
+    ex: 'Ejemplo '
+    proof: 'Demostración. '
+    remark: 'Nota. '
+  ui:
+    edit: Edit
+    chapter_name: ''
+~~~
+
+- En **md** hay una funcionalidad con la que poder introducir contenido multimedia de distintas páginas como Twitter o Youtube. Para ello se debe emplear la sintaxis ``{{ % X % }}``. En **Rmd**, que es donde escribo la mayoría de los post, se puede recurrir a la función `blogdown::shortcode()`.
+
+```{r echo = TRUE,eval = FALSE}
+library(blogdown)
+
+shortcode("tweet", "1234567")
+shortcodes("tweet", as.character(1:5))  # multiple tweets
+shortcode("figure", src = "/images/foo.png", alt = "A nice figure")
+shortcode("highlight", "bash", .content = "echo hello world;")
+
+shortcode_html("myshortcode", .content = "My <strong>shortcode</strong>.")
+
+shortcode_open("figure", src = "/images/foo.png")
+# This inner text will be *processed* by Pandoc, @Smith2006
+shortcode_close("figure")
+```
+
+Para más extensiones en **markdown** ver el siguiente [post](http://destio.us.es/calvo/post/2017-08-30-como-he-creado-mi-pagina-web-2-parte/como-he-creado-mi-pagina-web-2-parte/) y el capítulo correspondiente de la [documentación](https://bookdown.org/yihui/rmarkdown/bookdown-markdown.html).
+
+  
+---

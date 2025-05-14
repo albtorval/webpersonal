@@ -1,0 +1,18 @@
+---
+title: Un interruptor
+author: Alberto Torrejón Valenzuela
+date: '2020-11-30'
+slug: un-interruptor
+categories:
+  - textos
+tags:
+  - Ella
+  - Luz
+description: ''
+---
+
+<center><h3>**Un interruptor**</h3></center>
+
+<p style = 'text-align:justify'> Un interruptor que se apaga y se enciende. Que yace encendido pero que no sabes cuando se apagará. Y que cuando se apaga cuesta volver a encenderlo, mucho, mucho.... Se lo que es. Pero lo que tú no sabes es que en mis mejores momentos fui farolero encendía las calles por la noche, cuando más frío hacía. Apenas me pagaban dólares y en invierno el frío me congelaba las dedos. En verano pasaba por delante de los veladores y veía a los enamorados llorar. De observarlos aprendí que cuando una luz se apaga hay alguien que la encenderá. Y lo haré. Y lo haremos. Todo a su momento tendrá lugar. </p>
+
+![](/text/2020-11-30-un-interruptor_files/reina.jpeg){width=50% height=50%}

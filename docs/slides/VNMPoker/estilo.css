@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Passero+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nova+Oval&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Barcode+128+Text&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Vampiro+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Atma&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Miniver&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gaegu:wght@300&display=swap');
+
+/* COLOR FUENTE */
+.blanco{color: white;}
+.negro{color: black;}
+.salmon{color: salmon;}
+.rojo{color: red;}
+.orange{color: orange;}
+.red_suits{color: firebrick;}
+
+/* TAMAÑO FUENTE */
+.diminuta{font-size: 10pt;}
+.reducida{
+  font-size: 12pt;
+  text-align: justify; 
+}
+.grande{font-size: 125%;}
+.big {font-size: 200%}
+
+
+/* TIPO FUENTE */
+.fuente{font-family: 'Nova Oval';}
+.nombre{font-family: 'Passero One'; font-size: 50px;}
+.barcode{font-family: 'Libre Barcode 128 Text';}
+.cita{
+  color: black;
+  font-family:  'Miniver', cursive;
+  font-size: 16pt;
+  text-align: justify; 
+}
+.justo{ text-align: justify; }
+
+/* TÍTULO */
+.plate {
+  width: 450px;
+  margin: 10% auto;
+}
+
+.script {
+  font-family: 'Passero One';
+  color: #000000;
+  text-align: center;
+  font-size: 70px;
+  position: relative;
+  margin:0;
+}
+.script span {
+  padding: 0 0.3em;
+}
+.script:before {
+  content:"";
+  display: block;
+  position: absolute;
+  z-index:-1;
+  top: 50%;
+  width: 100%;
+  border-bottom: 3px solid #fff;
+}
+
+/* LOGO */
+.logo {
+  background-image: url(logo.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  top: 1em;
+  right: 1em;
+  width: 110px;
+  height: 128px;
+  z-index: 0;
+}
+
+
+
+
+
+
+
+
+
+/* Carta girando */
+.body {
+	text-align:center;
+	font-family: "Ledger" , serif;
+	color: hsl(12, 100%, 50%);
+}
+ol,li {
+	padding: 0;
+	margin: 0;
+}
+ol li {
+	list-style: none;
+}
+.back ol {
+	height: 100%;
+	overflow: hidden;
+	font-size: 0;
+}
+.back ol li {
+	display: inline-block;
+	font-size: 18px;
+	line-height: 16px;
+	color: #3f71a4;
+}
+.front ol {
+	border: 4px solid white;
+	border-radius: 4px;
+	text-align: center;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -74px;
+	margin-top: -150px;
+	width: 158px;
+	height: 300px;
+	line-height: 100px;
+}
+.front ol li:nth-child(2),
+.front ol li:nth-child(3) {
+	-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+	-o-transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	transform: rotate(180deg);
+}
+.front .number {
+	position: absolute;
+}
+.front .number:after {
+	content: "♥";
+	display: block;
+	line-height: 50px;
+}
+#card {
+	width: 300px;
+	height: 450px;
+	margin: 70px auto;
+	position: relative;
+	font-size: 80px;
+	-webkit-perspective: 1000;
+	-moz-perspective: 1000;
+	position: relative;
+
+	-webkit-transform: rotate(5deg);
+	-moz-transform: rotate(5deg);
+	-o-transform: rotate(5deg);
+	-ms-transform: rotate(5deg);
+	transform: rotate(5deg);
+}
+.front,.back {
+	overflow: hidden;
+	cursor: pointer;
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	backface-visibility:hidden;
+	-webkit-transition: -webkit-transform 1s ease-in;
+	-moz-transition: -moz-transform 1s ease-in;
+	-o-transition: -o-transform 1s ease-in;
+	-ms-transition: -ms-transform 1s ease-in;
+	transition: transform 1s ease-in;
+	padding: 20px;
+	background: #fff;
+	border-radius: 9px;
+
+	-webkit-box-shadow: 0 2px 7px rgba(0,0,0,.3);
+	box-shadow: 0 2px 7px rgba(0,0,0,.3);
+	position: absolute;
+	height: 100%;
+	width: 100%;
+
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	box-sizing: border-box; /* Safari/Chrome, other WebKit */
+/* Firefox, other Gecko */
+/* Opera/IE 8+ */
+}
+.back {
+	-webkit-transform: rotateY(180deg);
+	-moz-transform: rotateY(180deg);
+	-o-transform: rotateY(180deg);
+	-ms-transform: rotateY(180deg);
+	transform: rotateY(180deg);
+	overflow: hidden;
+	background-color: white;
+	background-image: linear-gradient(45deg, #3f71a4 25%, transparent 25%, 		transparent 75%, #3f71a4 75%), 
+	linear-gradient(-45deg,#3f71a4 25%, transparent 25%, transparent 75%, #3f71a4 75%);
+	background-size:12px 12px;
+	background-position: 0 0, 0 0;
+}
+.front {
+	background: #fff;
+}
+#card-container {
+	display: inline-block;
+}
+#card-container:hover .back {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-o-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+#card-container:hover .front {
+	-webkit-transform: rotateY(-180deg);
+	-moz-transform: rotateY(-180deg);
+	-o-transform: rotateY(-180deg);
+	-ms-transform: rotateY(-180deg);
+	transform: rotateY(-180deg);
+}
+
+
+
+

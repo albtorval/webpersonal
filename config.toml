@@ -1,0 +1,44 @@
+baseURL = "/"
+publishDir = "docs"
+languageCode = "es-es"
+title = "Alberto Torrejón Valenzuela"
+relativeURLs = true
+theme = "hugo-classic"
+uglyURLs = true
+googleAnalytics = ""
+ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
+enableEmoji = true
+footnotereturnlinkcontents = "↩"
+toc = false
+
+[permalinks]
+    post = "/post/:year/:month/:day/:slug/"
+
+[params]
+    fullWidthTheme = false
+    centerTheme = false
+    description = "Web personal de Alberto Torrejón Valenzuela"
+    footer = "Alberto Torrejón Valenzuela | [Github](https://github.com/albtorval) | [Twitter](https://twitter.com/ajedre97) | [LinkedIn](https://www.linkedin.com/in/alberto-torrej%C3%B3n-valenzuela-851680174/)"
+    custom_css = ["css/theme-override.css"]
+
+[[menu.main]]
+    name = "cv"
+    url = "https://torrejonvalenzuela.com/pdf/CV.pdf"
+    weight = 1
+
+[[menu.main]]
+    name = "posts"
+    url = "/post/"
+    weight = 2
+
+[[menu.main]]
+    name = "texts"
+    url = "/text/"
+    weight = 3
+
+[[menu.main]]
+    name = "tags"
+    url = "/tags/"
+    weight = 4
+    
+    

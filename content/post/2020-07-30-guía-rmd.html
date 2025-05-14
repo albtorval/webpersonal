@@ -1,0 +1,163 @@
+---
+title: Guía RMarkdown
+author: Alberto Torrejón Valenzuela
+date: '2020-07-30'
+slug: guía-rmd
+categories: []
+tags:
+  - R Markdown
+description: ''
+mathjax: local
+#draft: true
+#publishdate: 
+#weight: 120
+---
+
+
+
+<div id="uso-de-markdown" class="section level1">
+<h1>Uso de Markdown</h1>
+<div class="just">
+En esta página voy a mostrar algunas utilidades a la hora de escribir en <code>markdown</code> que a menudo se me olvidan. Otras soluciones serían usar lenguaje <strong>HTML</strong> o <strong>LaTeX</strong> embedido en el achivo <em>Rmd</em>. Puedes encontrar más información en la <a href="https://rstudio.com/wp-content/uploads/2015/03/rmarkdown-reference.pdf">guía de referencia oficial</a>. Esta ayuda también te será muy útil para cuando escribas un post de los desesperados en <a href="https://stackoverflow.com/">StackOverflow</a> no te regañen.
+</div>
+<hr />
+<div id="estructura-básica-de-un-documento" class="section level4">
+<h4>Estructura básica de un documento</h4>
+<pre><code>## Título
+
+Texto
+
+### Subtítulo
+
+Este es un ejemplo de texto para una lista genérica de elementos:
+
+- Elemento 1
+- Elemento 2
+- Elemento 3
+
+Este es un ejemplo de texto que da entrada a una lista numerada:
+
+1. Elemento 1
+2. Elemento 2
+3. Elemento 3
+
+Al texto puedes darle formato como **negrita** o *cursiva*.</code></pre>
+<hr />
+</div>
+<div id="marcar-expresiones" class="section level4">
+<h4>Marcar expresiones</h4>
+<ul>
+<li><p>Escribir en <em>cursiva</em>: <code>*italic*</code> &amp; <code>_italic_</code>.</p></li>
+<li><p>Escribir en <strong>negrita</strong>: <code>**bold**</code> &amp; <code>__bold__</code>.</p></li>
+<li><p>Escribir <code>código</code> entre <span class="math inline">\(&#39;&#39;&#39; código &#39;&#39;&#39;\)</span>.</p></li>
+</ul>
+<p>Otra forma de escribir código en <em>Rmd</em> es a través de una secuencia de tres <a href="https://es.wikipedia.org/wiki/Virgulilla">virgulillas</a> <code>~~~</code>, colocándola al principio y al final de este. Además podemos pedir que nos resalte el código indicando el lenguaje de programación correspondiente al principio de la primera secuencia de virgulillas: <code>~~~ruby</code>.</p>
+<pre class="ruby"><code>def word_up(value)
+  self.class.from_life(name, value, type)
+end
+
+def word_down(value)
+  self.class.from_death(name, value, type)
+end</code></pre>
+<ul>
+<li><p>Superíndice - R<sup>2</sup>: <code>R^2^</code></p></li>
+<li><p>Subíndice - H<sub>2</sub>O: <code>H~2~O</code></p></li>
+<li><p>Escribir una cita: <code>&gt; Cita</code></p></li>
+</ul>
+<blockquote>
+<p>Aquí va la cita.</p>
+</blockquote>
+<p>Además las citas son anidables usando <code>&gt;</code>, <code>&gt;&gt;</code>, <code>&gt;&gt;&gt;</code>, etc.</p>
+<blockquote>
+<p>Esta es la primera cita.</p>
+<blockquote>
+<p>Esta cita está dentro de la anterior.</p>
+</blockquote>
+</blockquote>
+<hr />
+</div>
+<div id="introducir-elementos" class="section level4">
+<h4>Introducir elementos</h4>
+<ul>
+<li><p>Enlace: <code>[text](url)</code></p></li>
+<li><p>Imagen: <code>![title](url)</code></p></li>
+<li><p>Pie de página: <code>text^[footnote]</code> text<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p></li>
+<li><p>Notación matemática entre un <strong>dolar</strong> <code>$</code> al principio y al final para latex en línea, <span class="math inline">\(S_n =\sum_{i=1}^n X_i\)</span>, o con dobles dólares para que las expresiones aparezcan independientes al texto: <span class="math display">\[\left [- \frac{\hbar^2}{2m}\right ] + \Psi = i \hbar \frac{\partial}{\partial t} \Psi.\]</span></p></li>
+</ul>
+<p>Como una vez me hicieron saber, “las expresiones matemáticas han de estar debidamente puntuadas”, así que tened cuidado. Gracias Mariló.</p>
+<ul>
+<li><p>HTML widgets y Shiny apps embedidas via <code>&lt;iframe&gt;</code>: <iframe> </iframe></p></li>
+<li><p>Lista de tareas:</p>
+<ul>
+<li><input type="checkbox" disabled="" checked="" />
+Estudiar :books:.</li>
+<li><input type="checkbox" disabled="" />
+Cervezas :beer:.</li>
+<li><input type="checkbox" disabled="" />
+Dormir :zzz:.</li>
+</ul></li>
+<li><p>Las <strong>reglas horizontales</strong> se utilizan para separar secciones de una manera visual. Para crearlas, en una línea en blanco deberás incluir tres de los siguientes elementos: asteriscos, guiones, o guiones bajos.</p></li>
+</ul>
+<p>Es decir</p>
+<pre><code>***
+---
+___</code></pre>
+<p>También puedes separarlos mediante un espacio en blanco por pura estética.</p>
+<pre><code>* * *
+- - -
+_ _ _</code></pre>
+<hr />
+</div>
+<div id="extensiones-en-markdown-y-hugo" class="section level3">
+<h3>Extensiones en markdown y Hugo</h3>
+<ul>
+<li>Sin tener que hacer uso de las expresiones de <strong>LaTeX</strong> podemos introducir teoremas y demostraciones en <em>Rmd</em>. Simplemente basta con usar la siguiente sintaxis: ``<code>{theorem}</code> Aquí está mi teorema. Idem para indicar que se trata de una prueba.</li>
+</ul>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-1" class="theorem"><strong>Teorema 1  </strong></span>Aquí está mi teorema.
+</div>
+
+<p>Otra variantes son: <code>lemma</code>, <code>corollary</code>, <code>proposition</code>, <code>conjecture</code>, <code>definition</code>, <code>example</code>, y <code>exercise</code>. Variantes de <code>proof</code> incluyen <code>remark</code> y <code>solution</code>.</p>
+<p>Para que el texto <strong>Teorema</strong> aparezca en español hace falta crear un script <code>_bookdown.yml</code> en la carpeta <code>post</code> como se indica <a href="http://destio.us.es/calvo/post/2017-08-27-como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/#algunas-curiosidades">aquí</a>.</p>
+<pre class="r"><code>language:
+  label:
+    fig: &#39;Figura &#39;
+    tab: &#39;Tabla &#39;
+    eq: &#39;Ecuación &#39;
+    thm: &#39;Teorema &#39;
+    lem: &#39;Lema &#39;
+    def: &#39;Definicion &#39;
+    cor: &#39;Corolario &#39;
+    prp: &#39;Proposición &#39;
+    ex: &#39;Ejemplo &#39;
+    proof: &#39;Demostración. &#39;
+    remark: &#39;Nota. &#39;
+  ui:
+    edit: Edit
+    chapter_name: &#39;&#39;</code></pre>
+<ul>
+<li>En <strong>md</strong> hay una funcionalidad con la que poder introducir contenido multimedia de distintas páginas como Twitter o Youtube. Para ello se debe emplear la sintaxis <code>{{ % X % }}</code>. En <strong>Rmd</strong>, que es donde escribo la mayoría de los post, se puede recurrir a la función <code>blogdown::shortcode()</code>.</li>
+</ul>
+<pre class="r"><code>library(blogdown)
+
+shortcode(&quot;tweet&quot;, &quot;1234567&quot;)
+shortcodes(&quot;tweet&quot;, as.character(1:5))  # multiple tweets
+shortcode(&quot;figure&quot;, src = &quot;/images/foo.png&quot;, alt = &quot;A nice figure&quot;)
+shortcode(&quot;highlight&quot;, &quot;bash&quot;, .content = &quot;echo hello world;&quot;)
+
+shortcode_html(&quot;myshortcode&quot;, .content = &quot;My &lt;strong&gt;shortcode&lt;/strong&gt;.&quot;)
+
+shortcode_open(&quot;figure&quot;, src = &quot;/images/foo.png&quot;)
+# This inner text will be *processed* by Pandoc, @Smith2006
+shortcode_close(&quot;figure&quot;)</code></pre>
+<p>Para más extensiones en <strong>markdown</strong> ver el siguiente <a href="http://destio.us.es/calvo/post/2017-08-30-como-he-creado-mi-pagina-web-2-parte/como-he-creado-mi-pagina-web-2-parte/">post</a> y el capítulo correspondiente de la <a href="https://bookdown.org/yihui/rmarkdown/bookdown-markdown.html">documentación</a>.</p>
+<hr />
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p>footnote<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>

@@ -1,0 +1,29 @@
+---
+title: Cazar moscas
+author: Alberto Torrejón Valenzuela
+date: '2020-11-21'
+categories:
+  - poemas
+tags:
+  - Poemas
+slug: poema-cazar-moscas
+---
+
+<center> 
+<h3>**Cazar moscas**</h3>
+
+![](/text/2020-11-23-poema-cazar-moscas_files/cuarto.JPG){width=50% height=50%}
+
+Cuando te visite una mosca, escúchala, <br>
+seguro que algún problema tendrá. <br>
+Se comprensivo, <br>
+tu lengua puede no hablar <br>
+y sus problemas querrá contar. <br>
+Mas nunca olvides... <br>
+las moscas <br>
+a la mierda siempre van. 
+</center>
+
+
+
+

@@ -1,0 +1,16 @@
+---
+title: Orange dress
+author: Alberto Torrejón Valenzuela
+date: '2020-12-19'
+slug: orange-dress
+categories:
+  - poemas
+tags:
+  - Inglés
+  - Granada
+description: ''
+---
+
+<center>
+![](/text/2020-12-19-orange-dress_files/That well known dress.png){width=50% height=50%}
+</center>
