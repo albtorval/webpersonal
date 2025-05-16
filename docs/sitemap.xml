@@ -2,8 +2,38 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
-    <lastmod>2025-05-15T00:00:00+00:00</lastmod>
+    <loc>/post/2025/04/25/a-fresh-view-on-least-quantile-of-squares-regression-based-on-new-optimization-approaches/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/art%C3%ADculos/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/investigaci%C3%B3n/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-04-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/caf%C3%A9/</loc>
+    <lastmod>2025-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/2025/04/20/el-caf-brasil/</loc>
+    <lastmod>2025-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/matem%C3%A1ticas/</loc>
+    <lastmod>2025-04-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/clases/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/estad%C3%ADstica/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/2025/04/16/status-la-ra-z-de-las-cosas/</loc>
+    <lastmod>2025-04-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/de-nada-paco/</loc>
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
@@ -11,14 +41,20 @@
     <loc>/tags/paco/</loc>
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/</loc>
-    <lastmod>2025-03-25T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/textos/</loc>
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/</loc>
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/ella/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/poemas/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/sin-andalucia-en-paris/</loc>
+    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/mama/</loc>
     <lastmod>2025-03-02T00:00:00+00:00</lastmod>
@@ -32,13 +68,7 @@
     <loc>/text/andalucia-no-es/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/poemas/</loc>
-    <lastmod>2025-02-28T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/amor/</loc>
-    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/ella/</loc>
     <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/todos-conocen-a-cupido/</loc>
@@ -46,6 +76,21 @@
   </url><url>
     <loc>/text/comparten-pena-y-alegria/</loc>
     <lastmod>2025-02-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/cocina/</loc>
+    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/mensaje-de-navidad-2024/</loc>
+    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/navidad/</loc>
+    <lastmod>2024-12-24T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/2024/12/10/alberto-torrej-n-ejecutamos-algoritmos-de-un-modo-constante/</loc>
+    <lastmod>2024-12-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/divulgaci%C3%B3n/</loc>
+    <lastmod>2024-12-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/yo-ya-he-estado-aqui/</loc>
     <lastmod>2024-09-30T00:00:00+00:00</lastmod>
@@ -59,19 +104,46 @@
     <loc>/text/los-poemas-que-ahora-leo-tienen-nombre/</loc>
     <lastmod>2024-08-06T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/tags/muerte/</loc>
+    <lastmod>2024-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/vendra-la-rastrera/</loc>
+    <lastmod>2024-08-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/post/2024/06/29/the-ordered-tree-location-problem/</loc>
+    <lastmod>2024-06-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/dos/</loc>
+    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/recuerdo/</loc>
+    <lastmod>2024-06-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/transicion/</loc>
+    <lastmod>2024-05-31T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/text/por-que-roma/</loc>
     <lastmod>2024-05-09T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/text/fin-de-mi-primer-cuarto-de-siglo/</loc>
+    <loc>/post/2024/05/06/benders-decomposition-for-the-discrete-ordered-median-problem/</loc>
+    <lastmod>2024-05-06T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/aprovecha-mi-pluma/</loc>
+    <lastmod>2024-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/despedida/</loc>
+    <lastmod>2024-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/para-que-poetas/</loc>
     <lastmod>2024-02-12T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/text/sillas-vacias/</loc>
-    <lastmod>2023-12-27T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/recuerdo/</loc>
-    <lastmod>2023-12-27T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/tags/social/</loc>
+    <lastmod>2024-02-12T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/</loc>
+    <lastmod>2024-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/sillas-vacias/</loc>
     <lastmod>2023-12-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/casa/</loc>
@@ -80,7 +152,10 @@
     <loc>/text/quema-tus-barcos/</loc>
     <lastmod>2023-12-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/text/para-que-poetas/</loc>
+    <loc>/text/esferas-altas/</loc>
+    <lastmod>2023-11-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/fin-de-mi-primer-cuarto-de-siglo/</loc>
     <lastmod>2023-08-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/abuela/</loc>
@@ -104,13 +179,10 @@
     <loc>/tags/imus/</loc>
     <lastmod>2023-04-19T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/matem%C3%A1ticas/</loc>
-    <lastmod>2023-04-19T00:00:00+00:00</lastmod>
+    <loc>/text/poeta-trsite/</loc>
+    <lastmod>2023-02-01T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/mensaje-de-navidad-2022/</loc>
-    <lastmod>2022-12-25T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/navidad/</loc>
     <lastmod>2022-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/tags/proverbio/</loc>
@@ -128,16 +200,13 @@
     <loc>/text/aracena/</loc>
     <lastmod>2021-11-05T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/text/anabel/</loc>
+    <lastmod>2021-05-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/billar/</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/divulgaci%C3%B3n/</loc>
-    <lastmod>2021-04-26T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/post/2021/04/26/el-billar-infalible/</loc>
-    <lastmod>2021-04-26T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/post/</loc>
     <lastmod>2021-04-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/conocete-a-ti-mismo/</loc>
@@ -186,9 +255,6 @@
     <lastmod>2020-12-25T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/cerrado-por-reformas/</loc>
-    <lastmod>2020-12-19T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/despedida/</loc>
     <lastmod>2020-12-19T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/despedida/</loc>
@@ -278,10 +344,61 @@
     <loc>/post/2020/07/30/rmarkdown-y-hugo-para-crear-una-p%C3%A1gina-web/</loc>
     <lastmod>2020-07-30T00:00:00+00:00</lastmod>
   </url><url>
+    <loc>/text/a-mi-hermano-ii/</loc>
+    <lastmod>2020-04-01T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/tags/discurso/</loc>
     <lastmod>2020-03-21T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/discurso-de-graduacion/</loc>
     <lastmod>2020-03-21T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/ai-la-ama/</loc>
+    <lastmod>2020-01-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/diosa-del-ingenio/</loc>
+    <lastmod>2020-01-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/andrea/</loc>
+    <lastmod>2020-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/a-mi-hermano-i/</loc>
+    <lastmod>2019-04-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/mi-padre-me-exige/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/papa/</loc>
+    <lastmod>2019-03-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/experimento-i/</loc>
+    <lastmod>2019-02-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/cuando-jug-bamos/</loc>
+    <lastmod>2019-01-05T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/celia/</loc>
+    <lastmod>2019-01-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/raquel/</loc>
+    <lastmod>2019-01-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/paola/</loc>
+    <lastmod>2019-01-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/a-esos-imbeciles/</loc>
+    <lastmod>2019-01-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/han-callado-tu-voz/</loc>
+    <lastmod>2018-09-02T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/carta/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/tienes-un-mech-n/</loc>
+    <lastmod>2018-09-01T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/sara/</loc>
+    <lastmod>2018-08-19T00:00:00+00:00</lastmod>
   </url>
 </urlset>

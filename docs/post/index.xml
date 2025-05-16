@@ -6,8 +6,50 @@
     <description>Recent content in Posts on Alberto Torrejón Valenzuela</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Mon, 26 Apr 2021 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A fresh view on Least Quantile of Squares Regression based on new optimization approaches</title>
+      <link>/post/2025/04/25/a-fresh-view-on-least-quantile-of-squares-regression-based-on-new-optimization-approaches/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/post/2025/04/25/a-fresh-view-on-least-quantile-of-squares-regression-based-on-new-optimization-approaches/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;“We prove by logic, but we discover by intuition.”&lt;/em&gt; — &lt;strong&gt;Henri Poincaré&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Our article &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0957417425013272&#34;&gt;&lt;strong&gt;“A fresh view on Least Quantile of Squares Regression based on new optimization approaches”&lt;/strong&gt;&lt;/a&gt;, coauthored by Justo Puerto and Alberto Torrejón, has just been published in &lt;em&gt;Expert Systems With Applications&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;But… what is this paper really about?&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../post/Img/ART3_1.jpg&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;You’re probably familiar with the image of a scatter plot and a line running through it, right?&lt;br /&gt;&#xA;Exactly! This work revisits the well-known &lt;strong&gt;linear regression&lt;/strong&gt; model.&#xA;And while it might seem like everything has already been said about it… that’s not quite true.&#xA;The estimator most people know is &lt;strong&gt;Least Squares (LS)&lt;/strong&gt; — it’s simple, easy to compute, and widely used. But it’s not flawless.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>El Café Brasil</title>
+      <link>/post/2025/04/20/el-caf-brasil/</link>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/post/2025/04/20/el-caf-brasil/</guid>
+      <description>&lt;div id=&#34;el-café-brasil-de-sevilla&#34; class=&#34;section level2&#34;&gt;&#xA;&lt;h2&gt;El Café Brasil de Sevilla&lt;/h2&gt;&#xA;&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;“Claro que el café es un veneno lento; hace cuarenta años que lo bebo.”&lt;/em&gt;&#xA;— &lt;strong&gt;Voltaire&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;No sé si conoceréis la historia del Café Escocés de Lwów, Lviv o Leópolis en la actualidad.&#xA;La comunidad matemática más cafetera, seguro que sí.&#xA;Pero para aquellos que no, el Café Escocés de Lwów fue el epicentro de una de las tertulias matemáticas más memorables y fructíferas de la historia, a la que solo la guerra pudo poner fin.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>STATUS: La raíz de las cosas</title>
+      <link>/post/2025/04/16/status-la-ra-z-de-las-cosas/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/post/2025/04/16/status-la-ra-z-de-las-cosas/</guid>
+      <description>&lt;p&gt;Hasta nuevo aviso, este ha sido mi último curso impartiendo clases a nivel universitario.&lt;br /&gt;&#xA;Así inicié las de este año:&lt;/p&gt;&#xA;&lt;hr /&gt;&#xA;&lt;div id=&#34;pregunta-se-dice-estadista-o-estadístico&#34; class=&#34;section level3&#34;&gt;&#xA;&lt;h3&gt;Pregunta: ¿Se dice estadista o estadístico?&lt;/h3&gt;&#xA;&lt;p&gt;El término &lt;em&gt;estadista&lt;/em&gt; proviene del italiano &lt;em&gt;statista&lt;/em&gt; y define a quien, más allá de ocupar un cargo político, moldea el destino de una nación. No es solo quien gobierna, sino quien comprende el arte de dirigir un Estado.&lt;/p&gt;&#xA;&lt;p&gt;La &lt;em&gt;estadística&lt;/em&gt; remite a la ciencia que, en sus orígenes, fue precisamente la “Ciencia del Estado”. En tiempos antiguos, los gobiernos necesitaban información esencial: cuántos ciudadanos estaban en edad de pagar impuestos, si la cosecha de trigo bastaría para alimentar a la población, o si había suficientes soldados para ganar una guerra. A medida que los Estados crecieron en extensión y complejidad, la organización se volvió vital. Los datos comenzaron a delinear un doble reflejo: describen a la sociedad, pero también &lt;strong&gt;nos describen a cada uno de nosotros&lt;/strong&gt;.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Alberto Torrejón: &#34;Ejecutamos algoritmos de un modo constante&#34;</title>
+      <link>/post/2024/12/10/alberto-torrej-n-ejecutamos-algoritmos-de-un-modo-constante/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>/post/2024/12/10/alberto-torrej-n-ejecutamos-algoritmos-de-un-modo-constante/</guid>
+      <description>&lt;p&gt;&lt;img src=&#34;../post/Img/noticia.jpeg&#34; /&gt;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ordered Tree Location Problem</title>
+      <link>/post/2024/06/29/the-ordered-tree-location-problem/</link>
+      <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>/post/2024/06/29/the-ordered-tree-location-problem/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;“If the fool would persist in his folly he would become wise.” - &lt;strong&gt;William Blake&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;After a lot of hard work, we can now present the final results, published in Computers and Operations Research of the &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0305054824002181&#34;&gt;“The Ordered Tree Location Problem”&lt;/a&gt; - Miguel A. Pozo, Justo Puerto and Alberto Torrejón&lt;/p&gt;&#xA;&lt;p&gt;But what are the implications of our work…?&lt;/p&gt;&#xA;&lt;p&gt;Location problems allow us to optimize the allocation of resources, where to locate the bus stop, where to locate the supermarket, where we should go to vote, which hospital should we go,… One way to generalise all these location problems is through ordered optimization. Through ordered optimization we attend many ways of locating these resources, for example, trying to consider fair criteria. Trying to ensure that the most disadvantaged in the allocation are not so damaged by compensating them in the objective function.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Benders decomposition for the Discrete Ordered Median Problem</title>
+      <link>/post/2024/05/06/benders-decomposition-for-the-discrete-ordered-median-problem/</link>
+      <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
+      <guid>/post/2024/05/06/benders-decomposition-for-the-discrete-ordered-median-problem/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;“I trust in work more than in luck”. &lt;strong&gt;Latin proverb.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;And here is the fruit of that work.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0377221724003291?via%3Dihub&#34;&gt;&lt;strong&gt;‘Benders Decomposition for the Discrete Ordered Median Problem’&lt;/strong&gt;&lt;/a&gt; is available open access in the European Journal of Operational Research. A joint work with Ivana Ljubic, Miguel A. Pozo, Justo Puerto Albandoz and myself.&lt;/p&gt;&#xA;&lt;p&gt;But what have we achieved with this work? Let me give some context.&lt;/p&gt;&#xA;&lt;p&gt;Is a garbage dump necessary? And an electrical station? But… if necessary, where do we want to have them located? Surely somewhere where their distance from our homes compensates the harm we may experience from having them close with the cost of accessing them. This is known as Obnoxious Location Theory. Another example. Towns that are close to large cities tend to have more services than those that are more isolated. How can these resources be distributed in such a way that the isolated ones do not feel that they are being treated inequitably? This is known as Equity Location Theory.&lt;/p&gt;</description>
+    </item>
     <item>
       <title>El billar infalible</title>
       <link>/post/2021/04/26/el-billar-infalible/</link>

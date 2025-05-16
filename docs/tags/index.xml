@@ -6,8 +6,50 @@
     <description>Recent content in Tags on Alberto Torrejón Valenzuela</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Tue, 25 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 25 Apr 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Artículos</title>
+      <link>/tags/art%C3%ADculos/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/art%C3%ADculos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Investigación</title>
+      <link>/tags/investigaci%C3%B3n/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/investigaci%C3%B3n/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Café</title>
+      <link>/tags/caf%C3%A9/</link>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/caf%C3%A9/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Matemáticas</title>
+      <link>/tags/matem%C3%A1ticas/</link>
+      <pubDate>Sun, 20 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/matem%C3%A1ticas/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Clases</title>
+      <link>/tags/clases/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/clases/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Estadística</title>
+      <link>/tags/estad%C3%ADstica/</link>
+      <pubDate>Wed, 16 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/estad%C3%ADstica/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Paco</title>
       <link>/tags/paco/</link>
@@ -20,6 +62,20 @@
       <link>/tags/textos/</link>
       <pubDate>Tue, 25 Mar 2025 00:00:00 +0000</pubDate>
       <guid>/tags/textos/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Ella</title>
+      <link>/tags/ella/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/ella/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Poemas</title>
+      <link>/tags/poemas/</link>
+      <pubDate>Thu, 20 Mar 2025 00:00:00 +0000</pubDate>
+      <guid>/tags/poemas/</guid>
       <description></description>
     </item>
     <item>
@@ -37,13 +93,6 @@
       <description></description>
     </item>
     <item>
-      <title>Poemas</title>
-      <link>/tags/poemas/</link>
-      <pubDate>Fri, 28 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/tags/poemas/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Amor</title>
       <link>/tags/amor/</link>
       <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
@@ -51,10 +100,24 @@
       <description></description>
     </item>
     <item>
-      <title>Ella</title>
-      <link>/tags/ella/</link>
-      <pubDate>Mon, 17 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>/tags/ella/</guid>
+      <title>Cocina</title>
+      <link>/tags/cocina/</link>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>/tags/cocina/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Navidad</title>
+      <link>/tags/navidad/</link>
+      <pubDate>Tue, 24 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>/tags/navidad/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Divulgación</title>
+      <link>/tags/divulgaci%C3%B3n/</link>
+      <pubDate>Tue, 10 Dec 2024 00:00:00 +0000</pubDate>
+      <guid>/tags/divulgaci%C3%B3n/</guid>
       <description></description>
     </item>
     <item>
@@ -65,16 +128,30 @@
       <description></description>
     </item>
     <item>
+      <title>Muerte</title>
+      <link>/tags/muerte/</link>
+      <pubDate>Thu, 01 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>/tags/muerte/</guid>
+      <description></description>
+    </item>
+    <item>
       <title>Recuerdo</title>
       <link>/tags/recuerdo/</link>
-      <pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 07 Jun 2024 00:00:00 +0000</pubDate>
       <guid>/tags/recuerdo/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Despedida</title>
+      <link>/tags/despedida/</link>
+      <pubDate>Fri, 15 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>/tags/despedida/</guid>
       <description></description>
     </item>
     <item>
       <title>Social</title>
       <link>/tags/social/</link>
-      <pubDate>Wed, 27 Dec 2023 00:00:00 +0000</pubDate>
+      <pubDate>Mon, 12 Feb 2024 00:00:00 +0000</pubDate>
       <guid>/tags/social/</guid>
       <description></description>
     </item>
@@ -107,20 +184,6 @@
       <description></description>
     </item>
     <item>
-      <title>Matemáticas</title>
-      <link>/tags/matem%C3%A1ticas/</link>
-      <pubDate>Wed, 19 Apr 2023 00:00:00 +0000</pubDate>
-      <guid>/tags/matem%C3%A1ticas/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Navidad</title>
-      <link>/tags/navidad/</link>
-      <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
-      <guid>/tags/navidad/</guid>
-      <description></description>
-    </item>
-    <item>
       <title>Proverbio</title>
       <link>/tags/proverbio/</link>
       <pubDate>Sun, 25 Dec 2022 00:00:00 +0000</pubDate>
@@ -132,13 +195,6 @@
       <link>/tags/billar/</link>
       <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
       <guid>/tags/billar/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Divulgación</title>
-      <link>/tags/divulgaci%C3%B3n/</link>
-      <pubDate>Mon, 26 Apr 2021 00:00:00 +0000</pubDate>
-      <guid>/tags/divulgaci%C3%B3n/</guid>
       <description></description>
     </item>
     <item>
@@ -209,13 +265,6 @@
       <link>/tags/mensaje/</link>
       <pubDate>Fri, 25 Dec 2020 00:00:00 +0000</pubDate>
       <guid>/tags/mensaje/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>Despedida</title>
-      <link>/tags/despedida/</link>
-      <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>/tags/despedida/</guid>
       <description></description>
     </item>
     <item>
@@ -307,6 +356,20 @@
       <link>/tags/discurso/</link>
       <pubDate>Sat, 21 Mar 2020 00:00:00 +0000</pubDate>
       <guid>/tags/discurso/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Papa</title>
+      <link>/tags/papa/</link>
+      <pubDate>Fri, 01 Mar 2019 00:00:00 +0000</pubDate>
+      <guid>/tags/papa/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Carta</title>
+      <link>/tags/carta/</link>
+      <pubDate>Sat, 01 Sep 2018 00:00:00 +0000</pubDate>
+      <guid>/tags/carta/</guid>
       <description></description>
     </item>
   </channel>

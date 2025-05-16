@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../../../../images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web personal de Alberto Torrejón Valenzuela">
+    <title>A fresh view on Least Quantile of Squares Regression based on new optimization approaches | Alberto Torrejón Valenzuela</title>
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../css/theme-override.css">
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../">~/alberto torrejón valenzuela</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="pdf/CV.pdf">~/cv</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../post/">~/posts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../text/">~/texts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../tags/">~/tags</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">A fresh view on Least Quantile of Squares Regression based on new optimization approaches</span></h1>
+<h2 class="author">Alberto Torrejón Valenzuela</h2>
+<h2 class="date">2025/04/25</h2>
+<p class="terms">
+  
+  
+  Categories: <a href="../../../../../categories/matem%C3%A1ticas">Matemáticas</a> 
+  
+  
+  
+  Tags: <a href="../../../../../tags/art%C3%ADculos">Artículos</a> <a href="../../../../../tags/investigaci%C3%B3n">Investigación</a> 
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    
+
+
+<blockquote>
+<p><em>“We prove by logic, but we discover by intuition.”</em> — <strong>Henri Poincaré</strong></p>
+</blockquote>
+<p>Our article <a href="https://www.sciencedirect.com/science/article/pii/S0957417425013272"><strong>“A fresh view on Least Quantile of Squares Regression based on new optimization approaches”</strong></a>, coauthored by Justo Puerto and Alberto Torrejón, has just been published in <em>Expert Systems With Applications</em>.</p>
+<p>But… what is this paper really about?</p>
+<p><img src="../../../../../post/Img/ART3_1.jpg" style="width:50.0%;height:50.0%" /></p>
+<p>You’re probably familiar with the image of a scatter plot and a line running through it, right?<br />
+Exactly! This work revisits the well-known <strong>linear regression</strong> model.
+And while it might seem like everything has already been said about it… that’s not quite true.
+The estimator most people know is <strong>Least Squares (LS)</strong> — it’s simple, easy to compute, and widely used. But it’s not flawless.</p>
+<p><img src="../../../../../post/Img/ART3_3.jpg" style="width:75.0%;height:75.0%" /></p>
+<p>That’s why researchers have proposed alternatives: either by making LS more robust or by designing new estimators with better statistical properties or fewer theoretical assumptions. (Some examples are in the images below.)</p>
+<p><img src="../../../../../post/Img/ART3_4.jpg" style="width:75.0%;height:75.0%" /></p>
+<p>In fact, you can generalize many of these estimators by means of an ordered approach known as Ordered Linear Regression:</p>
+<p><img src="../../../../../post/Img/ART3_5.jpg" style="width:75.0%;height:75.0%" /></p>
+<p>One of the most powerful alternatives is called <strong>Least Quantile of Squares (LQS)</strong>.<br />
+But here’s the catch: the more statistically precise the estimator, the harder it becomes to compute.</p>
+<p>💡 <strong>That’s where we come in</strong></p>
+<p>In our paper, we expand the range of models capable of solving the LQS regression <strong>optimally</strong>. We introduce three mathematical programming formulations based on sorting techniques, and a fourth model based on <strong>bilevel optimization</strong>.</p>
+<p><img src="../../../../../post/Img/ART3_6.jpg" style="width:75.0%;height:75.0%" /></p>
+<hr />
+<p>🎯 <em>Spoiler alert from our next paper:</em><br />
+Did you know that simply sorting residuals can help generalize many families of estimators? These are known as <strong>L-estimators</strong>, and they’re incredibly useful. But — and here’s the challenge — <strong>sorting optimally is no easy task</strong>.</p>
+<p>🔗 Want to know more? 👉 <a href="https://tinyurl.com/5n6b437b">Upcoming paper teaser</a></p>
+<hr />
+<p>That’s all… for now. More to come!</p>
+
+    <a href="../../../../../"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+      <hr/>
+      Alberto Torrejón Valenzuela | <a href="https://github.com/albtorval">Github</a> | <a href="https://twitter.com/ajedre97">Twitter</a> | <a href="https://www.linkedin.com/in/alberto-torrej%C3%B3n-valenzuela-851680174/">LinkedIn</a>
+      
+    </footer>
+  </body>
+</html>
+
