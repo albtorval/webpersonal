@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Artículos on Alberto Torrejón Valenzuela</title>
+    <link>/tags/art%C3%ADculos/</link>
+    <description>Recent content in Artículos on Alberto Torrejón Valenzuela</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Fri, 25 Apr 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/art%C3%ADculos/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>A fresh view on Least Quantile of Squares Regression based on new optimization approaches</title>
+      <link>/post/2025/04/25/a-fresh-view-on-least-quantile-of-squares-regression-based-on-new-optimization-approaches/</link>
+      <pubDate>Fri, 25 Apr 2025 00:00:00 +0000</pubDate>
+      <guid>/post/2025/04/25/a-fresh-view-on-least-quantile-of-squares-regression-based-on-new-optimization-approaches/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;&lt;em&gt;“We prove by logic, but we discover by intuition.”&lt;/em&gt; — &lt;strong&gt;Henri Poincaré&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;Our article &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0957417425013272&#34;&gt;&lt;strong&gt;“A fresh view on Least Quantile of Squares Regression based on new optimization approaches”&lt;/strong&gt;&lt;/a&gt;, coauthored by Justo Puerto and Alberto Torrejón, has just been published in &lt;em&gt;Expert Systems With Applications&lt;/em&gt;.&lt;/p&gt;&#xA;&lt;p&gt;But… what is this paper really about?&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../post/Img/ART3_1.jpg&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;You’re probably familiar with the image of a scatter plot and a line running through it, right?&lt;br /&gt;&#xA;Exactly! This work revisits the well-known &lt;strong&gt;linear regression&lt;/strong&gt; model.&#xA;And while it might seem like everything has already been said about it… that’s not quite true.&#xA;The estimator most people know is &lt;strong&gt;Least Squares (LS)&lt;/strong&gt; — it’s simple, easy to compute, and widely used. But it’s not flawless.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>The Ordered Tree Location Problem</title>
+      <link>/post/2024/06/29/the-ordered-tree-location-problem/</link>
+      <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>/post/2024/06/29/the-ordered-tree-location-problem/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;“If the fool would persist in his folly he would become wise.” - &lt;strong&gt;William Blake&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;After a lot of hard work, we can now present the final results, published in Computers and Operations Research of the &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0305054824002181&#34;&gt;“The Ordered Tree Location Problem”&lt;/a&gt; - Miguel A. Pozo, Justo Puerto and Alberto Torrejón&lt;/p&gt;&#xA;&lt;p&gt;But what are the implications of our work…?&lt;/p&gt;&#xA;&lt;p&gt;Location problems allow us to optimize the allocation of resources, where to locate the bus stop, where to locate the supermarket, where we should go to vote, which hospital should we go,… One way to generalise all these location problems is through ordered optimization. Through ordered optimization we attend many ways of locating these resources, for example, trying to consider fair criteria. Trying to ensure that the most disadvantaged in the allocation are not so damaged by compensating them in the objective function.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Benders decomposition for the Discrete Ordered Median Problem</title>
+      <link>/post/2024/05/06/benders-decomposition-for-the-discrete-ordered-median-problem/</link>
+      <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
+      <guid>/post/2024/05/06/benders-decomposition-for-the-discrete-ordered-median-problem/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;“I trust in work more than in luck”. &lt;strong&gt;Latin proverb.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;And here is the fruit of that work.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0377221724003291?via%3Dihub&#34;&gt;&lt;strong&gt;‘Benders Decomposition for the Discrete Ordered Median Problem’&lt;/strong&gt;&lt;/a&gt; is available open access in the European Journal of Operational Research. A joint work with Ivana Ljubic, Miguel A. Pozo, Justo Puerto Albandoz and myself.&lt;/p&gt;&#xA;&lt;p&gt;But what have we achieved with this work? Let me give some context.&lt;/p&gt;&#xA;&lt;p&gt;Is a garbage dump necessary? And an electrical station? But… if necessary, where do we want to have them located? Surely somewhere where their distance from our homes compensates the harm we may experience from having them close with the cost of accessing them. This is known as Obnoxious Location Theory. Another example. Towns that are close to large cities tend to have more services than those that are more isolated. How can these resources be distributed in such a way that the isolated ones do not feel that they are being treated inequitably? This is known as Equity Location Theory.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

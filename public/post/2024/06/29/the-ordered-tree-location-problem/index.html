@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../../../../images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web personal de Alberto Torrejón Valenzuela">
+    <title>The Ordered Tree Location Problem | Alberto Torrejón Valenzuela</title>
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../css/theme-override.css">
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../">~/alberto torrejón valenzuela</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="https://albtorval.github.io/webpersonal/pdf/CV.pdf">~/cv</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../post/">~/posts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../text/">~/texts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../tags/">~/tags</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">The Ordered Tree Location Problem</span></h1>
+<h2 class="author">Alberto Torrejón Valenzuela</h2>
+<h2 class="date">2024/06/29</h2>
+<p class="terms">
+  
+  
+  Categories: <a href="../../../../../categories/matem%C3%A1ticas">Matemáticas</a> 
+  
+  
+  
+  Tags: <a href="../../../../../tags/art%C3%ADculos">Artículos</a> <a href="../../../../../tags/investigaci%C3%B3n">Investigación</a> 
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    
+
+
+<blockquote>
+<p>“If the fool would persist in his folly he would become wise.” - <strong>William Blake</strong></p>
+</blockquote>
+<p>After a lot of hard work, we can now present the final results, published in Computers and Operations Research of the <a href="https://www.sciencedirect.com/science/article/pii/S0305054824002181">“The Ordered Tree Location Problem”</a> - Miguel A. Pozo, Justo Puerto and Alberto Torrejón</p>
+<p>But what are the implications of our work…?</p>
+<p>Location problems allow us to optimize the allocation of resources, where to locate the bus stop, where to locate the supermarket, where we should go to vote, which hospital should we go,… One way to generalise all these location problems is through ordered optimization. Through ordered optimization we attend many ways of locating these resources, for example, trying to consider fair criteria. Trying to ensure that the most disadvantaged in the allocation are not so damaged by compensating them in the objective function.</p>
+<center>
+<img src="../../../../../post/Img/equity.jpeg" style="width:40.0%;height:40.0%" />
+</center>
+<p>In particular, in this paper we deal with the Discrete Ordered Median Problem (DOMP), which explores facility location ranking clients by allocation cost. By means of a ordered approach many objective functions can be modeled.</p>
+<p>While this problem has been well studied, there was still something missing… What if we need the resources to be connected to each other? This is, what if we need hospitals to have an internal network that connects them, or if supermarkets need the distances that connects them to be optimal as well?</p>
+<center>
+<div style="display:inline-block;width:40%;height:40%">
+<p><img src ="/post/Img/ART2_2.jpg"></p>
+</div>
+<div style="display:inline-block;width:40%;height:40%">
+<p><img src ="/post/Img/ART2_3.jpg"></p>
+</div>
+</center>
+<p>This was the question that laid the foundation for our research. In this way, we complete the literature of the DOMP which was missing.</p>
+<center>
+<img src="../../../../../post/Img/ART2_1.jpeg" style="width:50.0%;height:50.0%" />
+</center>
+<p>The results can be found in…</p>
+<center>
+<img src="../../../../../post/Img/ART2_0.png" />
+</center>
+
+    <a href="../../../../../"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+      <hr/>
+      Alberto Torrejón Valenzuela | <a href="https://github.com/albtorval">Github</a> | <a href="https://twitter.com/ajedre97">Twitter</a> | <a href="https://www.linkedin.com/in/alberto-torrej%C3%B3n-valenzuela-851680174/">LinkedIn</a>
+      
+    </footer>
+  </body>
+</html>
+

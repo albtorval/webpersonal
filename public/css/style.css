@@ -1,0 +1,336 @@
+body {
+  max-width: 60%;
+  margin: auto;
+  padding: .2em;
+  line-height: 1.5em;
+}
+
+/* Table of Contents, if wanted
+
+Add to yaml:
+
+output:
+  blogdown::html_page:
+    toc: true
+
+    */
+  
+code.has-jax {
+    -webkit-font-smoothing: antialiased;
+    background: inherit !important;
+    border: none !important;
+    font-size: 100%;
+}
+
+#TableOfContents, #TOC {
+  border: 1px solid #eee;
+  border-radius: 5px;
+}
+
+/* Header and Footer */
+.menu li { display: inline-block; }
+.article-meta, .menu a {
+  text-decoration: none;
+  background: #E8DBC5;
+  color: #000;
+  padding: 5px;
+  border-radius: 5px;
+  border-style: dotted;
+  border-width: 1px;
+  margin-bottom: 20px;
+}
+
+.terms { font-size: .9em; }
+.menu, .article-meta, footer { text-align: center; }
+.title { font-size: 1.1em; }
+footer a { text-decoration: none; }
+
+.pull-left {
+    float: left
+}
+.pull-right {
+    float: right
+}
+
+a {
+  color: #613DC1;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Adjust background at your leisure! */
+header {
+    position: relative;
+    width: 100%;
+    height: 1.75rem;
+    font-size: 1rem;
+    background: #6495ED;
+    border-bottom: 1px solid #000;
+}
+
+header ul,
+header ol {
+    margin: 0;
+    padding: 0;
+    list-style: none
+}
+header nav {
+    padding: 0 0.5rem
+}
+
+header a {
+    color: #fff;
+    line-height: 1.75rem;
+    padding: 0 0.5rem
+}
+header a:hover,
+header .current a {
+    color: #fff
+}
+
+/* Code Boxes */
+pre {
+  border: 1px solid #ddd;
+  box-shadow: 5px 5px 5px #eee;
+  background: #f8f8f8;
+  padding: 1em;
+  overflow-x: auto;
+}
+code { background: #f9f9f9; }
+pre code { background: none; }
+
+/* Images, tables, misc. */
+img, iframe, video {
+  max-width: 100%;
+  height: auto;
+}
+main {
+  hyphens: auto;
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.7em;
+  hyphens: auto;
+  display: block;
+  font-size: 1.1em;
+}
+main a {
+  font-weight: bold;
+}
+blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  padding: 3px 1em 3px;
+}
+
+table {
+  margin: auto;
+  border-top: 1px solid #666;
+  border-bottom: 1px solid #666;
+}
+table thead th { border-bottom: 1px solid #ddd; }
+th, td { padding: 5px; }
+tr:nth-child(even) { background: #eee }
+
+.content-wrapper {
+  padding: 0px 12px 0px 12px;
+}
+
+#main-image {
+  min-width: 40px;
+  float: right;
+  padding: 10px;
+  display: block;
+}
+
+.col2 {
+  columns: 2 200px;         /* number of columns and width in pixels*/
+  -webkit-columns: 2 200px; /* chrome, safari */
+  -moz-columns: 2 200px;    /* firefox */
+}
+.col3 {
+  columns: 3 100px;
+  -webkit-columns: 3 100px;
+  -moz-columns: 3 100px;
+}
+
+
+div.der { text-align: right; }
+div.just { text-align: justify; }
+
+
+
+/*ANIMACIÓN*/
+/*Texto*/
+.textslide {
+    animation-duration: 4s;
+    animation-name: slidein;
+    text-align: right;
+}
+
+.textslide span {
+  font-style: "oblique";
+  /*text-shadow:2px 2px 2px gray;*/
+}
+@keyframes slidein {
+  from {margin-left: 100%; width: 300%;}
+    to {margin-left: 0%; width: 100%;}
+}
+
+/*COLUMNAS*/
+.two-columns {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.left {
+  flex: 0 0 120px;
+  margin-right: 20px;
+}
+.foto {
+  max-width: 100%;
+  border-radius: 50%;
+}
+.right {
+  flex: 1;
+}
+
+.two-columnsC {
+  display: flex;
+  justify-content: space-between; /* Espaciado entre las columnas */
+  margin-top: 1.5rem;
+}
+.leftC, .rightC {
+  flex: 1;
+  max-width: 50%; /* Asegura que cada columna ocupe el 50% */
+}
+
+/* Estilos del botón 3D */
+
+.button-grid-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px; /* Ajusta según dónde quieras centrar */
+}
+
+.button-grid {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+}
+
+.button-grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 20px;
+}
+
+.css-button-3d {
+  min-width: 130px;
+  height: 40px;
+  color: #fff;
+  padding: 5px 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  line-height: 30px;
+}
+
+.css-button-3d:hover {
+  box-shadow: 0 3px var(--shadow-color);
+  top: 1px;
+}
+
+.css-button-3d:active {
+  box-shadow: 0 0 var(--shadow-color);
+  top: 5px;
+}
+
+/* Botones de distintos colores */
+.fblue {
+  background: #3d348b;
+  box-shadow: 0 5px #2c0b8e;
+  --shadow-color: #2c0b8e;
+}
+
+.green {
+  background: #2e8b57;
+  box-shadow: 0 5px #1e5e3d;
+  --shadow-color: #1e5e3d;
+}
+
+.red {
+  background: #c0392b;
+  box-shadow: 0 5px #922b21;
+  --shadow-color: #922b21;
+}
+
+.orange {
+  background: #e67e22;
+  box-shadow: 0 5px #ca6f1e;
+  --shadow-color: #ca6f1e;
+}
+
+.teal {
+  background: #16a085;
+  box-shadow: 0 5px #0e6655;
+  --shadow-color: #0e6655;
+}
+
+.gray {
+  background: #7f8c8d;
+  box-shadow: 0 5px #5d6d6d;
+  --shadow-color: #5d6d6d;
+}
+
+.fgreen {
+  background: forestgreen;;
+  box-shadow: 0 5px #5d6d6d;
+  --shadow-color: #5d6d6d;
+}
+
+.cfblue {
+  background: cornflowerblue;
+  box-shadow: 0 5px #5d6d6d;
+  --shadow-color: #5d6d6d;
+}
+
+.rsalmon {
+  background: salmon;
+  box-shadow: 0 5px #5d6d6d;
+  --shadow-color: #5d6d6d;
+}
+
+.nenufar {
+  background: black;
+  box-shadow: 0 5px #5d6d6d;
+  --shadow-color: #5d6d6d;
+}
+
+.lblue {
+  background: lightskyblue;
+  box-shadow: 0 5px #5d6d6d;
+  --shadow-color: #5d6d6d;
+}
+
+.lilon {
+  background: mediumslateblue;
+  box-shadow: 0 5px #5d6d6d;
+  --shadow-color: #5d6d6d;
+}
+
+
+
+

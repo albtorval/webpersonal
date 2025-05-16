@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../../../../images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web personal de Alberto Torrejón Valenzuela">
+    <title>Benders decomposition for the Discrete Ordered Median Problem | Alberto Torrejón Valenzuela</title>
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../css/theme-override.css">
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../">~/alberto torrejón valenzuela</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="https://albtorval.github.io/webpersonal/pdf/CV.pdf">~/cv</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../post/">~/posts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../text/">~/texts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../tags/">~/tags</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">Benders decomposition for the Discrete Ordered Median Problem</span></h1>
+<h2 class="author">Alberto Torrejón Valenzuela</h2>
+<h2 class="date">2024/05/06</h2>
+<p class="terms">
+  
+  
+  Categories: <a href="../../../../../categories/matem%C3%A1ticas">Matemáticas</a> 
+  
+  
+  
+  Tags: <a href="../../../../../tags/art%C3%ADculos">Artículos</a> <a href="../../../../../tags/investigaci%C3%B3n">Investigación</a> 
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    
+
+
+<blockquote>
+<p>“I trust in work more than in luck”. <strong>Latin proverb.</strong></p>
+</blockquote>
+<p>And here is the fruit of that work.</p>
+<p><a href="https://www.sciencedirect.com/science/article/pii/S0377221724003291?via%3Dihub"><strong>‘Benders Decomposition for the Discrete Ordered Median Problem’</strong></a> is available open access in the European Journal of Operational Research. A joint work with Ivana Ljubic, Miguel A. Pozo, Justo Puerto Albandoz and myself.</p>
+<p>But what have we achieved with this work? Let me give some context.</p>
+<p>Is a garbage dump necessary? And an electrical station? But… if necessary, where do we want to have them located? Surely somewhere where their distance from our homes compensates the harm we may experience from having them close with the cost of accessing them. This is known as Obnoxious Location Theory. Another example. Towns that are close to large cities tend to have more services than those that are more isolated. How can these resources be distributed in such a way that the isolated ones do not feel that they are being treated inequitably? This is known as Equity Location Theory.</p>
+<p>For example, given these locations representing the cities and towns in the Campo de Gibraltar.</p>
+<center>
+<img src="../../../../../post/Img/ART1_2.jpeg" style="width:50.0%;height:50.0%" />
+</center>
+<p>What situation is fairer?</p>
+<center>
+<div style="display:inline-block;width:40%;height:40%">
+<p><img src ="/post/Img/ART1_3.jpeg"></p>
+</div>
+<div style="display:inline-block;width:40%;height:40%">
+<p><img src ="/post/Img/ART1_4.jpeg"></p>
+</div>
+</center>
+<p>Well… it depends on where you are and how you interpret fairness.
+Location problems have been widely studied and their importance in the real world is well established. In turns out that there is a way to generalize all these location problems to extend their study in a common framework through ordered optimization. In particular, in this paper we deal with the Discrete Ordered Median Problem (DOMP), which explores facility location ranking clients by allocation cost. By means of a ordered approach many objective functions can be modeled, e.g.,</p>
+<center>
+<img src="../../../../../post/Img/ART1_5.png" style="width:70.0%;height:70.0%" />
+</center>
+<p>But if we want to compute the exact solution of these location problems there is a very difficult wall to overcome. These problems are difficult to scale in general, i.e., the more individuals that come into play, the more complex they become. Playing against combinatorics is far from easy. In this paper we have studied the application of the Benders Decomposition Algorithm to propose formulations that allow us to obtain solutions for large instances and with complex (or even impossible to model non-ordereded) objective functions, obtaining the best results so far.</p>
+<center>
+<img src="../../../../../post/Img/ART1_1.png" style="width:80.0%;height:80.0%" />
+</center>
+
+    <a href="../../../../../"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+      <hr/>
+      Alberto Torrejón Valenzuela | <a href="https://github.com/albtorval">Github</a> | <a href="https://twitter.com/ajedre97">Twitter</a> | <a href="https://www.linkedin.com/in/alberto-torrej%C3%B3n-valenzuela-851680174/">LinkedIn</a>
+      
+    </footer>
+  </body>
+</html>
+

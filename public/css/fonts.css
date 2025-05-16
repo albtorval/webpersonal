@@ -1,0 +1,49 @@
+@import url('https://rsms.me/inter/inter.css');
+@import url('https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zeyada&display=swap');
+
+html { font-family:
+        'Inter',
+        sans-serif,
+        'Apple Color Emoji',
+        'Segoe UI Emoji',
+        'Segoe UI Symbol';
+      }
+@supports (font-variation-settings: normal) {
+  html { font-family:
+          'Inter var',
+          sans-serif,
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol';
+        }
+}
+
+code {
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Helvetica,
+    Arial,
+    sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol"
+  font-size: 85%;
+}
+
+/*Otros estilos y colores*/
+
+.fg{ color: forestgreen; }
+.db{ color: dodgerblue; }
+.salmon{ color: salmon; }
+.lila{ color: mediumslateblue; }
+.dgr{ color: darkgoldenrod;}
+.rocksalt{ font-family: 'Rock Salt', cursive; }
+.specialelite{ font-family: 'Special Elite', cursive; }
+.primerapalabra {
+  font-family: 'Zeyada', cursive;
+  font-size: 30pt;
+}
