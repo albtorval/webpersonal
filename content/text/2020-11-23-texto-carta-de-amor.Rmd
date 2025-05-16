@@ -10,9 +10,6 @@ tags:
 slug: texto-carta-de-amor
 ---
 
-
-<center><h3>**Carta de amor**</h3></center>
-
 <div class="just"> Querida... algo que ya dejaste de ser para convertirte en deseada, así que... </div>
 
 <br>

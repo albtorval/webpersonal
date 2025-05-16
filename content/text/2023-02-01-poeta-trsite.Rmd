@@ -1,0 +1,37 @@
+---
+title: ¿Qué vuelve a un poeta triste?
+author: Alberto Torrejón Valenzuela
+date: '2023-02-01'
+slug: poeta-trsite
+categories:
+  - textos
+tags:
+  - Poemas
+  - Amor
+description: ''
+---
+
+
+<center>
+<span class = "primerapalabra">H</span>abíalos que llenaban hojas a tinta <br>
+y, de la noche a la mañana, solo son lágrima. <br>
+Amigos poetas que entonaban con revuelo, <br>
+Y ahora a otros les pertenece su ego. <br>
+Si bien siempre quise ser un poeta, <br>
+nunca quise ser uno triste, de los que se ahogan. <br>
+A todos ellos preguntaba, <br>
+¡Imbécil!, todos me abroncaban. <br>
+¿Qué vuelve a un poeta triste? <br>
+¿Merece la pena serlo, tenerlo? <br>
+Y entonces llegaste, como olivo en el desierto. <br>
+Como marea sin viento, lluvia para el sediento. <br>
+Y entristecí, y en sollozo continuo caí. <br>
+¡El amor! Ese era el sentimiento. <br>
+¿El amor? No puede ser cierto.  <br>
+El amor no te rompe, no te hace equivocarte. <br>
+¡El amor no es un dulce lejano! <br>
+Me he dado cuenta de algo, lo reconozco, <br>
+Soy un poeta más triste si no te tengo a mi lado.
+
+![](/text/Img/poetatrsite_Miró.jpeg){width=50% height=50%}
+</center>

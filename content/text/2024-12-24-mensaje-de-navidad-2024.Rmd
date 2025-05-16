@@ -1,0 +1,42 @@
+---
+title: Mensaje de Navidad 2024
+author: Alberto Torrejón Valenzuela
+date: '2024-12-24'
+slug: mensaje-de-navidad-2024
+categories:
+  - textos
+tags:
+  - Navidad
+  - Amor
+  - Cocina
+description: ''
+---
+
+<div class="just">
+<span class = "primerapalabra">U</span>n buen perol elegido de entre una amalgama de sartenes y ollas. Para cocinar basta con un cuchillo afilado con la mejor de las chairas y una cuchara de palo, de las que hay en casa del herrero, de las que no ralla la cerámica de la cacerola.
+
+A la *juliana*, a la *brunoise*, a la *chiffonade*,... da igual, mas los ingredientes básicos con esmero has de trocear. Trabajo, esfuerzo, humildad, curiosidad e ilusión. Familia siempre presente, amistades bien tamizadas y buenos guías, maestros hechos de prueba y error, de los que te prestan su cuchillo para que tú mismo aprendas. Para dar sabor, no hay fórmula secreta, el ingrediente clave que rebose, bien de amor. Amor en todas sus vertientes, en todas sus luces, en todas sus sombras. Amor, siempre amor. Todo bien pochado, escaldado, o salteado. Los más osados prueban a ahumar, encurtir, e incluso caramelizar, alta cocina. Como toque especial: una pizca muy controlada de valentía, picaresca, de ambición, y mucha ilusión, aunque acabe por defraudarte, no dudes en echarle mucha ilusión. Y ya.
+
+Con todos estos ingredientes, varias veces repetí la misma receta, esa que dejó mi abuela grabada de su puño y letra en una libreta que visito a menudo, el recuerdo. La repetí paso a paso. No os sorprenderéis si os hago saber que numerosas fueron las veces que todo acabó insípido, insulso. Otras tantas demasiado condimentado, muy salado. Las que menos, por fortuna, se me quemó de tanta efusividad. No os sorprenderéis si os hago saber que no soy buen cocinero...
+
+Y es al punto del renuncio, que aparece alguien. Alguien que también está aprendiendo a cocinar, una receta totalmente distinta a la tuya, con ingredientes diferentes, con sabores encontrados. Es que aparece con el mismo miedo que tú, con una sonrisa, voz frágil, tenue, te susurra al oído...
+</div>
+
+<div class="der">
+*¿y si lo ponemos a fuego lento?*
+</div>
+
+> *Mejor es la comida de legumbres donde hay amor, que de buey engordado donde hay odio.*
+> **Proverbios 15:17**
+
+Felices fiestas y feliz entrada de año a todos y todas. Nos vemos con más en el siguiente, a fuego lento.
+
+Atentamente,
+
+<div class="der">
+<span class = "primerapalabra">Alberto Torrejón Valenzuela</span>
+</div>
+
+<center>
+![](/text/Img/cocina.jpeg){width=70% height=70%}
+</center>

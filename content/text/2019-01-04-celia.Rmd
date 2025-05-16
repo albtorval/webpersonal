@@ -1,0 +1,43 @@
+---
+title: Celia
+author: Alberto Torrejón Valenzuela
+date: '2019-01-04'
+slug: celia
+categories:
+  - textos
+tags:
+  - Amor
+  - Poemas
+  - Ella
+description: ''
+---
+
+<center>
+<span class = "primerapalabra">U</span>n camino, un sendero <br>
+Uno color carne, <br>
+con un avión en medio. <br>
+Muchas ganas, más recelo. <br>
+
+Un camino, un sendero <br> 
+Uno color carne, <br> 
+Que alcance tu cuello. <br>
+
+Te miro, comerte quiero <br>
+Poco a poco, con esmero. <br>
+
+Un camino, un sendero <br>
+Uno rojo <br> 
+A tus labios llego.<br>
+
+Acabas, me miras <br>
+Me pierdo, volver no quiero. <br>
+Acabo, tengo miedo<br> 
+Me mimas, no temo.
+
+Pasa el tiempo, <br>
+No diré te echo de menos <br>
+Pero déjame verte de nuevo <br>
+Que te anhelo.
+
+![](/text/Img/avion.jpeg){width=50% height=50%}
+</center>

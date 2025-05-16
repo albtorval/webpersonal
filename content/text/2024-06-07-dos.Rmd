@@ -1,0 +1,37 @@
+---
+title: Dos
+author: Alberto Torrejón Valenzuela
+date: '2024-06-07'
+slug: dos
+categories:
+  - textos
+tags:
+  - Poemas
+  - Recuerdo
+  - Amor
+description: ''
+---
+
+<center>
+<span class = "primerapalabra">D</span>e una guardo dos tazas rojas de café. <br>
+De otra, dos copas de cristal fino de Bohemia, <br>
+y un par de catavinos. <br>
+
+Dos cuencos de sopa, de otra. <br>
+De muchas guardo solo dos besos. <br>
+De la mayoría, apenas dos abrazos. <br>
+
+Todas ellas han alimentado mi alma, <br>
+la han vestido, la han cuidado, <br>
+la han querido, <br>
+la han llorado. <br>
+
+Y yo, de todas, de todo, guardo siempre dos: <br>
+por si uno se rompe, tener el otro. <br>
+De todas he aprendido dos cosas: <br>
+a amar, <br>
+y luego, <br>
+a olvidar.
+
+![](/text/Img/dos.jpeg){width=50% height=50%}
+</center>

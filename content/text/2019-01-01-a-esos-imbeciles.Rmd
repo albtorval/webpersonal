@@ -1,0 +1,38 @@
+---
+title: A esos imbéciles, ahora ya es tarde
+author: Alberto Torrejón Valenzuela
+date: '2019-01-01'
+slug: a-esos-imbeciles
+categories:
+  - textos
+tags:
+  - Poemas
+  - Social
+description: ''
+---
+
+<center>
+<span class = "primerapalabra">Al</span> pueblo ha llegado el circo, <br>
+vienen con un ganso y un cerdo, <br>
+haciendo volteretas y con panderetas, <br>
+llamando a las puertas de aquellos majaretas. <br>
+Montando en moto y haciendo el loco <br>
+han cavado un agujero en tu coco. <br>
+Te han dejado sin cordura. <br>
+Se han llevado tu mesura, <br>
+ultrajado tu ternura. <br>
+Han acabado contigo, <br>
+amigo, te han quitado los ojos, <br>
+de no ver te has estrellado <br>
+y te has hecho daño. <br>
+Ahora buscas un peldaño <br>
+que te suba a la cuna, <br>
+Ahora buscas una anciana <br>
+que te cure la herida, <br>
+Ahora buscas un abuelo <br>
+que te tienda su mano, <br>
+pero ellos no pueden, <br>
+pues su aliento, ya está cansado.
+
+![](/text/Img/pueblo.jpeg){width=70% height=70%}
+</center>

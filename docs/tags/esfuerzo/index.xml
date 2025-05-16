@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Esfuerzo on Alberto Torrejón Valenzuela</title>
-    <link>/tags/esfuerzo.html</link>
+    <link>/tags/esfuerzo/</link>
     <description>Recent content in Esfuerzo on Alberto Torrejón Valenzuela</description>
     <generator>Hugo</generator>
     <language>es-es</language>
@@ -10,10 +10,10 @@
     <atom:link href="/tags/esfuerzo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Mientras las chimeneas duermen</title>
-      <link>/text/poema.html</link>
+      <link>/text/poema/</link>
       <pubDate>Tue, 04 Aug 2020 00:00:00 +0000</pubDate>
-      <guid>/text/poema.html</guid>
-      <description>&lt;center&gt;&#xA;&lt;p&gt;&lt;strong&gt;Mientras las chimeneas duermen&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../text/2020-08-04-mientras-las-chimeneas-duermen_files/licabeto.png&#34; style=&#34;width:50.0%;height:50.0%&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;Mientras las chimeneas duermen, &lt;br&gt;&#xA;cuando la oscuridad es noche, &lt;br&gt;&#xA;una luz permanece. &lt;br&gt;&#xA;Es la del estudiante, macabro intransigente. &lt;br&gt;&#xA;Tiene en sus hojas fórmulas con vida, &lt;br&gt;&#xA;notas hasta en la mesilla, &lt;br&gt;&#xA;los apuntes lo van a tapar, &lt;br&gt;&#xA;el frío desaparecerá, &lt;br&gt;&#xA;y tú cuando lo veas, &lt;br&gt;&#xA;mérito le vas a restar. &lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Mientras las chimeneas duermen, &lt;br&gt;&#xA;cuando las farolas son ocre, &lt;br&gt;&#xA;una luz permanece. &lt;br&gt;&#xA;Es la de la trabajadora que corre, &lt;br&gt;&#xA;su día le debe al siguiente. &lt;br&gt;&#xA;Se queja, se duele, es madre, &lt;br&gt;&#xA;y ni amamantar a su retoño puede. &lt;br&gt;&#xA;Tiempo sin tiempo, y así sin cesar, &lt;br&gt;&#xA;y tu cuando la mires, &lt;br&gt;&#xA;la vas a criticar. &lt;br&gt;&lt;/p&gt;</description>
+      <guid>/text/poema/</guid>
+      <description>&lt;center&gt;&#xA;&lt;p&gt;Mientras las chimeneas duermen, &lt;br&gt;&#xA;cuando la oscuridad es noche, &lt;br&gt;&#xA;una luz permanece. &lt;br&gt;&#xA;Es la del estudiante, macabro intransigente. &lt;br&gt;&#xA;Tiene en sus hojas fórmulas con vida, &lt;br&gt;&#xA;notas hasta en la mesilla, &lt;br&gt;&#xA;los apuntes lo van a tapar, &lt;br&gt;&#xA;el frío desaparecerá, &lt;br&gt;&#xA;y tú cuando lo veas, &lt;br&gt;&#xA;mérito le vas a restar. &lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Mientras las chimeneas duermen, &lt;br&gt;&#xA;cuando las farolas son ocre, &lt;br&gt;&#xA;una luz permanece. &lt;br&gt;&#xA;Es la de la trabajadora que corre, &lt;br&gt;&#xA;su día le debe al siguiente. &lt;br&gt;&#xA;Se queja, se duele, es madre, &lt;br&gt;&#xA;y ni amamantar a su retoño puede. &lt;br&gt;&#xA;Tiempo sin tiempo, y así sin cesar, &lt;br&gt;&#xA;y tu cuando la mires, &lt;br&gt;&#xA;la vas a criticar. &lt;br&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

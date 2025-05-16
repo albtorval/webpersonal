@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../../../../images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Web personal de Alberto Torrejón Valenzuela">
+    <title>RMarkdown y Hugo para crear un sitio web | Alberto Torrejón Valenzuela</title>
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../css/theme-override.css">
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../">~/alberto torrejón valenzuela</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="pdf/CV.pdf">~/cv</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../post/">~/posts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../text/">~/texts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../tags/">~/tags</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">RMarkdown y Hugo para crear un sitio web</span></h1>
+<h2 class="author">Alberto Torrejón Valenzuela</h2>
+<h2 class="date">2020/07/30</h2>
+<p class="terms">
+  
+  
+  
+  
+  Tags: <a href="../../../../../tags/html">HTML</a> <a href="../../../../../tags/r-markdown">R Markdown</a> 
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    
+
+
+<div id="nuevo-sitio-web" class="section level3">
+<h3><svg aria-hidden="true" role="img" viewBox="0 0 581 512" style="height:1em;width:1.13em;vertical-align:-0.125em;margin-left:auto;margin-right:auto;font-size:inherit;fill:steelblue;overflow:visible;position:relative;"><path d="M581 226.6C581 119.1 450.9 32 290.5 32S0 119.1 0 226.6C0 322.4 103.3 402 239.4 418.1V480h99.1v-61.5c24.3-2.7 47.6-7.4 69.4-13.9L448 480h112l-67.4-113.7c54.5-35.4 88.4-84.9 88.4-139.7zm-466.8 14.5c0-73.5 98.9-133 220.8-133s211.9 40.7 211.9 133c0 50.1-26.5 85-70.3 106.4-2.4-1.6-4.7-2.9-6.4-3.7-10.2-5.2-27.8-10.5-27.8-10.5s86.6-6.4 86.6-92.7-90.6-87.9-90.6-87.9h-199V361c-74.1-21.5-125.2-67.1-125.2-119.9zm225.1 38.3v-55.6c57.8 0 87.8-6.8 87.8 27.3 0 36.5-38.2 28.3-87.8 28.3zm-.9 72.5H365c10.8 0 18.9 11.7 24 19.2-16.1 1.9-33 2.8-50.6 2.9v-22.1z"/></svg> Nuevo sitio web</h3>
+<ol style="list-style-type: decimal">
+<li><p>Elija cuidadosamente un tema en <a href="http://themes.gohugo.io" class="uri">http://themes.gohugo.io</a> y busque el enlace a su repositorio de <code>GitHub</code>, que tiene la forma <code>https://github.com/user/repo</code>.</p></li>
+<li><p>Cree un nuevo proyecto en <strong>RStudio</strong> y escriba el código <code>blogdown::new_site(theme = 'user/repo')</code> en la consola <strong>R</strong>, donde <code>user/repo</code> es del enlace en el Paso 1.</p></li>
+<li><p>Interactúe con el nuevo sitio por un tiempo y si no le gusta, puede repetir los pasos anteriores, de lo contrario edite las opciones en <code>config.toml</code>. Si no comprende ciertas opciones, vaya a la documentación.</p></li>
+</ol>
+<p>De los directorios que se generan, los dos más relevantes son:</p>
+<ul>
+<li><p><code>content/</code>. Aquí se encuentran todos los archivos que necesita manipular para que aparezcan en su sitio web.</p></li>
+<li><p><code>public/</code>. Aquí se encuentran todos los archivos que deberá subir a su servidor web propio.</p></li>
+</ul>
+</div>
+<div id="editar-un-sitio-web" class="section level3">
+<h3>Editar un sitio web</h3>
+<ol style="list-style-type: decimal">
+<li><p>Haga clic en el complemento RStudio <code>Server site</code> situado en la pestaña <code>Addins</code> para obtener una vista previa del sitio en <strong>RStudio Viewer</strong>. Esto solo debe hacerse una vez cada vez que abra el proyecto <strong>RStudio</strong> o reinicie su sesión <strong>R</strong>. No haga clic en el botón <code>knit</code> en la barra de herramientas de <strong>RStudio</strong>.</p></li>
+<li><p>Use el complemento <code>New Post</code> para crear una nueva publicación o página, luego comience a escribir el contenido.</p></li>
+<li><p>Utilice el complemento <code>Upload metadata</code> para modificar los metadatos de YAML si es necesario.</p></li>
+</ol>
+</div>
+<div id="publicar-un-sitio-web-si-no-está-familiarizado-con-git-o-github" class="section level3">
+<h3>Publicar un sitio web si no está familiarizado con Git o GitHub</h3>
+<ol style="list-style-type: decimal">
+<li><p>Reinicie la sesión <strong>R</strong> y ejecute <code>blogdown::hugo_build()</code>. Debería obtener un directorio <code>public/</code> en el directorio raíz de su proyecto.</p></li>
+<li><p>Inicie sesión en <a href="https://www.netlify.com" class="uri">https://www.netlify.com</a> (puede usar una cuenta de <strong>GitHub</strong> si tiene una). Si es la primera vez que publica este sitio web, puede crear un sitio nuevo; de lo contrario, puede actualizar el sitio existente que creó la última vez. Puede arrastrar y soltar la carpeta <code>public/</code> desde su visor de archivos al área indicada en la página web de <strong>Netlify</strong>, donde dice “Arrastre una carpeta con un sitio estático aquí”.</p></li>
+<li><p>Espere unos segundos a que <strong>Netlify</strong> implemente los archivos y le asignará un subdominio aleatorio de la forma <code>random-word- 12345.netlify.com</code>. Puede (y debe) cambiar este subdominio aleatorio a uno más significativo si aún está disponible.</p></li>
+</ol>
+<p>Publicar un sitio web puede ser mucho más fácil si está familiarizado con Git y GitHub. Recomendamos que cree un nuevo sitio en <strong>Netlify</strong> desde su repositorio de GitHub que contenga los archivos de origen de su sitio web, para que pueda disfrutar de los beneficios de la implementación continua en lugar de cargar manualmente la carpeta <code>public/</code> cada vez. Con este enfoque, no necesita ejecutar <code>blogdown::hugo_build()</code> localmente, ya que el sitio web se puede construir en <strong>Netlify</strong> a través de Hugo.</p>
+<p>Existen otros sitios donde puede hospedar sus directorios: <a href="https://pages.github.com">GitHub Pages</a>, <a href="https://about.gitlab.com/features/pages/">GitLab Pages</a>, …</p>
+<p>Información obtenida de la documentación oficial de <a href="https://bookdown.org/yihui/blogdown/">blogdown</a> y del <a href="http://destio.us.es/calvo/post/2017-08-27-como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/#contenido-incluir-tabla-creada-con-el-paquete-dt">post</a> del profesor <a href="https://twitter.com/luque_calvo">Pedro Luis Luque Calvo</a> de la Universidad de Sevilla. Para mayor profundización visitar dichos sitios.</p>
+</div>
+
+    <a href="../../../../../"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+      <hr/>
+      Alberto Torrejón Valenzuela | <a href="https://github.com/albtorval">Github</a> | <a href="https://twitter.com/ajedre97">Twitter</a> | <a href="https://www.linkedin.com/in/alberto-torrej%C3%B3n-valenzuela-851680174/">LinkedIn</a>
+      
+    </footer>
+  </body>
+</html>
+

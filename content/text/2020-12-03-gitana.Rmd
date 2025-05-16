@@ -2,21 +2,16 @@
 title: Gitana
 author: Alberto Torrejón Valenzuela
 date: '2020-12-03'
-slug: gitana
 categories:
   - poemas
 tags:
-  - Ella
   - Amor
-description: ''
+  - Ella
+slug: gitana
 ---
 
 <center>
-<h3>**Gitana**</h3>
-
-![](/text/2020-12-03-gitana_files/vela.JPG){width=50% height=40%}
-
-Gitanilla mala, <br>
+<span class = "primerapalabra">G</span>itanilla mala, <br>
 alma de pana, <br>
 llora las noches, <br>
 vive las madrugadas. <br>
@@ -35,5 +30,8 @@ Sábanas pegadas, <br>
 vamos tarde, <br>
 con el amor... <br>
 he vuelto a encontrarme.
+
+![](/text/Img/vela.JPG){width=50% height=50%}
+
 </center>
 

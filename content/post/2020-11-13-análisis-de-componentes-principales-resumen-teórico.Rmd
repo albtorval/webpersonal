@@ -2,19 +2,20 @@
 title: Análisis de Componentes Principales - resumen teórico
 author: Alberto Torrejón Valenzuela
 date: '2020-11-13'
-slug: análisis-de-componentes-principales-resumen-teórico
 categories:
   - Estadística
 tags:
+  - ACP
   - Minería Estadística
   - R
-  - ACP
-description: 'Resumen teórico sobre el análisis de componentes principales'
+slug: análisis-de-componentes-principales-resumen-teórico
+description: Resumen teórico sobre el análisis de componentes principales
 mathjax: local
 output:
   blogdown::html_page:
-      toc: TRUE
+    toc: yes
 ---
+
 
 # Análisis de Componentes Principales - ACP
 

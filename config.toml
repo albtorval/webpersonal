@@ -4,12 +4,15 @@ languageCode = "es-es"
 title = "Alberto Torrejón Valenzuela"
 relativeURLs = true
 theme = "hugo-classic"
-uglyURLs = true
+uglyURLs = false
 googleAnalytics = ""
 ignoreFiles = ["\\.Rmd$", "_files$", "_cache$"]
 enableEmoji = true
 footnotereturnlinkcontents = "↩"
 toc = false
+
+[taxonomies]
+    tag = "tags"
 
 [permalinks]
     post = "/post/:year/:month/:day/:slug/"
@@ -23,7 +26,7 @@ toc = false
 
 [[menu.main]]
     name = "cv"
-    url = "https://torrejonvalenzuela.com/pdf/CV.pdf"
+    url = "pdf/CV.pdf"
     weight = 1
 
 [[menu.main]]
@@ -40,5 +43,3 @@ toc = false
     name = "tags"
     url = "/tags/"
     weight = 4
-    
-    

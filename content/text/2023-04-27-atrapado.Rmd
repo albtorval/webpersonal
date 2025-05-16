@@ -1,0 +1,27 @@
+---
+title: Atrapado
+author: Alberto Torrejón Valenzuela
+date: '2023-04-27'
+slug: atrapado
+categories:
+  - textos
+tags:
+  - Poemas
+  - Feria
+description: ''
+---
+
+<center>
+<span class = "primerapalabra">A</span>trapado entre los farolillos del Real. <br>
+Atrapado por las sábanas al despertar. <br>
+Atrapado entre aplausos, elogios y luces. <br>
+Atrapado en soledades remediables, amistades confusas. <br>
+Atrapado en un sueño que fue. <br>
+Atrapado en un cuerpo que no es. <br>
+Atrapado en una fábula irreal.<br>
+Atrapado y sin poder escapar. <br>
+Todos tenéis vuestra trampa que os atrapa. <br>
+Conocedla y disfrutrar, pobre de quien intente escapar.
+
+![](/text/Img/atrapado.jpg){width=50% height=50%}
+</center>

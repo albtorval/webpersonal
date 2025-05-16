@@ -1,0 +1,60 @@
+---
+title: A fresh view on Least Quantile of Squares Regression based on new optimization
+  approaches
+author: Alberto Torrejón Valenzuela
+date: '2025-04-25'
+slug: a-fresh-view-on-least-quantile-of-squares-regression-based-on-new-optimization-approaches
+categories:
+  - Matemáticas
+tags:
+  - Artículos
+  - Investigación
+description: ''
+---
+
+
+> *"We prove by logic, but we discover by intuition."* — **Henri Poincaré**
+
+Our article [**“A fresh view on Least Quantile of Squares Regression based on new optimization approaches”**](https://www.sciencedirect.com/science/article/pii/S0957417425013272), coauthored by Justo Puerto and Alberto Torrejón, has just been published in *Expert Systems With Applications*.  
+
+
+But… what is this paper really about?
+
+
+![](/post/Img/ART3_1.jpg){width=50% height=50%}
+
+You're probably familiar with the image of a scatter plot and a line running through it, right?  
+Exactly! This work revisits the well-known **linear regression** model. 
+And while it might seem like everything has already been said about it… that's not quite true.
+The estimator most people know is **Least Squares (LS)** — it's simple, easy to compute, and widely used. But it’s not flawless. 
+
+![](/post/Img/ART3_3.jpg){width=75% height=75%}
+
+That’s why researchers have proposed alternatives: either by making LS more robust or by designing new estimators with better statistical properties or fewer theoretical assumptions. (Some examples are in the images below.)
+
+![](/post/Img/ART3_4.jpg){width=75% height=75%}
+
+In fact, you can generalize many of these estimators by means of an ordered approach known as Ordered Linear Regression:
+
+![](/post/Img/ART3_5.jpg){width=75% height=75%}
+
+
+One of the most powerful alternatives is called **Least Quantile of Squares (LQS)**.  
+But here’s the catch: the more statistically precise the estimator, the harder it becomes to compute.
+
+💡 **That’s where we come in**  
+
+In our paper, we expand the range of models capable of solving the LQS regression **optimally**. We introduce three mathematical programming formulations based on sorting techniques, and a fourth model based on **bilevel optimization**.
+
+![](/post/Img/ART3_6.jpg){width=75% height=75%}
+
+---
+
+🎯 *Spoiler alert from our next paper:*  
+Did you know that simply sorting residuals can help generalize many families of estimators? These are known as **L-estimators**, and they’re incredibly useful. But — and here’s the challenge — **sorting optimally is no easy task**.
+
+🔗 Want to know more? 👉 [Upcoming paper teaser](https://tinyurl.com/5n6b437b)
+
+---
+
+That’s all… for now. More to come!

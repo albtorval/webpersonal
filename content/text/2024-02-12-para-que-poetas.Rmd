@@ -1,0 +1,35 @@
+---
+title: ¿Para qué poetas en tiempo de penurias?
+author: Alberto Torrejón Valenzuela
+date: '2024-02-12'
+categories:
+  - textos
+tags:
+  - Poemas
+  - Social
+slug: para-que-poetas
+---
+
+<center>
+<span class = "primerapalabra">H</span>oy lloro por un Estrecho deshonrado en una cruzada sinsentido, <br>
+un Estrecho milenario perdido en olas equivocadas, <br>
+lleno de espuma escarlata y lágrimas saladas. <br>
+
+Lloro por un Estrecho donde juegan <br>
+gatos desorientados por ilustres ignorantes, colas de león, <br>
+persiguiendo a ratones llenos de falsa pretensión, <br>
+con el silencio de toda una nación. <br>
+
+Ante sus fardos, nuestros libros, <br>
+Ante sus gomas, las nuestras, <br>
+papel y lapiz, pizarra y tiza, <br>
+que su veneno se disuelva en nuestro Mediterráneo, en nuestro Altlántico. <br>
+
+Lloro por un Estrecho con dueños de helado corazón, <br>
+un Estrecho que debemos recuperar por la fuerza y con su rendición. <br>
+Hoy lloro por mi Estrecho y, hacedme el favor, si lo lloráis conmigo, <br>
+esmeraros en que se escuche también vuestra voz.
+
+![](/text/Img/estrecho.jpeg){width=50% height=50%}
+
+</center>

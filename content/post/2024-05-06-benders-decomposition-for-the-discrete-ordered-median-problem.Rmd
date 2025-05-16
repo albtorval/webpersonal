@@ -1,0 +1,52 @@
+---
+title: Benders decomposition for the Discrete Ordered Median Problem
+author: Alberto Torrejón Valenzuela
+date: '2024-05-06'
+slug: benders-decomposition-for-the-discrete-ordered-median-problem
+categories:
+  - Matemáticas
+tags:
+  - Artículos
+  - Investigación
+description: ''
+---
+
+> “I trust in work more than in luck”. **Latin proverb.**
+
+And here is the fruit of that work.
+
+[**‘Benders Decomposition for the Discrete Ordered Median Problem’**](https://www.sciencedirect.com/science/article/pii/S0377221724003291?via%3Dihub) is available open access in the European Journal of Operational Research. A joint work with Ivana Ljubic, Miguel A. Pozo, Justo Puerto Albandoz and myself.
+
+But what have we achieved with this work? Let me give some context.
+
+Is a garbage dump necessary? And an electrical station? But... if necessary, where do we want to have them located? Surely somewhere where their distance from our homes compensates the harm we may experience from having them close with the cost of accessing them. This is known as Obnoxious Location Theory. Another example. Towns that are close to large cities tend to have more services than those that are more isolated. How can these resources be distributed in such a way that the isolated ones do not feel that they are being treated inequitably? This is known as Equity Location Theory.
+
+For example, given these locations representing the cities and towns in the Campo de Gibraltar.
+
+<center>
+![](/post/Img/ART1_2.jpeg){width=50% height=50%}
+</center>
+
+What situation is fairer?
+
+<center>
+<div style="display:inline-block;width:40%;height:40%">
+  <img src ="/post/Img/ART1_3.jpeg">
+</div>
+<div style="display:inline-block;width:40%;height:40%">
+  <img src ="/post/Img/ART1_4.jpeg">
+</div>
+</center>
+
+Well... it depends on where you are and how you interpret fairness.
+Location problems have been widely studied and their importance in the real world is well established. In turns out that there is a way to generalize all these location problems to extend their study in a common framework through ordered optimization. In particular, in this paper we deal with the Discrete Ordered Median Problem (DOMP), which explores facility location ranking clients by allocation cost. By means of a ordered approach many objective functions can be modeled, e.g.,
+
+<center>
+![](/post/Img/ART1_5.png){width=70% height=70%}
+</center>
+
+But if we want to compute the exact solution of these location problems there is a very difficult wall to overcome. These problems are difficult to scale in general, i.e., the more individuals that come into play, the more complex they become. Playing against combinatorics is far from easy. In this paper we have studied the application of the Benders Decomposition Algorithm to propose formulations that allow us to obtain solutions for large instances and with complex (or even impossible to model non-ordereded) objective functions, obtaining the best results so far.
+
+<center>
+![](/post/Img/ART1_1.png){width=80% height=80%}
+</center>

@@ -1,0 +1,60 @@
+---
+title: 'STATUS: La raíz de las cosas'
+author: Alberto Torrejón Valenzuela
+date: '2025-04-16'
+slug: status-la-ra-z-de-las-cosas
+categories:
+  - Matemáticas
+tags:
+  - Clases
+  - Estadística
+description: ''
+---
+
+Hasta nuevo aviso, este ha sido mi último curso impartiendo clases a nivel universitario.  
+Así inicié las de este año:
+
+---
+
+### Pregunta: ¿Se dice estadista o estadístico?
+
+El término *estadista* proviene del italiano *statista* y define a quien, más allá de ocupar un cargo político, moldea el destino de una nación. No es solo quien gobierna, sino quien comprende el arte de dirigir un Estado.
+
+La *estadística* remite a la ciencia que, en sus orígenes, fue precisamente la “Ciencia del Estado”. En tiempos antiguos, los gobiernos necesitaban información esencial: cuántos ciudadanos estaban en edad de pagar impuestos, si la cosecha de trigo bastaría para alimentar a la población, o si había suficientes soldados para ganar una guerra. A medida que los Estados crecieron en extensión y complejidad, la organización se volvió vital. Los datos comenzaron a delinear un doble reflejo: describen a la sociedad, pero también **nos describen a cada uno de nosotros**.
+
+### Pregunta: ¿Creéis que los políticos actuales utilizan la estadística para fundamentar sus políticas?
+
+El silencio es elocuente. La ausencia de respuestas lo confirma.  
+He notado que cuando la conversación gira en torno a la política, muchos prefieren apartar la mirada.  
+Se percibe hastío, desinterés, incluso desconfianza.
+
+Pero creedme, no sois los primeros en sentirlo, ni seréis los últimos. Sócrates decía:
+
+> *"Nadie es capaz de enfrentarse a un trabajo si no se siente competente; sin embargo, muchos piensan que son capaces de controlar el más difícil de los trabajos: el gobierno."*
+
+Pero, ¿qué sucede cuando nos desentendemos de la política?  
+Su discípulo, Platón, advertía:
+
+> *"El precio de desentenderse de la política es ser gobernado por los peores hombres."*
+
+¿Y acaso podemos realmente alejarnos de ella?  
+Otro de sus discípulos, Aristóteles, afirmaba que el ser humano es un *zoon politikón*, un "animal político".
+
+Pero qué decir de todos estos más que lo que siglos más tarde, Isaac Asimov sentenciaría:
+
+> *"Acabemos con Sócrates, pues ya estoy harto de este invento de que no saber nada es un signo de sabiduría, ¡hasta la ignorancia tiene un límite!"*
+
+### Conclusión
+
+Sois seres políticos por naturaleza,  
+y más a menudo de lo que creéis usáis la estadística en vuestro día a día.
+
+Si no alzáis la voz, nadie escuchará vuestros problemas.  
+Y cuando hagáis política, cuando exijáis que se haga política, para hacer política fundamentada, recordad: **usad las estadísticas**.
+
+Así que… Tema 1: Estadística descriptiva.
+
+---
+
+Me despido por el momento de la docencia, pero volveré.  
+Hasta más saber…

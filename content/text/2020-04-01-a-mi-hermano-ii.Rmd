@@ -1,0 +1,37 @@
+---
+title: A mi hermano II
+author: Alberto Torrejón Valenzuela
+date: '2020-04-01'
+slug: a-mi-hermano-ii
+categories:
+  - textos
+tags:
+  - Poemas
+description: ''
+---
+
+<center>
+<span class = "primerapalabra">U</span>n mérito, camarada, <br>
+Cuando se anda, <br>
+Uno adelante, ninguno atrás, <br>
+Y si el viento es fuerte, <br>
+Y si el suelo es duro, <br>
+Uno adelante, ninguno atrás. <br>
+
+Yo caminé antes, <br>
+Eso nunca deberías olvidar; <br>
+que cuando se anda, <br>
+Uno adelante, ninguno atrás. <br>
+Este viaje nos separará <br>
+añicos su dureza te hará, <br>
+Amigo, tú siempre, <br>
+uno adelante, ninguno atrás. <br>
+
+Tu camino harás. <br>
+Pero hermano, tu siempre, <br>
+uno adelante, ninguno atrás, <br>
+que mi estela para ti, <br>
+siempre estará.
+
+![](/text/Img/dani3.jpeg){width=70% height=70%}
+</center>

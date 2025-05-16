@@ -29,7 +29,7 @@
       
       
       <li class="pull-left ">
-        <a href="https://torrejonvalenzuela.com/pdf/CV.pdf">~/cv</a>
+        <a href="pdf/CV.pdf">~/cv</a>
       </li>
       
       
@@ -175,13 +175,10 @@ end</code></pre>
 <ul>
 <li><p>HTML widgets y Shiny apps embedidas via <code>&lt;iframe&gt;</code>: <iframe> </iframe></p></li>
 <li><p>Lista de tareas:</p>
-<ul>
-<li><input type="checkbox" disabled="" checked="" />
-Estudiar :books:.</li>
-<li><input type="checkbox" disabled="" />
-Cervezas :beer:.</li>
-<li><input type="checkbox" disabled="" />
-Dormir :zzz:.</li>
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />Estudiar :books:.</label></li>
+<li><label><input type="checkbox" />Cervezas :beer:.</label></li>
+<li><label><input type="checkbox" />Dormir :zzz:.</label></li>
 </ul></li>
 <li><p>Las <strong>reglas horizontales</strong> se utilizan para separar secciones de una manera visual. Para crearlas, en una línea en blanco deberás incluir tres de los siguientes elementos: asteriscos, guiones, o guiones bajos.</p></li>
 </ul>
@@ -200,11 +197,9 @@ _ _ _</code></pre>
 <ul>
 <li>Sin tener que hacer uso de las expresiones de <strong>LaTeX</strong> podemos introducir teoremas y demostraciones en <em>Rmd</em>. Simplemente basta con usar la siguiente sintaxis: ``<code>{theorem}</code> Aquí está mi teorema. Idem para indicar que se trata de una prueba.</li>
 </ul>
-
 <div class="theorem">
-<span id="thm:unnamed-chunk-1" class="theorem"><strong>Teorema 1  </strong></span>Aquí está mi teorema.
+<p><span id="thm:unnamed-chunk-1" class="theorem"><strong>Theorem 1  </strong></span>Aquí está mi teorema.</p>
 </div>
-
 <p>Otra variantes son: <code>lemma</code>, <code>corollary</code>, <code>proposition</code>, <code>conjecture</code>, <code>definition</code>, <code>example</code>, y <code>exercise</code>. Variantes de <code>proof</code> incluyen <code>remark</code> y <code>solution</code>.</p>
 <p>Para que el texto <strong>Teorema</strong> aparezca en español hace falta crear un script <code>_bookdown.yml</code> en la carpeta <code>post</code> como se indica <a href="http://destio.us.es/calvo/post/2017-08-27-como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/como-he-creado-mi-pagina-web-personal-con-el-paquete-r-blogdown/#algunas-curiosidades">aquí</a>.</p>
 <pre class="r"><code>language:
@@ -242,7 +237,7 @@ shortcode_close(&quot;figure&quot;)</code></pre>
 <hr />
 </div>
 </div>
-<div class="footnotes">
+<div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>footnote<a href="#fnref1" class="footnote-back">↩︎</a></p></li>

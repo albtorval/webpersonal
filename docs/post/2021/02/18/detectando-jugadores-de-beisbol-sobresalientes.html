@@ -29,7 +29,7 @@
       
       
       <li class="pull-left ">
-        <a href="https://torrejonvalenzuela.com/pdf/CV.pdf">~/cv</a>
+        <a href="pdf/CV.pdf">~/cv</a>
       </li>
       
       
@@ -92,7 +92,7 @@
   
   
   
-  Tags: <a href="../../../../tags/acp">ACP</a> <a href="../../../../tags/xaringan">Xaringan</a> <a href="../../../../tags/b%C3%A9isbol">Béisbol</a> 
+  Tags: <a href="../../../../tags/acp">ACP</a> <a href="../../../../tags/b%C3%A9isbol">Béisbol</a> <a href="../../../../tags/xaringan">Xaringan</a> 
   
   
 </p>
@@ -110,13 +110,10 @@
 <blockquote>
 <p><em>“El poder de la estadística en el béisbol es que, a diferencia del precio de la vivienda o la inflación, toma vida”</em>. Bill James.</p>
 </blockquote>
-<center>
-<iframe width="560" height="315" src="https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1" frameborder="0">
-</iframe>
-</center>
-<center>
-<a href="https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1">DIAPOSITIVAS</a>
-</center>
+<!-- <center><iframe width="560" height="315" src="https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1" frameborder="0"></iframe></center> -->
+<!-- <center> -->
+<!-- [DIAPOSITIVAS](https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1) -->
+<!-- </center> -->
 <pre class="r"><code># Manipulación de datos
 library(tidyverse)
 library(magrittr)
@@ -163,12 +160,12 @@ library(baseballr)</code></pre>
 <p>Vamos a analizar a los bateadores. Obtenemos la información de los estadísticos de los bateadores en la temporada 2020 como se sigue:</p>
 <pre class="r"><code>bateadores &lt;- daily_batter_bref(&quot;2020-06-23&quot;, &quot;2020-09-27&quot;)
 bateadores %&gt;% summary() %&gt;% .[,1:15]</code></pre>
-<pre><code>   bbref_id            season              Name                Age       
- Length:588         Length:588         Length:588         Min.   :20.00  
- Class :character   Class :character   Class :character   1st Qu.:25.00  
- Mode  :character   Mode  :character   Mode  :character   Median :27.00  
-                                                          Mean   :27.78  
-                                                          3rd Qu.:30.00  
+<pre><code>   bbref_id             season         Name                Age       
+ Length:588         Min.   :2020   Length:588         Min.   :20.00  
+ Class :character   1st Qu.:2020   Class :character   1st Qu.:25.00  
+ Mode  :character   Median :2020   Mode  :character   Median :27.00  
+                    Mean   :2020                      Mean   :27.78  
+                    3rd Qu.:2020                      3rd Qu.:30.00  
     Level               Team                 G               PA        
  Length:588         Length:588         Min.   : 1.00   Min.   :  0.00  
  Class :character   Class :character   1st Qu.:15.00   1st Qu.: 40.75  
@@ -189,13 +186,15 @@ bateadores %&gt;% summary() %&gt;% .[,1:15]</code></pre>
  3rd Qu.: 8.000   3rd Qu.:1.0000   3rd Qu.: 6.000  
  [ reached getOption(&quot;max.print&quot;) -- omitted 2 rows ]</code></pre>
 <pre class="r"><code>bateadores %&gt;% head() %&gt;% .[,1:10]</code></pre>
-<pre><code>  bbref_id season             Name Age  Level        Team  G  PA  AB  R
-1   547989   2020    Marcell Ozuna  29 Maj-NL     Atlanta 60 267 228 38
-2   660670   2020 Francisco Lindor  26 Maj-AL   Cleveland 60 266 236 30
-3   642715   2020     Cavan Biggio  25 Maj-AL     Toronto 59 265 220 41
-4   613534   2020  Whit Merrifield  31 Maj-AL Kansas City 60 265 248 38
-5   571431   2020   Dansby Swanson  26 Maj-NL     Atlanta 60 264 237 49
-6   666176   2020  Freddie Freeman  30 Maj-NL     Atlanta 60 262 214 51</code></pre>
+<pre><code># A tibble: 6 × 10
+  bbref_id  season Name               Age Level  Team        G    PA    AB     R
+  &lt;chr&gt;      &lt;int&gt; &lt;chr&gt;            &lt;dbl&gt; &lt;chr&gt;  &lt;chr&gt;   &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+1 ozunama01   2020 Marcell Ozuna       29 Maj-NL Atlanta    60   267   228    38
+2 lindofr01   2020 Francisco Lindor    26 Maj-AL Clevel…    60   266   236    30
+3 biggica01   2020 Cavan Biggio        25 Maj-AL Toronto    59   265   220    41
+4 merriwh01   2020 Whit Merrifield     31 Maj-AL Kansas…    60   265   248    38
+5 swansda01   2020 Dansby Swanson      26 Maj-NL Atlanta    60   264   237    49
+6 freemfr01   2020 Freddie Freeman     30 Maj-NL Atlanta    60   262   214    51</code></pre>
 <pre class="r"><code># Comprobación de que los jugadores no se repiten:
 bateadores %&gt;% nrow() == length(bateadores %$% unique(Name))</code></pre>
 <pre><code>[1] TRUE</code></pre>
@@ -245,7 +244,7 @@ R_bateadores &lt;- cor(bateadores)
 R_bateadores %&gt;% corrplot(method = &quot;square&quot;)</code></pre>
 <p><img src="../../../../post/2021-02-18-detectando-jugadores-de-beisbol-sobresalientes_files/figure-html/unnamed-chunk-7-1.png" width="672" style="display: block; margin: auto;" /></p>
 <pre class="r"><code>R_bateadores %&gt;% det()</code></pre>
-<pre><code>[1] -8.335519e-53</code></pre>
+<pre><code>[1] -1.841519e-50</code></pre>
 <p>En nuestra matriz, dado que <code>det(R)</code> está cerca de cero, existe colinealidad y el ACP es apropiado para tratar con este conjunto de datos. Ahora ya estamos en condiciones de realizar nuestro Análisis de Componentes Principales.</p>
 </div>
 <div id="acp" class="section level2">
@@ -264,7 +263,7 @@ Standard deviations:
      Comp.13      Comp.14      Comp.15      Comp.16      Comp.17      Comp.18 
 5.096326e-01 4.720466e-01 3.621281e-01 3.052015e-01 2.663781e-01 2.506803e-01 
      Comp.19      Comp.20      Comp.21      Comp.22      Comp.23      Comp.24 
-1.841724e-01 1.377867e-01 2.501310e-03 1.435223e-03 3.437449e-08 0.000000e+00 
+1.841724e-01 1.377867e-01 2.501310e-03 1.435223e-03 4.122877e-08 0.000000e+00 
 
  24  variables and  580 observations.</code></pre>
 <p>Resumen del resultado.</p>
@@ -276,357 +275,157 @@ resumen_CP &lt;- tibble(CP = resumen_name, Eigen = resumen_eign) %&gt;%
 resumen_CP %&gt;% mutate_at(2:4, round, 2) %&gt;% kable()</code></pre>
 <table>
 <thead>
-<tr>
-<th style="text-align:left;">
-CP
-</th>
-<th style="text-align:right;">
-Eigen
-</th>
-<th style="text-align:right;">
-Percentage
-</th>
-<th style="text-align:right;">
-Cumulative Percentage
-</th>
+<tr class="header">
+<th align="left">CP</th>
+<th align="right">Eigen</th>
+<th align="right">Percentage</th>
+<th align="right">Cumulative Percentage</th>
 </tr>
 </thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-CP1
-</td>
-<td style="text-align:right;">
-12.77
-</td>
-<td style="text-align:right;">
-53.20
-</td>
-<td style="text-align:right;">
-53.20
-</td>
+<tr class="odd">
+<td align="left">CP1</td>
+<td align="right">12.77</td>
+<td align="right">53.20</td>
+<td align="right">53.20</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP2
-</td>
-<td style="text-align:right;">
-2.55
-</td>
-<td style="text-align:right;">
-10.64
-</td>
-<td style="text-align:right;">
-63.84
-</td>
+<tr class="even">
+<td align="left">CP2</td>
+<td align="right">2.55</td>
+<td align="right">10.64</td>
+<td align="right">63.84</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP3
-</td>
-<td style="text-align:right;">
-1.66
-</td>
-<td style="text-align:right;">
-6.93
-</td>
-<td style="text-align:right;">
-70.77
-</td>
+<tr class="odd">
+<td align="left">CP3</td>
+<td align="right">1.66</td>
+<td align="right">6.93</td>
+<td align="right">70.77</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP4
-</td>
-<td style="text-align:right;">
-1.01
-</td>
-<td style="text-align:right;">
-4.19
-</td>
-<td style="text-align:right;">
-74.96
-</td>
+<tr class="even">
+<td align="left">CP4</td>
+<td align="right">1.01</td>
+<td align="right">4.19</td>
+<td align="right">74.96</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP5
-</td>
-<td style="text-align:right;">
-0.92
-</td>
-<td style="text-align:right;">
-3.83
-</td>
-<td style="text-align:right;">
-78.79
-</td>
+<tr class="odd">
+<td align="left">CP5</td>
+<td align="right">0.92</td>
+<td align="right">3.83</td>
+<td align="right">78.79</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP6
-</td>
-<td style="text-align:right;">
-0.84
-</td>
-<td style="text-align:right;">
-3.49
-</td>
-<td style="text-align:right;">
-82.28
-</td>
+<tr class="even">
+<td align="left">CP6</td>
+<td align="right">0.84</td>
+<td align="right">3.49</td>
+<td align="right">82.28</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP7
-</td>
-<td style="text-align:right;">
-0.79
-</td>
-<td style="text-align:right;">
-3.27
-</td>
-<td style="text-align:right;">
-85.55
-</td>
+<tr class="odd">
+<td align="left">CP7</td>
+<td align="right">0.79</td>
+<td align="right">3.27</td>
+<td align="right">85.55</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP8
-</td>
-<td style="text-align:right;">
-0.67
-</td>
-<td style="text-align:right;">
-2.80
-</td>
-<td style="text-align:right;">
-88.36
-</td>
+<tr class="even">
+<td align="left">CP8</td>
+<td align="right">0.67</td>
+<td align="right">2.80</td>
+<td align="right">88.36</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP9
-</td>
-<td style="text-align:right;">
-0.56
-</td>
-<td style="text-align:right;">
-2.33
-</td>
-<td style="text-align:right;">
-90.69
-</td>
+<tr class="odd">
+<td align="left">CP9</td>
+<td align="right">0.56</td>
+<td align="right">2.33</td>
+<td align="right">90.69</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP10
-</td>
-<td style="text-align:right;">
-0.54
-</td>
-<td style="text-align:right;">
-2.26
-</td>
-<td style="text-align:right;">
-92.95
-</td>
+<tr class="even">
+<td align="left">CP10</td>
+<td align="right">0.54</td>
+<td align="right">2.26</td>
+<td align="right">92.95</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP11
-</td>
-<td style="text-align:right;">
-0.45
-</td>
-<td style="text-align:right;">
-1.87
-</td>
-<td style="text-align:right;">
-94.83
-</td>
+<tr class="odd">
+<td align="left">CP11</td>
+<td align="right">0.45</td>
+<td align="right">1.87</td>
+<td align="right">94.83</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP12
-</td>
-<td style="text-align:right;">
-0.35
-</td>
-<td style="text-align:right;">
-1.45
-</td>
-<td style="text-align:right;">
-96.28
-</td>
+<tr class="even">
+<td align="left">CP12</td>
+<td align="right">0.35</td>
+<td align="right">1.45</td>
+<td align="right">96.28</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP13
-</td>
-<td style="text-align:right;">
-0.26
-</td>
-<td style="text-align:right;">
-1.08
-</td>
-<td style="text-align:right;">
-97.36
-</td>
+<tr class="odd">
+<td align="left">CP13</td>
+<td align="right">0.26</td>
+<td align="right">1.08</td>
+<td align="right">97.36</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP14
-</td>
-<td style="text-align:right;">
-0.22
-</td>
-<td style="text-align:right;">
-0.93
-</td>
-<td style="text-align:right;">
-98.29
-</td>
+<tr class="even">
+<td align="left">CP14</td>
+<td align="right">0.22</td>
+<td align="right">0.93</td>
+<td align="right">98.29</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP15
-</td>
-<td style="text-align:right;">
-0.13
-</td>
-<td style="text-align:right;">
-0.55
-</td>
-<td style="text-align:right;">
-98.83
-</td>
+<tr class="odd">
+<td align="left">CP15</td>
+<td align="right">0.13</td>
+<td align="right">0.55</td>
+<td align="right">98.83</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP16
-</td>
-<td style="text-align:right;">
-0.09
-</td>
-<td style="text-align:right;">
-0.39
-</td>
-<td style="text-align:right;">
-99.22
-</td>
+<tr class="even">
+<td align="left">CP16</td>
+<td align="right">0.09</td>
+<td align="right">0.39</td>
+<td align="right">99.22</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP17
-</td>
-<td style="text-align:right;">
-0.07
-</td>
-<td style="text-align:right;">
-0.30
-</td>
-<td style="text-align:right;">
-99.52
-</td>
+<tr class="odd">
+<td align="left">CP17</td>
+<td align="right">0.07</td>
+<td align="right">0.30</td>
+<td align="right">99.52</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP18
-</td>
-<td style="text-align:right;">
-0.06
-</td>
-<td style="text-align:right;">
-0.26
-</td>
-<td style="text-align:right;">
-99.78
-</td>
+<tr class="even">
+<td align="left">CP18</td>
+<td align="right">0.06</td>
+<td align="right">0.26</td>
+<td align="right">99.78</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP19
-</td>
-<td style="text-align:right;">
-0.03
-</td>
-<td style="text-align:right;">
-0.14
-</td>
-<td style="text-align:right;">
-99.92
-</td>
+<tr class="odd">
+<td align="left">CP19</td>
+<td align="right">0.03</td>
+<td align="right">0.14</td>
+<td align="right">99.92</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP20
-</td>
-<td style="text-align:right;">
-0.02
-</td>
-<td style="text-align:right;">
-0.08
-</td>
-<td style="text-align:right;">
-100.00
-</td>
+<tr class="even">
+<td align="left">CP20</td>
+<td align="right">0.02</td>
+<td align="right">0.08</td>
+<td align="right">100.00</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP21
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-<td style="text-align:right;">
-100.00
-</td>
+<tr class="odd">
+<td align="left">CP21</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">100.00</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP22
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-<td style="text-align:right;">
-100.00
-</td>
+<tr class="even">
+<td align="left">CP22</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">100.00</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP23
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-<td style="text-align:right;">
-100.00
-</td>
+<tr class="odd">
+<td align="left">CP23</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">100.00</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-CP24
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-<td style="text-align:right;">
-0.00
-</td>
-<td style="text-align:right;">
-100.00
-</td>
+<tr class="even">
+<td align="left">CP24</td>
+<td align="right">0.00</td>
+<td align="right">0.00</td>
+<td align="right">100.00</td>
 </tr>
 </tbody>
 </table>
@@ -1413,7 +1212,7 @@ José Abreu
 </tr>
 <tr>
 <td style="text-align:left;">
-Cesar Hernandez
+César Hernández
 </td>
 <td style="text-align:right;">
 5.0030030
@@ -1528,7 +1327,7 @@ Carlos Santana
 </tr>
 <tr>
 <td style="text-align:left;">
-Jose Ramirez
+José Ramírez
 </td>
 <td style="text-align:right;">
 7.7187837
@@ -2172,7 +1971,7 @@ Marcus Semien
 </tr>
 <tr>
 <td style="text-align:left;">
-Javier Baez
+Javier Báez
 </td>
 <td style="text-align:right;">
 3.8480120
@@ -2241,7 +2040,7 @@ Michael Conforto
 </tr>
 <tr>
 <td style="text-align:left;">
-Adalberto Mondesi
+Adalberto Mondesí
 </td>
 <td style="text-align:right;">
 6.1135194
@@ -2448,7 +2247,7 @@ Eddie Rosario
 </tr>
 <tr>
 <td style="text-align:left;">
-Eugenio Suarez
+Eugenio Suárez
 </td>
 <td style="text-align:right;">
 4.9346686
@@ -2494,7 +2293,7 @@ Miguel Cabrera
 </tr>
 <tr>
 <td style="text-align:left;">
-Yoan Moncada
+Yoán Moncada
 </td>
 <td style="text-align:right;">
 4.1793559
@@ -2747,7 +2546,7 @@ Isiah Kiner-Falefa
 </tr>
 <tr>
 <td style="text-align:left;">
-Luis Robert
+Luis Robert Jr. 
 </td>
 <td style="text-align:right;">
 4.9247121
@@ -2793,7 +2592,7 @@ Tommy Edman
 </tr>
 <tr>
 <td style="text-align:left;">
-Eloy Jimenez
+Eloy Jiménez
 </td>
 <td style="text-align:right;">
 4.8046286
@@ -3115,7 +2914,7 @@ George Springer
 </tr>
 <tr>
 <td style="text-align:left;">
-Ramon Laureano
+Ramón Laureano
 </td>
 <td style="text-align:right;">
 4.9338690
@@ -3368,7 +3167,7 @@ DJ LeMahieu
 </tr>
 <tr>
 <td style="text-align:left;">
-Renato Nunez
+Renato Núñez
 </td>
 <td style="text-align:right;">
 4.2223894
@@ -3391,7 +3190,7 @@ Renato Nunez
 </tr>
 <tr>
 <td style="text-align:left;">
-Jesus Aguilar
+Jesús Aguilar
 </td>
 <td style="text-align:right;">
 4.7245965
@@ -3483,7 +3282,7 @@ Wilmer Flores
 </tr>
 <tr>
 <td style="text-align:left;">
-Asdrubal Cabrera
+Asdrúbal Cabrera
 </td>
 <td style="text-align:right;">
 4.1515527
@@ -3506,7 +3305,7 @@ Asdrubal Cabrera
 </tr>
 <tr>
 <td style="text-align:left;">
-Victor Reyes
+Víctor Reyes
 </td>
 <td style="text-align:right;">
 3.4012676
@@ -3759,7 +3558,7 @@ Bryan Reynolds
 </tr>
 <tr>
 <td style="text-align:left;">
-Teoscar Hernandez
+Teoscar Hernández
 </td>
 <td style="text-align:right;">
 4.8549051
@@ -3782,7 +3581,7 @@ Teoscar Hernandez
 </tr>
 <tr>
 <td style="text-align:left;">
-Avisail Garcia
+Avisaíl García
 </td>
 <td style="text-align:right;">
 3.1757505
@@ -3920,7 +3719,7 @@ Willy Adames
 </tr>
 <tr>
 <td style="text-align:left;">
-Miguel Sano
+Miguel Sanó
 </td>
 <td style="text-align:right;">
 3.6513855
@@ -3989,7 +3788,7 @@ Donovan Solano
 </tr>
 <tr>
 <td style="text-align:left;">
-Ronald Acuna Jr. 
+Ronald Acuña Jr. 
 </td>
 <td style="text-align:right;">
 5.9834011
@@ -4127,7 +3926,7 @@ Dominic Smith
 </tr>
 <tr>
 <td style="text-align:left;">
-Marwin Gonzalez
+Marwin González
 </td>
 <td style="text-align:right;">
 2.0593208
@@ -4311,7 +4110,7 @@ Ryan McMahon
 </tr>
 <tr>
 <td style="text-align:left;">
-Erik Gonzalez
+Erik González
 </td>
 <td style="text-align:right;">
 2.5957636
@@ -4403,7 +4202,7 @@ Nicky Lopez
 </tr>
 <tr>
 <td style="text-align:left;">
-Christian Vazquez
+Christian Vázquez
 </td>
 <td style="text-align:right;">
 3.3704261
@@ -4449,7 +4248,7 @@ Orlando Arcia
 </tr>
 <tr>
 <td style="text-align:left;">
-Victor Robles
+Víctor Robles
 </td>
 <td style="text-align:right;">
 2.2032734
@@ -4725,7 +4524,7 @@ Shogo Akiyama
 </tr>
 <tr>
 <td style="text-align:left;">
-Robinson Cano
+Robinson Canó
 </td>
 <td style="text-align:right;">
 3.4467114
@@ -4771,7 +4570,7 @@ Jason Heyward
 </tr>
 <tr>
 <td style="text-align:left;">
-Edwin Encarnacion
+Edwin Encarnación
 </td>
 <td style="text-align:right;">
 1.5238995
@@ -4932,7 +4731,7 @@ Pedro Severino
 </tr>
 <tr>
 <td style="text-align:left;">
-Gary Sanchez
+Gary Sánchez
 </td>
 <td style="text-align:right;">
 1.8970792
@@ -4978,7 +4777,7 @@ Jonathan Schoop
 </tr>
 <tr>
 <td style="text-align:left;">
-Mauricio Dubon
+Mauricio Dubón
 </td>
 <td style="text-align:right;">
 2.6882875
@@ -5346,7 +5145,7 @@ Anthony Santander
 </tr>
 <tr>
 <td style="text-align:left;">
-Martin Maldonado
+Martín Maldonado
 </td>
 <td style="text-align:right;">
 1.8775173
@@ -5875,7 +5674,7 @@ Tim Lopes
 </tr>
 <tr>
 <td style="text-align:left;">
-José Iglesias
+Jose Iglesias
 </td>
 <td style="text-align:right;">
 2.2512162
@@ -5990,7 +5789,7 @@ Matt Joyce
 </tr>
 <tr>
 <td style="text-align:left;">
-Enrique Hernandez
+Enrique Hernández
 </td>
 <td style="text-align:right;">
 1.3364755
@@ -6105,7 +5904,7 @@ Kris Bryant
 </tr>
 <tr>
 <td style="text-align:left;">
-Ji-Man Choi
+Jiman Choi
 </td>
 <td style="text-align:right;">
 1.6081069
@@ -6381,7 +6180,7 @@ Eric Thames
 </tr>
 <tr>
 <td style="text-align:left;">
-Luis Garcia
+Luis García Jr. 
 </td>
 <td style="text-align:right;">
 0.4994080
@@ -6818,7 +6617,7 @@ Jo Adell
 </tr>
 <tr>
 <td style="text-align:left;">
-Andres Gimenez
+Andrés Giménez
 </td>
 <td style="text-align:right;">
 1.3837433
@@ -6956,7 +6755,7 @@ Eric Sogard
 </tr>
 <tr>
 <td style="text-align:left;">
-Shed Long
+Shed Long Jr. 
 </td>
 <td style="text-align:right;">
 -0.8225271
@@ -7117,7 +6916,7 @@ Nico Hoerner
 </tr>
 <tr>
 <td style="text-align:left;">
-Omar Narvaez
+Omar Narváez
 </td>
 <td style="text-align:right;">
 -0.5708181
@@ -7278,7 +7077,7 @@ Carter Kieboom
 </tr>
 <tr>
 <td style="text-align:left;">
-Luis Arraez
+Luis Arráez
 </td>
 <td style="text-align:right;">
 0.2492533
@@ -7347,7 +7146,7 @@ Delino DeShields
 </tr>
 <tr>
 <td style="text-align:left;">
-Jose Peraza
+José Peraza
 </td>
 <td style="text-align:right;">
 -0.2424679
@@ -7370,7 +7169,7 @@ Jose Peraza
 </tr>
 <tr>
 <td style="text-align:left;">
-Luis Urias
+Luis Urías
 </td>
 <td style="text-align:right;">
 0.1395122
@@ -7485,7 +7284,7 @@ Cole Tucker
 </tr>
 <tr>
 <td style="text-align:left;">
-Jose Marmolejos
+José Marmolejos
 </td>
 <td style="text-align:right;">
 -0.4605994
@@ -7784,7 +7583,7 @@ Tucker Barnhart
 </tr>
 <tr>
 <td style="text-align:left;">
-Roberto Perez
+Roberto Pérez
 </td>
 <td style="text-align:right;">
 -1.5081863
@@ -8520,7 +8319,7 @@ Mike Brosseau
 </tr>
 <tr>
 <td style="text-align:left;">
-Jose Martinez
+José Martínez
 </td>
 <td style="text-align:right;">
 -0.9509559
@@ -8704,7 +8503,7 @@ Adam Engel
 </tr>
 <tr>
 <td style="text-align:left;">
-Michael Perez
+Michael Pérez
 </td>
 <td style="text-align:right;">
 -1.5806068
@@ -8727,7 +8526,7 @@ Michael Perez
 </tr>
 <tr>
 <td style="text-align:left;">
-Oscar Mercado
+Óscar Mercado
 </td>
 <td style="text-align:right;">
 -2.5915329
@@ -8934,7 +8733,7 @@ Phil Ervin
 </tr>
 <tr>
 <td style="text-align:left;">
-Ronald Guzman
+Ronald Guzmán
 </td>
 <td style="text-align:right;">
 -1.1501368
@@ -9072,7 +8871,7 @@ Mike Ford
 </tr>
 <tr>
 <td style="text-align:left;">
-Edwin Rios
+Edwin Ríos
 </td>
 <td style="text-align:right;">
 -0.1760661
@@ -9164,7 +8963,7 @@ Jose Trevino
 </tr>
 <tr>
 <td style="text-align:left;">
-Jose Osuna
+José Osuna
 </td>
 <td style="text-align:right;">
 -1.8608665
@@ -9233,7 +9032,7 @@ Robinson Chirinos
 </tr>
 <tr>
 <td style="text-align:left;">
-Sandy Leon
+Sandy León
 </td>
 <td style="text-align:right;">
 -2.1755215
@@ -9325,7 +9124,7 @@ Tyler Flowers
 </tr>
 <tr>
 <td style="text-align:left;">
-Jonathan Arauz
+Jonathan Araúz
 </td>
 <td style="text-align:right;">
 -1.7825134
@@ -9532,7 +9331,7 @@ Derek Dietrich
 </tr>
 <tr>
 <td style="text-align:left;">
-Elias Diaz
+Elias Díaz
 </td>
 <td style="text-align:right;">
 -1.8594505
@@ -9601,7 +9400,7 @@ Greg Garcia
 </tr>
 <tr>
 <td style="text-align:left;">
-Vimael Machin
+Vimael Machín
 </td>
 <td style="text-align:right;">
 -2.2822015
@@ -9762,7 +9561,7 @@ Luis Guillorme
 </tr>
 <tr>
 <td style="text-align:left;">
-José Barrero
+Jose Barrero
 </td>
 <td style="text-align:right;">
 -3.0464398
@@ -9900,7 +9699,7 @@ Bubba Starling
 </tr>
 <tr>
 <td style="text-align:left;">
-Leury Garcia
+Leury García
 </td>
 <td style="text-align:right;">
 -2.2098947
@@ -9946,7 +9745,7 @@ Starlin Castro
 </tr>
 <tr>
 <td style="text-align:left;">
-Adeiny Hechavarria
+Adeiny Hechavarría
 </td>
 <td style="text-align:right;">
 -2.4365875
@@ -10084,7 +9883,7 @@ Alex Avila
 </tr>
 <tr>
 <td style="text-align:left;">
-Jazz Chisholm
+Jazz Chisholm Jr. 
 </td>
 <td style="text-align:right;">
 -2.3308878
@@ -10981,7 +10780,7 @@ Phillip Evans
 </tr>
 <tr>
 <td style="text-align:left;">
-Yairo Munoz
+Yairo Muñoz
 </td>
 <td style="text-align:right;">
 -2.1424487
@@ -11004,7 +10803,7 @@ Yairo Munoz
 </tr>
 <tr>
 <td style="text-align:left;">
-Manny Pina
+Manny Piña
 </td>
 <td style="text-align:right;">
 -2.6357206
@@ -11096,7 +10895,7 @@ Pavin Smith
 </tr>
 <tr>
 <td style="text-align:left;">
-LaMonte Wade Jr
+LaMonte Wade Jr. 
 </td>
 <td style="text-align:right;">
 -2.9264740
@@ -11372,7 +11171,7 @@ Jonah Heim
 </tr>
 <tr>
 <td style="text-align:left;">
-Lewin Diaz
+Lewin Díaz
 </td>
 <td style="text-align:right;">
 -3.8517995
@@ -11970,7 +11769,7 @@ Jake Fraley
 </tr>
 <tr>
 <td style="text-align:left;">
-Jesus Sanchez
+Jesús Sánchez
 </td>
 <td style="text-align:right;">
 -4.7512352
@@ -12085,7 +11884,7 @@ Franklin Barreto
 </tr>
 <tr>
 <td style="text-align:left;">
-Ramon Urias
+Ramón Urías
 </td>
 <td style="text-align:right;">
 -2.4240674
@@ -12108,7 +11907,7 @@ Ramon Urias
 </tr>
 <tr>
 <td style="text-align:left;">
-Tomas Nido
+Tomás Nido
 </td>
 <td style="text-align:right;">
 -2.5973261
@@ -12223,7 +12022,7 @@ Meibrys Viloria
 </tr>
 <tr>
 <td style="text-align:left;">
-Christian Colon
+Christian Colón
 </td>
 <td style="text-align:right;">
 -4.5211566
@@ -12269,7 +12068,7 @@ Beau Taylor
 </tr>
 <tr>
 <td style="text-align:left;">
-Sergio Alcantara
+Sergio Alcántara
 </td>
 <td style="text-align:right;">
 -3.9797979
@@ -12384,7 +12183,7 @@ Nicky Delmonico
 </tr>
 <tr>
 <td style="text-align:left;">
-Isan Diaz
+Isan Díaz
 </td>
 <td style="text-align:right;">
 -4.5977932
@@ -13097,7 +12896,7 @@ Abraham Almonte
 </tr>
 <tr>
 <td style="text-align:left;">
-Sean Rodriguez
+Sean Rodríguez
 </td>
 <td style="text-align:right;">
 -5.0479294
@@ -13166,7 +12965,7 @@ Jaylin Davis
 </tr>
 <tr>
 <td style="text-align:left;">
-Kelvin Gutierrez
+Kelvin Gutiérrez
 </td>
 <td style="text-align:right;">
 -4.6612058
@@ -13212,7 +13011,7 @@ Derek Hill
 </tr>
 <tr>
 <td style="text-align:left;">
-Cesar Puello
+César Puello
 </td>
 <td style="text-align:right;">
 -3.2591526
@@ -13281,7 +13080,7 @@ Dawel Lugo
 </tr>
 <tr>
 <td style="text-align:left;">
-Harold Ramirez
+Harold Ramírez
 </td>
 <td style="text-align:right;">
 -4.5422274
@@ -13396,7 +13195,7 @@ Michael Hermosillo
 </tr>
 <tr>
 <td style="text-align:left;">
-Ali Sanchez
+Ali Sánchez
 </td>
 <td style="text-align:right;">
 -4.9500878
@@ -13488,7 +13287,7 @@ Joe McCarthy
 </tr>
 <tr>
 <td style="text-align:left;">
-Rafael Marchan
+Rafael Marchán
 </td>
 <td style="text-align:right;">
 -1.8363106
@@ -13511,7 +13310,7 @@ Rafael Marchan
 </tr>
 <tr>
 <td style="text-align:left;">
-Yordan Álvarez
+Yordan Alvarez
 </td>
 <td style="text-align:right;">
 -3.3138542
@@ -13833,7 +13632,7 @@ Nate Orf
 </tr>
 <tr>
 <td style="text-align:left;">
-Jose Briceno
+José Briceño
 </td>
 <td style="text-align:right;">
 -4.5541835
@@ -13879,7 +13678,7 @@ Justin Williams
 </tr>
 <tr>
 <td style="text-align:left;">
-Hernan Perez
+Hernán Pérez
 </td>
 <td style="text-align:right;">
 -5.1145339
@@ -14086,7 +13885,7 @@ Travis Blankenhorn
 </tr>
 <tr>
 <td style="text-align:left;">
-Oscar Hernandez
+Óscar Hernández
 </td>
 <td style="text-align:right;">
 -2.9032793
@@ -14109,7 +13908,7 @@ Oscar Hernandez
 </tr>
 <tr>
 <td style="text-align:left;">
-Deivy Grullon
+Deivy Grullón
 </td>
 <td style="text-align:right;">
 -3.6453782
@@ -14201,7 +14000,7 @@ Cristian Pache
 </tr>
 <tr>
 <td style="text-align:left;">
-Rene Rivera
+René Rivera
 </td>
 <td style="text-align:right;">
 -4.6115833
@@ -14316,7 +14115,7 @@ Estevan Florial
 </tr>
 <tr>
 <td style="text-align:left;">
-Emilio Bonifacio
+Emilio Bonifácio
 </td>
 <td style="text-align:right;">
 -6.0713707
@@ -14362,7 +14161,7 @@ Rob Brantly
 </tr>
 <tr>
 <td style="text-align:left;">
-Eduardo Nunez
+Eduardo Núñez
 </td>
 <td style="text-align:right;">
 -3.0551213
@@ -14385,7 +14184,7 @@ Eduardo Nunez
 </tr>
 <tr>
 <td style="text-align:left;">
-Luis Gonzalez
+Luis González
 </td>
 <td style="text-align:right;">
 -4.8860669
@@ -14500,7 +14299,7 @@ Tim Hill
 </tr>
 <tr>
 <td style="text-align:left;">
-Yermin Mercedes
+Yermín Mercedes
 </td>
 <td style="text-align:right;">
 -6.2789509

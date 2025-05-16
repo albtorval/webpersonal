@@ -1,0 +1,28 @@
+---
+title: Mensaje de Navidad 2022
+author: Alberto Torrejón Valenzuela
+date: '2022-12-25'
+slug: mensaje-de-navidad-2022
+categories:
+  - textos
+tags:
+  - Proverbio
+  - Navidad
+description: ''
+---
+
+<span class = "primerapalabra">U</span>n tonto es acercado en un bar por un grupo que le preguntan: *“Tonto, ¿qué prefieres 2 euros ahora o 5 mañana?”* A lo que responde: *“Yo… 2€ ahora, 2€ ahora”*. 
+
+La historia se repetía constantemente hasta que un día, un hombre cansado de que ser riesen del tonto, le dijo: *“Tonto, elige los 5€ que es más dinero”*. A lo que el tonto, con el semblante totalmente serio, responde: *“Si yo les digo que elijo los 5€, dejarían de gastarme la broma y yo dejaría de ganar dinero”.*
+
+Cuidado de quién decidís reiros, cuidado a quién decidís criticar, cuidado con quién decidís enfrentaros. No seais los listos, sed siempre los tontos.
+
+Felices fiestas y próspero año nuevo a todos.
+
+Atentamente, 
+
+<div class="der">
+<span class = "primerapalabra">Alberto Torrejón Valenzuela</span>
+</div>
+
+![](/text/Img/tonto.jpg){width=50% height=50%}

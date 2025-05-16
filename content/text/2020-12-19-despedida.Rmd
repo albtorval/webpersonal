@@ -2,22 +2,17 @@
 title: Despedida
 author: Alberto Torrejón Valenzuela
 date: '2020-12-19'
-slug: despedida
 categories:
   - poemas
 tags:
   - Amor
-  - Ella
   - Despedida
-description: ''
+  - Ella
+slug: despedida
 ---
 
 <center>
-<h3>**Despedida**</h3>
-
-![](/text/2020-12-19-despedida_files/fin.JPG){width=40% height=40%}
-
-Que el agua del vergel, <br>
+<span class = "primerapalabra">Q</span>ue el agua del vergel, <br>
 Refleje una vez más tu tez, <br>
 Llegue a tu ser <br>
 Y traiga de nuevo tu piel. <br>
@@ -31,4 +26,6 @@ Incesante espera <br>
 Necesito verla <br>
 Mas aquí callado <br>
 Acataré mi pena. 
+
+![](/text/Img/fin.JPG){width=40% height=40%}
 </center>

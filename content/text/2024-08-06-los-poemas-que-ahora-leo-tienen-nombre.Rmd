@@ -1,0 +1,25 @@
+---
+title: Los poemas que ahora leo tienen nombre
+author: Alberto Torrejón Valenzuela
+date: '2024-08-06'
+slug: los-poemas-que-ahora-leo-tienen-nombre
+categories:
+  - textos
+tags:
+  - Amor
+description: ''
+---
+
+<div class="just">
+
+<span class = "primerapalabra">U</span>saré todas y cada una de tus metáforas contra ti. Tus mitos, tus alegorías, tus hipérboles, las haré todas mías. Me quedaré con tus antítesis, con tus anáforas, hasta con tus aliteraciones. Te robaré hasta el mayor de los oxímoron.
+
+Mas jamás podré hacer mío algo tuyo, ni robarlo, ni mucho menos quedármelo. Jamás tendría fuerza para hacerlo. Sabes bastante bien, corazón, de lo que hablo.
+</div>
+
+<center>
+
+<span class = "primerapalabra">Los poemas que ahora leo tienen nombre</span>
+
+![](/text/Img/cascada.jpg){width=50% height=50%}
+</center>

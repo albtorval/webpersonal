@@ -2,23 +2,20 @@
 title: 'Matemáticas y cine: Sesión de podcast en La Camarilla'
 author: Alberto Torrejón Valenzuela
 date: '2021-03-19'
-slug: matemáticas-y-cine-sesión-de-podcast-en-la-camarilla
 categories:
   - Cine
-  - Matemáticas
   - Estadística
+  - Matemáticas
   - Podcast
 tags:
   - Béisbol
-  - Teoría de Juegos
   - Blackjack
-  - Póker
-  - Probabilidad
   - Cine
   - Moneyball
-  - Una mente maravillosa
-  - 21 BlackJack
-description: ''
+  - Póker
+  - Probabilidad
+  - Teoría de Juegos
+slug: matemáticas-y-cine-sesión-de-podcast-en-la-camarilla
 ---
 
 Escucha el podcast aquí:

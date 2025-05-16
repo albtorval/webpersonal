@@ -1,0 +1,14 @@
+---
+title: 'Alberto Torrejón: "Ejecutamos algoritmos de un modo constante"'
+author: Alberto Torrejón Valenzuela
+date: '2024-12-10'
+slug: alberto-torrej-n-ejecutamos-algoritmos-de-un-modo-constante
+categories:
+  - Entrvista
+tags:
+  - Matemáticas
+  - Divulgación
+description: ''
+---
+
+![](/post/Img/noticia.jpeg)

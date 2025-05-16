@@ -7,15 +7,14 @@ categories:
   - Estadística deportiva
 tags:
   - ACP
-  - Xaringan
   - Béisbol
+  - Xaringan
 slug: detectando-jugadores-de-beisbol-sobresalientes
 description: Análisis de componentes principales y béisbol
 mathjax: local
 output:
   blogdown::html_page:
     toc: no
-# draft: true
 ---
 
 ```{r setup, echo=FALSE, warning = FALSE, cache=FALSE}
@@ -39,12 +38,11 @@ opts_knit$set(width=75)
 
 > *"El poder de la estadística en el béisbol es que, a diferencia del precio de la vivienda o la inflación, toma vida"*. Bill James.
 
+<!-- <center><iframe width="560" height="315" src="https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1" frameborder="0"></iframe></center> -->
 
-<center><iframe width="560" height="315" src="https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1" frameborder="0"></iframe></center>
-
-<center>
-[DIAPOSITIVAS](https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1)
-</center>
+<!-- <center> -->
+<!-- [DIAPOSITIVAS](https://torrejonvalenzuela.com/slides/acp-baseball/beisbol.html#1) -->
+<!-- </center> -->
 
 ```{r}
 # Manipulación de datos

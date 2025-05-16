@@ -1,0 +1,35 @@
+---
+title: Quema tus barcos
+author: Alberto Torrejón Valenzuela
+date: '2023-12-10'
+categories:
+  - textos
+tags:
+  - Casa
+  - Social
+  - Textos
+slug: quema-tus-barcos
+---
+
+> *"Quema tus barcos"*, dijo Tariq bin Ziyad. *“Ahora, el enemigo está delante de ti y el mar detrás. O serás victorioso, o martirizado. No hay una tercera opción. Todos los medios de escape han sido destruidos”.*
+
+<div class="two-columnsC">
+<div class="leftC">
+
+<div class="just">
+**¿El miedo como el motivo tras el éxito?**
+
+<span class = "primerapalabra">P</span>arece ser que esta historia es una leyenda que contaban sus enemigos. Al parecer, Tariq bin Ziyad ni siquiera tenía barcos. Seguramente sus soldados no hubiesen salido victoriosos si hubiesen tenido miedo. Lucharon porque confiaron en la victoria, en la causa.
+
+Haz que el mundo crea en tu causa primero, luego mándalos a la lucha.
+Por cierto, Ŷab al-Tāriq, Yabal Tarik, "Gibraltar"...
+</div>
+
+</div>
+
+<div class="rightC">
+
+![](/text/Img/gib.jpg){width=70% height=70%}
+</div>
+</div>
+

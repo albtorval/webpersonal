@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Poema on Alberto Torrejón Valenzuela</title>
+    <link>/tags/poema/</link>
+    <description>Recent content in Poema on Alberto Torrejón Valenzuela</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Thu, 15 May 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/poema/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Estabamos bien</title>
+      <link>/text/estabamos-bien/</link>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+      <guid>/text/estabamos-bien/</guid>
+      <description></description>
+    </item>
+  </channel>
+</rss>

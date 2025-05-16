@@ -1,0 +1,24 @@
+---
+title: Experimento I
+author: Alberto Torrejón Valenzuela
+date: '2019-02-01'
+slug: experimento-i
+categories:
+  - textos
+tags:
+  - Poemas
+  - Versos
+description: ''
+---
+
+
+<center>
+“Aloha” <br>
+“Aloha Aku” <br>
+“Pono i ka manawa” <br>
+“Aloha Aku No” <br>
+“Ohana o na mea a pau” <br>
+“Lä” 
+
+![](/text/Img/aloha.jpeg){width=50% height=50%}
+</center>

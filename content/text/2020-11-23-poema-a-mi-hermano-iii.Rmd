@@ -11,11 +11,7 @@ slug: poema-a-mi-hermano-iii
 ---
 
 <center> 
-<h3>**A mi hermano III**</h3>
-
-![](/post/2020-11-23-poema-a-mi-hermano-iii_files/IMG_9385.jpg){width=50% height=50%}
-
-Hermano, cierre los ojos, <br>
+<span class = "primerapalabra">H</span>ermano, cierre los ojos, <br>
 en su oscuridad recordará. <br>
 Teníamos un lagarto y una tortuga, <br>
 una casa y una familia. <br>
@@ -38,4 +34,6 @@ Que a uno podrán vencer <br>
 pero dos resistirán, <br>
 y si el cordón es de tres dobleces, <br>
 entonces nunca se partirá. 
+
+![](/text/Img/dani.jpg){width=50% height=50%}
 </center>

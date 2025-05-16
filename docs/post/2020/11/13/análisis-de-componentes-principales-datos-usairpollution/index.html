@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../../../../images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ejemplo de aplicación del Análisis de Componentes Principales a datos reales.">
+    <title>Análisis de Componentes Principales - datos `USairpollution` | Alberto Torrejón Valenzuela</title>
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../css/theme-override.css">
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../">~/alberto torrejón valenzuela</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="pdf/CV.pdf">~/cv</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../post/">~/posts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../text/">~/texts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../tags/">~/tags</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">Análisis de Componentes Principales - datos <code>USairpollution</code></span></h1>
+<h2 class="author">Alberto Torrejón Valenzuela</h2>
+<h2 class="date">2020/11/13</h2>
+<p class="terms">
+  
+  
+  Categories: <a href="../../../../../categories/estad%C3%ADstica">Estadística</a> 
+  
+  
+  
+  Tags: <a href="../../../../../tags/acp">ACP</a> <a href="../../../../../tags/ejemplo">Ejemplo</a> <a href="../../../../../tags/miner%C3%ADa-estad%C3%ADstica">Minería Estadística</a> <a href="../../../../../tags/r">R</a> 
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    
+
+<div id="TOC">
+<ul>
+<li><a href="#ejemplo-usairpollution" id="toc-ejemplo-usairpollution">Ejemplo <code>USairpollution</code></a>
+<ul>
+<li><a href="#acp-con-princomp" id="toc-acp-con-princomp">ACP con <code>princomp</code></a></li>
+<li><a href="#ampliaci%C3%B3n---usando-tidymodels" id="toc-ampliación---usando-tidymodels">Ampliación - Usando <code>tidymodels</code></a></li>
+</ul></li>
+<li><a href="#referencias" id="toc-referencias">Referencias</a></li>
+</ul>
+</div>
+
+<div id="ejemplo-usairpollution" class="section level1">
+<h1>Ejemplo <code>USairpollution</code></h1>
+<p>Los paquetes de R que vamos a emplear son:</p>
+<pre class="r"><code># Lectura de datos
+library(readr)
+# Manipulación de datos
+library(tidyverse)
+library(magrittr)
+# Gráficos
+library(ggplot2)
+library(ggforce)
+library(ggthemes)</code></pre>
+<p>Los datos se pueden encontar en el paquete <code>HSAUR3</code>.</p>
+<pre class="r"><code>data(&quot;USairpollution&quot;, package=&quot;HSAUR3&quot;)</code></pre>
+<p>También se pueden cargar desde el directorio de trabajo.</p>
+<pre class="r"><code>aire.dat &lt;- read_table2(&quot;Datos/datosaire.txt&quot;)
+aire.dat %&gt;% head()</code></pre>
+<pre><code># A tibble: 6 × 8
+  Ciudad         SO2  Temp Empresas   Pob Viento Precip  Dias
+  &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
+1 Phoenix         10  70.3      213   582    6     7.05    36
+2 LittleRock      13  61         91   132    8.2  48.5    100
+3 SanFrancisco    12  56.7      453   716    8.7  20.7     67
+4 Denver          17  51.9      454   515    9    13.0     86
+5 Hartford        56  49.1      412   158    9    43.4    127
+6 Wilmington      36  54         80    80    9    40.2    114</code></pre>
+<p>Las variables recogidas en la base de datos son las siguientes:</p>
+<ul>
+<li><code>Ciudad</code>: nombre de la ciudad de EE.UU.</li>
+<li><code>SO2</code>: contenido de SO2 del aire en microgramos por metro cúbico.</li>
+<li><code>Temp</code>: temperatura media anual en grados Fahrenheit.</li>
+<li><code>Empresas</code>: número de empresas manufactureras que emplean 20 o más trabajadores.</li>
+<li><code>Pob</code>: tamaño de la población (censo de 1970) en miles.</li>
+<li><code>Viento</code>: velocidad media anual del viento en millas por hora.</li>
+<li><code>Precip</code>: precipitación media anual en pulgadas.</li>
+<li><code>Dias</code>: número medio de días con precipitación al año</li>
+</ul>
+<p>Guardamos la variable <code>Ciudad</code> como nombres de la matriz y la quitamos para tener una matriz de datos numéricos. Es mejor usar el formato <code>tibble</code> en los datos que el <code>dataframe</code> por cuestiones de uso del paquete <code>tidyverse</code>, no obstante está modificación no es estrictamente necesaria para el buen desarrollo del ejercicio aunque la efectuaremos.</p>
+<pre class="r"><code>aire.dat &lt;- aire.dat %&gt;% as.tibble() %&gt;% column_to_rownames(&quot;Ciudad&quot;)</code></pre>
+<p>Podemos realizar un estudio descriptivo de los datos para observar la singularidad de estos y advertir posibles anomalías. Además, complementaremos el análisis descriptivo con gráficos ilustrativos usando el paquete <code>ggplot2</code>, para lo que necesitaremos a menudo realizar una transformación, pivotado, de los datos para adecuarlos a la sintaxis del paquete e incluso emplear el paquete <a href="https://forcats.tidyverse.org/"><code>forcast</code></a> para mejorar la visualización de los gráficos.</p>
+<ul>
+<li><strong>Análisis descriptivo.</strong></li>
+</ul>
+<pre class="r"><code>aire.dat %&gt;% summary()</code></pre>
+<pre><code>      SO2              Temp          Empresas           Pob        
+ Min.   :  8.00   Min.   :43.50   Min.   :  35.0   Min.   :  71.0  
+ 1st Qu.: 13.00   1st Qu.:50.60   1st Qu.: 181.0   1st Qu.: 299.0  
+ Median : 26.00   Median :54.60   Median : 347.0   Median : 515.0  
+ Mean   : 30.05   Mean   :55.76   Mean   : 463.1   Mean   : 608.6  
+ 3rd Qu.: 35.00   3rd Qu.:59.30   3rd Qu.: 462.0   3rd Qu.: 717.0  
+ Max.   :110.00   Max.   :75.50   Max.   :3344.0   Max.   :3369.0  
+     Viento           Precip           Dias      
+ Min.   : 6.000   Min.   : 7.05   Min.   : 36.0  
+ 1st Qu.: 8.700   1st Qu.:30.96   1st Qu.:103.0  
+ Median : 9.300   Median :38.74   Median :115.0  
+ Mean   : 9.444   Mean   :36.77   Mean   :113.9  
+ 3rd Qu.:10.600   3rd Qu.:43.11   3rd Qu.:128.0  
+ Max.   :12.700   Max.   :59.80   Max.   :166.0  </code></pre>
+<ul>
+<li><strong>Diagrama de cajas.</strong></li>
+</ul>
+<pre class="r"><code>aire.dat %&gt;%
+  pivot_longer(everything(),names_to = &quot;item&quot;,values_to = &quot;valor&quot;) %&gt;% 
+  mutate(item = fct_reorder(item, valor, .fun=&#39;median&#39;)) %&gt;%
+  ggplot(aes(x=item, y=valor, fill=item)) +
+    geom_boxplot() + theme_pander() + 
+    theme(legend.position = &quot;none&quot;) +
+    xlab(&quot;&quot;) + ylab(&quot;&quot;)</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<ul>
+<li><strong>Gráfico de dispersión de parejas de variables</strong>. Se puede hacer llamando a la función <code>pairs()</code> implementada en R base pero para seguir con la sintaxis del paquete <code>ggplot2</code> encontramos una opción en el paquete <code>GGally</code> que proporciona mucha más información con menor código.</li>
+</ul>
+<pre class="r"><code>library(GGally)
+aire.dat %&gt;% 
+  ggpairs() + theme_pander() + 
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Los gráficos sugieren que pueden existir algunos valores atípicos en nuestra muestra. Por otra parte, en el diagrama de cajas podemos observar que las variables se miden en escalas bastante diferentes (unidades y rango de valores bastante diferentes), por lo que parece mejor trabajar con las variables estandarizadas. Además, encontramos que existen relaciones de colinealidad entre variables como por ejemplo entre <code>Empresas</code> y <code>Pob</code>. De hecho, como se comentaba en el desarrollo teórico anterior, para poder deducir conclusiones válidas del <strong>ACP</strong> es fundamental que exista correlación entre variables. Veamos si se cumple estudiando el determinante de la matriz de correlaciones.</p>
+<ul>
+<li><strong>Estudio de la correlación</strong>. Vamos a calcular la matriz de correlaciones, proyectar una visualización de esta reccurriendo al <code>heatmap</code> (se usará el paquete <code>corrplot</code>) y computar el determinante de la matriz.</li>
+</ul>
+<pre class="r"><code>R=cor(aire.dat)
+round(R,2)</code></pre>
+<pre><code>           SO2  Temp Empresas   Pob Viento Precip  Dias
+SO2       1.00 -0.43     0.64  0.49   0.09   0.05  0.37
+Temp     -0.43  1.00    -0.19 -0.06  -0.35   0.39 -0.43
+Empresas  0.64 -0.19     1.00  0.96   0.24  -0.03  0.13
+Pob       0.49 -0.06     0.96  1.00   0.21  -0.03  0.04
+Viento    0.09 -0.35     0.24  0.21   1.00  -0.01  0.16
+Precip    0.05  0.39    -0.03 -0.03  -0.01   1.00  0.50
+Dias      0.37 -0.43     0.13  0.04   0.16   0.50  1.00</code></pre>
+<pre class="r"><code>library(corrplot)
+R %&gt;%  corrplot(method = &quot;square&quot;)</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<pre class="r"><code>det(R)</code></pre>
+<pre><code>[1] 0.004555454</code></pre>
+<p>El determinante de la matriz de correlaciones: un determinante muy bajo indicará altas intercorrelaciones entre las variables, pero no debe ser cero (matriz no singular), pues esto indicaría que algunas de las variables son linealmente dependientes y no se podrían realizar ciertos cálculos.</p>
+<p>En nuestra matriz, dado que <code>det(R)</code> está cerca de cero, existe colinealidad y el <em>ACP</em> es apropiado para tratar con este conjunto de datos.</p>
+<div id="acp-con-princomp" class="section level3">
+<h3>ACP con <code>princomp</code></h3>
+<p><strong>ORDEN:</strong></p>
+<ul>
+<li><code>princomp(formula, data = NULL, subset, na.action, ...)</code></li>
+<li><code>princomp(x, cor = FALSE, scores = TRUE, covmat = NULL, subset = rep(TRUE, nrow(as.matrix(x))), ...)</code></li>
+</ul>
+<p><strong>ARGUMENTOS:</strong></p>
+<ul>
+<li><code>formula</code>: fórmula sin variable respuesta, sólo con variables numéricas. Por ej.: <code>~ varX1 + varX2 + varX3</code>.</li>
+<li><code>data</code>: un marco de datos opcional que contenga las variables de la fórmula.</li>
+<li><code>subset</code>: un vector opcional para seleccionar las filas (observaciones) de la matriz de datos.</li>
+<li><code>x</code>: matriz o marco de datos que proporciona los datos que proporciona los datos para el ACP.</li>
+<li><code>cor</code>: Valor lógico (<code>T/F</code>) indicando si se usa la matriz de correlación (<code>T</code>) o la matriz de covarianzas (<code>F</code>). Dado que debemos considerar las variables estandarizadas, o equivalentemente la matriz de correlación, <code>cor = TRUE</code>.</li>
+<li><code>scores</code>: Valor lógico (<code>T/F</code>) indicando si las puntuaciones de cada c.p. deben ser calculadas.</li>
+</ul>
+<p><strong>RESULTADOS:</strong> Crea un objeto <code>princomp</code> que recoge la siguiente información:</p>
+<ul>
+<li><code>sdev</code>: desviaciones estándar de las comp.principales.</li>
+<li><code>loadings</code>: matriz de cargas (es decir, matriz de autovectores).</li>
+<li><code>center</code>: las medias.</li>
+<li><code>scaling</code>: la escala aplicada a cada variable.</li>
+<li><code>n.obs</code>: número de observaciones.</li>
+<li><code>scores</code>: Si se ha solicitado, las puntuaciones de los datos en las c.p.</li>
+</ul>
+<pre class="r"><code>pca &lt;- princomp(aire.dat, cor = TRUE)
+pca</code></pre>
+<pre><code>Call:
+princomp(x = aire.dat, cor = TRUE)
+
+Standard deviations:
+   Comp.1    Comp.2    Comp.3    Comp.4    Comp.5    Comp.6    Comp.7 
+1.6517021 1.2297702 1.1810897 0.9444529 0.5888792 0.3166822 0.1597339 
+
+ 7  variables and  41 observations.</code></pre>
+<pre class="r"><code>pca %&gt;% str()</code></pre>
+<pre><code>List of 7
+ $ sdev    : Named num [1:7] 1.652 1.23 1.181 0.944 0.589 ...
+  ..- attr(*, &quot;names&quot;)= chr [1:7] &quot;Comp.1&quot; &quot;Comp.2&quot; &quot;Comp.3&quot; &quot;Comp.4&quot; ...
+ $ loadings: &#39;loadings&#39; num [1:7, 1:7] 0.49 -0.315 0.541 0.488 0.25 ...
+  ..- attr(*, &quot;dimnames&quot;)=List of 2
+  .. ..$ : chr [1:7] &quot;SO2&quot; &quot;Temp&quot; &quot;Empresas&quot; &quot;Pob&quot; ...
+  .. ..$ : chr [1:7] &quot;Comp.1&quot; &quot;Comp.2&quot; &quot;Comp.3&quot; &quot;Comp.4&quot; ...
+ $ center  : Named num [1:7] 30.05 55.76 463.1 608.61 9.44 ...
+  ..- attr(*, &quot;names&quot;)= chr [1:7] &quot;SO2&quot; &quot;Temp&quot; &quot;Empresas&quot; &quot;Pob&quot; ...
+ $ scale   : Named num [1:7] 23.18 7.14 556.56 572.01 1.41 ...
+  ..- attr(*, &quot;names&quot;)= chr [1:7] &quot;SO2&quot; &quot;Temp&quot; &quot;Empresas&quot; &quot;Pob&quot; ...
+ $ n.obs   : int 41
+ $ scores  : num [1:41, 1:7] -2.716 -1.718 -0.939 -0.55 0.46 ...
+  ..- attr(*, &quot;dimnames&quot;)=List of 2
+  .. ..$ : chr [1:41] &quot;Phoenix&quot; &quot;LittleRock&quot; &quot;SanFrancisco&quot; &quot;Denver&quot; ...
+  .. ..$ : chr [1:7] &quot;Comp.1&quot; &quot;Comp.2&quot; &quot;Comp.3&quot; &quot;Comp.4&quot; ...
+ $ call    : language princomp(x = aire.dat, cor = TRUE)
+ - attr(*, &quot;class&quot;)= chr &quot;princomp&quot;</code></pre>
+<pre class="r"><code>pca %&gt;% summary()</code></pre>
+<pre><code>Importance of components:
+                          Comp.1    Comp.2    Comp.3    Comp.4     Comp.5
+Standard deviation     1.6517021 1.2297702 1.1810897 0.9444529 0.58887916
+Proportion of Variance 0.3897314 0.2160478 0.1992819 0.1274273 0.04953981
+Cumulative Proportion  0.3897314 0.6057792 0.8050611 0.9324884 0.98202821
+                          Comp.6      Comp.7
+Standard deviation     0.3166822 0.159733920
+Proportion of Variance 0.0143268 0.003644989
+Cumulative Proportion  0.9963550 1.000000000</code></pre>
+<p>La función de resumen en el objeto de resultado nos da la desviación estándar, la proporción de varianza explicada por cada componente principal y la proporción acumulada de varianza explicada. Recuérdese que la varianza del <span class="math inline">\(i\)</span>-ésimo PC es el <span class="math inline">\(i\)</span>-ésimo valor propio: <span class="math inline">\(\hat\sigma_{Y_i}^2 = \hat\lambda_i\)</span>.</p>
+<p>Podemos construir nuestro propio resumen.</p>
+<pre class="r"><code>resumen_name &lt;- paste0(&quot;CP&quot;,1:7)
+resumen_eign &lt;- pca$sdev^2
+resumen_CP &lt;- tibble(CP = resumen_name, Eigen = resumen_eign) %&gt;% 
+  mutate(Percentage = 100*Eigen/sum(Eigen),
+         `Cumulative Percentage` = cumsum(Percentage))
+
+resumen_CP %&gt;%
+  mutate_at(2:4, round, 2) %&gt;% 
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">CP</th>
+<th align="right">Eigen</th>
+<th align="right">Percentage</th>
+<th align="right">Cumulative Percentage</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">CP1</td>
+<td align="right">2.73</td>
+<td align="right">38.97</td>
+<td align="right">38.97</td>
+</tr>
+<tr class="even">
+<td align="left">CP2</td>
+<td align="right">1.51</td>
+<td align="right">21.60</td>
+<td align="right">60.58</td>
+</tr>
+<tr class="odd">
+<td align="left">CP3</td>
+<td align="right">1.39</td>
+<td align="right">19.93</td>
+<td align="right">80.51</td>
+</tr>
+<tr class="even">
+<td align="left">CP4</td>
+<td align="right">0.89</td>
+<td align="right">12.74</td>
+<td align="right">93.25</td>
+</tr>
+<tr class="odd">
+<td align="left">CP5</td>
+<td align="right">0.35</td>
+<td align="right">4.95</td>
+<td align="right">98.20</td>
+</tr>
+<tr class="even">
+<td align="left">CP6</td>
+<td align="right">0.10</td>
+<td align="right">1.43</td>
+<td align="right">99.64</td>
+</tr>
+<tr class="odd">
+<td align="left">CP7</td>
+<td align="right">0.03</td>
+<td align="right">0.36</td>
+<td align="right">100.00</td>
+</tr>
+</tbody>
+</table>
+<p>Comprobamos que los valores propios de la matriz <span class="math inline">\(\mathbf{\hat R}\)</span> concuerden con la varianza de los componentes principales.</p>
+<pre class="r"><code>eigen(R)$values</code></pre>
+<pre><code>[1] 2.72811968 1.51233485 1.39497299 0.89199129 0.34677866 0.10028759 0.02551493</code></pre>
+<div id="selección-del-número-de-componentes" class="section level4">
+<h4>Selección del número de componentes</h4>
+<p>Podemos ver la variablidad explicada por cada componente construyendo un gráfico de autovalores o <a href="https://en.wikipedia.org/wiki/Scree_plot#:~:text=In%20multivariate%20statistics%2C%20a%20scree,principal%20component%20analysis%20(PCA)."><strong>scree plot</strong></a>. Esto nos facilitará ver con qué componentes principales nos quedaremos siguiendo uno de los criterios anteriormente expuestos.</p>
+<pre class="r"><code>resumen_CP %&gt;% 
+  ggplot(aes(x = CP, y = Eigen)) + 
+  geom_bar(stat=&quot;identity&quot;,width=0.01) + 
+  geom_point() + theme_pander() +
+  geom_hline(yintercept=1, linetype=&quot;dashed&quot;, color = &quot;red&quot;)</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Para observar la variablidad explicada por cada CP existe una opción en el paquete de R base es llamando a <code>plot</code> directamente.</p>
+<pre class="r"><code>plot(pca, col = &quot;lightblue&quot;)</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Tanto el resumen del <strong>ACP</strong> como ambos dibujos sugieren que en nuestro caso nos deberíamos de quedar con <strong>3</strong> componentes.</p>
+</div>
+<div id="estudio-de-las-componentes" class="section level4">
+<h4>Estudio de las componentes</h4>
+<ul>
+<li><strong>Cargas (<em>loadings</em>) de cada CP</strong>. Las conseguimos llamando a la orden <code>loadings</code> del paquete estadístico de R base. Las cargas pequeñas no se imprimen convencionalmente (siendo reemplazadas por espacios), para destacar los patrones de las cargas más grandes.</li>
+</ul>
+<pre class="r"><code>pca %&gt;% loadings()</code></pre>
+<pre><code>
+Loadings:
+         Comp.1 Comp.2 Comp.3 Comp.4 Comp.5 Comp.6 Comp.7
+SO2       0.490                0.404  0.730  0.183  0.150
+Temp     -0.315         0.677 -0.185  0.162  0.611       
+Empresas  0.541 -0.226  0.267        -0.164        -0.745
+Pob       0.488 -0.282  0.345 -0.113 -0.349         0.649
+Viento    0.250        -0.311 -0.862  0.268  0.150       
+Precip           0.626  0.492 -0.184  0.161 -0.554       
+Dias      0.260  0.678 -0.110  0.110 -0.440  0.505       
+
+               Comp.1 Comp.2 Comp.3 Comp.4 Comp.5 Comp.6 Comp.7
+SS loadings     1.000  1.000  1.000  1.000  1.000  1.000  1.000
+Proportion Var  0.143  0.143  0.143  0.143  0.143  0.143  0.143
+Cumulative Var  0.143  0.286  0.429  0.571  0.714  0.857  1.000</code></pre>
+<p>Recuérdese que las cargas son los coeficientes <span class="math inline">\(\underline{\hat e}_i\)</span> que definen cada componente principal, <span class="math inline">\(Y_i = \underline{\hat e}_i&#39;\underline{X}\)</span>. Así tenemos por ejemplo que la CP1 es</p>
+<p><span class="math display">\[Y_1 = 0.41 SO2 - 0.315 Temp + 0.54Empresas + 0.488 Pob + 0.250 Viento + 0.26 Dias\]</span></p>
+<p>y así con las demás. Las cargas coinciden con los autovectores de la matriz <span class="math inline">\(\mathbf{R}\)</span>. Comprobamos la relación (solo para <span class="math inline">\(Y_1\)</span>, <span class="math inline">\(Y_2\)</span> e <span class="math inline">\(Y_3\)</span>).</p>
+<pre class="r"><code>eigen(R)$vectors %&gt;% 
+  as.tibble() %&gt;% 
+  select(1:3) %&gt;% 
+  round(3) %&gt;% 
+  kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="right">V1</th>
+<th align="right">V2</th>
+<th align="right">V3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="right">0.490</td>
+<td align="right">-0.085</td>
+<td align="right">-0.014</td>
+</tr>
+<tr class="even">
+<td align="right">-0.315</td>
+<td align="right">0.089</td>
+<td align="right">-0.677</td>
+</tr>
+<tr class="odd">
+<td align="right">0.541</td>
+<td align="right">0.226</td>
+<td align="right">-0.267</td>
+</tr>
+<tr class="even">
+<td align="right">0.488</td>
+<td align="right">0.282</td>
+<td align="right">-0.345</td>
+</tr>
+<tr class="odd">
+<td align="right">0.250</td>
+<td align="right">-0.055</td>
+<td align="right">0.311</td>
+</tr>
+<tr class="even">
+<td align="right">0.000</td>
+<td align="right">-0.626</td>
+<td align="right">-0.492</td>
+</tr>
+<tr class="odd">
+<td align="right">0.260</td>
+<td align="right">-0.678</td>
+<td align="right">0.110</td>
+</tr>
+</tbody>
+</table>
+<p>Coinciden salvo signo.<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<ul>
+<li><strong>Correlación entre las variables originales <span class="math inline">\(X_i\)</span> y las CP.</strong></li>
+</ul>
+<p>La relación de correlación viene dada por <span class="math display">\[r_{X_i,Y_j} = \hat{e}_{ij}\sqrt{\hat\lambda_j}.\]</span> Se pueden calcular de forma sencilla con la siguiente orden. Nos quedaremos con las dos primeras para posteriormente estudiar una representación gráfica de estas.</p>
+<pre class="r"><code>correlations &lt;- loadings(pca)%*%diag(pca$sdev) 
+
+corr_tibble &lt;- correlations %&gt;% 
+  set_colnames(paste0(&quot;CP&quot;,1:7)) %&gt;% 
+  as.tibble() %&gt;% mutate(nombre = rownames(correlations))
+corr_tibble</code></pre>
+<pre><code># A tibble: 7 × 8
+        CP1     CP2     CP3     CP4     CP5     CP6      CP7 nombre  
+      &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;   
+1  0.809     0.104   0.0169  0.382   0.430   0.0581  0.0239  SO2     
+2 -0.521    -0.109   0.800  -0.175   0.0957  0.193  -0.00378 Temp    
+3  0.894    -0.278   0.316  -0.0248 -0.0966 -0.0135 -0.119   Empresas
+4  0.805    -0.347   0.407  -0.107  -0.206  -0.0278  0.104   Pob     
+5  0.413     0.0682 -0.368  -0.814   0.158   0.0475  0.00252 Viento  
+6  0.000309  0.770   0.581  -0.174   0.0946 -0.175  -0.00165 Precip  
+7  0.430     0.834  -0.129   0.104  -0.259   0.160   0.00131 Dias    </code></pre>
+<pre class="r"><code>corr_tibble %&gt;% 
+  select(c(1:2,8)) %&gt;% 
+  ggplot(aes(CP1,CP2,label=nombre)) + 
+    xlim(-1,1) + ylim(-1,1) +
+    geom_label() + 
+    geom_hline(yintercept = -0.5, linetype=&quot;dashed&quot;, color = &quot;red&quot;) +
+    geom_hline(yintercept = 0.5, linetype=&quot;dashed&quot;, color = &quot;red&quot;) +
+    geom_vline(xintercept = -0.5, linetype=&quot;dashed&quot;, color = &quot;red&quot;) +
+    geom_vline(xintercept = 0.5, linetype=&quot;dashed&quot;, color = &quot;red&quot;) + 
+    theme_pander()</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
+<p>Este gráfico muestra cuáles de las variables originales están más fuertemente correlacionadas con las dos primeras CP. Podemos considerar más correladas aquellas que se encuentren fuera del cuadrado <span class="math inline">\([-.5,.5]\times[-.5,.5]\)</span> (o también estudiar el valor absoluto). De nuevo, el gráfico puede verse rotado por la cuestión antes explicada del signo de los autovectores, pero la interpretación sigue siendo la misma.</p>
+<p>Un gráfico al que se recurre para el estudio de la correlación entre variables y CP es el <strong>Círculo de Correlación</strong>. Se puede emplear el paquete <code>FactoMineR</code> como se indica en los apuntes. Otra opción es recurrir al paquete <code>factoextra</code> que hace un wrapper a funciones de <code>ggplot2</code>.</p>
+<pre class="r"><code>library(factoextra)
+fviz_pca_var(pca, col.var = &quot;salmon&quot;, 
+             ggtheme = theme_pander())</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
+<p>El <strong>círculo de correlación</strong> es un gráfico de <span class="math inline">\(r_{X_i,Y_1}\)</span> versus <span class="math inline">\(r_{X_i,Y_2}\)</span>. Este gráfico muestra cuáles de las variables originales están más estrechamente correlacionadas con las PC, es decir, aquellas que están cerca de la periferia del círculo de radio 1. Con este gráfico también se puede observar la contribución de cada variable a las dos primeras componentes.</p>
+<p>El argumento <code>col.var</code> puede ser una variable continua o una variable factorial. Los valores posibles incluyen: <em>cos2</em>, <em>contrib</em>, <em>coord</em>, <em>x</em> o <em>y</em>.</p>
+<p>En este caso, los colores de los individuos/variables se controlan automáticamente por sus cualidades de representación (<em>cos2</em>), contribuciones (<em>contrib</em>), coordenadas (<span class="math inline">\(x^2 + y^2\)</span>, <em>coord</em>), valores x (<em>x</em>) o valores de y (<em>y</em>). Si se especifica solo un color es usado como único tono.</p>
+<ul>
+<li><em>cos2</em>: representa la calidad de representación de las variables y se calcula como las coordenadas cuadradas: <span class="math inline">\(var.cos2 = var.coord \times var.coord\)</span>. Para una variable dada, la suma del <em>cos2</em> en todos los componentes principales es igual a uno. Si una variable está perfectamente representada por solo dos componentes principales (<span class="math inline">\(Dim.1\)</span> y <span class="math inline">\(Dim.2\)</span>), la suma del <em>cos2</em> en estas dos CP es igual a uno. En este caso las variables se posicionarán en el círculo de correlaciones.Para algunas de las variables, se pueden requerir más de 2 componentes para representar perfectamente los datos. En este caso, las variables se colocan dentro del círculo de correlaciones.</li>
+</ul>
+<pre class="r"><code>fviz_cos2(pca, choice = &quot;var&quot;, axes = 1:2,
+             color = &quot;salmon&quot;, fill = &quot;cornflowerblue&quot;,
+             ggtheme = theme_pander())</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<ul>
+<li><em>contrib</em>: contiene las contribuciones (en porcentaje) de las variables a los componentes principales. La contribución de una variable (var) a un componente principal dado es (en porcentaje): <span class="math inline">\((var.cos2 \times 100) / (cos2 \ \text{total del componente})\)</span>. Las variables que están correlacionadas con CP1 (es decir, <span class="math inline">\(Dim.1\)</span>) y CP2 (es decir, <span class="math inline">\(Dim.2\)</span>) son las más importantes para explicar la variabilidad en el conjunto de datos. Las variables que no se correlacionan con ningún CP o que se correlacionan con las últimas dimensiones son variables de baja contribución y podrían eliminarse para simplificar el análisis general.</li>
+</ul>
+<p>Es posible utilizar la función <code>corrplot</code> para resaltar las variables que más contribuyen a cada CP - dimensión:</p>
+<pre class="r"><code>var &lt;- get_pca_var(pca)
+var$contrib %&gt;% round(3)</code></pre>
+<pre><code>          Dim.1  Dim.2  Dim.3  Dim.4  Dim.5  Dim.6  Dim.7
+SO2      23.980  0.715  0.021 16.339 53.348  3.362  2.236
+Temp      9.946  0.786 45.851  3.431  2.639 37.291  0.056
+Empresas 29.286  5.102  7.137  0.069  2.693  0.183 55.529
+Pob      23.774  7.953 11.891  1.286 12.187  0.772 42.136
+Viento    6.244  0.308  9.689 74.287  7.196  2.252  0.025
+Precip    0.000 39.172 24.210  3.383  2.579 30.644  0.011
+Dias      6.769 45.964  1.201  1.205 19.357 25.497  0.007</code></pre>
+<pre class="r"><code>corrplot(var$contrib, is.corr=FALSE)</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p>Cada cuadrado es un valor, círculos más oscuros y más grandes corresponden a valores más altos. La contribución total a CP1 y CP2 se obtiene con el siguiente código R:</p>
+<pre class="r"><code>fviz_contrib(pca, choice = &quot;var&quot;, axes = 1:2, top = 10,
+             color = &quot;salmon&quot;, fill = &quot;cornflowerblue&quot;,
+             ggtheme = theme_pander())</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<p>La línea roja discontinua en el gráfico indica la contribución promedio esperada. Si la contribución de las variables fuera uniforme, el valor esperado sería 1/longitud (variables) = <span class="math inline">\(1/10\)</span> = <span class="math inline">\(10\%\)</span>. Para un componente dado, una variable con una contribución mayor que este límite podría considerarse importante para contribuir al componente. Lo que sugiere que las variables <code>Temp</code> y <code>Viento</code> no contribuyen mucho a las dos primeras componentes. No obstante en el apartado de selección de componentes se acordó que serían 3 las CP a elegir.</p>
+<pre class="r"><code>fviz_contrib(pca, choice = &quot;var&quot;, axes = 1:3, top = 10,
+             color = &quot;salmon&quot;, fill = &quot;cornflowerblue&quot;,
+             ggtheme = theme_pander())</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<p>Lo que modifica la interpretación anterior.</p>
+<p>Aquí se muestra el círculo de correlación indicando la contribución de las variables a las 2 primeras CP.</p>
+<pre class="r"><code>fviz_pca_var(pca, col.var = &quot;coord&quot;,
+   gradient.cols = c(&quot;orange&quot;, &quot;red&quot;, &quot;blue&quot;),
+   ggtheme = theme_pander())</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
+<ul>
+<li><strong>Gráfico de las puntuaciones</strong></li>
+</ul>
+<p>Las <strong>puntuaciones</strong> son los valores de las CP en las unidades de muestra.</p>
+<pre class="r"><code>pca$scores %&gt;% head() %&gt;% kable()</code></pre>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="11%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left"></th>
+<th align="right">Comp.1</th>
+<th align="right">Comp.2</th>
+<th align="right">Comp.3</th>
+<th align="right">Comp.4</th>
+<th align="right">Comp.5</th>
+<th align="right">Comp.6</th>
+<th align="right">Comp.7</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Phoenix</td>
+<td align="right">-2.7159758</td>
+<td align="right">-3.8914391</td>
+<td align="right">1.0583546</td>
+<td align="right">1.5374428</td>
+<td align="right">0.0331333</td>
+<td align="right">0.6544276</td>
+<td align="right">0.0906066</td>
+</tr>
+<tr class="even">
+<td align="left">LittleRock</td>
+<td align="right">-1.7177454</td>
+<td align="right">0.4824200</td>
+<td align="right">0.8500434</td>
+<td align="right">0.1945366</td>
+<td align="right">0.1421327</td>
+<td align="right">-0.5449915</td>
+<td align="right">-0.1986651</td>
+</tr>
+<tr class="odd">
+<td align="left">SanFrancisco</td>
+<td align="right">-0.9389649</td>
+<td align="right">-2.2372464</td>
+<td align="right">-0.1837479</td>
+<td align="right">0.1527907</td>
+<td align="right">-0.1855924</td>
+<td align="right">-0.2950736</td>
+<td align="right">0.0071357</td>
+</tr>
+<tr class="even">
+<td align="left">Denver</td>
+<td align="right">-0.5498615</td>
+<td align="right">-1.9719430</td>
+<td align="right">-1.2285958</td>
+<td align="right">0.4226922</td>
+<td align="right">-0.3836845</td>
+<td align="right">0.1301060</td>
+<td align="right">-0.1579881</td>
+</tr>
+<tr class="odd">
+<td align="left">Hartford</td>
+<td align="right">0.4603718</td>
+<td align="right">1.0973345</td>
+<td align="right">-0.5897038</td>
+<td align="right">0.9387046</td>
+<td align="right">0.7426900</td>
+<td align="right">-0.4004830</td>
+<td align="right">-0.2601886</td>
+</tr>
+<tr class="even">
+<td align="left">Wilmington</td>
+<td align="right">-0.6970761</td>
+<td align="right">0.6321489</td>
+<td align="right">-0.4213294</td>
+<td align="right">0.4888693</td>
+<td align="right">0.5449854</td>
+<td align="right">-0.2042173</td>
+<td align="right">-0.0507348</td>
+</tr>
+</tbody>
+</table>
+<p>Podemos representarlas para la CP1 y la CP2. Se podría hacer recurriendo al paquete base de R con <code>plot()</code> o empleando el paquete <code>ggplot</code>, pero aprovechando que se ha introducido el paquete <code>factoextra</code> se usará la función <code>fviz_pca_ind()</code> que permite usar las herramientas de <code>ggplot</code> de forma más intuitiva.</p>
+<pre class="r"><code>fviz_pca_ind(pca, col.ind = &quot;cornflowerblue&quot;, 
+             gradient.cols = c(&quot;#00AFBB&quot;, &quot;#E7B800&quot;, &quot;#FC4E07&quot;),
+             repel = TRUE, ggtheme = theme_pander())</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+<p>Este gráfico es útil para detectar valores atípicos en el caso multivariado. En este ejemplo, <strong>Chicago</strong> y <strong>Phoenix</strong> pueden ser valores atípicos. El gráfico puede verse rotado de nuevo al replicarlo como se explicó anteriormente.</p>
+<ul>
+<li><strong>Biplot</strong></li>
+</ul>
+<p>Todo lo anterior se puede agrupar fácilmente en un gráfico conjunto que se conoce como <code>biplot</code>. En el paquete <code>factoextra</code> se encuentra la orden <code>fviz_pca_biplot</code> que permite construir este gráfico de forma intuitiva y haciendo uso del motor de <code>ggplot2</code>.</p>
+<pre class="r"><code>fviz_pca_biplot(pca,
+                col.var = &quot;red&quot;, # Variables color
+                col.ind = &quot;cornflowerblue&quot;,  # Individuals color
+                repel = TRUE, ggtheme = theme_pander())</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-25-1.png" width="672" /></p>
+<p>Tenga en cuenta que el <code>biplot</code> solo puede ser útil cuando hay un número bajo de variables e individuos en el conjunto de datos; de lo contrario, la trama final sería ilegible. Tenga en cuenta también que las coordenadas de los individuos y las variables no se construyen en el mismo espacio. Por lo tanto, en el biplot, debe centrarse principalmente en la dirección de las variables, pero no en sus posiciones absolutas en el gráfico.</p>
+<p>En términos generales, un biplot se puede interpretar de la siguiente manera:</p>
+<ul>
+<li>Un individuo que está en el mismo lado de una variable dada tiene un valor alto para esta variable.</li>
+<li>Un individuo que está en el lado opuesto de una variable dada tiene un valor bajo para esta variable.</li>
+</ul>
+<p>A continuación, comprobamos que la variabilidad de la PC disminuye</p>
+<p><span class="math display">\[\hat\lambda_1 \geq \hat\lambda_2 \geq \cdots \geq \hat\lambda_7\]</span></p>
+<pre class="r"><code>pca$scores</code></pre>
+<pre><code>                       Comp.1      Comp.2      Comp.3      Comp.4      Comp.5
+Phoenix           -2.71597577 -3.89143908  1.05835456  1.53744284  0.03313329
+LittleRock        -1.71774538  0.48242002  0.85004335  0.19453662  0.14213267
+SanFrancisco      -0.93896495 -2.23724644 -0.18374788  0.15279070 -0.18559238
+Denver            -0.54986148 -1.97194298 -1.22859584  0.42269224 -0.38368448
+Hartford           0.46037184  1.09733455 -0.58970378  0.93870455  0.74269000
+Wilmington        -0.69707612  0.63214894 -0.42132942  0.48886932  0.54498541
+Washington        -0.04612550 -0.05089780  0.35423200 -0.04402514 -0.02934285
+Jacksonville      -1.37601389  0.93839689  1.86596320 -0.45438597  0.01384513
+Miami             -1.71572800  1.50799472  2.58526278 -0.82939956  0.05685634
+Atlanta           -0.61858862  0.63808943  0.98836295 -0.19607655  0.11214859
+                         Comp.6       Comp.7
+Phoenix            0.6544276475  0.090606552
+LittleRock        -0.5449915353 -0.198665115
+SanFrancisco      -0.2950735876  0.007135691
+Denver             0.1301060178 -0.157988070
+Hartford          -0.4004830221 -0.260188627
+Wilmington        -0.2042172800 -0.050734764
+Washington        -0.0696776892  0.191097207
+Jacksonville       0.1205695112  0.179974967
+Miami              0.7195496265 -0.183303486
+Atlanta           -0.0989937572 -0.071121250
+ [ reached getOption(&quot;max.print&quot;) -- omitted 31 rows ]</code></pre>
+<pre class="r"><code>pca$scores %&gt;% 
+  as.tibble() %&gt;%
+  pivot_longer(everything(),names_to = &quot;item&quot;,values_to = &quot;valor&quot;) %&gt;% 
+  ggplot(aes(x=item, y=valor, fill=item)) +
+    geom_boxplot() + theme_pander() + 
+    theme(legend.position = &quot;none&quot;) +
+    xlab(&quot;&quot;) + ylab(&quot;&quot;)</code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-26-1.png" width="672" /></p>
+<p>Podemos usar el comando <code>boxplot</code> para detectar los valores atípicos en nuestros datos.</p>
+<pre class="r"><code>boxPCA = boxplot(pca$scores)</code></pre>
+<pre class="r"><code>outliers = boxPCA$out
+outliers</code></pre>
+<pre><code>[1]  7.320800 -3.891439 -2.763310 -1.009775  2.297055</code></pre>
+<pre class="r"><code>component=boxPCA$group
+component</code></pre>
+<pre><code>[1] 1 2 2 5 5</code></pre>
+<p>Se puede comprobar que los valores atípicos detectados por CP1 y CP2 corresponden a <code>Chicago</code>, <code>Phoenix</code> y <code>Alburquerque</code>.</p>
+</div>
+</div>
+<div id="ampliación---usando-tidymodels" class="section level3">
+<h3>Ampliación - Usando <code>tidymodels</code></h3>
+<pre class="r"><code>library(tidymodels)</code></pre>
+<p><strong>¿Porque <code>tidymodels</code>?</strong></p>
+<p><strong>R</strong> es un software de licencia abierta que cuenta con una comunidad activa que es a la vez desarrolladora y explotadora de los paquetes disponibles para su uso. Desde hace un tiempo, un grupo de estos miembros, entre los que cabe destacar a <a href="http://hadley.nz/">Hadley Wickham</a> o <a href="https://juliasilge.com/about/">Julia Silge</a> entre otros, llevan centrando sus esfuerzos en organizar y facilitar el uso de R como herramienta creando el <a href="https://www.tidyverse.org/"><strong>tidyverso</strong></a>, <em>mundo ordenado</em>. A esta iniciativa se están uniendo otros muchos desarrolladores que dejan de actualizar sus paquetes para integrarlos en los que se están desarrollando, quedando estos desfasados y en algunos casos desactualizados para nuevas versiones de R.</p>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/tidyverse.png" style="width:50.0%;height:75.0%" /></p>
+<p>Esta idea bajo la cual se construye el paquete <a href="https://www.tidymodels.org/"><code>tidymodels</code></a>, donde se están recogiendo los principales modelos de aprendizaje e incorporándolos en un flujo de trabajo que facilite su programación y análisis.</p>
+<center>
+<img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/tidymodels.png" />
+</center>
+<p>Este apartado pretende mostrar los pasos para construir un <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales">análisis de componentes principales</a> - <strong>PCA</strong> - con el paquete <code>tidymodels</code> sobre los datos de <code>USairpollution</code> descritos en el apartado anterior. No nos detendremos tanto en las conclusiones y las interpretaciones de los resultados debido a que se han expuesto en el apartado anterior, así como nos preocuparemos del código necesario.</p>
+<p>Seguimos trabajando con los mismos datos.</p>
+<pre class="r"><code>aire.dat</code></pre>
+<pre><code>             SO2 Temp Empresas Pob Viento Precip Dias
+Phoenix       10 70.3      213 582    6.0   7.05   36
+LittleRock    13 61.0       91 132    8.2  48.52  100
+SanFrancisco  12 56.7      453 716    8.7  20.66   67
+Denver        17 51.9      454 515    9.0  12.95   86
+Hartford      56 49.1      412 158    9.0  43.37  127
+Wilmington    36 54.0       80  80    9.0  40.25  114
+Washington    29 57.3      434 757    9.3  38.89  111
+Jacksonville  14 68.4      136 529    8.8  54.47  116
+Miami         10 75.5      207 335    9.0  59.80  128
+Atlanta       24 61.5      368 497    9.1  48.34  115
+ [ reached &#39;max&#39; / getOption(&quot;max.print&quot;) -- omitted 31 rows ]</code></pre>
+<p>En primer lugar, para usar <code>tidymodels</code>, debemos definir un pipeline, es decir, una serie de pasos de análisis que queremos realizar. Para ello empleamos el paquete R <a href="https://recipes.tidymodels.org/"><code>recipes</code></a>.</p>
+<pre class="r"><code>pca_recipe &lt;- recipe(~., data = aire.dat)</code></pre>
+<p>Como el ACP es un algoritmo de aprendizaje no supervisado no habrá que realizar la partición del conjunto de datos característico de los modelos de aprendizaje supervisado. No obstante, si que habrá que preprocesar los datos para adecuarlos al ACP escalando los datos. Y finalmente, especificamos que queremos hacer PCA usando <code>step_pca()</code>.</p>
+<pre class="r"><code>pca_trans &lt;- pca_recipe %&gt;%
+  step_center(all_numeric()) %&gt;% # center the data
+  step_scale(all_numeric()) %&gt;% # center the data
+  step_pca(all_numeric()) # pca on all numeric variables
+pca_trans</code></pre>
+<p>Ahora estamos listos para el análisis. Usaremos la receta que construimos hasta ahora como argumento para la función <code>prep()</code>, “preparar”.</p>
+<pre class="r"><code>pca_estimates &lt;- prep(pca_trans)
+pca_estimates
+pca_estimates %&gt;% names()</code></pre>
+<pre><code> [1] &quot;var_info&quot;       &quot;term_info&quot;      &quot;steps&quot;          &quot;template&quot;      
+ [5] &quot;retained&quot;       &quot;requirements&quot;   &quot;ptype&quot;          &quot;tr_info&quot;       
+ [9] &quot;orig_lvls&quot;      &quot;fit_times&quot;      &quot;last_term_info&quot;</code></pre>
+<p>Nuestros resultados de los pasos de la receta de ACP están disponibles en <code>steps</code>. En nuestro caso usamos tres pasos, dos para normalizar los datos y uno para hacer ACP. Por lo tanto, el objeto <code>steps</code> es una lista de tamaño tres, donde los dos primeros elementos contienen detalles sobre nuestros pasos de normalización y el tercer elemento contiene los resultados de ACP. Revisemos el tercer paso.</p>
+<pre class="r"><code>pca_tidy &lt;- pca_estimates$steps[[3]]
+pca_tidy</code></pre>
+<p>Vemos que las cargas de cada CP quedan guardadas en el argumento <code>res</code>. Si las comparamos con las obtenidas en <code>princomp</code> vemos que coinciden salvo signo de nuevo.</p>
+<pre class="r"><code>paste(&quot;TIDYMODELS&quot;)</code></pre>
+<pre><code>[1] &quot;TIDYMODELS&quot;</code></pre>
+<pre class="r"><code>pca_tidy$res$rotation %&gt;% round(3)</code></pre>
+<pre><code>            PC1    PC2    PC3    PC4    PC5    PC6    PC7
+SO2       0.490  0.085  0.014 -0.404  0.730 -0.183 -0.150
+Temp     -0.315 -0.089  0.677  0.185  0.162 -0.611  0.024
+Empresas  0.541 -0.226  0.267  0.026 -0.164  0.043  0.745
+Pob       0.488 -0.282  0.345  0.113 -0.349  0.088 -0.649
+Viento    0.250  0.055 -0.311  0.862  0.268 -0.150 -0.016
+Precip    0.000  0.626  0.492  0.184  0.161  0.554  0.010
+Dias      0.260  0.678 -0.110 -0.110 -0.440 -0.505 -0.008</code></pre>
+<pre class="r"><code>paste(&quot;PRINCOMP&quot;)</code></pre>
+<pre><code>[1] &quot;PRINCOMP&quot;</code></pre>
+<pre class="r"><code>pca$loadings</code></pre>
+<pre><code>
+Loadings:
+         Comp.1 Comp.2 Comp.3 Comp.4 Comp.5 Comp.6 Comp.7
+SO2       0.490                0.404  0.730  0.183  0.150
+Temp     -0.315         0.677 -0.185  0.162  0.611       
+Empresas  0.541 -0.226  0.267        -0.164        -0.745
+Pob       0.488 -0.282  0.345 -0.113 -0.349         0.649
+Viento    0.250        -0.311 -0.862  0.268  0.150       
+Precip           0.626  0.492 -0.184  0.161 -0.554       
+Dias      0.260  0.678 -0.110  0.110 -0.440  0.505       
+
+               Comp.1 Comp.2 Comp.3 Comp.4 Comp.5 Comp.6 Comp.7
+SS loadings     1.000  1.000  1.000  1.000  1.000  1.000  1.000
+Proportion Var  0.143  0.143  0.143  0.143  0.143  0.143  0.143
+Cumulative Var  0.143  0.286  0.429  0.571  0.714  0.857  1.000</code></pre>
+<p>Accediendo al tercer elemento podemos obtener las desviaciones estándar del análisis de ACP y utilizarlas para calcular el porcentaje de variación explicado por cada CP. Para dar la varianza elevamos al cuadrado, que coinciden con los autovalores de <span class="math inline">\(\mathbf{\hat R}\)</span>.</p>
+<pre class="r"><code>sdev &lt;- pca_estimates$steps[[3]]$res$sdev
+percent_variation &lt;- 100*sdev^2 / sum(sdev^2)
+var_df &lt;- tibble(CP = paste0(&quot;PC&quot;,1:length(sdev))) %&gt;% 
+  mutate(Var = sdev^2,
+         Per_explained = percent_variation, 
+         Cumulative_Per_Explained = cumsum(Per_explained))
+var_df %&gt;% kable()</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">CP</th>
+<th align="right">Var</th>
+<th align="right">Per_explained</th>
+<th align="right">Cumulative_Per_Explained</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">PC1</td>
+<td align="right">2.7281197</td>
+<td align="right">38.9731383</td>
+<td align="right">38.97314</td>
+</tr>
+<tr class="even">
+<td align="left">PC2</td>
+<td align="right">1.5123349</td>
+<td align="right">21.6047836</td>
+<td align="right">60.57792</td>
+</tr>
+<tr class="odd">
+<td align="left">PC3</td>
+<td align="right">1.3949730</td>
+<td align="right">19.9281856</td>
+<td align="right">80.50611</td>
+</tr>
+<tr class="even">
+<td align="left">PC4</td>
+<td align="right">0.8919913</td>
+<td align="right">12.7427327</td>
+<td align="right">93.24884</td>
+</tr>
+<tr class="odd">
+<td align="left">PC5</td>
+<td align="right">0.3467787</td>
+<td align="right">4.9539809</td>
+<td align="right">98.20282</td>
+</tr>
+<tr class="even">
+<td align="left">PC6</td>
+<td align="right">0.1002876</td>
+<td align="right">1.4326799</td>
+<td align="right">99.63550</td>
+</tr>
+<tr class="odd">
+<td align="left">PC7</td>
+<td align="right">0.0255149</td>
+<td align="right">0.3644989</td>
+<td align="right">100.00000</td>
+</tr>
+</tbody>
+</table>
+<p>Ahora podemos construir el gráfico el scree plot que muestra y de forma similar el del porcentaje variabilidad explicada por cada CP.</p>
+<pre class="r"><code>var_df %&gt;%
+  mutate(CP = fct_inorder(CP)) %&gt;%
+  ggplot(aes(x = CP, y = Var)) +
+  geom_bar(stat=&quot;identity&quot;,width=0.01) + 
+  geom_point() +
+  geom_hline(yintercept=1, linetype=&quot;dashed&quot;, color = &quot;red&quot;) + 
+  theme_pander() </code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-36-1.png" width="672" /></p>
+<pre class="r"><code>var_df %&gt;%
+  mutate(CP = fct_inorder(CP)) %&gt;%
+  ggplot(aes(x = CP, y = Per_explained)) +
+  geom_col(fill = &quot;cornflowerblue&quot;, color = &quot;red&quot;) + 
+  ylab(&quot;Variablidad explicada&quot;) + theme_pander() </code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-36-2.png" width="672" /></p>
+<p>Echemos un vistazo a los componentes principales calculados por nuestra receta. El paquete de <code>recipes</code> de <code>tidymodels</code> tiene una función llamada <code>juice</code>, “jugo”, que devolverá los resultados de una receta creada por <code>prep</code>.</p>
+<pre class="r"><code>juice(pca_estimates) </code></pre>
+<pre><code># A tibble: 41 × 5
+       PC1     PC2    PC3     PC4     PC5
+     &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
+ 1 -2.68   -3.84    1.05  -1.52    0.0327
+ 2 -1.70    0.477   0.840 -0.192   0.140 
+ 3 -0.927  -2.21   -0.181 -0.151  -0.183 
+ 4 -0.543  -1.95   -1.21  -0.418  -0.379 
+ 5  0.455   1.08   -0.582 -0.927   0.734 
+ 6 -0.689   0.624  -0.416 -0.483   0.538 
+ 7 -0.0456 -0.0503  0.350  0.0435 -0.0290
+ 8 -1.36    0.927   1.84   0.449   0.0137
+ 9 -1.69    1.49    2.55   0.819   0.0562
+10 -0.611   0.630   0.976  0.194   0.111 
+# ℹ 31 more rows</code></pre>
+<p>Podemos usar los resultados de juice para hacer un diagrama de ACP estándar, un diagrama de dispersión con la CP1 en el eje <span class="math inline">\(x\)</span> y la CP2 en el eje <span class="math inline">\(y\)</span> para ver la estructura en los datos.</p>
+<pre class="r"><code>juice(pca_estimates) %&gt;%
+  ggplot(aes(PC1, PC2, label = rownames(aire.dat))) +
+  geom_point(color=&quot;salmon&quot;, alpha = 0.7, size = 2,show.legend = FALSE) +
+  geom_text(check_overlap = TRUE) + 
+  labs(title=&quot;PCA with Tidymodels&quot;) + theme_pander() </code></pre>
+<p><img src="../../../../../post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-38-1.png" width="672" /></p>
+<p>Obviamente el uso de tidymodels supone en ocasiones un mayor esfuerzo en cuanto a código se refiere y que sea una perspectiva novedosa también influye en su comprensión y manejabilidad. No obstante, se sigue un proceso estructurado lo que facilitará su entendimiento a largo plazo y, como se comentaba anteriormente, la comunidad lleva tiempo mostrando interés en metodologías como está que seguramente terminarán imperando en la minería de datos y programación estadística.</p>
+</div>
+</div>
+<div id="referencias" class="section level1">
+<h1>Referencias</h1>
+<ul>
+<li><p><a href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues/150978#150978">Making sense of principal component analysis, eigenvectors &amp; eigenvalues</a></p></li>
+<li><p><a href="http://www.sthda.com/english/articles/31-principal-component-methods-in-r-practical-guide/112-pca-principal-component-analysis-essentials/">PCA - Principal Component Analysis Essentials</a></p></li>
+<li><p><a href="https://rpkgs.datanovia.com/factoextra/reference/fviz_pca.html">Visualize Principal Component Analysis</a></p></li>
+<li><p>Sobre ACP con tidymodels:</p>
+<ul>
+<li><a href="https://cmdlinetips.com/2020/06/pca-with-tidymodels-in-r/">Python and R Tips - PCA with tidymodels</a></li>
+</ul></li>
+<li><p>Sobre el signo de las CP:</p>
+<ul>
+<li><a href="https://stats.stackexchange.com/questions/88880/does-the-sign-of-scores-or-of-loadings-in-pca-or-fa-have-a-meaning-may-i-revers">Does the sign of scores or of loadings in PCA or FA have a meaning? May I reverse the sign?</a></li>
+<li><a href="https://stats.stackexchange.com/questions/269428/reverse-the-sign-of-pca">Reverse the sign of PCA</a></li>
+</ul></li>
+</ul>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p><strong>¿Por qué la interpretación es la misma aunque cambie el signo?</strong> El <strong>ACP</strong> proporciona vectores principales que apuntan en las mejores direcciones para proyectar sus datos en términos de varianza o error al cuadrado, ignorando el signo. Un vector principal que apunta en la dirección opuesta también es una solución válida para <strong>ACP</strong> pero le dará componentes principales con el signo opuesto. Informalmente, se puede decir que <span class="math inline">\(Variables \ originales \approx Cargas \times Puntuaciones\)</span>. Desde aquí podemos ver que si se cambia el signo de sus puntuaciones y de sus cargas, entonces esto no tendrá influencia en el resultado (o interpretación), porque <span class="math inline">\(-1\times-1 = 1\)</span>, idem si se cambia el de la CP y solo uno de las cargas o puntuaciones. Solo para proporcionar una mayor relevancia matemática, las direcciones en las que actúan los componentes principales corresponden a los autovectores del sistema. Si obtiene un CP positivo o negativo, solo significa que se está proyectando en un vector propio que apunta en un sentido ó <span class="math inline">\(180^\circ\)</span> en el otro. Un autovector para una matriz (transformación lineal) <span class="math inline">\(A\)</span> se define como cualquier vector <span class="math inline">\(v\neq0\)</span> que satisfaga <span class="math inline">\(Av = \lambda v\)</span>. Si <span class="math inline">\(v\)</span> es un autovector, cualquier múltiplo escalar <span class="math inline">\(\hat{v}=\alpha v\)</span> también funcionará <span class="math inline">\((\alpha \neq 0)\)</span>: <span class="math display">\[\begin{align} A v = \lambda v &amp; \iff \alpha A v = \alpha \lambda v \\ &amp; \iff A \hat v = \lambda \hat v \end{align}\]</span> Esto incluye que se pueda eligir <span class="math inline">\(\alpha = -1\)</span>. Si <span class="math inline">\(v\)</span> es un autovector, también lo es <span class="math inline">\(-v\)</span>. Digamos que el algoritmo <strong>ACP</strong> garantiza que <span class="math inline">\(\| v \|=1\)</span>. Todavía tienes dos posibilidades porque si tomas la intersección de una línea que pasa por el origen y el círculo unitario, obtienes dos puntos. La conclusión es que para cada componente de <strong>ACP</strong>, el signo de sus puntuaciones y de sus cargas es arbitrario. Además como se comentó en el desarrollo teórico las distancias se siguen manteniedo. Se puede modificar el signo de forma manual para adecuarlo a sus datos. En R, como se dice en la documentación de los signos de las columnas de las cargas y las puntuaciones son <em>arbitrarios</em>, por lo que pueden diferir entre diferentes programas para el ACP, e incluso entre diferentes compilaciones de R. Seguramente en el algoritmo programado el signo del autovector se elija de forma aleatoria y por eso puede cambiar al replicarse en otro momento. <strong><code>fix_sign = TRUE</code> alivia eso</strong>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+
+    <a href="../../../../../"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+      <hr/>
+      Alberto Torrejón Valenzuela | <a href="https://github.com/albtorval">Github</a> | <a href="https://twitter.com/ajedre97">Twitter</a> | <a href="https://www.linkedin.com/in/alberto-torrej%C3%B3n-valenzuela-851680174/">LinkedIn</a>
+      
+    </footer>
+  </body>
+</html>
+

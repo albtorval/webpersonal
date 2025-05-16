@@ -1,0 +1,35 @@
+---
+title: La Cafetería de Chari
+author: Alberto Torrejón Valenzuela
+date: '2022-08-04'
+slug: la-cafeteria-de-chari
+categories:
+  - textos
+tags:
+  - Poemas
+  - Social
+description: ''
+---
+
+
+<center>
+<span class = "primerapalabra">V</span>espertina de raza, <br>
+la Chari no pone café en taza, <br>
+solo vaso de cristal <br>
+y una sonrisa al entrar. <br>
+
+Cuando había examen, <br>
+cafetera. <br>
+Cuando había celebración, <br>
+un ron. <br>
+Y ahora que nada queda, <br>
+tostada con jamón. <br>
+
+¡Chari!, muchas gracias, <br>
+de corazón. <br>
+Gracias a ti, todas las mañanas, <br>
+el día empezaba con el sol. <br>
+
+![](/text/Img/chari.jpeg){width=50% height=50%}
+</center>
+

@@ -29,7 +29,7 @@
       
       
       <li class="pull-left ">
-        <a href="https://torrejonvalenzuela.com/pdf/CV.pdf">~/cv</a>
+        <a href="pdf/CV.pdf">~/cv</a>
       </li>
       
       
@@ -92,7 +92,7 @@
   
   
   
-  Tags: <a href="../../../../tags/probabilidad">Probabilidad</a> <a href="../../../../tags/teor%C3%ADa-de-juegos">Teoría de Juegos</a> <a href="../../../../tags/matem%C3%A1ticas">Matemáticas</a> <a href="../../../../tags/p%C3%B3ker">Póker</a> 
+  Tags: <a href="../../../../tags/matem%C3%A1ticas">Matemáticas</a> <a href="../../../../tags/p%C3%B3ker">Póker</a> <a href="../../../../tags/probabilidad">Probabilidad</a> <a href="../../../../tags/teor%C3%ADa-de-juegos">Teoría de Juegos</a> 
   
   
 </p>
@@ -107,13 +107,10 @@
 <blockquote>
 <p><em>Gran parte del dinero que ganarás al póker no procederá de la brillantez de tu juego, sino de la ineptitud de tus oponentes.</em> Lou Krieger</p>
 </blockquote>
-<center>
-<iframe src="https://torrejonvalenzuela.com/slides/VNMPoker/VNMPoker.html#1">
-</iframe>
-</center>
-<center>
-<a href="https://torrejonvalenzuela.com/slides/VNMPoker/VNMPoker.html#1">DIAPOSITIVAS</a>
-</center>
+<!-- <center><iframe src="https://torrejonvalenzuela.com/slides/VNMPoker/VNMPoker.html#1"></iframe></center> -->
+<!-- <center> -->
+<!-- [DIAPOSITIVAS](https://torrejonvalenzuela.com/slides/VNMPoker/VNMPoker.html#1) -->
+<!-- </center> -->
 <div id="vnm-póker" class="section level1">
 <h1>VNM-Póker</h1>
 <p>El juego que se plantea en este capítulo a modo de ejemplo es el <strong>Póker de Von Neumann–Morgenstern</strong>, al que nos referiremos como <em>VNM-Póker</em>. Fue introducido en el estudio <em>Theory of Games and Economic Behavior</em>.</p>
@@ -135,7 +132,7 @@
 <h2>Previamente</h2>
 <p>En primer lugar, se puede dar la forma extensiva del juego. Para ello es de rigor observar el <em>módulo</em> del juego que describe los movimientos de <span class="math inline">\(Ann\)</span> y <span class="math inline">\(Beth\)</span>. Combinamos módulos para dotar al juego de su forma extensiva completa.</p>
 <center>
-<img src="../../../../post/2021-03-16-vnm-póker_files/ModuloVNMPoker.png" style="width:50.0%" />
+<img src="../../../../post/2021-03-16-vnm-p%C3%B3ker_files/ModuloVNMPoker.png" style="width:50.0%" />
 </center>
 <p>Se empieza con el reparto aleatorio de la carta, un <strong>nodo de riesgo</strong>. Supuesto <span class="math inline">\(r&gt;1\)</span>, los jugadores pueden obtener cualquier carta de <span class="math inline">\(1,2,...,S\)</span>, existen <span class="math inline">\(S^2\)</span> alternativas diferentes. Si <span class="math inline">\(r=1\)</span>, el número de alternativas sería de <span class="math inline">\(S\cdot(S-1)\)</span>.</p>
 <p>Las alternativas para el movimiento aleatorio inicial no son igualmente probables. Por ejemplo, la probabilidad de obtener un <span class="math inline">\(King\)</span> es <span class="math inline">\(\frac{r}{rS} = \frac{1}{S}\)</span>. Una vez que se ha sacado el <span class="math inline">\(King\)</span> del mazo, quedan <span class="math inline">\(r-1\)</span> <span class="math inline">\(King\)</span> entre un total de <span class="math inline">\(rS-1\)</span> cartas. De esta forma, la probabilidad de obtener un <span class="math inline">\(King\)</span> es de <span class="math inline">\(\frac{r-1}{rS-1}\)</span>. En conclusión:</p>
@@ -148,7 +145,7 @@
 </ul>
 <p><span class="math display">\[p_{xy} = \frac{1}{S} \cdot \frac{r}{rS-1} = \frac{r}{S(rS-1)}.\]</span></p>
 <center>
-<img src="../../../../post/2021-03-16-vnm-póker_files/VNMPoker.png" style="width:75.0%" />
+<img src="../../../../post/2021-03-16-vnm-p%C3%B3ker_files/VNMPoker.png" style="width:75.0%" />
 </center>
 </div>
 <div id="estrategias" class="section level2">
@@ -164,7 +161,7 @@
 <p>Bajo este supuesto se tiene que el conjunto de estrategias puras para <span class="math inline">\(Ann\)</span> es {<span class="math inline">\(CC\)</span> (prudente), <span class="math inline">\(CR\)</span> (razonable), <span class="math inline">\(RC\)</span> (inútil), <span class="math inline">\(RR\)</span> (agresiva)} y para <span class="math inline">\(Beth\)</span> se tiene {<span class="math inline">\(FF\)</span> (prudente), <span class="math inline">\(FC\)</span> (razonable), <span class="math inline">\(CF\)</span> (contraintuitiva), <span class="math inline">\(CC\)</span> (agresiva)}.</p>
 <p>A continuación se presenta la forma normal de un juego <strong>VNM-Póker(2,r,m,n)</strong>,</p>
 <center>
-<img src="../../../../post/2021-03-16-vnm-póker_files/vnm1.png" />
+<img src="../../../../post/2021-03-16-vnm-p%C3%B3ker_files/vnm1.png" />
 </center>
 <p>Las expresiones de esta tabla se obtienen de la siguiente forma. Para cada par de estrategias, sea <span class="math inline">\(u_{x,y}\)</span> el pago que recibe <span class="math inline">\(Ann\)</span> (al ser un juego de suma nula basta especificar solo una función de utilidad), siempre que ambos jugadores se ciñan a sus estrategias elegidas, dándose el caso de que <span class="math inline">\(Ann\)</span> obtiene una carta de valor <span class="math inline">\(x\)</span> y <span class="math inline">\(Beth\)</span> una carta de valor <span class="math inline">\(y\)</span>. Entonces la utilidad esperada para <span class="math inline">\(Ann\)</span> se calcula con la siguiente expresión</p>
 <p><span class="math display">\[p_{xx} u_{1,1} + p_{xy} u_{1,2} + p_{xy} u_{2,1} + p_{xx} u_{2,2},\]</span></p>
@@ -173,14 +170,12 @@
 <p><span class="math display">\[\begin{aligned} &amp; p_{xx} \cdot m + p_{xy} \cdot (-n) + p_{xy} \cdot m + p_{xx} \cdot 0 = \\ = &amp; \frac{r-1}{4r-2}\cdot m + \frac{r}{4r-2}\cdot (-n) + \frac{r}{4r-2}\cdot m + \frac{r-1}{4r-2}\cdot 0 = \\ = &amp; \frac{(r-1)m-rn+rm}{4r-2} = \\ = &amp; \frac{(2r-1)m-rn}{4r-2}. \end{aligned}\]</span></p>
 <p>Algunas estrategias puras son débilmente dominadas. Cuando <span class="math inline">\(Ann\)</span> tiene una carta de mayor valor, <span class="math inline">\(raise\)</span> domina a <span class="math inline">\(check\)</span>. Cualquiera de las estrategias de Ann <span class="math inline">\(X...YC\)</span> donde <span class="math inline">\(Ann\)</span> estaría débilmente dominada por la estrategia <span class="math inline">\(X...YR\)</span>. Cuando <span class="math inline">\(Beth\)</span> tiene una carta de mayor valor, <span class="math inline">\(call\)</span> domina a <span class="math inline">\(fold\)</span>. Cualquiera de las estrategias de <span class="math inline">\(Beth\)</span> <span class="math inline">\(X...YF\)</span> estaría débilmente dominada por <span class="math inline">\(X ... YC\)</span>.</p>
 <p>De hecho, en el caso de <span class="math inline">\(Beth\)</span>, las relaciones de dominancia van más allá:</p>
-
 <div class="theorem">
-<span id="thm:unnamed-chunk-1" class="theorem"><strong>Teorema 1  </strong></span>Todas las estrategias de Beth excepto C…C y las de la forma F…FC…C, i.e. las que comienzan con algunas F seguidas de algunas (al menos una) C, están débilmente dominadas.
+<p><span id="thm:unnamed-chunk-1" class="theorem"><strong>Teorema 1  </strong></span>Todas las estrategias de Beth excepto C…C y las de la forma F…FC…C, i.e. las que comienzan con algunas F seguidas de algunas (al menos una) C, están débilmente dominadas.</p>
 </div>
-
 <p>De esta forma eliminando las estrategias débilmente dominadas en nuestro ejemplo obtenemos la siguiente forma normal reducida,</p>
 <center>
-<img src="../../../../post/2021-03-16-vnm-póker_files/vnm3.png" />
+<img src="../../../../post/2021-03-16-vnm-p%C3%B3ker_files/vnm3.png" />
 </center>
 <p>Por otra parte, existe un concepto en el póker denominado <em>tirarse un farol</em>, donde un jugador sube (<span class="math inline">\(raise\)</span>) aunque tiene una carta (o mano) de poco valor. Debido a que un jugador puede <em>tirarse un farol</em> en un determinado momento del juego, las relaciones de dominancia deben analizarse con cuidado. No obstante, y supuesta la hipótesis de <em>racionalidad</em> de los jugadores, las relaciones de dominancia antes expuestas deben mantenerse.</p>
 </div>
@@ -217,12 +212,12 @@
 <p>El libro de Erich Prisner [pág 259-276] desarrolla en varios capítulos los juegos <strong>VNM-Póker(4,4,3,5)</strong>, <strong>KUHN-Póker(3, 4, 2, 3)</strong> y <strong>End-of-Semester Poker Tournament</strong> explicados con detalle e incluyendo demostraciones.</p>
 <p>En un juego con más de dos jugadores apostar por el equilibrio de Nash puede llevar a la derrota, resulta extremadamente difícil identificarlo y, además, en el póker hay mucha información escondida, por lo que no resulta práctico hacer esta aproximación. Sin embargo, el análisis de estos juegos sirve de base para la construcción de agentes automáticos de póker (<em>bots</em>) o desarrollo de distintos algoritmos para el estudio de las posibles estragegias (<em>counterfactual regret minimization</em>, <em>EGT for extensive form games</em>, …), e incluso para la formulación de diversos modelos económicos.</p>
 <center>
-<img src="../../../../post/2021-03-16-vnm-póker_files/VNM_1.jpg" style="width:25.0%" />
+<img src="../../../../post/2021-03-16-vnm-p%C3%B3ker_files/VNM_1.jpg" style="width:25.0%" />
 </center>
 </div>
 </div>
 </div>
-<div class="footnotes">
+<div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p>Obsérvese que bajo nuestro supuesto <span class="math inline">\(4r-2 &gt;0\)</span><a href="#fnref1" class="footnote-back">↩︎</a></p></li>

@@ -2,28 +2,30 @@
 title: Análisis de Componentes Principales - datos `USairpollution`
 author: Alberto Torrejón Valenzuela
 date: '2020-11-13'
-slug: análisis-de-componentes-principales-datos-usairpollution
 categories:
   - Estadística
 tags:
-  - Minería Estadística
   - ACP
   - Ejemplo
+  - Minería Estadística
   - R
-description: 'Ejemplo de aplicación del Análisis de Componentes Principales a datos reales.'
+slug: análisis-de-componentes-principales-datos-usairpollution
+description: Ejemplo de aplicación del Análisis de Componentes Principales a datos
+  reales.
 output:
   blogdown::html_page:
-      toc: TRUE
+    toc: yes
 ---
 
 
 <div id="TOC">
 <ul>
-<li><a href="#ejemplo-usairpollution">Ejemplo <code>USairpollution</code></a><ul>
-<li><a href="#acp-con-princomp">ACP con <code>princomp</code></a></li>
-<li><a href="#ampliación---usando-tidymodels">Ampliación - Usando <code>tidymodels</code></a></li>
+<li><a href="#ejemplo-usairpollution" id="toc-ejemplo-usairpollution">Ejemplo <code>USairpollution</code></a>
+<ul>
+<li><a href="#acp-con-princomp" id="toc-acp-con-princomp">ACP con <code>princomp</code></a></li>
+<li><a href="#ampliaci%C3%B3n---usando-tidymodels" id="toc-ampliación---usando-tidymodels">Ampliación - Usando <code>tidymodels</code></a></li>
 </ul></li>
-<li><a href="#referencias">Referencias</a></li>
+<li><a href="#referencias" id="toc-referencias">Referencias</a></li>
 </ul>
 </div>
 
@@ -44,7 +46,7 @@ library(ggthemes)</code></pre>
 <p>También se pueden cargar desde el directorio de trabajo.</p>
 <pre class="r"><code>aire.dat &lt;- read_table2(&quot;Datos/datosaire.txt&quot;)
 aire.dat %&gt;% head()</code></pre>
-<pre><code># A tibble: 6 x 8
+<pre><code># A tibble: 6 × 8
   Ciudad         SO2  Temp Empresas   Pob Viento Precip  Dias
   &lt;chr&gt;        &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt; &lt;dbl&gt;  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;
 1 Phoenix         10  70.3      213   582    6     7.05    36
@@ -357,7 +359,7 @@ corr_tibble &lt;- correlations %&gt;%
   set_colnames(paste0(&quot;CP&quot;,1:7)) %&gt;% 
   as.tibble() %&gt;% mutate(nombre = rownames(correlations))
 corr_tibble</code></pre>
-<pre><code># A tibble: 7 x 8
+<pre><code># A tibble: 7 × 8
         CP1     CP2     CP3     CP4     CP5     CP6      CP7 nombre  
       &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;    &lt;dbl&gt; &lt;chr&gt;   
 1  0.809     0.104   0.0169  0.382   0.430   0.0581  0.0239  SO2     
@@ -588,10 +590,10 @@ component</code></pre>
 <pre class="r"><code>library(tidymodels)</code></pre>
 <p><strong>¿Porque <code>tidymodels</code>?</strong></p>
 <p><strong>R</strong> es un software de licencia abierta que cuenta con una comunidad activa que es a la vez desarrolladora y explotadora de los paquetes disponibles para su uso. Desde hace un tiempo, un grupo de estos miembros, entre los que cabe destacar a <a href="http://hadley.nz/">Hadley Wickham</a> o <a href="https://juliasilge.com/about/">Julia Silge</a> entre otros, llevan centrando sus esfuerzos en organizar y facilitar el uso de R como herramienta creando el <a href="https://www.tidyverse.org/"><strong>tidyverso</strong></a>, <em>mundo ordenado</em>. A esta iniciativa se están uniendo otros muchos desarrolladores que dejan de actualizar sus paquetes para integrarlos en los que se están desarrollando, quedando estos desfasados y en algunos casos desactualizados para nuevas versiones de R.</p>
-<p><img src="/post/2020-11-13-análisis-de-componentes-principales-datos-usairpollution_files/tidyverse.png" style="width:50.0%;height:75.0%" /></p>
+<p><img src="/post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/tidyverse.png" style="width:50.0%;height:75.0%" /></p>
 <p>Esta idea bajo la cual se construye el paquete <a href="https://www.tidymodels.org/"><code>tidymodels</code></a>, donde se están recogiendo los principales modelos de aprendizaje e incorporándolos en un flujo de trabajo que facilite su programación y análisis.</p>
 <center>
-<img src="/post/2020-11-13-análisis-de-componentes-principales-datos-usairpollution_files/tidymodels.png" />
+<img src="/post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/tidymodels.png" />
 </center>
 <p>Este apartado pretende mostrar los pasos para construir un <a href="https://es.wikipedia.org/wiki/An%C3%A1lisis_de_componentes_principales">análisis de componentes principales</a> - <strong>PCA</strong> - con el paquete <code>tidymodels</code> sobre los datos de <code>USairpollution</code> descritos en el apartado anterior. No nos detendremos tanto en las conclusiones y las interpretaciones de los resultados debido a que se han expuesto en el apartado anterior, así como nos preocuparemos del código necesario.</p>
 <p>Seguimos trabajando con los mismos datos.</p>
@@ -616,113 +618,28 @@ Atlanta       24 61.5      368 497    9.1  48.34  115
   step_scale(all_numeric()) %&gt;% # center the data
   step_pca(all_numeric()) # pca on all numeric variables
 pca_trans</code></pre>
-<pre><code>Data Recipe
-
-Inputs:
-
-      role #variables
- predictor          7
-
-Operations:
-
-Centering for all_numeric()
-Scaling for all_numeric()
-No PCA components were extracted.</code></pre>
 <p>Ahora estamos listos para el análisis. Usaremos la receta que construimos hasta ahora como argumento para la función <code>prep()</code>, “preparar”.</p>
 <pre class="r"><code>pca_estimates &lt;- prep(pca_trans)
-pca_estimates</code></pre>
-<pre><code>Data Recipe
-
-Inputs:
-
-      role #variables
- predictor          7
-
-Training data contained 41 data points and no missing data.
-
-Operations:
-
-Centering for SO2, Temp, Empresas, Pob, Viento, Precip, Dias [trained]
-Scaling for SO2, Temp, Empresas, Pob, Viento, Precip, Dias [trained]
-PCA extraction with SO2, Temp, Empresas, Pob, Viento, Precip, Dias [trained]</code></pre>
-<pre class="r"><code>pca_estimates %&gt;% names()</code></pre>
-<pre><code>[1] &quot;var_info&quot;       &quot;term_info&quot;      &quot;steps&quot;          &quot;template&quot;      
-[5] &quot;retained&quot;       &quot;tr_info&quot;        &quot;orig_lvls&quot;      &quot;last_term_info&quot;</code></pre>
+pca_estimates
+pca_estimates %&gt;% names()</code></pre>
+<pre><code> [1] &quot;var_info&quot;       &quot;term_info&quot;      &quot;steps&quot;          &quot;template&quot;      
+ [5] &quot;retained&quot;       &quot;requirements&quot;   &quot;ptype&quot;          &quot;tr_info&quot;       
+ [9] &quot;orig_lvls&quot;      &quot;fit_times&quot;      &quot;last_term_info&quot;</code></pre>
 <p>Nuestros resultados de los pasos de la receta de ACP están disponibles en <code>steps</code>. En nuestro caso usamos tres pasos, dos para normalizar los datos y uno para hacer ACP. Por lo tanto, el objeto <code>steps</code> es una lista de tamaño tres, donde los dos primeros elementos contienen detalles sobre nuestros pasos de normalización y el tercer elemento contiene los resultados de ACP. Revisemos el tercer paso.</p>
 <pre class="r"><code>pca_tidy &lt;- pca_estimates$steps[[3]]
 pca_tidy</code></pre>
-<pre><code>$terms
-&lt;list_of&lt;quosure&gt;&gt;
-
-[[1]]
-&lt;quosure&gt;
-expr: ^all_numeric()
-env:  0x7fb3b28d11c0
-
-
-$role
-[1] &quot;predictor&quot;
-
-$trained
-[1] TRUE
-
-$num_comp
-[1] 5
-
-$threshold
-[1] NA
-
-$options
-list()
-
-$res
-Standard deviations (1, .., p=7):
-[1] 1.6517021 1.2297702 1.1810897 0.9444529 0.5888792 0.3166822 0.1597339
-
-Rotation (n x k) = (7 x 7):
-                   PC1         PC2        PC3         PC4        PC5
-SO2       0.4896988171  0.08457563 -0.0143502  0.40421007  0.7303942
-Temp     -0.3153706901 -0.08863789 -0.6771362 -0.18522794  0.1624652
-Empresas  0.5411687028 -0.22588109 -0.2671591 -0.02627237 -0.1641011
-Pob       0.4875881115 -0.28200380 -0.3448380 -0.11340377 -0.3491048
-Viento    0.2498749284  0.05547149  0.3112655 -0.86190131  0.2682549
-Precip    0.0001873122  0.62587937 -0.4920363 -0.18393719  0.1605988
-Dias      0.2601790729  0.67796741  0.1095789  0.10976070 -0.4399698
-                 PC6          PC7
-SO2      -0.18334573 -0.149529278
-Temp     -0.61066107  0.023664113
-Empresas  0.04273352  0.745180920
-Pob       0.08786327 -0.649125507
-Viento   -0.15005378 -0.015765377
-Precip    0.55357384  0.010315309
-Dias     -0.50494668 -0.008217393
-
-$prefix
-[1] &quot;PC&quot;
-
-$keep_original_cols
-[1] FALSE
-
-$skip
-[1] FALSE
-
-$id
-[1] &quot;pca_0gtrC&quot;
-
-attr(,&quot;class&quot;)
-[1] &quot;step_pca&quot; &quot;step&quot;    </code></pre>
 <p>Vemos que las cargas de cada CP quedan guardadas en el argumento <code>res</code>. Si las comparamos con las obtenidas en <code>princomp</code> vemos que coinciden salvo signo de nuevo.</p>
 <pre class="r"><code>paste(&quot;TIDYMODELS&quot;)</code></pre>
 <pre><code>[1] &quot;TIDYMODELS&quot;</code></pre>
 <pre class="r"><code>pca_tidy$res$rotation %&gt;% round(3)</code></pre>
 <pre><code>            PC1    PC2    PC3    PC4    PC5    PC6    PC7
-SO2       0.490  0.085 -0.014  0.404  0.730 -0.183 -0.150
-Temp     -0.315 -0.089 -0.677 -0.185  0.162 -0.611  0.024
-Empresas  0.541 -0.226 -0.267 -0.026 -0.164  0.043  0.745
-Pob       0.488 -0.282 -0.345 -0.113 -0.349  0.088 -0.649
-Viento    0.250  0.055  0.311 -0.862  0.268 -0.150 -0.016
-Precip    0.000  0.626 -0.492 -0.184  0.161  0.554  0.010
-Dias      0.260  0.678  0.110  0.110 -0.440 -0.505 -0.008</code></pre>
+SO2       0.490  0.085  0.014 -0.404  0.730 -0.183 -0.150
+Temp     -0.315 -0.089  0.677  0.185  0.162 -0.611  0.024
+Empresas  0.541 -0.226  0.267  0.026 -0.164  0.043  0.745
+Pob       0.488 -0.282  0.345  0.113 -0.349  0.088 -0.649
+Viento    0.250  0.055 -0.311  0.862  0.268 -0.150 -0.016
+Precip    0.000  0.626  0.492  0.184  0.161  0.554  0.010
+Dias      0.260  0.678 -0.110 -0.110 -0.440 -0.505 -0.008</code></pre>
 <pre class="r"><code>paste(&quot;PRINCOMP&quot;)</code></pre>
 <pre><code>[1] &quot;PRINCOMP&quot;</code></pre>
 <pre class="r"><code>pca$loadings</code></pre>
@@ -820,20 +737,20 @@ var_df %&gt;% kable()</code></pre>
 <p><img src="/post/2020-11-13-an%C3%A1lisis-de-componentes-principales-datos-usairpollution_files/figure-html/unnamed-chunk-36-2.png" width="672" /></p>
 <p>Echemos un vistazo a los componentes principales calculados por nuestra receta. El paquete de <code>recipes</code> de <code>tidymodels</code> tiene una función llamada <code>juice</code>, “jugo”, que devolverá los resultados de una receta creada por <code>prep</code>.</p>
 <pre class="r"><code>juice(pca_estimates) </code></pre>
-<pre><code># A tibble: 41 x 5
+<pre><code># A tibble: 41 × 5
        PC1     PC2    PC3     PC4     PC5
      &lt;dbl&gt;   &lt;dbl&gt;  &lt;dbl&gt;   &lt;dbl&gt;   &lt;dbl&gt;
- 1 -2.68   -3.84   -1.05   1.52    0.0327
- 2 -1.70    0.477  -0.840  0.192   0.140 
- 3 -0.927  -2.21    0.181  0.151  -0.183 
- 4 -0.543  -1.95    1.21   0.418  -0.379 
- 5  0.455   1.08    0.582  0.927   0.734 
- 6 -0.689   0.624   0.416  0.483   0.538 
- 7 -0.0456 -0.0503 -0.350 -0.0435 -0.0290
- 8 -1.36    0.927  -1.84  -0.449   0.0137
- 9 -1.69    1.49   -2.55  -0.819   0.0562
-10 -0.611   0.630  -0.976 -0.194   0.111 
-# … with 31 more rows</code></pre>
+ 1 -2.68   -3.84    1.05  -1.52    0.0327
+ 2 -1.70    0.477   0.840 -0.192   0.140 
+ 3 -0.927  -2.21   -0.181 -0.151  -0.183 
+ 4 -0.543  -1.95   -1.21  -0.418  -0.379 
+ 5  0.455   1.08   -0.582 -0.927   0.734 
+ 6 -0.689   0.624  -0.416 -0.483   0.538 
+ 7 -0.0456 -0.0503  0.350  0.0435 -0.0290
+ 8 -1.36    0.927   1.84   0.449   0.0137
+ 9 -1.69    1.49    2.55   0.819   0.0562
+10 -0.611   0.630   0.976  0.194   0.111 
+# ℹ 31 more rows</code></pre>
 <p>Podemos usar los resultados de juice para hacer un diagrama de ACP estándar, un diagrama de dispersión con la CP1 en el eje <span class="math inline">\(x\)</span> y la CP2 en el eje <span class="math inline">\(y\)</span> para ver la estructura en los datos.</p>
 <pre class="r"><code>juice(pca_estimates) %&gt;%
   ggplot(aes(PC1, PC2, label = rownames(aire.dat))) +
@@ -861,7 +778,7 @@ var_df %&gt;% kable()</code></pre>
 </ul></li>
 </ul>
 </div>
-<div class="footnotes">
+<div class="footnotes footnotes-end-of-document">
 <hr />
 <ol>
 <li id="fn1"><p><strong>¿Por qué la interpretación es la misma aunque cambie el signo?</strong> El <strong>ACP</strong> proporciona vectores principales que apuntan en las mejores direcciones para proyectar sus datos en términos de varianza o error al cuadrado, ignorando el signo. Un vector principal que apunta en la dirección opuesta también es una solución válida para <strong>ACP</strong> pero le dará componentes principales con el signo opuesto. Informalmente, se puede decir que <span class="math inline">\(Variables \ originales \approx Cargas \times Puntuaciones\)</span>. Desde aquí podemos ver que si se cambia el signo de sus puntuaciones y de sus cargas, entonces esto no tendrá influencia en el resultado (o interpretación), porque <span class="math inline">\(-1\times-1 = 1\)</span>, idem si se cambia el de la CP y solo uno de las cargas o puntuaciones. Solo para proporcionar una mayor relevancia matemática, las direcciones en las que actúan los componentes principales corresponden a los autovectores del sistema. Si obtiene un CP positivo o negativo, solo significa que se está proyectando en un vector propio que apunta en un sentido ó <span class="math inline">\(180^\circ\)</span> en el otro. Un autovector para una matriz (transformación lineal) <span class="math inline">\(A\)</span> se define como cualquier vector <span class="math inline">\(v\neq0\)</span> que satisfaga <span class="math inline">\(Av = \lambda v\)</span>. Si <span class="math inline">\(v\)</span> es un autovector, cualquier múltiplo escalar <span class="math inline">\(\hat{v}=\alpha v\)</span> también funcionará <span class="math inline">\((\alpha \neq 0)\)</span>: <span class="math display">\[\begin{align} A v = \lambda v &amp; \iff \alpha A v = \alpha \lambda v \\ &amp; \iff A \hat v = \lambda \hat v \end{align}\]</span> Esto incluye que se pueda eligir <span class="math inline">\(\alpha = -1\)</span>. Si <span class="math inline">\(v\)</span> es un autovector, también lo es <span class="math inline">\(-v\)</span>. Digamos que el algoritmo <strong>ACP</strong> garantiza que <span class="math inline">\(\| v \|=1\)</span>. Todavía tienes dos posibilidades porque si tomas la intersección de una línea que pasa por el origen y el círculo unitario, obtienes dos puntos. La conclusión es que para cada componente de <strong>ACP</strong>, el signo de sus puntuaciones y de sus cargas es arbitrario. Además como se comentó en el desarrollo teórico las distancias se siguen manteniedo. Se puede modificar el signo de forma manual para adecuarlo a sus datos. En R, como se dice en la documentación de los signos de las columnas de las cargas y las puntuaciones son <em>arbitrarios</em>, por lo que pueden diferir entre diferentes programas para el ACP, e incluso entre diferentes compilaciones de R. Seguramente en el algoritmo programado el signo del autovector se elija de forma aleatoria y por eso puede cambiar al replicarse en otro momento. <strong><code>fix_sign = TRUE</code> alivia eso</strong>.<a href="#fnref1" class="footnote-back">↩︎</a></p></li>

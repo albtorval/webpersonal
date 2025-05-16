@@ -1,0 +1,36 @@
+---
+title: Mi padre me exige
+author: Alberto Torrejón Valenzuela
+date: '2019-03-01'
+slug: mi-padre-me-exige
+categories:
+  - textos
+tags:
+  - Papa
+  - Versos
+  - Poemas
+description: ''
+---
+
+<center>
+<span class = "primerapalabra">M</span>i padre me exige <br>
+que juegue con las palabras <br>
+él me enseño a escribir <br>
+así que su consejo quiero seguir: <br>
+
+Graciosa Rosa <br>
+rusa Úrsula, <br>
+Andrea atea, <br>
+curtida Ida, <br>
+¡irrita Rita!, <br>
+Ana…, anda, <br>
+Sara, rara. <br>
+
+Priscila hila, <br>
+anhela Helena, <br>
+Pamela, ¡lela!, <br>
+Ángela, ¿hiela?
+
+![](/text/Img/jugarmujer.jpeg){width=70% height=70%}
+</center>
+

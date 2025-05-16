@@ -1,0 +1,32 @@
+---
+title: Yo ya he estado aquí
+author: Alberto Torrejón Valenzuela
+date: '2024-09-30'
+slug: yo-ya-he-estado-aqui
+categories:
+  - textos
+tags:
+  - Amor
+description: ''
+---
+
+<span class = "primerapalabra">Yo ya he estado aquí</span>
+
+<div class="just">
+Recordaba sus casas más azules, su gente más morena, el calor más sofocante, el té más dulce. Lo recordaba como un vergel entre montañas, con un río cayendo que rompía el silencio. Recordaba escuchar un llanto apenumbrado por cada rincón, en cada entrepuerta, en cada ventana. Pero yo ya he estado aquí. 
+
+Pregunté por ello, porque aquí no escuchaba ese sollozo que allí tanto se me repetía. Entonces me contaron sobre el recuerdo de la joven enamorada de un emir que huyó a Marruecos durante la Reconquista, triste porque dejaba atrás a su querida Vejer, su preciosa Vejer, su vergel. Allí, para paliar el dolor de su recuerdo, construyeron un pueblo hermano al que ella recordaba. No contenta, siendo para ella imposible recorrer una sin acordarse de la otra, comenzó un llanto incesante, inquebrantable, que duraría por el resto de sus días.
+
+Sabía que ya había estado antes aquí, estas casas encaladas, recovecos arbolados, la fresca brisa que te espera tras la ardua subida, el horizonte a tus pies… lo sabía. Solo que aquí no escucho ese llanto perdido, en su lugar, aquí resuena una risa nerviosa, tímida, feliz, que calma.
+</div>
+
+<div class="der">
+<span class = "primerapalabra">Alguien ríe aquí, alguien llora allí...</span>
+</div>
+
+> “¿Quién de ustedes, por mucho que se preocupe, puede añadir una sola hora al curso de su vida? Ya que no pueden hacer algo tan insignificante, ¿por qué se preocupan por lo demás?”
+<div class="der">**Lucas 12:25-26**</span>
+
+<center>
+![](/text/Img/vejer.jpg){width=50% height=50%}
+</center>

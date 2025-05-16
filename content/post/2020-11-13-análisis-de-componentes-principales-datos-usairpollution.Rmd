@@ -2,18 +2,19 @@
 title: Análisis de Componentes Principales - datos `USairpollution`
 author: Alberto Torrejón Valenzuela
 date: '2020-11-13'
-slug: análisis-de-componentes-principales-datos-usairpollution
 categories:
   - Estadística
 tags:
-  - Minería Estadística
   - ACP
   - Ejemplo
+  - Minería Estadística
   - R
-description: 'Ejemplo de aplicación del Análisis de Componentes Principales a datos reales.'
+slug: análisis-de-componentes-principales-datos-usairpollution
+description: Ejemplo de aplicación del Análisis de Componentes Principales a datos
+  reales.
 output:
   blogdown::html_page:
-      toc: TRUE
+    toc: yes
 ---
 
 ```{r setup, echo=FALSE, warning = FALSE, cache=FALSE}
@@ -31,6 +32,7 @@ opts_knit$set(width=75)
 ```
 
 # Ejemplo `USairpollution`
+
 
 Los paquetes de R que vamos a emplear son:
 

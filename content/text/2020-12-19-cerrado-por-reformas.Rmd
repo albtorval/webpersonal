@@ -2,20 +2,15 @@
 title: Cerrado por reformas
 author: Alberto Torrejón Valenzuela
 date: '2020-12-19'
-slug: cerrado-por-reformas
 categories:
   - poemas
 tags:
   - Poemas
-description: ''
+slug: cerrado-por-reformas
 ---
 
 <center>
-<h3>**Cerrado por reformas**</h3>
-
-![](/text/2020-12-19-cerrado-por-reformas_files/miniyo.jpg){width=40% height=40%}
-
-Tengo un don, <br>
+<span class = "primerapalabra">T</span>engo un don, <br>
 y es poder verte con ojos, <br>
 rozarte con manos, <br>
 hablarte con palabras y <br> 
@@ -33,5 +28,7 @@ una sonrisa que con tu vida se deshace <br>
 ¡Ay, corazón! <br>
 ¿Me haces un favor? <br>
 Te cambio mi don por tu amor.
+
+![](/text/Img/miniyo.jpg){width=40% height=40%}
 </center>
 

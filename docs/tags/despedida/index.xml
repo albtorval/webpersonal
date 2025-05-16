@@ -2,7 +2,7 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Despedida on Alberto Torrejón Valenzuela</title>
-    <link>/tags/despedida.html</link>
+    <link>/tags/despedida/</link>
     <description>Recent content in Despedida on Alberto Torrejón Valenzuela</description>
     <generator>Hugo</generator>
     <language>es-es</language>
@@ -10,10 +10,10 @@
     <atom:link href="/tags/despedida/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Despedida</title>
-      <link>/text/despedida.html</link>
+      <link>/text/despedida/</link>
       <pubDate>Sat, 19 Dec 2020 00:00:00 +0000</pubDate>
-      <guid>/text/despedida.html</guid>
-      <description>&lt;center&gt;&#xA;&lt;h3&gt;&#xA;&lt;strong&gt;Despedida&lt;/strong&gt;&#xA;&lt;/h3&gt;&#xA;&lt;p&gt;&lt;img src=&#34;../../text/2020-12-19-despedida_files/fin.JPG&#34; style=&#34;width:40.0%;height:40.0%&#34; /&gt;&lt;/p&gt;&#xA;&lt;p&gt;Que el agua del vergel, &lt;br&gt;&#xA;Refleje una vez más tu tez, &lt;br&gt;&#xA;Llegue a tu ser &lt;br&gt;&#xA;Y traiga de nuevo tu piel. &lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Que el sol del atardecer, &lt;br&gt;&#xA;Recupere mi perdida fe, &lt;br&gt;&#xA;Rejuvenezca al fiel &lt;br&gt;&#xA;Y traiga de nuevo la miel. &lt;br&gt;&lt;/p&gt;&#xA;Incesante espera &lt;br&gt;&#xA;Necesito verla &lt;br&gt;&#xA;Mas aquí callado &lt;br&gt;&#xA;Acataré mi pena.&#xA;&lt;/center&gt;</description>
+      <guid>/text/despedida/</guid>
+      <description>&lt;center&gt;&#xA;&lt;p&gt;Que el agua del vergel, &lt;br&gt;&#xA;Refleje una vez más tu tez, &lt;br&gt;&#xA;Llegue a tu ser &lt;br&gt;&#xA;Y traiga de nuevo tu piel. &lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Que el sol del atardecer, &lt;br&gt;&#xA;Recupere mi perdida fe, &lt;br&gt;&#xA;Rejuvenezca al fiel &lt;br&gt;&#xA;Y traiga de nuevo la miel. &lt;br&gt;&lt;/p&gt;&#xA;&lt;p&gt;Incesante espera &lt;br&gt;&#xA;Necesito verla &lt;br&gt;&#xA;Mas aquí callado &lt;br&gt;&#xA;Acataré mi pena.&lt;/p&gt;&#xA;&lt;img src=&#34;../../text/Img/fin.JPG&#34; style=&#34;width:40.0%;height:40.0%&#34; /&gt;&#xA;&lt;/center&gt;</description>
     </item>
   </channel>
 </rss>

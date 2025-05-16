@@ -1,16 +1,16 @@
 ---
-title: "Home"
-self_contained: true
+title: Home
+author: Alberto Torrejón Valenzuela
+date: '2024-02-01'
+self_contained: yes
 ---
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 library(fontawesome)
-
 ```
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"> -->
-
 
 <!-- ![](images/Sujeto4.png){ width=20% height=20% } -->
 
@@ -149,39 +149,33 @@ y con lo puesto... <br>
   + **Introduction to R and Linear Models for Biology** (2024) [10 hours] — Institute of Educational Sciences, University of Seville.  
   + [**Introduction to Statistics**](https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-de-la-salud-por-la-universidad-de-malaga/2260007) (2022–2025) [180 hours] — Health Engineering Degree, University of Málaga and University of Seville.  
 
-- <span class="specialelite"> **Research Projects Participation** </span>
+- <span class="specialelite"> **Participation in Research Projects** </span>
 
   + **PROYECTO ETNIAS** — *Estrategias para administración de terapias neuroprotectoras para el ictus isquémico identificado mediante biomarcadores en las ambulancias de Sevilla* [(PI21/01158)](https://www.fisevi.com/images/documentos/fichas/PI21.01158.pdf) <br> Principal researcher: Dr. Joan Montaner Villalonga  
-
   + **Optimization on Data Science and Network Design Problems:** *Large-scale network models meet optimization and data science tools* [(PID2020-114594GB-C21)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=33871) <br>
     Principal researchers: Prof. Justo Puerto, Prof. Víctor Blanco  
-
   + **Challenges in Combinatorial Optimization in New Models of Complex Networks and Data Science** [(P18-FR-1422)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=30878) <br> Principal researchers: Prof. Justo Puerto, Prof. Antonio M. Rodríguez-Chía
-
   + **New Results on Design and Optimization Problems in Complex Networks: Applications to the Design of Smart Cities** [(US-1256951)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=30367) <br> Principal researcher: Prof. Justo Puerto, Prof. José Fernando López-Blázquez
+  
+- <span class="specialelite"> **Editoral activity** </span>
+
+  + [**Boletín de Estadística e Investigación Operativa de la Sociedad Española
+de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/) (2025-now). Technical editor.
 
 - <span class="specialelite"> **Organization** </span>
 
   + [**XLI Congreso Nacional de Estadística e Investigación Operativa**](https://seio2025.com/es/programa/viernes-13-de-junio-de-2025) (10-13/06/2025) - University of Lleida, Lleida, Spain. Organizer of a parallel session in the conference.
-
   + [**5th Spanish Young Statisticians and Operational Researchers Meeting (SYSORM)**](https://www.imus.us.es/congresos/5SYSORM/) (05-07/11/2025) - Institute of Mathematics, University of Seville, Seville, Spain. Organizer. 
-    
   + [**7th Congress of Young Researchers of the RSME**](https://jovenes2025.rsme.es/paralelaCD04.html) (13-17/01/2025) - Universidad del País Vasco, Bilbao, Spain. Organizer of a parallel session in the conference.
-
   + [**III Congreso y XIV Jornadas de usuarios de R**](https://www.imus.us.es/congresos/IIIRqueR/) (06-08/11/2024) -  Institute of Mathematics, University of Seville, Seville, Spain.  Organizing member of the conference
-
   + [**XIII International Workshop on Locational Analysis and Related Problems**](https://easychair.org/cfp/iwoloca24#:~:text=The%20XIII%20International%20Workshop%20on,SEIO%20working%20group%20on%20Location) (04-06/09/2024) - Institute of Mathematics, University of Granada, Granada, Spain. Organizer.
-
   + [**3rd Sevilla MINLP Workshop**](https://www.imus.us.es/congresos/3sminlp/) (30–31/03/2023) — Institute of Mathematics, University of Seville, Seville, Spain. Organizer.  
-
   + [**Seminarios PhD**](https://www.imus.us.es/#actividades/PHD) (2022–2023, full academic year) — Institute of Mathematics, University of Seville, Seville, Spain. Organizer.  
-
   + [**Los Martes Se Investiga – LMSI**]() (2022–2023, full academic year) — Faculty of Mathematics, University of Seville, Seville, Spain. Organizer.  
 
 - <span class="specialelite"> **Awards** </span>
 
   + **Runner-up in the XL Mathematical Olympiad of Cádiz** (February 2016). *Royal Spanish Mathematical Society*.
-
   + [**Third prize in the II Rhetoric and Argumentation Contest**](https://youtu.be/6hY3pNP7N3c?si=QDsRqOBN49Rf7Wpl) (May 2015). *Edith Stein Institute of Philosophy*.
 
 - <span class="specialelite"> **Undergraduate projects** </span>
@@ -189,9 +183,10 @@ y con lo puesto... <br>
   + [Game Theory (Bachelor's Thesis)](https://torrejonvalenzuela.com/pdf/TFG.pdf)  
   + [Deep Reinforcement Learning and Application to Games (Master's Thesis)](https://torrejonvalenzuela.com/pdf/TFM.pdf)  
   + [Game Theory and Artificial Intelligence Dashboard](https://albtorval.shinyapps.io/IA_Juegos_Proyecto/)
+  
 <!-- + [Una breve introducción a CSS](http://torrejonvalenzuela.sytes.net/intro_css/) -->
 
-... not enough? Have a look to my [CV](https://torrejonvalenzuela.com/pdf/CV.pdf)
+... not enough? Have a look to my [CV](pdf/CV.pdf)
 
 ---
 
@@ -223,7 +218,6 @@ y con lo puesto... <br>
 - **Podcast La Camarilla** - [La Hoguera de Kurt Gödel](https://go.ivoox.com/rf/67089001)
 
 
-  
 ---
 
 
@@ -253,10 +247,7 @@ y con lo puesto... <br>
 </div>
 </div>
 
-
-
-
-
 ---
 
 ### <span class="specialelite"> `r emo::ji("memo")` What else? </span>
+

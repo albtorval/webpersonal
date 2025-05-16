@@ -10,11 +10,7 @@ slug: poema-días-de-estudio
 ---
 
 <center>
-<h3>**Días de estudio**</h3>
-
-![](/text/2020-08-16-poema-días-de-estudio_files/bami.png){width=50% height=50%}
-
-Caramelos de limón, una naranja, <br>
+<span class = "primerapalabra">C</span>aramelos de limón, una naranja, <br>
 Apuntes en páginas amarillas. <br>
 Un flexo, una mesa, una silla. <br>
 Suelo frío, calcetines finos. <br>
@@ -24,6 +20,9 @@ a la que visita el sol por la mañana, <br>
 y que aún guarda tu mirada… <br>
 
 Ya se porqué, <br>
-porqué a primera siempre faltaba. <br>
+porqué a primera hora... <br> 
+siempre faltaba. <br>
 
+![](/text/Img/bami.png){width=50% height=50%}
+</center>
 

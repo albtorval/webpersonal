@@ -2,22 +2,20 @@
 title: VNM Póker
 author: Alberto Torrejón Valenzuela
 date: '2021-03-16'
-slug: vnm-póker
 categories:
   - Póker
   - Teoría de Juegos
 tags:
-  - Probabilidad
-  - Teoría de Juegos
   - Matemáticas
   - Póker
+  - Probabilidad
+  - Teoría de Juegos
+slug: vnm-póker
 mathjax: local
 output:
   blogdown::html_page:
     toc: no
-# draft: true
-description: 'VNM Poker'
-
+description: VNM Poker
 ---
 
 ```{r setup, echo=FALSE, warning = FALSE, cache=FALSE}
@@ -41,11 +39,11 @@ opts_knit$set(width=75)
 
 > *Gran parte del dinero que ganarás al póker no procederá de la brillantez de tu juego, sino de la ineptitud de tus oponentes.* Lou Krieger
 
-<center><iframe src="https://torrejonvalenzuela.com/slides/VNMPoker/VNMPoker.html#1"></iframe></center>
+<!-- <center><iframe src="https://torrejonvalenzuela.com/slides/VNMPoker/VNMPoker.html#1"></iframe></center> -->
 
-<center>
-[DIAPOSITIVAS](https://torrejonvalenzuela.com/slides/VNMPoker/VNMPoker.html#1)
-</center>
+<!-- <center> -->
+<!-- [DIAPOSITIVAS](https://torrejonvalenzuela.com/slides/VNMPoker/VNMPoker.html#1) -->
+<!-- </center> -->
 
 # VNM-Póker
 

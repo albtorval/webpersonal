@@ -2,15 +2,24 @@
 title: Orange dress
 author: Alberto Torrejón Valenzuela
 date: '2020-12-19'
-slug: orange-dress
 categories:
   - poemas
 tags:
-  - Inglés
   - Granada
-description: ''
+  - Inglés
+slug: orange-dress
 ---
 
 <center>
-![](/text/2020-12-19-orange-dress_files/That well known dress.png){width=50% height=50%}
+<span class = "primerapalabra">T</span>hat well known dress <br>
+Tied to your skin, <br>
+Facing the wind, <br>
+Shining in the street. <br>
+Orange it was, <br>
+Subtle, no bluffing, <br>
+Never been so charmed, <br>
+Tonight, <br>
+I'm the lucky. 
+
+![](/text/Img/orange.jpeg){width=50% height=50%}
 </center>

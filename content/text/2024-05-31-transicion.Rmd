@@ -1,0 +1,30 @@
+---
+title: Transición
+author: Alberto Torrejón Valenzuela
+date: '2024-05-31'
+slug: transicion
+categories:
+  - textos
+tags:
+  - Amor
+  - Ella
+  - Poemas
+description: ''
+---
+
+<center>
+<span class = "primerapalabra">E</span>n el encono de unos ojos marrones, <br>
+en el candor de otros verdes. <br>
+En la agonía del adiós, <br>
+en el alborozo del comienzo. <br>
+La huella que desaparece con el mar, <br>
+virtiendo agua de sal, <br>
+no dejando cicatrizar. <br>
+La huella que deja un pequeño pie <br>
+que con agua dulce hace sanar. <br>
+Vivir en el inteno de olvidar, <br>
+en el recuerdo de intentar. <br>
+La paradoja de vivir en eterna transición. 
+
+![](/text/Img/IMG_4487.jpg){width=50% height=50%}
+</center>

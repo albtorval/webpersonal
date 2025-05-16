@@ -2,20 +2,15 @@
 title: El cielo no quema
 author: Alberto Torrejón Valenzuela
 date: '2020-11-30'
-slug: el-cielo-no-quema
 categories:
   - poemas
 tags:
   - Ella
-description: ''
+slug: el-cielo-no-quema
 ---
 
 <center> 
-<h3>**El cielo no quema**</h3>
-
-![](/text/2020-11-30-el-cielo-no-quema_files/castillo.JPG){width=50% height=50%}
-
-No temas que el cielo no quema, <br>
+<span class = "primerapalabra">N</span>o temas que el cielo no quema, <br>
 alcanzarlo no es en vano <br>
 y si quieres te presto mi mano. <br>
 
@@ -35,5 +30,7 @@ la cocción es lenta, <br>
 lo saben los encarcelados, <br> 
 el tiempo pesa, <br>
 pero el cielo… no quema. 
+
+![](/text/Img/castillo.JPG){width=50% height=50%}
 
 </center>

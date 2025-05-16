@@ -1,0 +1,36 @@
+---
+title: ¿Qué es el frío si no estás?
+author: Alberto Torrejón Valenzuela
+date: '2022-12-04'
+categories:
+  - textos
+tags:
+  - Ella
+  - Poemas
+slug: que-es-el-frio-si-no-estas
+---
+
+<center>
+<span class = "primerapalabra">E</span>l frío no perece, <br>
+Ni manta, ni agua caliente. <br>
+El mármol hiela, <br>
+Ni abrigo, ni candela. <br>
+
+Que insulsa la música, <br>
+Que anodina la vida, <br>
+Febrícula y dentera, <br>
+Desazón ante esta ceguera.<br>
+
+Solo unos ojos, una boca <br>
+Solo una piel y un palpitar <br>
+Tu cálido susurrar: <br>
+“Imbécil… ¡basta ya!” <br>
+
+Ya, calientame, me quiero quemar, <br>
+Protégeme, pues odio esta soledad, <br>
+Rompe este tiritar, que me pesa agonizar. <br>
+¿Qué es el frío si no estás? <br>
+¿Qué es el frío si te vas?  
+
+![](/text/Img/mujerescultura.jpeg){width=50% height=50%}
+</center>

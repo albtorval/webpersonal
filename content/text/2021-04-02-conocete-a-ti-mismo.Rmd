@@ -1,0 +1,22 @@
+---
+title: Conócete a ti mismo
+author: Alberto Torrejón Valenzuela
+date: '2021-04-02'
+categories:
+  - textos
+tags:
+  - Textos
+slug: conocete-a-ti-mismo
+---
+
+> *"Conócete a ti mismo"*
+
+<div class="just">
+<span class = "primerapalabra">P</span>latón pone esta frase en boca de Sócrates en su diálogo con Alcibíades, un joven ignorante que aspira a la política. Con ella, trata de recordarle que, antes de ser gobernante y mandar sobre el pueblo, su primera tarea como hombre es gobernarse a sí mismo, y no lo conseguirá si antes no se conoce a sí mismo.
+
+La frase, previene al hombre en relación con el camino cierto de la sabiduría: **primero deberás conocerte a ti mismo, para a continuación acceder a grados mayores, más complejos y oscuros, de conocimiento.** No hay que luchar por la libertad, hay que luchar por alcanzar el conocimiento y este te encauzará hacia la libertad siguiendo un principio sólido.
+</div>
+
+<center>
+![](/text/Img/delfos.jpeg){width=70% height=70%}
+</center>

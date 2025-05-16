@@ -2,15 +2,10 @@
 title: Guía RMarkdown
 author: Alberto Torrejón Valenzuela
 date: '2020-07-30'
-slug: guía-rmd
-categories: []
 tags:
   - R Markdown
-description: ''
+slug: guía-rmd
 mathjax: local
-#draft: true
-#publishdate: 
-#weight: 120
 ---
 
 # Uso de Markdown 
