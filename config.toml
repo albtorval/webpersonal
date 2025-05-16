@@ -1,5 +1,5 @@
 baseURL = "/"
-publishDir = "public"
+publishDir = "docs"
 languageCode = "es-es"
 title = "Alberto Torrejón Valenzuela"
 relativeURLs = false
