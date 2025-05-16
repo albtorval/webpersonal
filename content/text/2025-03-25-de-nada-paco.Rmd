@@ -39,5 +39,4 @@ Gracias por todo,
 <span class = "primerapalabra">Dr. Temprano García</span>
 </div>
 
-
 ![](/text/Img/Paco.jpg){width=70% height=70%}

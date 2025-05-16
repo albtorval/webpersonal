@@ -79,8 +79,6 @@ Sincerely,
 
 ### <span class="specialelite"> `r emo::ji("bust")` About me... </span>
 
-
-
 > "There is a difference between a thing and talking about a thing."
 > <div class="der">Kurt Gödel</div>
 
@@ -247,7 +245,7 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
 </div>
 </div>
 
----
+<!-- --- -->
 
-### <span class="specialelite"> `r emo::ji("memo")` What else? </span>
+<!-- ### <span class="specialelite"> `r emo::ji("memo")` What else? </span> -->
 
