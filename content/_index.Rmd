@@ -34,7 +34,7 @@ library(fontawesome)
 If you have arrived at this page to discuss **existentialism**, perhaps this is not the right forum. For that, you may want to go to Instagram and see for yourself if "man is a wolf to man" (*homo homini lupus*).
 However, **don't despair**. If you're not interested in reading anything that requires more effort than your own desire to read, you can also find a space to redeem yourself in the **~/texts** tab. There, you can read some of the texts I write. Good luck if you find one that rhymes. But remember, the will to read has to come from you.
 
-Finally, perhaps you're not here for any of the reasons mentioned above, and you're just reading this for some job selection process, scholarship, or something similar. In that case, I kindly ask you to forget what you have read in the previous paragraphs, check my resume in the **~/curriculum** tab, and hire me.
+Finally, perhaps you're not here for any of the reasons mentioned above, and you're just reading this for some job selection process, scholarship, or something similar. In that case, I kindly ask you to forget what you have read in the previous paragraphs, check my resume in the **~/cv** tab, and hire me.
 
 Of course, like everything in life should, this page is subject to improvements. If you find any errors or have any advice, please feel free to contact me via the links below.
 
