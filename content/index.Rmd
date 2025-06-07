@@ -190,6 +190,7 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
 
 ### <span class="specialelite"> `r emo::ji("speaking")` Scientific dissemination and media </span>
 
+- **Charla Colegio de España** - [Caminante, no hay camino... se optimiza al andar](https://www.colesp.org/events/las-charlas-del-comite-151/)
 - **Canal Sur Radio Mediodía** - [¿Qué hace un matemático de Los Barrios (Cádiz) en París?](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2164719&fbclid=IwY2xjawKRqKBleHRuA2FlbQIxMABicmlkETFFcnU5ZzdyS05PbGZEREhNAR71YWlmtCQjSjLu7iMI_svr7_kcrdF7Gbnw1eQy6jeYgKrVxQEkrSsawnrxdg_aem_mrZ8lKFrdWeZ6RVEs3rTcA) [Clip 21/04/2025 minute 38]
 - **R Consortium Blog** - [Seville R Users Group: R’s Role in Optimization Research and Stroke Prevention](http://r-consortium.org/posts/seville-r-users-group-rs-role-in-optimization-research-and-stroke-prevention/)
 - **Revista Muy Interesante** - [El MUY descubrimiento de 2025: Varios científicos y científicas se atreven a vaticinar qué ocurrirá este año en el mundo de la ciencia](IwY2xjawKRqR5leHRuA2FlbQIxMQBicmlkETFFcnU5ZzdyS05PbGZEREhNAR4NBCnuVFww9ilg4upDWFHMW9slJ0RJU478iZ9yJ6keWCLZ87JNK5eHifvTrA_aem_wLwU)
@@ -211,13 +212,16 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
   + [Andalucía Información](https://andaluciainformacion.es/andalucia/1393071/los-barrios-reune-a-jovenes-investigadores-de-la-localidad-en-una-jornada-el-lunes-30/)
 - **Colaboration with QuantumFracture** - [¿Puedes Ganar Siempre a Pokémon con Matemáticas?](https://youtu.be/ciQR2jehJiI?si=iZydQbrlYQoTlp5c)
 - **Colaboration with Facultad de Matemáticas de la Universidad de Sevilla** - [Un Billar Elíptico](https://youtu.be/sZeKmyL7LdM?si=BEgNPv2enV0a703I)
+- **Salón del Estudiante de la Universidad de Sevilla 2021** - [Matemáticas a través de maquetas: Un billar elíptico](https://tv.us.es/media/MATEM%C3%81TICAS+A+TRAV%C3%89S+DE+MAQUETAS.+UN+BILLAR+EL%C3%8DPTICO/1_9o3c34e9/233736812)
 - **Invited talk at Facultad de Matemáticas de la Universidad de Sevilla** - [PiDay talk 2024](https://youtu.be/nDZO3nNE9J4?si=Nis96j4WqZ4emYb_)
 - **La Locomotora** - [Interview](https://www.twitch.tv/videos/1783768829)
+- **TalleR of the R Users Asscoiation of Murcia** - [Optimización, Solvers y R con ejemplos](https://www.youtube.com/watch?v=FMfUo-COP8c)
 - **Podcast La Camarilla** - [La Hoguera de Kurt Gödel](https://go.ivoox.com/rf/67089001)
-
+- **Blog de prensa del Ayuntamiento de Los Barrios** - [Romero recibe el Alcaldía a Alberto Torrejón Valenzuela, segundo premio en la LI Olimpiada Matemática](https://prensa.ayto-losbarrios.es/romero-recibe-el-alcaldia-a-alberto-torrejon-valenzuela-segundo-premio-en-la-li-olimpiada-matematica/)
+- **Noticias de la Villa** - [Alberto Torrejón del Sierra Luna segundo clasificado en la Olimpiada de Matemática](https://www.noticiasdelavilla.net/alberto-torrejon-del-sierra-luna-segundo-clasificado-en-la-olimpiada-de-matematica/)
+- **La UCA entrega los diplomas al alumnado ganador de las seis Olimpiadas del curso 2014/2015** - [Communication](https://d113.uca.es/wp-content/uploads/2018/02/ImpresoUCA.pdf)
 
 ---
-
 
 ### <span class="specialelite"> `r emo::ji("mag")` Seek and you shall find... </span>
 

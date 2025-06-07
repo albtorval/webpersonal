@@ -1,0 +1,28 @@
+---
+title: Del capullo, el pistilo
+author: Alberto Torrejón Valenzuela
+date: '2025-06-07'
+slug: del-capullo-el-pistilo
+categories:
+  - textos
+tags:
+  - Poemas
+description: ''
+---
+
+<center>
+
+<span class = "primerapalabra">D</span>el capullo el pistilo <br>
+que tiene la espora <br>
+que germina, <br>
+que explota, <br>
+que al viento se adora <br>
+y en danza se posa <br>
+sobre un tallo dormido <br>
+que en flor se transforma <br>
+y espera, sin prisa, <br>
+la abeja que asoma.
+
+![](/text/Img/tulipan.jpeg){width=50% height=50%}
+
+</center>
