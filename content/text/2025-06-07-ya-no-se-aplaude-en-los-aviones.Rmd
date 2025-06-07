@@ -12,7 +12,7 @@ description: ''
 
 <center>
 
-<span class = "primerapalabra">D</span>a no se aplaude en los aviones, <br>
+<span class = "primerapalabra">Y</span>a no se aplaude en los aviones, <br>
 Ni se come carne con tomate <br>
 ¿Qué fue de la canción del verano? <br>
 La gente ahora, lee más, escribe más, <br>

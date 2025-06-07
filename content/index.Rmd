@@ -173,13 +173,13 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
 
 - <span class="specialelite"> **Awards** </span>
 
-  + **Runner-up in the XL Mathematical Olympiad of Cádiz** (February 2016). *Royal Spanish Mathematical Society*.
+  + **Runner-up in the LI Mathematical Olympiad of Cádiz** (February 2016). *Royal Spanish Mathematical Society*.
   + [**Third prize in the II Rhetoric and Argumentation Contest**](https://youtu.be/6hY3pNP7N3c?si=QDsRqOBN49Rf7Wpl) (May 2015). *Edith Stein Institute of Philosophy*.
 
 - <span class="specialelite"> **Undergraduate projects** </span>
 
-  + [Game Theory (Bachelor's Thesis)](https://torrejonvalenzuela.com/pdf/TFG.pdf)  
-  + [Deep Reinforcement Learning and Application to Games (Master's Thesis)](https://torrejonvalenzuela.com/pdf/TFM.pdf)  
+  + [Game Theory (Bachelor's Thesis)](https://www.torrejonvalenzuela.net/pdf/TFG.pdf)  
+  + [Deep Reinforcement Learning and Application to Games (Master's Thesis)](https://www.torrejonvalenzuela.net/pdf/TFM.pdf)  
   + [Game Theory and Artificial Intelligence Dashboard](https://albtorval.shinyapps.io/IA_Juegos_Proyecto/)
   
 <!-- + [Una breve introducción a CSS](http://torrejonvalenzuela.sytes.net/intro_css/) -->
@@ -190,8 +190,8 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
 
 ### <span class="specialelite"> `r emo::ji("speaking")` Scientific dissemination and media </span>
 
-- **Charla Colegio de España** - [Caminante, no hay camino... se optimiza al andar](https://www.colesp.org/events/las-charlas-del-comite-151/)
-- **Canal Sur Radio Mediodía** - [¿Qué hace un matemático de Los Barrios (Cádiz) en París?](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2164719&fbclid=IwY2xjawKRqKBleHRuA2FlbQIxMABicmlkETFFcnU5ZzdyS05PbGZEREhNAR71YWlmtCQjSjLu7iMI_svr7_kcrdF7Gbnw1eQy6jeYgKrVxQEkrSsawnrxdg_aem_mrZ8lKFrdWeZ6RVEs3rTcA) [Clip 21/04/2025 minute 38]
+- **Talk in the Colegio de España of Paris** - [Caminante, no hay camino... se optimiza al andar](https://www.colesp.org/events/las-charlas-del-comite-151/)
+- **Canal Sur Radio Mediodía** - [¿Qué hace un matemático de Los Barrios en París?](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2164719&fbclid=IwY2xjawKRqKBleHRuA2FlbQIxMABicmlkETFFcnU5ZzdyS05PbGZEREhNAR71YWlmtCQjSjLu7iMI_svr7_kcrdF7Gbnw1eQy6jeYgKrVxQEkrSsawnrxdg_aem_mrZ8lKFrdWeZ6RVEs3rTcA) [Clip 21/04/2025 minute 38]
 - **R Consortium Blog** - [Seville R Users Group: R’s Role in Optimization Research and Stroke Prevention](http://r-consortium.org/posts/seville-r-users-group-rs-role-in-optimization-research-and-stroke-prevention/)
 - **Revista Muy Interesante** - [El MUY descubrimiento de 2025: Varios científicos y científicas se atreven a vaticinar qué ocurrirá este año en el mundo de la ciencia](IwY2xjawKRqR5leHRuA2FlbQIxMQBicmlkETFFcnU5ZzdyS05PbGZEREhNAR4NBCnuVFww9ilg4upDWFHMW9slJ0RJU478iZ9yJ6keWCLZ87JNK5eHifvTrA_aem_wLwU)
 - **Canal Sur Radio Mediodía** - [Entrevista](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2164719&fbclid=IwY2xjawKRqctleHRuA2FlbQIxMABicmlkETFFcnU5ZzdyS05PbGZEREhNAR7lyGN_vYXvMnWYaUgIQHL2RJN0pDFRKzuN1aMWBJz2a3GXLCsafbpq9ROi-A_aem_h7MxiCQl701ZLW4gPOjVXg) [Clip 18/12/24 minute 27]
