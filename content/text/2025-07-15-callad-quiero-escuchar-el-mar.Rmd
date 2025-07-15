@@ -14,7 +14,6 @@ description: ''
 ---
 
 <center>
-
 Callad, que quiero escuchar el mar, <br>
 cómo los pies se hunden en la arena, <br> 
 cómo la ola rompe y el viento hace sanar, <br>

@@ -2,19 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
+    <loc>/tags/amor/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/callad-quiero-escuchar-el-mar/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/ella/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/mar/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/poemas/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/tags/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>/text/</loc>
+    <lastmod>2025-07-15T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>/text/ce-n-est-pas-un-adieu/</loc>
     <lastmod>2025-06-22T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/text/</loc>
-    <lastmod>2025-06-22T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/text/del-capullo-el-pistilo/</loc>
-    <lastmod>2025-06-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/poemas/</loc>
-    <lastmod>2025-06-07T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/</loc>
     <lastmod>2025-06-07T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/ya-no-se-aplaude-en-los-aviones/</loc>
@@ -59,9 +71,6 @@
     <loc>/tags/textos/</loc>
     <lastmod>2025-03-25T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>/tags/ella/</loc>
-    <lastmod>2025-03-20T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>/text/sin-andalucia-en-paris/</loc>
     <lastmod>2025-03-20T00:00:00+00:00</lastmod>
   </url><url>
@@ -76,9 +85,6 @@
   </url><url>
     <loc>/text/andalucia-no-es/</loc>
     <lastmod>2025-02-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>/tags/amor/</loc>
-    <lastmod>2025-02-17T00:00:00+00:00</lastmod>
   </url><url>
     <loc>/text/todos-conocen-a-cupido/</loc>
     <lastmod>2025-02-17T00:00:00+00:00</lastmod>
