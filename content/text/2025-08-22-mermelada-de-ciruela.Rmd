@@ -1,0 +1,28 @@
+---
+title: Mermelada de ciruela
+author: Alberto Torrejón Valenzuela
+date: '2025-08-22'
+slug: mermelada-de-ciruela
+categories:
+  - poemas
+tags:
+  - Amor
+  - Ella
+  - Poemas
+description: ''
+---
+
+
+<center>
+![](/text/Img/mermelada.jpeg){width=50% height=50%}
+<br>
+Eva prepara mermelada de ciruela, <br>
+la veo desde la mesa donde leo. <br>
+La casa huele a limón. <br>
+Venga, Alberto.. concentración. <br>
+
+Eva prepara mermelada, <br>
+yo la miro, <br>
+huele a limón, <br>
+Alberto...
+</center>

@@ -1,6 +1,6 @@
 ---
 title: Callad, quiero escuchar el mar
-author: Package Build
+author: Alberto Torrejón Valenzuela
 date: '2025-07-15'
 slug: callad-quiero-escuchar-el-mar
 categories:
