@@ -11,7 +11,7 @@ description: ''
 <center>
 ![](/text/Img/PARIS1.JPG){width=50% height=50%}
 <br>
-Cité Universitaire <br>
+<span class = "primerapalabra">C</span>ité Universitaire <br>
 Denfert‑Rochereau <br>
 Port‑Royal <br>
 Luxembourg <br>
