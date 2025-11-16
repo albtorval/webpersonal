@@ -5,7 +5,6 @@ date: '2024-02-01'
 self_contained: yes
 ---
 
-
 ```{r echo=FALSE, message=FALSE, warning=FALSE, include=FALSE}
 library(fontawesome)
 ```
@@ -182,9 +181,9 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
 
 - <span class="specialelite"> **Projects** </span>
 
-  + [Ordered Optimization: Theory, Algorithms and Applications](https://www.torrejonvalenzuela.net/pdf/PhD.pdf)
-  + [Deep Reinforcement Learning and Application to Games (Master's Thesis)](https://www.torrejonvalenzuela.net/pdf/TFM.pdf)  
-  + [Game Theory (Bachelor's Thesis)](https://www.torrejonvalenzuela.net/pdf/TFG.pdf)  
+  + [Ordered Optimization: Theory, Algorithms and Applications (PhD Thesis)](pdf/PhD.pdf)
+  + [Deep Reinforcement Learning and Application to Games (Master Thesis)](pdf/TFM.pdf)  
+  + [Game Theory (Bachelor Thesis)](pdf/TFG.pdf)  
   + [Game Theory and Artificial Intelligence Dashboard](https://albtorval.shinyapps.io/IA_Juegos_Proyecto/)
   
 <!-- + [Una breve introducción a CSS](http://torrejonvalenzuela.sytes.net/intro_css/) -->
