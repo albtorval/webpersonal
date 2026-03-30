@@ -138,51 +138,65 @@ y con lo puesto... <br>
 
 - <span class="specialelite"> **Scientific publications** </span>
 
-  + **Linear, nested, and quadratic ordered measures: Computation and incorporation into optimization problems**. *Víctor Blanco, Miguel A. Pozo, Justo Puerto, Alberto Torrejon*. ArXiv (2025) [[doi.org/10.48550/arXiv.2503.18097](https://doi.org/10.48550/arXiv.2503.18097)]
-  + **A fresh view on Least Quantile of Squares Regression based on new optimization approaches**. Expert Systems with Applications. *Justo Puerto, Alberto Torrejón*. (2025) [[doi.org/10.1016/j.eswa.2025.127705](https://doi.org/10.1016/j.eswa.2025.127705)]
-  + **The Ordered Median Tree Location Problem**. *Miguel A. Pozo, Justo Puerto, Alberto Torrejón*. Computers & Operations Research (2024) [[doi.org/10.1016/j.cor.2024.106746](https://doi.org/10.1016/j.cor.2024.106746)]
-  + **Benders decomposition for the Discrete Ordered Median Problem**. *Ivana Ljubić, Miguel A. Pozo, Justo Puerto, Alberto Torrejon*. European Journal of Operational Research (2024) [[doi.org/10.1016/j.ejor.2024.04.030](https://doi.org/10.1016/j.ejor.2024.04.030)]
-
+  + **Fair Vehicle Routing via Bilevel Optimization**. *Ljubić I., Puerto J., Torrejon A.* (2026), Optimization Online.
+  [[https://optimization-online.org/?p=33847](https://optimization-online.org/?p=33847)]
+  + **Revisiting transportation problems under Monge costs with applications to location problems**. *Nickel S., Puerto J., Ramoser S., Torrejon A.* (2026), arXiv.
+  [[doi.org/10.48550/arXiv.2602.15151](https://arxiv.org/abs/2602.15151)]
+  + **Linear, nested, and quadratic ordered measures: Computation and incorporation into optimization problems**. *Blanco V., Pozo M.A., Puerto J., Torrejon A.* (2025), arXiv
+  [[doi.org/10.48550/arXiv.2503.18097](https://doi.org/10.48550/arXiv.2503.18097)]
+  + **A fresh view on Least Quantile of Squares Regression based on new optimization approaches**. *Puerto J., Torrejon A.* (2025), Expert Systems with Applications
+  [[doi.org/10.1016/j.eswa.2025.127705](https://doi.org/10.1016/j.eswa.2025.127705)]
+  + **The Ordered Median Tree Location Problem**. *Pozo M.A., Puerto J., Torrejon A.* (2024), Computers & Operations Research 
+  [[doi.org/10.1016/j.cor.2024.106746](https://doi.org/10.1016/j.cor.2024.106746)]
+  + **Benders decomposition for the Discrete Ordered Median Problem**. *Ljubić I., Pozo M.A., Puerto J., Torrejon A.* (2024), European Journal of Operational Research
+  [[doi.org/10.1016/j.ejor.2024.04.030](https://doi.org/10.1016/j.ejor.2024.04.030)]
 
 - <span class="specialelite"> **Teaching** </span>
 
-  + **Advanced Linear Models for Biology** (2024) [18 hours] — Institute of Educational Sciences, University of Seville.  
-  + **Introduction to R and Linear Models for Biology** (2024) [10 hours] — Institute of Educational Sciences, University of Seville.  
-  + [**Introduction to Statistics**](https://www.us.es/estudiar/que-estudiar/oferta-de-grados/grado-en-ingenieria-de-la-salud-por-la-universidad-de-malaga/2260007) (2022–2025) [180 hours] — Health Engineering Degree, University of Málaga and University of Seville.  
+  + **Probability Theory** (2025–2026) – [120h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
+  + **Introduction to Statistics**  
+    - (2025–2026) [6h - Practice] Degree in Computer Engineering, University of Seville.
+    - (2024-2025) [60h - Theory + Practice], Degree in Health Engineering, University of Sevilla and University of Malaga.
+    - (2023–2024) [60h - Theory + Practice], Degree in Health Engineering, University of Sevilla and University of Malaga.
+    - (2022–2023) [60h - Theory + Practice], Degree in Health Engineering, University of Sevilla and University of Malaga.
+  + **Advanced Linear Models for Biology** (2024) – [18h - Theory + Practice], Institute of Educational Sciences of the University of Sevilla.
+  + **Introduction to R and Linear Models for Biology** (2024) – [10h - Theory + Practice], Institute of Educational Sciences of the University of Sevilla.
 
 - <span class="specialelite"> **Participation in Research Projects** </span>
 
-  + **PROYECTO ETNIAS** — *Estrategias para administración de terapias neuroprotectoras para el ictus isquémico identificado mediante biomarcadores en las ambulancias de Sevilla* [(PI21/01158)](https://www.fisevi.com/images/documentos/fichas/PI21.01158.pdf) <br> Principal researcher: Dr. Joan Montaner Villalonga  
-  + **Optimization on Data Science and Network Design Problems:** *Large-scale network models meet optimization and data science tools* [(PID2020-114594GB-C21)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=33871) <br>
-    Principal researchers: Prof. Justo Puerto, Prof. Víctor Blanco  
-  + **Challenges in Combinatorial Optimization in New Models of Complex Networks and Data Science** [(P18-FR-1422)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=30878) <br> Principal researchers: Prof. Justo Puerto, Prof. Antonio M. Rodríguez-Chía
-  + **New Results on Design and Optimization Problems in Complex Networks: Applications to the Design of Smart Cities** [(US-1256951)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=30367) <br> Principal researcher: Prof. Justo Puerto, Prof. José Fernando López-Blázquez
-  
-- <span class="specialelite"> **Editoral activity** </span>
+  + **Mathematical Optimization for Machine Learning in Complex Networks** [(PID2024‑156594NB‑C21)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=41080). <br> PIs: *Prof. Justo Puerto, Prof. Víctor Blanco*. <!-- Funding: *€185,000*. Period: *2025–2029*. Role: *Research Team Member*. -->
+  + **Clinical-Experimental Study on Sodium and Cognitive Function** [(PI25/00474)](https://sede.isciii.gob.es/serviciosecontroller?action=downloadPub&idDocumento=11/09/2025-f1f87b5dd2&idPublicacion=51454). <br> PI: *Dr. Soledad Pérez-Sánchez*. <!-- Funding: *€161,713.75*. Period: *2025–2028.* Role: *Research Team Member.* -->
+  + **PROYECTO ETNIAS — Estrategias para administración de terapias neuroprotectoras para el ictus isquémico identificado mediante biomarcadores en las ambulancias de Sevilla** [(PI21/01158)](https://www.fisevi.com/images/documentos/fichas/PI21.01158.pdf). <br> PI: *Dr. Joan Montaner*. <!-- Funding: *€246,840*. Period: *2022–2026.* Role: *Collaborator.* -->
+  + **Optimization on Data Science and Network Design Problems: Large-scale network models meet optimization and data science tools** [(PID2020-114594GB-C21)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=33871). <br> 
+PIs: *Prof. Justo Puerto, Prof. Víctor Blanco*. <!-- Funding: *€217,115.* Period: *2021–2025.* Role: *Research Team Member.* -->
+  + **Location Science and Related Problems – Thematic Network** [(RED2022‑134149‑T)](https://redloca.es/).  <br> PI: *Prof. Víctor Blanco*. <!-- Funding: *€20,000*. Period: *2023–2025.* Role: *Research Team Member.* -->
+  + **Challenges in Combinatorial Optimization in New Models of Complex Networks and Data Science** [(P18-FR-1422)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=30878). <br> PIs: *Prof. Justo Puerto, Prof. Antonio M. Rodríguez-Chía*. <!-- Funding: *€109,750.* Period: *2023–2025.* Role: *Research Team Member.* -->
+  + **New Results on Design and Optimization Problems in Complex Networks: Applications to the Design of Smart Cities** [(US-1256951)](https://investigacion.us.es/sisius/sis_proyecto.php?idproy=30367). <br> PIs: *Prof. Justo Puerto, Prof. José F. López-Blázquez*. <!-- Funding: *€80,000*. Period: *2020–2022.* Role: *Research Team Member.* -->
 
-  + [**Boletín de Estadística e Investigación Operativa de la Sociedad Española
-de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/) (2025-now). Technical editor.
+- <span class="specialelite"> **Other academic activities** (organization, editorial work, scientific service, outreach, etc.) </span>
 
-- <span class="specialelite"> **Organization an other academic activities** </span>
-
-  + [**5th Spanish Young Statisticians and Operational Researchers Meeting (SYSORM)**](https://www.imus.us.es/congresos/5SYSORM/) (05-07/11/2025) - Institute of Mathematics, University of Seville, Seville, Spain. Organizer member of the conference. 
-  + [**IV Congreso y XV Jornadas de Usuarios de R**](https://rvalencia.webs.upv.es/) (05–07/11/2025) — Polytechnic University of Valencia, Valencia, Spain. Member of the Scientific Committee.
-  + [**30th Meeting of the EURO Working Group on Locational Analysis & XIV International Workshop on Locational Analysis**](https://ewgla2025.uca.es/) (17–19/09/2025) — University of Cádiz, Jerez, Spain. Organization and promotion tasks.  
-  + [**Coordinator for dissemination of scientific activities at IMUS**](https://www.imus.us.es/#) (01/10/2023 – 25/02/2025) — Institute of Mathematics (IMUS), University of Seville, Seville, Spain.
-  + [**XLI Congreso Nacional de Estadística e Investigación Operativa**](https://seio2025.com/es/programa/viernes-13-de-junio-de-2025) (10-13/06/2025) - University of Lleida, Lleida, Spain. Organizer of a parallel session in the conference.
-  + [**7th Congress of Young Researchers of the RSME**](https://jovenes2025.rsme.es/paralelaCD04.html) (13-17/01/2025) - Universidad del País Vasco, Bilbao, Spain. Organizer of a parallel session in the conference.
-  + [**III Congreso y XIV Jornadas de usuarios de R**](https://www.imus.us.es/congresos/IIIRqueR/) (06-08/11/2024) -  Institute of Mathematics, University of Seville, Seville, Spain.  Organizing member of the conference
-  + [**XIII International Workshop on Locational Analysis and Related Problems**](https://easychair.org/cfp/iwoloca24#:~:text=The%20XIII%20International%20Workshop%20on,SEIO%20working%20group%20on%20Location) (04-06/09/2024) - Institute of Mathematics, University of Granada, Granada, Spain. Organizer.
-  + [**3rd Sevilla MINLP Workshop**](https://www.imus.us.es/congresos/3sminlp/) (30–31/03/2023) — Institute of Mathematics, University of Seville, Seville, Spain. Organizer.  
-  + [**Seminarios PhD**](https://www.imus.us.es/#actividades/PHD) (2022–2023, full academic year) — Institute of Mathematics, University of Seville, Seville, Spain. Organizer.  
-  + [**Los Martes Se Investiga – LMSI**]() (2022–2023, full academic year) — Faculty of Mathematics, University of Seville, Seville, Spain. Organizer.  
+  + [**Outreach Commission, Spanish Society of Statistics, Operations Research and Data Science (SEIO)**](https://www.seio.es/comisiones-seio/) (Mar 2026–present). Role: Member.  
+  <!-- + **III Conference for Young Researchers from Los Barrios** (Mar 2026) — City Hall of Los Barrios, Cádiz, Spain. Role: Organizer of a round table.   -->
+  + [**Outreach Commission, IMUS – Institute of Mathematics, University of Seville (María de Maeztu Unit)**](https://www.imus.us.es/www/#organigrama) (Jan 2026–present). Role: Member.  
+  + [**1st International New Researchers Conference (IMS)**](https://www.imus.us.es/) (Dec 11–12, 2025) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Chair of the Organizing Committee.  
+  + [**5th Spanish Young Statisticians and Operational Researchers Meeting (SYSORM)**](https://www.imus.us.es/congresos/5SYSORM/) (Nov 5–7, 2025) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Member of the Organizing Committee.  
+  + [**IV Congreso y XV Jornadas de Usuarios de R**](https://rvalencia.webs.upv.es/) (Nov 5–7, 2025) — Polytechnic University of Valencia, Valencia, Spain. Role: Member of the Scientific Committee.  
+  + [**30th Meeting of the EURO Working Group on Locational Analysis & XIV International Workshop on Locational Analysis**](https://ewgla2025.uca.es/) (Sep 17–19, 2025) — University of Cádiz, Jerez, Spain. Role: Organization and promotion.  
+  + [**XLI Congreso Nacional de Estadística e Investigación Operativa (SEIO 2025)**](https://seio2025.com/es/programa/viernes-13-de-junio-de-2025) (Jun 10–13, 2025) — University of Lleida, Lleida, Spain. Role: Organizer of the invited session *Localización (GELOCA3)*.  
+  + [**7th Congress of Young Researchers of the RSME**](https://jovenes2025.rsme.es/paralelaCD04.html) (Jan 13–17, 2025) — University of the Basque Country, Bilbao, Spain. Role: Organizer of the session *CD04: Mathematical Optimization*.  
+  + [**III Congreso y XIV Jornadas de Usuarios de R**](https://www.imus.us.es/congresos/IIIRqueR/) (Nov 6–8, 2024) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Chair of the Organizing Committee.  
+  + [**XIII International Workshop on Locational Analysis and Related Problems (IWoLoCA)**](https://easychair.org/cfp/iwoloca24#:~:text=The%20XIII%20International%20Workshop%20on,SEIO%20working%20group%20on%20Location) (Sep 4–6, 2024) — Institute of Mathematics, University of Granada, Granada, Spain. Role: Organization and promotion.  
+  + [**Boletín de Estadística e Investigación Operativa (BEIO), Spanish Society of Statistics and Operations Research (SEIO)**](https://www.seio.es/revista-beio/) (2025–present). Role: Technical Editor.  
+  + [**3rd Sevilla MINLP Workshop**](https://www.imus.us.es/congresos/3sminlp/) (Mar 30–31, 2023) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Organization and promotion.  
+  + [**PhD Seminar Series (IMUS)**](https://www.imus.us.es/#actividades/PHD) (2022–2023, full academic year) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Organizer.  
+  + **Los Martes Se Investiga (LMSI)** — outreach activity (2022–2023, full academic year) — Faculty of Mathematics, University of Seville, Seville, Spain. Role: Organizer.  
 
 - <span class="specialelite"> **Awards** </span>
 
   + **Second prize in the LI Mathematical local RSME Olympiad** (February 2016). *Royal Spanish Mathematical Society*.
   + [**Third prize in the II Rhetoric and Argumentation Contest**](https://youtu.be/6hY3pNP7N3c?si=QDsRqOBN49Rf7Wpl) (May 2015). *Edith Stein Institute of Philosophy*.
 
-- <span class="specialelite"> **Projects** </span>
+- <span class="specialelite"> **Dissertations and other projects** </span>
 
   + [Ordered Optimization: Theory, Algorithms and Applications (PhD Thesis)](pdf/PhD.pdf)
   + [Deep Reinforcement Learning and Application to Games (Master Thesis)](pdf/TFM.pdf)  
@@ -197,6 +211,17 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
 
 ### <span class="specialelite"> `r emo::ji("speaking")` Scientific dissemination and media </span>
 
+- **Podcast "El Cajón del Autómata"** [[Link to Spotify](https://open.spotify.com/show/2jTPJYjp4Y86KgsqLlWle5?si=c965303726d7416c)] - Canal Sur Radio & Instituto de Matemáticas de la Universidad de Sevilla
+- **III Jornada Jóvenes Investigadores Barreños**
+  + [Ayuntamiento de Los Barrios](https://prensa.ayto-losbarrios.es/celebradas-las-iii-jornadas-de-jovenes-investigadores-para-fomentar-el-talento-y-la-orientacion-profesional/)
+  + [Área Campo de Gibraltar](https://www.diarioarea.com/los-barrios/los-barrios-acoge-la-iii-edicion-de-las-jornadas-de-jovenes-investigadores-barrenos/)
+  + [8 directo](https://www.8directo.com/los-barrios/jornadas-jovenes-investigadores-barrenos-se-celebran-jueves-26-febrero-con-tres-ponentes_631318_102.html)
+  + [Cadena Ser](https://cadenaser.com/andalucia/2026/02/26/los-barrios-vive-la-recta-final-de-las-xiii-jornadas-culturales-andaluzas-radio-algeciras/)
+  + [Mare Comunicación](https://mareespecial.es/los-barrios-acerca-la-ciencia-y-la-ingenieria-a-sus-estudiantes-con-las-iii-jornadas-de-jovenes-investigadores/)
+  + [Portal de Cádiz](https://www.portaldecadiz.com/mas-de-cadiz/cultura/152567-la-ciencia-irrumpe-en-los-barrios-con-las-iii-jornadas-de-jovenes-investigadores)
+  + [Campo de Gibraltar 24h](https://www.campogibraltar24h.es/articulo/los-barrios/barrios-celebra-iii-jornadas-jovenes-investigadores-orientar-futuro-profesional-alumnado/20260226191523013400.html?fbclid=IwY2xjawQ3gXVleHRuA2FlbQIxMQBicmlkETB6TVhZUkN4OWJoY0R5T0hNc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHqeUwj-xpoBv0HFPWFtTuYmTJaRPywlw79EF4In5edoxovG1kQpRFLan3117_aem_fceZ9Lcj47RX5MmyjuS_9g)
+- **Revista Muy Interesante** - [Mapas y rutas de sombra: Ciencia de datos para optimizar nuestros pasos bajo el sol](https://www.fundacionmuyinteresante.org/mapas-rutas-sombra-optimizar-pasos-bajo-el-sol.html)
+- **1+400: Divulgación con 1 imagen y 400 palabras.** - "El espejismo de lo suficientemente bueno". Alberto Torrejon. Boletín del IMI, Nº 199 (18 diciembre 2025), [doi.org/10.57037/b-imi.00199.1mas400](https://doi.org/10.57037/b-imi.00199.1mas400)
 - **Canal Sur Radio Mediodía** - [Entrevista por la defensa de tesis doctoral en el Instituto de Matemáticas de la Universidad de Sevilla](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2210057 ) [Clip 24/10/25 minute 30]
 - **Canal Sur Radio Mediodía** - [¿Qué es el Colegio de España de París?](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2175867) [Clip 17/06/2025 minute 48]
 - **Charla Colegio de España** - [Caminante, no hay camino... se optimiza al andar](https://www.colesp.org/events/las-charlas-del-comite-151/)
@@ -204,7 +229,7 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
 - **R Consortium Blog** - [Seville R Users Group: R’s Role in Optimization Research and Stroke Prevention](http://r-consortium.org/posts/seville-r-users-group-rs-role-in-optimization-research-and-stroke-prevention/)
 - **Revista Muy Interesante** - [El MUY descubrimiento de 2025: Varios científicos y científicas se atreven a vaticinar qué ocurrirá este año en el mundo de la ciencia](https://www.muyinteresante.com/actualidad/descubrimiento-2025-cientificos-vaticinan-ciencia.html)
 - **Canal Sur Radio Mediodía** - [Entrevista](https://www.canalsur.es/radio/programas/canal-sur-mediodia-campo-de-gibraltar/detalle/2894638.html?video=2164719&fbclid=IwY2xjawKRqctleHRuA2FlbQIxMABicmlkETFFcnU5ZzdyS05PbGZEREhNAR7lyGN_vYXvMnWYaUgIQHL2RJN0pDFRKzuN1aMWBJz2a3GXLCsafbpq9ROi-A_aem_h7MxiCQl701ZLW4gPOjVXg) [Clip 18/12/24 minute 27]
-- **Diario de Sevilla** - [Alberto Torrejón: "Ejecutamos algoritmos de un modo constate"](https://www.diariodesevilla.es/entrevistas/alberto-torrejon-ejecutamos-algoritmos-constante_0_2002953741.html)
+- **Diario de Sevilla** - [Alberto Torrejón: "Ejecutamos algoritmos de un modo constante"](https://www.diariodesevilla.es/entrevistas/alberto-torrejon-ejecutamos-algoritmos-constante_0_2002953741.html)
 - **II Jornada Jóvenes Investigadores Barreños**
   + [Ayuntamiento de Los Barrios](https://prensa.ayto-losbarrios.es/la-ii-jornada-jovenes-investigadores-barrenos-se-celebrara-el-5-de-diciembre-en-el-posito/)
   + [8 Directo](https://www.8directo.com/los-barrios/cuatro-jovenes-investigadores-barrenos-trasladan-su-experiencia-estudiantes-ies_621479_102.html)
@@ -225,7 +250,7 @@ de Estadística e Investigación Operativa**](https://www.seio.es/revista-beio/)
 - **Invited talk at Facultad de Matemáticas de la Universidad de Sevilla** - [PiDay talk 2024](https://youtu.be/nDZO3nNE9J4?si=Nis96j4WqZ4emYb_)
 - **La Locomotora** - [Interview](https://www.twitch.tv/videos/1783768829)
 - **TalleR of the R Users Asscoiation of Murcia** - [Optimización, Solvers y R con ejemplos](https://www.youtube.com/watch?v=FMfUo-COP8c)
-- **Podcast La Camarilla** - [La Hoguera de Kurt Gödel](https://go.ivoox.com/rf/67089001)
+- **Podcast "La Camarilla"** - [La Hoguera de Kurt Gödel](https://go.ivoox.com/rf/67089001)
 - **Blog de prensa del Ayuntamiento de Los Barrios** - [Romero recibe el Alcaldía a Alberto Torrejón Valenzuela, segundo premio en la LI Olimpiada Matemática](https://prensa.ayto-losbarrios.es/romero-recibe-el-alcaldia-a-alberto-torrejon-valenzuela-segundo-premio-en-la-li-olimpiada-matematica/)
 - **Noticias de la Villa** - [Alberto Torrejón del Sierra Luna segundo clasificado en la Olimpiada de Matemática](https://www.noticiasdelavilla.net/alberto-torrejon-del-sierra-luna-segundo-clasificado-en-la-olimpiada-de-matematica/)
 - **La UCA entrega los diplomas al alumnado ganador de las seis Olimpiadas del curso 2014/2015** - [Communication](https://d113.uca.es/wp-content/uploads/2018/02/ImpresoUCA.pdf)
