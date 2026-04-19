@@ -1,0 +1,39 @@
+---
+title: ¿Una lágrima de felicidad?
+author: Alberto Torrejón Valenzuela
+date: '2026-04-19'
+slug: una-lagrima-de-felicidad
+categories:
+  - poemas
+  - Versos
+  - textos
+tags:
+  - Ella
+description: ''
+---
+
+<center>
+![](/text/Img/2026-04-19-una-lagrima-de-felicidad_files/e0a30651-ac43-482c-a97f-876ba07d06b6.JPG){width=50% height=50%}
+</center>
+
+<center>
+<span class = "primerapalabra">E</span>n una de las páginas donde escribo, <br>
+uso el binomio de Newton para demostrar <br>
+que el azar es una función de probabilidad. <br>
+En una de las páginas donde escribo <br>
+hay una mancha de agua que ha emborronado <br>
+aquello que quiero demostrar. <br>
+
+Ya casi iba por el final. <br>
+Veía esa casa, esa sonrisa, <br>
+esa emoción que se siente, felicidad. <br>
+Ya veía tus ojos verdes, tu piel blanca, <br>
+entre la luz que entra al despertar, <br>
+una cuna, que se mece, un sueño realidad. <br>
+
+En la página donde escribo, donde demuestro <br>
+aquello que pretendo enseñar, <br>
+una lágrima ha dejado un rastro que todo ha hecho emborronar. <br>
+Creo, ahora, solo me queda volver a empezar. <br>
+</center>
+
