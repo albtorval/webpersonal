@@ -45,3 +45,8 @@ toc = false
     name = "tags"
     url = "/tags/"
     weight = 4
+    
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

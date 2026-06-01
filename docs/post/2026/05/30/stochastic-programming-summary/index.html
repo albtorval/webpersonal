@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="es-es">
+  <head>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/atom-one-light.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="../../../../../images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../../../../images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../../../../images/favicon-16x16.png">
+    <link rel="manifest" href="../../../../../images/site.webmanifest">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Introduction to stochastic programming, dynamic programming and Markov decision processes.">
+    <title>Stochastic Programming summary | Alberto Torrejón Valenzuela</title>
+    <link rel="stylesheet" href="../../../../../css/style.css" />
+    <link rel="stylesheet" href="../../../../../css/fonts.css" />
+    <link rel="stylesheet" href="../../../../../css/theme-override.css">
+    <header>
+
+  <nav>
+    <ul>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../">~/alberto torrejón valenzuela</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="https://albtorval.github.io/webpersonal/pdf/CV.pdf">~/cv</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../post/">~/posts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../text/">~/texts</a>
+      </li>
+      
+      
+      <li class="pull-left ">
+        <a href="../../../../../tags/">~/tags</a>
+      </li>
+      
+
+      
+
+    </ul>
+  </nav>
+</header>
+
+    <script>
+  MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\(', '\\)']],
+      displayMath: [['$$','$$'], ['\\[', '\\]']],
+      processEscapes: true,
+      processEnvironments: true
+    },
+    options: {
+      skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre']
+    }
+  };
+
+  window.addEventListener('load', (event) => {
+      document.querySelectorAll("mjx-container").forEach(function(x){
+        x.parentElement.classList += 'has-jax'})
+    });
+
+</script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
+
+  <body>
+    <br/>
+
+<div class="article-meta">
+<h1><span class="title">Stochastic Programming summary</span></h1>
+<h2 class="author">Alberto Torrejón Valenzuela</h2>
+<h2 class="date">2026/05/30</h2>
+<p class="terms">
+  
+  
+  Categories: <a href="../../../../../categories/mathematics">Mathematics</a> 
+  
+  
+  
+  Tags: <a href="../../../../../tags/introduction">Introduction</a> <a href="../../../../../tags/optimization">Optimization</a> <a href="../../../../../tags/stochastic-programming">Stochastic Programming</a> 
+  
+  
+</p>
+</div>
+
+
+<div class="content-wrapper">
+  <main>
+    <h2 id="decision-making-a-complex-path">Decision-making, a complex path</h2>
+<p>To move forward, we must <strong>make decisions</strong>. However, when there is <strong>no clear rationale</strong>, decision-making becomes extremely difficult.</p>
+<p>Even if there is! <code>\(\longrightarrow\)</code> <strong>Buridan’s Donkey</strong></p>
+<blockquote>
+<p>A donkey is placed exactly midway between two identical sacks of hay. Since both options are equally appealing, the donkey cannot decide which one to choose and eventually dies of starvation.</p></blockquote>
+<p>This paradox, traditionally associated with the French philosopher <em>Jean Buridan</em> <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>, illustrates a fundamental limitation of purely rational choice:</p>
+<ul>
+<li>When no option dominates the others,</li>
+<li>and no preference can be established,</li>
+<li>indecision may replace action.</li>
+</ul>
+<center>
+<p><img src="../../../../../post/Img/Buridan.jpg" alt=""></p>
+</center>
+<p>Although it was not its intention, it highlights that the maxim of always choosing the best option based on weak knowledge becomes problematic when faced with two options equally “better”, or “worse”.</p>
+<h3 id="challenges-in-the-decision-making-process">Challenges in the decision-making process</h3>
+<p>In the process, one can find, among others:</p>
+<ul>
+<li><strong>Choice overload</strong>, which can paralyze decision-making when many valid options exist.</li>
+<li><strong>Pressure to choose</strong> or <strong>fear of failure</strong>, which tend to magnify hesitation and errors.</li>
+<li><strong>Cognitive biases</strong>, which might distort our perception and reasoning.</li>
+<li><strong>Conventional wisdom</strong>, which can fail or even lead to paradoxical outcomes.</li>
+</ul>
+<blockquote>
+<p>“Grandpa once said: we’ve always done it this way, so it must be the right way.”</p></blockquote>
+<ul>
+<li><strong>Unfairness</strong>, since a solution that is not good for the whole system is not good enough.</li>
+<li>…</li>
+<li><strong>Uncertainty</strong>, <strong>how can we make good decisions when the future is inherently unpredictable?</strong></li>
+</ul>
+<p><strong>Strategic reasoning</strong> emerges as the step before decision-making, our way to prepare against complexity.</p>
+<p><strong>Optimization</strong> serves as the main tool for rational strategic reasoning.</p>
+<div class="callout-note" appearance="simple bigyy">
+<p><strong>Some well-known cognitive biases</strong></p>
+<div class="aumentada">
+<ul>
+<li>
+<p><em>Conformity Bias</em> or <em>Bandwagon Effect</em> (Leibenstein 1950), which is the tendency to do or believe things because many other people do or believe the same.</p>
+</li>
+<li>
+<p><em>Confirmation Bias</em> (Wason 1960), which is the tendency to search for, interpret, favor, and recall information that confirms or supports one’s preexisting beliefs or hypotheses.</p>
+</li>
+<li>
+<p><em>Gambler’s Fallacy</em> (Tversky and Kahneman 1971), which is the mistaken belief that if a random event has occurred more (or less) frequently than expected in the past, it is less (or more) likely to occur in the future, e.g., <em>“Tails, Tails, Tails… the next one must be Heads!”</em></p>
+</li>
+<li>
+<p><em>Overconfidence Bias</em> (Tversky and Kahneman 1974), which is the tendency for a person’s subjective confidence in their judgments to be reliably greater than their objective accuracy. <em>Dunning–Kruger effect</em> (Kruger and Dunning 1999), is a cognitive bias whereby people with low ability at a task overestimate their ability, failing to recognize their own incompetence.</p>
+</li>
+</ul>
+</div>
+</div>
+<h2 id="stochastic-programming">Stochastic Programming</h2>
+<p>Stochastic programming is <strong>optimization under uncertainty</strong>, where uncertainty is explicitly modeled through random variables with known (or estimable) probability distributions.</p>
+<p>In a standard optimization problem, we solve</p>
+<p><code>$$\min_{x} \; f(x) \quad \text{s.t.} \quad x \in \mathcal{X}$$</code></p>
+<p>Everything is deterministic.</p>
+<p>In stochastic programming, we instead minimize the <strong>expected cost</strong> over the uncertainty:</p>
+<p><code>$$\min_{x \in \mathcal{X}} \; \mathbb{E}_{\xi}\!\left[f(x,\xi)\right]$$</code></p>
+<p>where <code>\(\xi\)</code> is a random parameter whose realization is unknown at decision time.</p>
+<div class="callout-tip" style="background-color: #d9ecff; border-left: 6px solid #4a90e2; color: #1f2d3d;">
+<h5 id="example-planning-electricity-production-under-uncertain-demand">Example: Planning electricity production under uncertain demand</h5>
+<p>A power company must decide <strong>today</strong> how many generators to activate for tomorrow.</p>
+<ul>
+<li>Activating too many generators is expensive.</li>
+<li>Activating too few may lead to blackouts or emergency energy purchases.</li>
+<li>Tomorrow’s electricity demand is uncertain and depends on weather conditions, human activity, and renewable energy production.</li>
+</ul>
+</div>
+<p>In practice, <code>\(\xi\)</code> can be drawn from an estimated probability model and <strong>discretized into scenarios</strong> <code>\(\Omega = \{\omega_1, \ldots, \omega_{|\Omega|}\}\)</code> with probabilities <code>\(p_\omega\)</code>, where <code>\(\sum_{\omega \in \Omega} p_\omega = 1\)</code>, turning the expectation into a weighted sum: <code>$$\mathbb{E}_{\xi}\!\left[f(x,\xi)\right] \approx \sum_{\omega \in \Omega} p_\omega \, f(x, \omega)$$</code></p>
+<p>The challenge is therefore:</p>
+<center>
+<p><strong>How can we make good decisions now, without knowing the future?</strong></p>
+</center>
+<h3 id="key-elements-of-stochastic-programming">Key elements of Stochastic Programming</h3>
+<ol>
+<li>
+<p><strong>Stages:</strong> The timeline <code>\(t\)</code> (discrete or continuous) of information.</p>
+<ul>
+<li><strong>First-stage</strong> (<em>Here-and-Now</em>): Decisions <code>\(x\)</code> made before uncertainty <code>\(\xi\)</code> is revealed.</li>
+<li><strong>Second/Multi-stage</strong> (<em>Wait-and-See</em>): Recourse decisions made after observing <code>\(\xi\)</code>.</li>
+</ul>
+</li>
+<li>
+<p><strong>Scenarios</strong> (<code>\(\Omega\)</code>): Discrete representations of the future. Each <code>\(\omega \in \Omega\)</code> has probability <code>\(p_\omega\)</code>, with <code>\(\sum_{\omega \in \Omega} p_\omega = 1\)</code>.</p>
+</li>
+<li>
+<p><strong>States</strong> (<code>\(S\)</code>): Sufficient information <code>\(s \in S\)</code> summarizing all relevant information at a given stage to decide optimally going forward. Usually time-dependent <code>\(s_t \in S_t\)</code>.</p>
+</li>
+<li>
+<p><strong>Performance Measures</strong>. When optimization problems involve uncertainty, different modeling paradigms arise depending on how uncertainty is represented and how risk is handled.</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><strong>Stochastic Programming (Risk-Neutral)</strong>
+The uncertainty is modeled through probability distributions, and the objective usually minimizes the <strong>expected value</strong> of the random cost <code>$$\mathbb{E}[f(x,\xi)].$$</code></p>
+</li>
+<li>
+<p><strong>Robust Optimization</strong>
+Instead of probabilities, uncertainty is represented through an <strong>uncertainty set</strong> <code>\(\mathcal{U}\)</code> (e.g., box, ellipsoid, polytope). The goal is to obtain solutions that remain feasible for every realization <code>\(\xi \in \mathcal{U}\)</code> and optimize the <strong>worst-case performance</strong>. The general robust counterpart is:</p>
+<p><code>$$\min_{x} \left\{ \max_{\xi \in \mathcal{U}} f(x,\xi) \right\}.$$</code></p>
+<p>Equivalently, robust optimization can be interpreted as:</p>
+<ul>
+<li>minimizing the <strong>worst-case cost</strong>, or</li>
+<li>maximizing the <strong>worst-case performance</strong> (maximin approach).</li>
+</ul>
+<p><strong>Advantages</strong></p>
+<ul>
+<li>Does not require probability distributions.</li>
+<li>Provides protection against adverse scenarios.</li>
+</ul>
+<p><strong>Disadvantages</strong></p>
+<ul>
+<li>May be overly conservative, since it protects against extremely unlikely scenarios.</li>
+</ul>
+</li>
+<li>
+<p><strong>Risk Measures (Risk-Averse Stochastic Programming)</strong><br>
+Risk measures provide an intermediate framework between risk-neutral stochastic programming and worst-case robust optimization. Common examples include:</p>
+<ul>
+<li>
+<p><code>\(VaR_\alpha\)</code> (Value at Risk) The <code>\(\alpha\)</code>-quantile of the loss distribution. It measures the threshold such that losses exceed it with probability at most <code>\(1-\alpha\)</code>.</p>
+<p><strong>Limitation:</strong> VaR is not coherent (it is not subadditive) and ignores the severity of losses beyond the quantile. It is NP-hard to compute.</p>
+</li>
+<li>
+<p><code>\(CVaR_\alpha\)</code> (Conditional Value at Risk)<br>
+The expected loss conditioned on the loss exceeding the corresponding VaR level. CVaR is a <strong>coherent</strong> and convex risk measure, which makes it particularly attractive for optimization. A standard representation is:</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><code>$$CVaR_{\alpha}(X) = \frac{1}{1-\alpha} \int_{\alpha}^{1} VaR_{u}(X)\,du$$</code></p>
+<p>where:</p>
+<ul>
+<li><code>\(X\)</code> is the random variable of losses,</li>
+<li><code>\(VaR_{\alpha}(X)\)</code> is the quantile at level <code>\(\alpha\)</code>,</li>
+<li><code>\(CVaR_{\alpha}(X)\)</code> represents the average loss in the most extreme tail.</li>
+</ul>
+<p>Equivalently, when the distribution is continuous:</p>
+<p><code>$$CVaR_{\alpha}(X) = \mathbb{E}\big[X \mid X \ge VaR_{\alpha}(X)\big]$$</code></p>
+<p>and it is interpreted as the expected loss conditioned on being in the worst <code>\(1-\alpha\)</code> percent of scenarios. There is also the optimization formulation by Rockafellar and Uryasev:</p>
+<p><code>$$CVaR_{\alpha}(X) = \min_{t\in\mathbb{R}} \left\{ t+\frac{1}{1-\alpha}\mathbb{E}\big[(X-t)^+\big] \right\}$$</code></p>
+<p>where the optimal <code>\(t^\star\)</code> coincides with <code>\(VaR_\alpha(X)\)</code>.</p>
+<p><strong>Relationship between approaches</strong>:</p>
+<ul>
+<li>As <code>\(\alpha \to 1\)</code>, optimizing CVaR approaches the <strong>worst-case robust optimization</strong> paradigm.</li>
+<li>As <code>\(\alpha \to 0\)</code>, CVaR behaves closer to a <strong>risk-neutral</strong> criterion, as <code>\(CVaR\)</code> converges to <code>\(\mathbb{E}\big[f(x,\xi)\big]\)</code>.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Approach</th>
+          <th>Performance Measure</th>
+          <th>Expression to <code>\(min\)</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Stochastic Programming</strong> (risk-neutral)</td>
+          <td>Expected value</td>
+          <td><code>\(\mathbb{E}[f(x,\xi)]\)</code></td>
+      </tr>
+      <tr>
+          <td><strong>Robust Optimization</strong></td>
+          <td>Worst-case performance</td>
+          <td><code>\(\displaystyle \max_{\xi \in \mathcal{U}} f(x,\xi)\)</code></td>
+      </tr>
+      <tr>
+          <td><strong>Risk-Averse Stochastic Programming</strong></td>
+          <td>VaR / CVaR</td>
+          <td><code>\(\text{VaR}_\alpha(f(x,\xi)), \text{CVaR}_\alpha(f(x,\xi))\)</code></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="two-stage-stochastic-programming">Two-Stage Stochastic Programming</h2>
+<p>This is the most common formulation:</p>
+<center>
+<p>We fix <code>\(x\)</code>, then “correct” with <code>\(y\)</code> after <code>\(\xi\)</code> happens.</p>
+</center>
+<p><strong>Mathematical Formulation:</strong> <code>$$\min_{x \in \mathcal{X}} \ c^\top x + \mathcal{Q}(x)$$</code> where <code>\(\mathcal{Q}(x) = \mathbb{E}_\xi [Q(x, \xi)]\)</code> is the <strong>Expected Recourse Function</strong>.</p>
+<p>For a specific realization <code>\(\xi = (q, h, T, W)\)</code>, the second-stage problem is: <code>$$Q(x, \xi) = \min_{y} \left\{ q^\top y \mid Wy = h - Tx, \ y \ge 0 \right\}$$</code></p>
+<div class="callout-note">
+<h4 id="computational-challenges">Computational challenges</h4>
+<p>A major difficulty is the <strong>curse of dimensionality</strong>, since the number of scenarios may grow exponentially with the dimension of the uncertainty space or the number of stages.</p>
+<p>As a consequence, solving stochastic or robust optimization models directly can become computationally prohibitive. Several algorithmic strategies are commonly used to address this issue:</p>
+<ul>
+<li>
+<p><strong>Scenario Generation and Reduction</strong></p>
+<p>Approximate the uncertainty distribution using a manageable set of representative scenarios.<br>
+Scenario reduction techniques often rely on:</p>
+<ul>
+<li>clustering methods,</li>
+<li>probability metrics,</li>
+<li>or importance sampling approaches.</li>
+</ul>
+</li>
+<li>
+<p><strong>Decomposition Methods</strong></p>
+<p>Large-scale stochastic programs are frequently solved through decomposition techniques that exploit the problem structure.</p>
+<p>Common examples include:</p>
+<ul>
+<li>the <strong>L-shaped method</strong> (the stochastic extension of Benders decomposition),</li>
+<li>classical <strong>Benders decomposition</strong>,</li>
+<li>and other cutting-plane approaches.</li>
+</ul>
+<p>These methods separate first-stage decisions from recourse subproblems, significantly improving tractability.</p>
+</li>
+<li>
+<p><strong>Sampling-Based Approximations</strong></p>
+<p>A widely used framework is the <strong>Sample Average Approximation (SAA)</strong> method, where the expectation is approximated using a finite sample of scenarios:</p>
+<p><code>$$\mathbb{E}[f(x,\xi)] \approx \frac{1}{N}\sum_{i=1}^{N} f(x,\xi_i)$$</code></p>
+<p>The resulting optimization problem can then be solved as a deterministic large-scale program.</p>
+</li>
+</ul>
+</div>
+<h2 id="multistage-stochastic-programming-msp-scenario-trees">Multistage Stochastic Programming (MSP): Scenario Trees</h2>
+<p>In many real-world applications, decisions are not taken only once, but sequentially over time as uncertainty is progressively revealed.</p>
+<p>A typical decision process follows the structure</p>
+<p><code>$$x_0 \to \xi_1 \to x_1 \to \xi_2 \to x_2 \to \xi_3 \to \dots$$</code></p>
+<p>where:</p>
+<ul>
+<li>decisions <code>\(x_t\)</code> are made at stage <code>\(t\)</code>,</li>
+<li>uncertainty realizations <code>\(\xi_t\)</code> are observed over time.</li>
+</ul>
+<p>The central question in <strong>Multistage Stochastic Programming (MSP)</strong> is:</p>
+<blockquote>
+<p><em>“What decisions should be taken today and in the future, depending on how uncertainty evolves?”</em></p></blockquote>
+<p>Future uncertainty is commonly represented through a <strong>scenario tree</strong>:</p>
+<ul>
+<li>Each node corresponds to a specific <strong>state of information</strong>.</li>
+<li>Branches represent possible future realizations of uncertainty.</li>
+<li>Each path from the root to a leaf defines a complete scenario.</li>
+</ul>
+<p>A key modeling principle is <strong>non-anticipativity</strong>:</p>
+<blockquote>
+<p>Decisions at stage <code>\(t\)</code> can only depend on information revealed up to time <code>\(t\)</code>, and cannot use future information.</p></blockquote>
+<p>Therefore, future decisions are modeled as functions of the observed uncertainty history:</p>
+<p><code>$$x_t = x_t(\xi_1,\dots,\xi_t)$$</code></p>
+<p>This means that each node of the scenario tree may have its own decision variable, but only based on currently available information.</p>
+<p><strong>Mathematical Formulation</strong></p>
+<p>A generic multistage stochastic program can be written as</p>
+<p><code>$$\min \mathbb{E}\left[\sum_{t=0}^{T} c_t(x_t,\xi_t)\right]$$</code></p>
+<p>subject to <code>\(x_t \in X_t(x_{t-1},\xi_t)\)</code></p>
+<p>where:</p>
+<ul>
+<li><code>\(x_t\)</code> denotes the decision at stage <code>\(t\)</code>,</li>
+<li><code>\(\xi_t\)</code> represents the uncertainty observed at stage <code>\(t\)</code>,</li>
+<li><code>\(c_t(x_t,\xi_t)\)</code> is the stage cost,</li>
+<li><code>\(X_t(x_{t-1},\xi_t)\)</code> defines the feasible region,</li>
+<li>and non-anticipativity constraints enforce information consistency.</li>
+</ul>
+<div class="callout-note">
+<h3 id="computational-challenge">Computational Challenge</h3>
+<p>The main difficulty in MSP is the exponential growth of the scenario tree.</p>
+<p>For example, with:</p>
+<ul>
+<li>10 stages, and</li>
+<li>3 branches per stage,</li>
+</ul>
+<p>the total number of scenarios becomes</p>
+<p><code>$$3^{10} = 59,\!049$$</code></p>
+<p>This phenomenon is another manifestation of the <strong>curse of dimensionality</strong>, making multistage stochastic optimization computationally demanding.</p>
+<center>
+<img src="../../../../../post/Img/1_chesstree.JPG" width="70%"/>
+</center>
+</div>
+<h2 id="stochastic-dynamic-programming-sdp">Stochastic Dynamic Programming (SDP)</h2>
+<p><strong>Stochastic Dynamic Programming (SDP)</strong> is a methodology for solving sequential decision-making problems under uncertainty.</p>
+<p>Its goal is to determine an <strong>optimal decision policy</strong> when:</p>
+<ul>
+<li>decisions are taken over multiple stages,</li>
+<li>the system evolves randomly over time,</li>
+<li>and current actions influence both immediate costs and future system evolution.</li>
+</ul>
+<p>SDP combines optimization theory, stochastic processes, and dynamic programming.</p>
+<h3 id="main-components-of-an-sdp-model">Main Components of an SDP Model</h3>
+<ul>
+<li><strong>State Space</strong>. The state <code>\(s_t \in \mathcal{S}\)</code> contains all information necessary to make decisions at <code>\(t\)</code>.</li>
+<li><strong>Action Space</strong>. At each state, a feasible action can be selected: <code>\(a_t \in \mathcal{A}(s_t)\)</code>.</li>
+<li><strong>Transition Dynamics</strong>. The system evolves probabilistically: <code>\(P[s' \mid s, a]\)</code> is the probability of reaching state <code>\(s'\)</code> after taking action <code>\(a\)</code> in state <code>\(s\)</code>.</li>
+<li><strong>Cost or Reward Function</strong>. Each decision generates an immediate cost (or reward) <code>\(c(s, a)\)</code>.</li>
+<li><strong>Time Horizon</strong>. The optimization horizon may be finite (<code>\(t = 1, \ldots, T\)</code>), infinite discounted, or infinite average-cost.</li>
+<li><strong>Decision Policy</strong>. A policy <code>\(\pi : \mathcal{S} \to \mathcal{A}\)</code> specifies which action to take in every possible state. The objective is to compute an <strong>optimal policy</strong> <code>\(\pi^*\)</code> minimizing the expected long-term cost.</li>
+</ul>
+<div class="callout-tip" style="background-color: #d9ecff; border-left: 6px solid #4a90e2; color: #1f2d3d;">
+<h3 id="example-optimal-stock-selling">Example: Optimal Stock Selling</h3>
+<p>An investor holds one unit of a risky asset purchased at price <code>\(p_0\)</code> and must decide, at each of <code>\(T\)</code> trading days, whether to sell or to wait. The objective is to maximize the expected net gain at the moment of sale.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
+<p><strong>State space.</strong> The state at time <code>\(t\)</code> is the pair</p>
+<p><code>$$s_t = (p_t,\; T - t) \in \mathbb{R}_{+} \times \{0, 1, \ldots, T\},$$</code> where <code>\(p_t\)</code> denotes the current price and <code>\(T - t\)</code> the number of days remaining. This pair contains all information needed for future decisions, the history of past prices is irrelevant (Markov property).</p>
+<p><strong>Action space.</strong> At each state the investor chooses one of two feasible actions:</p>
+<p><code>$$a_t \in \mathcal{A}(s_t) = \{\texttt{sell},\; \texttt{wait}\}.$$</code></p>
+<p>The action <code>\(\texttt{sell}\)</code> is absorbing: once executed, the problem terminates. At <code>\(t = T\)</code> only <code>\(\texttt{sell}\)</code> is feasible.</p>
+<p><strong>Transition dynamics.</strong> If the investor waits, the price evolves according to a geometric random walk:</p>
+<p><code>$$p_{t+1} = p_t \exp(\mu + \sigma\,\varepsilon_t), \qquad \varepsilon_t \overset{\text{i.i.d.}}{\sim} \mathcal{N}(0,1),$$</code></p>
+<p>where <code>\(\mu \in \mathbb{R}\)</code> and <code>\(\sigma &gt; 0\)</code> are known parameters.</p>
+<p>Selling terminates the process, so no transition occurs. The transition kernel is therefore</p>
+<p><code>$$P(s' \mid s_t, \texttt{wait}) = P\!\left(p_{t+1} ,\; T{-}t{-}1 \mid p_t,\; T{-}t\right),$$</code>
+fully determined by the log-normal distribution above.</p>
+<p><strong>Cost/reward function.</strong> The reward is realised only upon selling:</p>
+<p><code>$$c(s_t, a_t) = \begin{cases} p_t - p_0 &amp; \text{if } a_t = \texttt{sell}, \\ 0 &amp; \text{if } a_t = \texttt{wait}.\end{cases}$$</code></p>
+<p><strong>Time horizon.</strong> The horizon is finite and deterministic <code>\(t = 0, 1, \ldots, T\)</code>, with a forced sale at <code>\(t = T\)</code>.</p>
+<p><strong>Decision policy.</strong> A (deterministic, stationary) policy maps each state to an action:</p>
+<p><code>$$\pi : \mathbb{R}_{+} \times \{0,\ldots,T\} \to \{\texttt{sell}, \texttt{wait}\}$$</code></p>
+<p><em>Example of a policy.</em> A natural candidate is the <strong>threshold policy</strong> <code>\(\pi_\theta\)</code>, parametrised by a vector <code>\(\theta = (\theta_0, \theta_1, \ldots, \theta_T) \in \mathbb{R}_{+}^{T+1}\)</code>:</p>
+<p><code>$$\pi_\theta(p_t, T{-}t) = \begin{cases} \texttt{sell} &amp; \text{if } p_t \geq \theta_{T-t}, \\ \texttt{wait} &amp; \text{if } p_t &lt; \theta_{T-t}. \end{cases}$$</code></p>
+<p>Intuitively, <code>\(\theta_k\)</code> is the minimum price the investor is willing to accept when <code>\(k\)</code> days remain. As the deadline approaches, the investor becomes less selective: one would expect <code>\(\theta_0 \leq \theta_1 \leq \cdots \leq \theta_T\)</code>, since waiting is less valuable with fewer days left. For instance, with <code>\(T = 3\)</code> and thresholds <code>\(\theta = (105, 110, 115, 120)\)</code> (in monetary units), the policy reads:</p>
+<table>
+  <thead>
+      <tr>
+          <th style="text-align: center">Days remaining <code>\(k\)</code></th>
+          <th style="text-align: center">Sell if price <code>\(\geq\)</code></th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td style="text-align: center">0 (deadline)</td>
+          <td style="text-align: center">105</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">1</td>
+          <td style="text-align: center">110</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">2</td>
+          <td style="text-align: center">115</td>
+      </tr>
+      <tr>
+          <td style="text-align: center">3</td>
+          <td style="text-align: center">120</td>
+      </tr>
+  </tbody>
+</table>
+<p>This policy is feasible but not necessarily optimal; it serves to illustrate the structure of a policy as a complete decision rule defined over the entire state space.</p>
+</div>
+<div class="callout-note">
+<h3 id="relationship-between-multistage-stochastic-programming-msp-and-stochastic-dynamic-programming-sdp">Relationship Between Multistage Stochastic Programming (MSP) and Stochastic Dynamic Programming (SDP)</h3>
+<p>The relationship between <strong>Multistage Stochastic Programming (MSP)</strong> and <strong>Stochastic Dynamic Programming (SDP)</strong> is very deep. In essence, both frameworks model <strong>sequential decision-making problems under uncertainty</strong>, but they do so from different perspectives.</p>
+<p>Both approaches consider:</p>
+<ul>
+<li>decisions taken over time,</li>
+<li>uncertainty progressively revealed,</li>
+<li>adaptive (non-anticipative) decisions,</li>
+<li>and a global expected objective.</li>
+</ul>
+<p>The main difference lies in how decisions are represented:</p>
+<ul>
+<li>In <strong>MSP</strong>, the variables are scenario-dependent decisions <code>\(x_t^\omega\)</code> meaning that each node (or scenario) of the tree has its own decision variable.</li>
+<li>In <strong>SDP</strong>, the solution is a <strong>policy</strong> <code>\(\pi(s)\)</code> that maps each state to an action.</li>
+</ul>
+<p>Thus:</p>
+<ul>
+<li>MSP focuses on optimizing a large deterministic equivalent problem,</li>
+<li>whereas SDP focuses on characterizing an optimal decision rule.</li>
+</ul>
+<table>
+  <thead>
+      <tr>
+          <th>Aspect</th>
+          <th>Multistage Stochastic Programming (MSP)</th>
+          <th>Stochastic Dynamic Programming (SDP)</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Representation</td>
+          <td>Scenario tree</td>
+          <td>States and transitions</td>
+      </tr>
+      <tr>
+          <td>Core methodology</td>
+          <td>MILP / convex optimization</td>
+          <td>Bellman equations</td>
+      </tr>
+      <tr>
+          <td>Decision variables</td>
+          <td>Decisions per stage and scenario</td>
+          <td>State-dependent policy</td>
+      </tr>
+      <tr>
+          <td>Uncertainty representation</td>
+          <td>Discretized scenarios</td>
+          <td>Probabilistic transition</td>
+      </tr>
+      <tr>
+          <td>Solution philosophy</td>
+          <td>“Optimize one large problem”</td>
+          <td>“Solve recursively”</td>
+      </tr>
+  </tbody>
+</table>
+</div>
+<h3 id="bellmans-principle-in-sdp">Bellman’s Principle in SDP</h3>
+<p>Instead of optimizing over the entire scenario tree simultaneously, SDP decomposes the problem recursively using the <strong>Bellman Principle of Optimality</strong>:</p>
+<blockquote>
+<p><em>An optimal policy has the property that, regardless of the initial state and decision, the remaining decisions must themselves constitute an optimal policy with respect to the resulting state.</em></p></blockquote>
+<p>For finite-horizon SDP, this yields the <strong>Bellman equation</strong>:</p>
+<p><code>$$V_t(s) = \min_{a \in \mathcal{A}(s)} \left\{ c(s, a) + \mathbb{E}\left[V_{t+1}(s') \mid s, a\right] \right\}$$</code></p>
+<p>with terminal condition <code>\(V_{T+1} = 0\)</code>, where <code>\(V_t(s)\)</code> is the <strong>optimal expected cost-to-go</strong> from state <code>\(s\)</code> at time <code>\(t\)</code>.</p>
+<h3 id="most-common-solution-methods">Most Common Solution Methods</h3>
+<p><strong>1. Backward recursion.</strong> Starting from the terminal stage and recursively moving backward:</p>
+<ol>
+<li>Initialize <code>\(V_T(s)\)</code>.</li>
+<li>Compute <code>\(V_t(s)\)</code> for <code>\(t = T-1, \ldots, 1\)</code>.</li>
+</ol>
+<ul>
+<li><strong>Advantage:</strong> Produces an exact optimal solution.</li>
+<li><strong>Limitation:</strong> Suffers from the <strong>curse of dimensionality</strong> as the state space grows.</li>
+</ul>
+<p><strong>2. Value Iteration.</strong> The value function is updated iteratively:</p>
+<p><code>$$V^{k+1}(s) = \min_a \left\{ c(s, a) + \gamma \, \mathbb{E}\left[V^k(s')\right] \right\}$$</code></p>
+<p>until convergence, where <code>\(\gamma \in [0,1)\)</code> is a discount factor.</p>
+<p><strong>3. Policy Iteration.</strong> Alternates between:</p>
+<ol>
+<li><strong>Policy evaluation:</strong> compute <code>\(V^\pi\)</code> for a fixed policy <code>\(\pi\)</code>.</li>
+<li><strong>Policy improvement:</strong> update <code>\(\pi\)</code> greedily from <code>\(V^\pi\)</code>.</li>
+</ol>
+<p>Compared to Value Iteration, Policy Iteration often converges faster, though each iteration is more expensive.</p>
+<h3 id="special-case-markov-decision-processes-mdp">Special Case: Markov Decision Processes (MDP)</h3>
+<p>In the general formulation, the transition law may depend on the full history of states and actions. However, in many practical settings the state <code>\(s_t\)</code> already encodes all relevant past information, so that:</p>
+<p><code>$$P\left[S_{t+1} = s' \mid S_0 = s_0, \ldots, S_t = s, A_t = a\right] = P_a(s, s')$$</code></p>
+<p>This is known as the <strong>Markov property</strong>. When it holds, the system is called a <strong>Markov Decision Process (MDP)</strong>, a special case that is considerably more tractable and therefore widely studied.</p>
+<div class="callout-note" appearance="simple">
+<p><strong>Why is the Markov property important?</strong></p>
+<p>Without it, the value function would need to depend on the entire history <code>\(\xi_{[t]} = (\xi_1, \ldots, \xi_t)\)</code>, making the state space grow exponentially with time. When the Markov property holds, the current state <code>\(s_t\)</code> is a <strong>sufficient statistic</strong> for the future, and we only need to track a single state variable.</p>
+<p>If an application does not naturally satisfy the Markov property, it is often possible to recover it by <strong>augmenting the state</strong> (e.g., including recent history or summary statistics as part of <code>\(s_t\)</code>), at the cost of a larger state space.</p>
+</div>
+<p>Formally, an MDP is defined as a 5-tuple <code>\(\mathcal{M} = \langle S, A, P, R, \gamma \rangle\)</code> where:</p>
+<ul>
+<li><code>\(S\)</code> is the state space.</li>
+<li><code>\(A\)</code> is the action space.</li>
+<li><code>\(P_a(s, s') = P[S_t = s' \mid S_{t-1} = s, A_{t-1} = a]\)</code> is the transition probability from state <code>\(s\)</code> to state <code>\(s'\)</code> under action <code>\(a\)</code>, satisfying <code>\(\sum_{s'} P_a(s, s') = 1\)</code> for all <code>\(s \in S,\ a \in A\)</code>.</li>
+<li><code>\(R_a(s, s') = \mathbb{E}[R_t \mid S_{t-1} = s, A_{t-1} = a, S_t = s']\)</code> is the expected reward received when transitioning from state <code>\(s\)</code> to state <code>\(s'\)</code> via action <code>\(a\)</code>.</li>
+<li><code>\(\gamma \in [0, 1)\)</code> is the discount factor.</li>
+</ul>
+<p>The rewards indicate how well an agent is doing at a step <code>\(t\)</code>, but, in particular, the reward signal is not the place to impart to the agent prior knowledge about how to achieve what we want it to do. For example, a chess playing agent should be rewarded only for actually winning, not for achieving subgoals such as taking its opponents pieces or gaining control of the center of the board. If achieving these subgoals were rewarded, then the agent might find a way to achieve them, without achieving the real goal, e.g. it might find a way to take the opponent’s pieces even at the cost of losing the game.</p>
+<p>The <strong>return</strong> formalizes the long-run objective:</p>
+<p><code>$$G_t = \sum_{k=t+1}^{T} \gamma^{k-t-1} R_k$$</code></p>
+<p>including the possibility that <code>\(T = \infty\)</code> or <code>\(\gamma = 1\)</code> (but not both).</p>
+<p>All goals reduce to maximizing the <strong>expected return</strong> <code>\(\mathbb{E}[G_t]\)</code>.</p>
+<p>Given a deterministic policy <code>\(\pi(s) = a\)</code>, the value functions are:</p>
+<p><code>$$V^\pi(s) \doteq \mathbb{E}_\pi\left[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \;\middle|\; S_t = s\right], \quad \forall s \in S$$</code></p>
+<p><code>$$Q^\pi(s, a) \doteq \mathbb{E}_\pi\left[\sum_{k=0}^{\infty} \gamma^k R_{t+k+1} \;\middle|\; S_t = s, A_t = a\right]$$</code></p>
+<p>These satisfy the <strong>Bellman consistency equations</strong>:</p>
+<p><code>$$V^\pi(s) = \sum_{s'} P_{\pi(s)}(s, s') \left( R_{\pi(s)}(s, s') + \gamma V^\pi(s') \right)$$</code></p>
+<p><code>$$Q^\pi(s, a) = \sum_{s'} P_a(s, s') \left( R_a(s, s') + \gamma Q^\pi(s', \pi(s')) \right)$$</code></p>
+<p>The optimal value functions <code>\(V^*(s) = \max_\pi V^\pi(s)\)</code> and <code>\(Q^*(s,a) = \max_\pi Q^\pi(s,a)\)</code> satisfy the <strong>Bellman optimality equations</strong>:</p>
+<p><code>$$V^*(s) = \max_{a \in A} \sum_{s'} P_a(s, s') \left( R_a(s, s') + \gamma V^*(s') \right)$$</code></p>
+<p><code>$$Q^*(s, a) = \sum_{s'} P_a(s, s') \left( R_a(s, s') + \gamma \max_{a' \in A} Q^*(s', a') \right)$$</code></p>
+<p>For finite MDPs, these equations have a <strong>unique solution</strong>, and the optimal policy can be recovered directly as:</p>
+<p><code>$$\pi^*(s) = \arg\max_{a \in A} \left\{ \sum_{s'} P_a(s, s') \left( R_a(s, s') + \gamma V^*(s') \right) \right\}$$</code></p>
+<p>The solution methods presented above (Backward DP, Value Iteration, Policy Iteration) all apply to the MDP setting and exploit its Markov structure efficiently.</p>
+<div class="callout-note">
+<h3 id="computational-challenges-1">Computational challenges</h3>
+<p>While Bellman’s principle is mathematically elegant, it also faces the problem of the curse of dimensionality. If the state vector <code>\(s_t\)</code> contains multiple dimensions (e.g., a portfolio with 30 assets, macroeconomic indicators, regime-switching variables), grid discretization becomes <strong>exponentially intractable</strong> (<code>\(O(N^d)\)</code>).</p>
+<ul>
+<li>
+<p><strong>Approximate Dynamic Programming (ADP).</strong> Instead of computing the exact value function <code>\(V(s)\)</code> for every state, function approximators (parametric regressions or neural networks) are used to estimate the cost-to-go.</p>
+</li>
+<li>
+<p><strong>Advanced link: Continuous Time.</strong> For continuous-state models, Bellman’s principle serves as the mathematical bridge to <strong>Optimal Control Theory</strong>, leading formally to the <strong>Hamilton–Jacobi–Bellman (HJB)</strong> partial differential equations.</p>
+</li>
+</ul>
+</div>
+<h3 id="finite-mdps-and-linear-programming">Finite MDPs and Linear Programming</h3>
+<p>The nonlinear <code>\(\max\)</code> operator appearing in the Bellman optimality equation can be avoided by reformulating a finite Markov Decision Process (MDP) as a linear optimization problem. Let <code>\(\alpha(s) &gt; 0\)</code> denote a strictly positive state relevance distribution satisfying</p>
+<p><code>$$\sum_{s \in S} \alpha(s) = 1.$$</code></p>
+<p>This distribution weights the relative importance of states in the objective function.</p>
+<p><strong>Primal Linear Programming Formulation</strong></p>
+<p>The primal formulation seeks the smallest value function consistent with the Bellman optimality inequalities. Intuitively, the optimal value function is the minimal vector that upper bounds the expected discounted return obtainable from every state-action pair.</p>
+<p><code>\begin{aligned} \min \quad &amp; \sum_{s \in S} \alpha(s)\, V(s) \\ s.t. \quad  &amp; V(s) \ge R(s,a) + \gamma \sum_{s' \in S} P(s' \mid s,a)\, V(s') \quad \forall s \in S,\ \forall a \in A. \end{aligned}</code></p>
+<p>Equivalently, the constraints may be written as</p>
+<p><code>$$V(s) - \gamma \sum_{s' \in S} P(s' \mid s,a)\, V(s') \ge R(s,a),$$</code></p>
+<p>which emphasizes the linear structure of the model.</p>
+<p><strong>Dual Linear Programming Formulation</strong></p>
+<p>Associated with the primal problem is its dual linear program. The dual variables <code>\(x(s,a)\)</code> can be interpreted as discounted state-action occupancy measures, representing the expected discounted number of times action <code>\(a\)</code> is selected in state <code>\(s\)</code> under a given policy.</p>
+<p>The dual formulation maximizes the total expected discounted reward while enforcing probability flow conservation across states.</p>
+<p><code>\begin{aligned} \max \quad  &amp; \sum_{s \in S} \sum_{a \in A} x(s,a)\, R(s,a) \\ s.t. \quad  &amp; \sum_{a \in A} x(s',a) - \gamma \sum_{s \in S} \sum_{a \in A} P(s' \mid s,a)\, x(s,a) = \alpha(s') \quad \forall s' \in S, \\ &amp; x(s,a) \ge 0 \quad \forall s \in S,\ \forall a \in A. \end{aligned}</code></p>
+<h3 id="notation">Notation</h3>
+<p>The terminology and notation for MDPs are not entirely settled. There are two main streams — one focuses on maximization problems from contexts like economics, using the terms action, reward, value, and calling the discount factor <code>\(\beta\)</code> or <code>\(\gamma\)</code>, while the other focuses on minimization problems from engineering and navigation, using the terms control, cost, cost-to-go, and calling the discount factor <code>\(\alpha\)</code>. In addition, the notation for the transition probability varies.</p>
+<table>
+  <thead>
+      <tr>
+          <th>in this article</th>
+          <th>alternative</th>
+          <th>comment</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>action <code>\(a\)</code></td>
+          <td>control <code>\(u\)</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>reward <code>\(R\)</code></td>
+          <td>cost <code>\(g\)</code></td>
+          <td><code>\(g\)</code> is the negative of <code>\(R\)</code></td>
+      </tr>
+      <tr>
+          <td>value <code>\(V\)</code></td>
+          <td>cost-to-go <code>\(J\)</code></td>
+          <td><code>\(J\)</code> is the negative of <code>\(V\)</code></td>
+      </tr>
+      <tr>
+          <td>policy <code>\(\pi\)</code></td>
+          <td>policy <code>\(\mu\)</code></td>
+          <td></td>
+      </tr>
+      <tr>
+          <td>discounting factor <code>\(\gamma\)</code></td>
+          <td>discounting factor <code>\(\alpha\)</code></td>
+          <td></td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="case-study-the-knapsack-problem">Case Study: The Knapsack Problem</h2>
+<p>The <strong>Bellman equation</strong> is the foundation of Dynamic Programming and provides a natural framework for solving Knapsack Problems in both deterministic and stochastic settings, modeling sequential decision-making under uncertainty.</p>
+<p>Below, we describe how the Bellman equation is applied to both variants of the problem.</p>
+<h3 id="1-deterministic-knapsack-problem">1. Deterministic Knapsack Problem</h3>
+<p>In the classical knapsack problem, the objective is to maximize the total value of the items packed into a knapsack with maximum capacity <code>\(W\)</code>. We are given <code>\(N\)</code> items, where each item <code>\(i\)</code> has a weight <code>\(w_i\)</code> and value <code>\(v_i\)</code>.</p>
+<p>The <strong>Bellman equation</strong> for this model defines the state as the remaining capacity <code>\(w\)</code> of the knapsack after considering the first <code>\(i\)</code> items:</p>
+<p><code>$$V(i,w)=\max\left(V(i-1,w),\;v_i+V(i-1,w-w_i)\right)$$</code></p>
+<p><strong>Interpretation of the States</strong></p>
+<ul>
+<li><code>\(V(i-1,w)\)</code>: Item <code>\(i\)</code> is <strong>not included</strong>. The accumulated value from previous items is preserved.</li>
+<li><code>\(v_i + V(i-1,w-w_i)\)</code> (only if <code>\(w \geq w_i\)</code>): Item <code>\(i\)</code> is included. Its value <code>\(v_i\)</code> is added, and the remaining capacity decreases by <code>\(w_i\)</code>.</li>
+</ul>
+<h3 id="2-stochastic-knapsack-problem-stochastic-programming">2. Stochastic Knapsack Problem (Stochastic Programming)</h3>
+<p>In stochastic programming, some problem parameters, such as item weights, item values, or even the total knapsack capacity, are not known with certainty, but instead follow probability distributions.</p>
+<p>The Bellman equation is then adapted into a <strong>Markov Decision Process (MDP)</strong> framework, where the objective becomes maximizing the <strong>expected value</strong>.</p>
+<p>The precise structure of the Bellman equation depends on which elements are stochastic.</p>
+<h4 id="case-a-stochastic-weights">Case A: Stochastic Weights</h4>
+<p>Suppose the true weight <code>\(W_i\)</code> of an item is a random variable that is only revealed when attempting to place the item into the knapsack. The Bellman equation incorporates the expected value over the reward function <code>\(\mathcal{R}\)</code>:</p>
+<p><code>$$V(i,w) = \max \left\{ V(i-1,w), \; \mathbb{E}_{W_i} \left[ \mathcal{R}(i, w, W_i) \right] \right\}$$</code></p>
+<p>Where the reward inside the expectation accounts for a safety boundary:</p>
+<p><code>$$\mathcal{R}(i, w, W_i) = \begin{cases} v_i + V(i-1, w - W_i) &amp; \text{si } W_i \le w \\ \text{Penalty} &amp; \text{si } W_i &gt; w \end{cases}$$</code></p>
+<p>If the random weight exceeds the remaining capacity <code>\(w\)</code>, a penalty is incurred.</p>
+<h4 id="case-b-random-arrival-of-items-online-knapsack-problem">Case B: Random Arrival of Items (Online Knapsack Problem)</h4>
+<p>In the online version of the knapsack problem, items arrive sequentially according to a probability distribution.</p>
+<p>At each step:</p>
+<ul>
+<li>an item with weight <code>\(w_i\)</code> and value <code>\(v\)</code> is revealed,</li>
+<li>and the decision maker must immediately accept or reject it before observing future items.</li>
+</ul>
+<p>If there are <code>\(t\)</code> remaining periods (or future arrivals) and the current available capacity is <code>\(w\)</code>, the Bellman equation becomes:</p>
+<p><code>$$V(t,w)=\mathbb{E}_{(v,w_i)}\left[\max\left(V(t-1,w),\;v+V(t-1,w-w_i)\right)\right]$$</code></p>
+<p>Here, the expectation <code>\(\mathbb{E}\)</code> is taken over all possible item types <code>\((v,w_i)\)</code> that may arrive in the next stage.</p>
+<p>This formulation naturally captures:</p>
+<ul>
+<li>sequential decision-making,</li>
+<li>uncertainty in future arrivals,</li>
+<li>and the trade-off between immediate reward and preserving future capacity.</li>
+</ul>
+<h2 id="case-study-solving-the-procrastination-loop-mdp">Case Study: Solving the Procrastination Loop MDP</h2>
+<p>We illustrate the MDP framework with a concrete example. The system is defined as:</p>
+<p><code>$$\mathcal{M} = \langle \mathcal{S}, \mathcal{A}, p, r, \gamma \rangle$$</code></p>
+<ul>
+<li><strong>State space:</strong> <code>\(\mathcal{S} = \{\text{NETFLIX},\ \text{NAP},\ \text{STUDY}\}\)</code></li>
+<li><strong>Action space:</strong> <code>\(\mathcal{A} = \{\text{Strive},\ \text{Relax}\}\)</code></li>
+<li><strong>Discount factor:</strong> <code>\(\gamma = 0.9\)</code></li>
+</ul>
+<p><strong>Transition and reward dynamics:</strong></p>
+<table>
+  <thead>
+      <tr>
+          <th><code>\(s\)</code></th>
+          <th><code>\(a\)</code></th>
+          <th><code>\(s'\)</code></th>
+          <th><code>\(P[s' \mid s, a]\)</code></th>
+          <th><code>\(r(s, a, s')\)</code></th>
+          <th>Description</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>NETFLIX</strong></td>
+          <td><strong>Strive</strong></td>
+          <td>STUDY</td>
+          <td>0.4</td>
+          <td>+5</td>
+          <td>Breaking the procrastination loop</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>NETFLIX</td>
+          <td>0.6</td>
+          <td>−10</td>
+          <td>Failed attempt to work</td>
+      </tr>
+      <tr>
+          <td><strong>NETFLIX</strong></td>
+          <td><strong>Relax</strong></td>
+          <td>NETFLIX</td>
+          <td>0.7</td>
+          <td>−5</td>
+          <td>Guilt-ridden binge-watching</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>NAP</td>
+          <td>0.3</td>
+          <td>+1</td>
+          <td>Shifting from screens to actual rest</td>
+      </tr>
+      <tr>
+          <td><strong>NAP</strong></td>
+          <td><strong>Strive</strong></td>
+          <td>STUDY</td>
+          <td>0.5</td>
+          <td>+8</td>
+          <td>Waking up productive</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>NETFLIX</td>
+          <td>0.5</td>
+          <td>−2</td>
+          <td>Waking up and opening a streaming app</td>
+      </tr>
+      <tr>
+          <td><strong>NAP</strong></td>
+          <td><strong>Relax</strong></td>
+          <td>NAP</td>
+          <td>0.1</td>
+          <td>+2</td>
+          <td>Enjoying a cozy rest extension</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>NETFLIX</td>
+          <td>0.9</td>
+          <td>−4</td>
+          <td>Oversleeping into procrastination</td>
+      </tr>
+      <tr>
+          <td><strong>STUDY</strong></td>
+          <td><strong>Strive</strong></td>
+          <td>STUDY</td>
+          <td>0.9</td>
+          <td>+10</td>
+          <td>Deep work / Flow state</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>NETFLIX</td>
+          <td>0.1</td>
+          <td>−1</td>
+          <td>Sudden burnout distraction</td>
+      </tr>
+      <tr>
+          <td><strong>STUDY</strong></td>
+          <td><strong>Relax</strong></td>
+          <td>NETFLIX</td>
+          <td>0.5</td>
+          <td>−8</td>
+          <td>Giving up on studying to binge-watch</td>
+      </tr>
+      <tr>
+          <td></td>
+          <td></td>
+          <td>NAP</td>
+          <td>0.5</td>
+          <td>+3</td>
+          <td>Strategic break to recover energy</td>
+      </tr>
+  </tbody>
+</table>
+<br>
+<center>
+<img src="../../../../../post/Img/MDPR.png" alt="" width="75%"/>
+</center>
+<p>We compress to expected state-action rewards <code>\(r(s, a) = \sum_{s'} P[s' \mid s, a]\, r(s, a, s')\)</code>:</p>
+<ul>
+<li><strong>NETFLIX:</strong> Strive: <code>\(0.4(5) + 0.6(-10) = -4.0\)</code> Relax: <code>\(0.7(-5) + 0.3(1) = -3.2\)</code></li>
+<li><strong>NAP:</strong> Strive: <code>\(0.5(8) + 0.5(-2) = 3.0\)</code> Relax: <code>\(0.1(2) + 0.9(-4) = -3.4\)</code></li>
+<li><strong>STUDY:</strong> Strive: <code>\(0.9(10) + 0.1(-1) = 8.9\)</code> Relax: <code>\(0.5(-8) + 0.5(3) = -2.5\)</code></li>
+</ul>
+<p>The Bellman optimality equations are:</p>
+<p><code>$$V(N) = \max \begin{cases} \text{Strive:} &amp; -4.0 + 0.9\left[0.4\,V(D) + 0.6\,V(N)\right] \\ \text{Relax:} &amp; -3.2 + 0.9\left[0.7\,V(N) + 0.3\,V(Z)\right] \end{cases}$$</code></p>
+<p><code>$$V(Z) = \max \begin{cases} \text{Strive:} &amp; 3.0 + 0.9\left[0.5\,V(D) + 0.5\,V(N)\right] \\ \text{Relax:} &amp; -3.4 + 0.9\left[0.1\,V(Z) + 0.9\,V(N)\right] \end{cases}$$</code></p>
+<p><code>$$V(D) = \max \begin{cases} \text{Strive:} &amp; 8.9 + 0.9\left[0.9\,V(D) + 0.1\,V(N)\right] \\ \text{Relax:} &amp; -2.5 + 0.9\left[0.5\,V(N) + 0.5\,V(Z)\right] \end{cases}$$</code></p>
+<p>We solve by assuming <strong>Strive</strong> is optimal everywhere and dropping the <code>\(\max\)</code> operator, then verifying consistency a posteriori. This yields the linear system:</p>
+<p><code>$$0.46\,V(N) - 0.36\,V(D) = -4.0$$</code> <code>$$-0.09\,V(N) + 0.19\,V(D) = 8.9$$</code></p>
+<p>Isolating <code>\(V(N)\)</code> from the first equation:</p>
+<p><code>$$V(N) = \frac{-4.0 + 0.36\,V(D)}{0.46} \approx -8.696 + 0.783\,V(D)$$</code></p>
+<p>Substituting into the second:</p>
+<p><code>$$0.19\,V(D) - 0.09\left(-8.696 + 0.783\,V(D)\right) = 8.9$$</code> <code>$$0.1196\,V(D) = 8.117 \implies \mathbf{V(D) \approx 67.89}$$</code></p>
+<p>Back-substituting:</p>
+<p><code>$$\mathbf{V(N) \approx 44.44}, \qquad V(Z) = 3.0 + 0.45(67.89) + 0.45(44.44) \implies \mathbf{V(Z) \approx 53.55}$$</code></p>
+<p><em>Verification:</em> substituting these values into all <strong>Relax</strong> branches confirms they yield strictly lower values, proving that <strong>Strive is the unique optimal action in every state</strong>.</p>
+<p>Now, in order to solve this problem using the <strong>Linear Programming approach</strong>, we define <strong>3 continuous decision variables</strong> representing the state values (<code>\(V_s \in \mathbb{R}\)</code>):</p>
+<ul>
+<li><code>\(V_N\)</code>: Expected discounted long-term value starting from state <strong>NETFLIX</strong>.</li>
+<li><code>\(V_Z\)</code>: Expected discounted long-term value starting from state <strong>NAP</strong>.</li>
+<li><code>\(V_D\)</code>: Expected discounted long-term value starting from state <strong>STUDY</strong>.</li>
+</ul>
+<p>We next introduce the mathematical model. Since <code>\(\alpha(s) = \frac{1}{3}\)</code> is a positive constant factor, minimizing <code>\(\frac{1}{3}V_N + \frac{1}{3}V_Z + \frac{1}{3}V_D\)</code> is mathematically equivalent to minimizing their direct summation. Moving all variable parameters to the Left-Hand Side (LHS) yields:</p>
+<p><code>$$\begin{align} \min \quad &amp; Z = V_N + V_Z + V_D \\ s.t. \quad &amp; \text{-- Netflix Constraints --} \\ &amp; 0.46 V_N - 0.36 V_D \ge -4.0 \quad (\text{Strive}) \\ &amp; 0.37 V_N - 0.27 V_Z \ge -3.2 \quad (\text{Relax}) \\ &amp; \text{-- Nap Constraints --} \\ &amp; -0.45 V_N + V_Z - 0.45 V_D \ge 3.0 \quad (\text{Strive}) \\ &amp; -0.81 V_N + 0.91 V_Z \ge -3.4 \quad (\text{Relax}) \\ &amp; \text{-- Study Constraints --} \\ &amp; -0.09 V_N + 0.19 V_D \ge 8.9 \quad (\text{Strive}) \\ &amp; -0.45 V_N - 0.45 V_Z + V_D \ge -2.5 \quad (\text{Relax}) \\ &amp; V_N, V_Z, V_D \quad \text{unbounded in sign} \end{align}$$</code></p>
+<p>After running either LP through an optimization engine, the optimal policy <code>\(\pi^*(s)\)</code> can be directly mapped:</p>
+<ul>
+<li><strong>Via Primal Variables:</strong> Look for <strong>active constraints</strong> (where the inequality holds as a strict equality). If a specific action <code>\(a\)</code> satisfies <code>\(V^*(s) - \gamma \sum_{s'} P[s' \mid s, a] V^*(s') = R(s, a)\)</code>, then <code>\(a\)</code> belongs to the optimal policy set for state <code>\(s\)</code>.</li>
+<li><strong>Via Dual Variables:</strong> Look for non-zero flow allocations. Due to complementary slackness, any action that is sub-optimal will receive a state-action frequency value of exactly <code>\(0\)</code>. Thus, the policy is deterministically selected via: <code>$$\pi^*(s) = \arg\max_{a \in A} x^*(s, a)$$</code> If <code>\(x^*(\text{NETFLIX}, \text{Strive}) &gt; 0\)</code> and <code>\(x^*(\text{NETFLIX}, \text{Relax}) = 0\)</code>, the optimal decision is unequivocally to <strong>Strive</strong>.</li>
+</ul>
+<h3 id="references">References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-bertsekas2012dynamic" class="csl-entry">
+<p>Bertsekas, Dimitri P. 2012. <em>Dynamic Programming and Optimal Control: Volume i</em>. 4th ed. Vol. 1. Athena Scientific.</p>
+</div>
+<div id="ref-kruger1999unskilled" class="csl-entry">
+<p>Kruger, Justin, and David Dunning. 1999. “<span class="nocase">Unskilled and unaware of it: How difficulties in recognizing one’s own incompetence lead to inflated self-assessments</span>.” <em>Journal of Personality and Social Psychology</em> 77 (6): 1121.</p>
+</div>
+<div id="ref-leibenstein1950bandwagon" class="csl-entry">
+<p>Leibenstein, Harvey. 1950. “<span class="nocase">Bandwagon, snob, and Veblen effects in the theory of consumers’ demand</span>.” <em>The Quarterly Journal of Economics</em> 64 (2): 183–207.</p>
+</div>
+<div id="ref-tversky1971belief" class="csl-entry">
+<p>Tversky, Amos, and Daniel Kahneman. 1971. “Belief in the Law of Small Numbers.” <em>Psychological Bulletin</em> 76 (2): 105.</p>
+</div>
+<div id="ref-tversky1974judgment" class="csl-entry">
+<p>Tversky, Amos, and Daniel Kahneman. 1974. “<span class="nocase">Judgment under Uncertainty: Heuristics and Biases: Biases in judgments reveal some heuristics of thinking under uncertainty</span>.” <em>Science</em> 185 (4157): 1124–31.</p>
+</div>
+<div id="ref-wason1960failure" class="csl-entry">
+<p>Wason, Peter C. 1960. “<span class="nocase">On the failure to eliminate hypotheses in a conceptual task</span>.” <em>Quarterly Journal of Experimental Psychology</em> 12 (3): 129–40.</p>
+</div>
+</div>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>The paradox is attributed to Buridan critics as a satire of excessive rationalism.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p>Based on the book Bertsekas (2012).&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+
+    <a href="../../../../../"> >> Home</a>
+  </main>
+</div>
+    <footer>
+      
+<script>
+(function() {
+  function center_el(tagName) {
+    var tags = document.getElementsByTagName(tagName), i, tag;
+    for (i = 0; i < tags.length; i++) {
+      tag = tags[i];
+      var parent = tag.parentElement;
+      
+      if (parent.childNodes.length === 1) {
+        
+        if (parent.nodeName === 'A') {
+          parent = parent.parentElement;
+          if (parent.childNodes.length != 1) continue;
+        }
+        if (parent.nodeName === 'P') parent.style.textAlign = 'center';
+      }
+    }
+  }
+  var tagNames = ['img', 'embed', 'object'];
+  for (var i = 0; i < tagNames.length; i++) {
+    center_el(tagNames[i]);
+  }
+})();
+</script>
+
+      
+      <hr/>
+      Alberto Torrejón Valenzuela | <a href="https://github.com/albtorval">Github</a> | <a href="https://twitter.com/ajedre97">Twitter</a> | <a href="https://www.linkedin.com/in/alberto-torrej%C3%B3n-valenzuela-851680174/">LinkedIn</a>
+      
+    </footer>
+  </body>
+</html>
+

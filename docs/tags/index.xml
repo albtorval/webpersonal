@@ -6,8 +6,29 @@
     <description>Recent content in Tags on Alberto Torrejón Valenzuela</description>
     <generator>Hugo</generator>
     <language>es-es</language>
-    <lastBuildDate>Sun, 19 Apr 2026 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 30 May 2026 00:00:00 +0000</lastBuildDate>
     <atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Introduction</title>
+      <link>/tags/introduction/</link>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <guid>/tags/introduction/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Optimization</title>
+      <link>/tags/optimization/</link>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <guid>/tags/optimization/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Stochastic Programming</title>
+      <link>/tags/stochastic-programming/</link>
+      <pubDate>Sat, 30 May 2026 00:00:00 +0000</pubDate>
+      <guid>/tags/stochastic-programming/</guid>
+      <description></description>
+    </item>
     <item>
       <title>Ella</title>
       <link>/tags/ella/</link>
