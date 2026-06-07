@@ -73,7 +73,7 @@
     });
 
 </script>
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
 <script type="text/javascript" id="MathJax-script" async
   src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
   </head>
@@ -112,9 +112,9 @@
 <li>and no preference can be established,</li>
 <li>indecision may replace action.</li>
 </ul>
-<center>
+<!-- raw HTML omitted -->
 <p><img src="../../../../../post/Img/Buridan.jpg" alt=""></p>
-</center>
+<!-- raw HTML omitted -->
 <p>Although it was not its intention, it highlights that the maxim of always choosing the best option based on weak knowledge becomes problematic when faced with two options equally “better”, or “worse”.</p>
 <h3 id="challenges-in-the-decision-making-process">Challenges in the decision-making process</h3>
 <p>In the process, one can find, among others:</p>
@@ -133,9 +133,9 @@
 </ul>
 <p><strong>Strategic reasoning</strong> emerges as the step before decision-making, our way to prepare against complexity.</p>
 <p><strong>Optimization</strong> serves as the main tool for rational strategic reasoning.</p>
-<div class="callout-note" appearance="simple bigyy">
+<!-- raw HTML omitted -->
 <p><strong>Some well-known cognitive biases</strong></p>
-<div class="aumentada">
+<!-- raw HTML omitted -->
 <ul>
 <li>
 <p><em>Conformity Bias</em> or <em>Bandwagon Effect</em> (Leibenstein 1950), which is the tendency to do or believe things because many other people do or believe the same.</p>
@@ -150,8 +150,8 @@
 <p><em>Overconfidence Bias</em> (Tversky and Kahneman 1974), which is the tendency for a person’s subjective confidence in their judgments to be reliably greater than their objective accuracy. <em>Dunning–Kruger effect</em> (Kruger and Dunning 1999), is a cognitive bias whereby people with low ability at a task overestimate their ability, failing to recognize their own incompetence.</p>
 </li>
 </ul>
-</div>
-</div>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="stochastic-programming">Stochastic Programming</h2>
 <p>Stochastic programming is <strong>optimization under uncertainty</strong>, where uncertainty is explicitly modeled through random variables with known (or estimable) probability distributions.</p>
 <p>In a standard optimization problem, we solve</p>
@@ -160,7 +160,7 @@
 <p>In stochastic programming, we instead minimize the <strong>expected cost</strong> over the uncertainty:</p>
 <p><code>$$\min_{x \in \mathcal{X}} \; \mathbb{E}_{\xi}\!\left[f(x,\xi)\right]$$</code></p>
 <p>where <code>\(\xi\)</code> is a random parameter whose realization is unknown at decision time.</p>
-<div class="callout-tip" style="background-color: #d9ecff; border-left: 6px solid #4a90e2; color: #1f2d3d;">
+<!-- raw HTML omitted -->
 <h5 id="example-planning-electricity-production-under-uncertain-demand">Example: Planning electricity production under uncertain demand</h5>
 <p>A power company must decide <strong>today</strong> how many generators to activate for tomorrow.</p>
 <ul>
@@ -168,12 +168,12 @@
 <li>Activating too few may lead to blackouts or emergency energy purchases.</li>
 <li>Tomorrow’s electricity demand is uncertain and depends on weather conditions, human activity, and renewable energy production.</li>
 </ul>
-</div>
+<!-- raw HTML omitted -->
 <p>In practice, <code>\(\xi\)</code> can be drawn from an estimated probability model and <strong>discretized into scenarios</strong> <code>\(\Omega = \{\omega_1, \ldots, \omega_{|\Omega|}\}\)</code> with probabilities <code>\(p_\omega\)</code>, where <code>\(\sum_{\omega \in \Omega} p_\omega = 1\)</code>, turning the expectation into a weighted sum: <code>$$\mathbb{E}_{\xi}\!\left[f(x,\xi)\right] \approx \sum_{\omega \in \Omega} p_\omega \, f(x, \omega)$$</code></p>
 <p>The challenge is therefore:</p>
-<center>
+<!-- raw HTML omitted -->
 <p><strong>How can we make good decisions now, without knowing the future?</strong></p>
-</center>
+<!-- raw HTML omitted -->
 <h3 id="key-elements-of-stochastic-programming">Key elements of Stochastic Programming</h3>
 <ol>
 <li>
@@ -277,12 +277,12 @@ The expected loss conditioned on the loss exceeding the corresponding VaR level.
 </table>
 <h2 id="two-stage-stochastic-programming">Two-Stage Stochastic Programming</h2>
 <p>This is the most common formulation:</p>
-<center>
+<!-- raw HTML omitted -->
 <p>We fix <code>\(x\)</code>, then “correct” with <code>\(y\)</code> after <code>\(\xi\)</code> happens.</p>
-</center>
+<!-- raw HTML omitted -->
 <p><strong>Mathematical Formulation:</strong> <code>$$\min_{x \in \mathcal{X}} \ c^\top x + \mathcal{Q}(x)$$</code> where <code>\(\mathcal{Q}(x) = \mathbb{E}_\xi [Q(x, \xi)]\)</code> is the <strong>Expected Recourse Function</strong>.</p>
 <p>For a specific realization <code>\(\xi = (q, h, T, W)\)</code>, the second-stage problem is: <code>$$Q(x, \xi) = \min_{y} \left\{ q^\top y \mid Wy = h - Tx, \ y \ge 0 \right\}$$</code></p>
-<div class="callout-note">
+<!-- raw HTML omitted -->
 <h4 id="computational-challenges">Computational challenges</h4>
 <p>A major difficulty is the <strong>curse of dimensionality</strong>, since the number of scenarios may grow exponentially with the dimension of the uncertainty space or the number of stages.</p>
 <p>As a consequence, solving stochastic or robust optimization models directly can become computationally prohibitive. Several algorithmic strategies are commonly used to address this issue:</p>
@@ -315,7 +315,7 @@ Scenario reduction techniques often rely on:</p>
 <p>The resulting optimization problem can then be solved as a deterministic large-scale program.</p>
 </li>
 </ul>
-</div>
+<!-- raw HTML omitted -->
 <h2 id="multistage-stochastic-programming-msp-scenario-trees">Multistage Stochastic Programming (MSP): Scenario Trees</h2>
 <p>In many real-world applications, decisions are not taken only once, but sequentially over time as uncertainty is progressively revealed.</p>
 <p>A typical decision process follows the structure</p>
@@ -352,7 +352,7 @@ Scenario reduction techniques often rely on:</p>
 <li><code>\(X_t(x_{t-1},\xi_t)\)</code> defines the feasible region,</li>
 <li>and non-anticipativity constraints enforce information consistency.</li>
 </ul>
-<div class="callout-note">
+<!-- raw HTML omitted -->
 <h3 id="computational-challenge">Computational Challenge</h3>
 <p>The main difficulty in MSP is the exponential growth of the scenario tree.</p>
 <p>For example, with:</p>
@@ -363,10 +363,9 @@ Scenario reduction techniques often rely on:</p>
 <p>the total number of scenarios becomes</p>
 <p><code>$$3^{10} = 59,\!049$$</code></p>
 <p>This phenomenon is another manifestation of the <strong>curse of dimensionality</strong>, making multistage stochastic optimization computationally demanding.</p>
-<center>
-<img src="../../../../../post/Img/1_chesstree.JPG" width="70%"/>
-</center>
-</div>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h2 id="stochastic-dynamic-programming-sdp">Stochastic Dynamic Programming (SDP)</h2>
 <p><strong>Stochastic Dynamic Programming (SDP)</strong> is a methodology for solving sequential decision-making problems under uncertainty.</p>
 <p>Its goal is to determine an <strong>optimal decision policy</strong> when:</p>
@@ -385,7 +384,7 @@ Scenario reduction techniques often rely on:</p>
 <li><strong>Time Horizon</strong>. The optimization horizon may be finite (<code>\(t = 1, \ldots, T\)</code>), infinite discounted, or infinite average-cost.</li>
 <li><strong>Decision Policy</strong>. A policy <code>\(\pi : \mathcal{S} \to \mathcal{A}\)</code> specifies which action to take in every possible state. The objective is to compute an <strong>optimal policy</strong> <code>\(\pi^*\)</code> minimizing the expected long-term cost.</li>
 </ul>
-<div class="callout-tip" style="background-color: #d9ecff; border-left: 6px solid #4a90e2; color: #1f2d3d;">
+<!-- raw HTML omitted -->
 <h3 id="example-optimal-stock-selling">Example: Optimal Stock Selling</h3>
 <p>An investor holds one unit of a risky asset purchased at price <code>\(p_0\)</code> and must decide, at each of <code>\(T\)</code> trading days, whether to sell or to wait. The objective is to maximize the expected net gain at the moment of sale.<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></p>
 <p><strong>State space.</strong> The state at time <code>\(t\)</code> is the pair</p>
@@ -434,8 +433,8 @@ fully determined by the log-normal distribution above.</p>
   </tbody>
 </table>
 <p>This policy is feasible but not necessarily optimal; it serves to illustrate the structure of a policy as a complete decision rule defined over the entire state space.</p>
-</div>
-<div class="callout-note">
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <h3 id="relationship-between-multistage-stochastic-programming-msp-and-stochastic-dynamic-programming-sdp">Relationship Between Multistage Stochastic Programming (MSP) and Stochastic Dynamic Programming (SDP)</h3>
 <p>The relationship between <strong>Multistage Stochastic Programming (MSP)</strong> and <strong>Stochastic Dynamic Programming (SDP)</strong> is very deep. In essence, both frameworks model <strong>sequential decision-making problems under uncertainty</strong>, but they do so from different perspectives.</p>
 <p>Both approaches consider:</p>
@@ -491,7 +490,7 @@ fully determined by the log-normal distribution above.</p>
       </tr>
   </tbody>
 </table>
-</div>
+<!-- raw HTML omitted -->
 <h3 id="bellmans-principle-in-sdp">Bellman’s Principle in SDP</h3>
 <p>Instead of optimizing over the entire scenario tree simultaneously, SDP decomposes the problem recursively using the <strong>Bellman Principle of Optimality</strong>:</p>
 <blockquote>
@@ -522,11 +521,11 @@ fully determined by the log-normal distribution above.</p>
 <p>In the general formulation, the transition law may depend on the full history of states and actions. However, in many practical settings the state <code>\(s_t\)</code> already encodes all relevant past information, so that:</p>
 <p><code>$$P\left[S_{t+1} = s' \mid S_0 = s_0, \ldots, S_t = s, A_t = a\right] = P_a(s, s')$$</code></p>
 <p>This is known as the <strong>Markov property</strong>. When it holds, the system is called a <strong>Markov Decision Process (MDP)</strong>, a special case that is considerably more tractable and therefore widely studied.</p>
-<div class="callout-note" appearance="simple">
+<!-- raw HTML omitted -->
 <p><strong>Why is the Markov property important?</strong></p>
 <p>Without it, the value function would need to depend on the entire history <code>\(\xi_{[t]} = (\xi_1, \ldots, \xi_t)\)</code>, making the state space grow exponentially with time. When the Markov property holds, the current state <code>\(s_t\)</code> is a <strong>sufficient statistic</strong> for the future, and we only need to track a single state variable.</p>
 <p>If an application does not naturally satisfy the Markov property, it is often possible to recover it by <strong>augmenting the state</strong> (e.g., including recent history or summary statistics as part of <code>\(s_t\)</code>), at the cost of a larger state space.</p>
-</div>
+<!-- raw HTML omitted -->
 <p>Formally, an MDP is defined as a 5-tuple <code>\(\mathcal{M} = \langle S, A, P, R, \gamma \rangle\)</code> where:</p>
 <ul>
 <li><code>\(S\)</code> is the state space.</li>
@@ -552,7 +551,7 @@ fully determined by the log-normal distribution above.</p>
 <p>For finite MDPs, these equations have a <strong>unique solution</strong>, and the optimal policy can be recovered directly as:</p>
 <p><code>$$\pi^*(s) = \arg\max_{a \in A} \left\{ \sum_{s'} P_a(s, s') \left( R_a(s, s') + \gamma V^*(s') \right) \right\}$$</code></p>
 <p>The solution methods presented above (Backward DP, Value Iteration, Policy Iteration) all apply to the MDP setting and exploit its Markov structure efficiently.</p>
-<div class="callout-note">
+<!-- raw HTML omitted -->
 <h3 id="computational-challenges-1">Computational challenges</h3>
 <p>While Bellman’s principle is mathematically elegant, it also faces the problem of the curse of dimensionality. If the state vector <code>\(s_t\)</code> contains multiple dimensions (e.g., a portfolio with 30 assets, macroeconomic indicators, regime-switching variables), grid discretization becomes <strong>exponentially intractable</strong> (<code>\(O(N^d)\)</code>).</p>
 <ul>
@@ -563,7 +562,7 @@ fully determined by the log-normal distribution above.</p>
 <p><strong>Advanced link: Continuous Time.</strong> For continuous-state models, Bellman’s principle serves as the mathematical bridge to <strong>Optimal Control Theory</strong>, leading formally to the <strong>Hamilton–Jacobi–Bellman (HJB)</strong> partial differential equations.</p>
 </li>
 </ul>
-</div>
+<!-- raw HTML omitted -->
 <h3 id="finite-mdps-and-linear-programming">Finite MDPs and Linear Programming</h3>
 <p>The nonlinear <code>\(\max\)</code> operator appearing in the Bellman optimality equation can be avoided by reformulating a finite Markov Decision Process (MDP) as a linear optimization problem. Let <code>\(\alpha(s) &gt; 0\)</code> denote a strictly positive state relevance distribution satisfying</p>
 <p><code>$$\sum_{s \in S} \alpha(s) = 1.$$</code></p>
@@ -773,10 +772,8 @@ fully determined by the log-normal distribution above.</p>
       </tr>
   </tbody>
 </table>
-<br>
-<center>
-<img src="../../../../../post/Img/MDPR.png" alt="" width="75%"/>
-</center>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>We compress to expected state-action rewards <code>\(r(s, a) = \sum_{s'} P[s' \mid s, a]\, r(s, a, s')\)</code>:</p>
 <ul>
 <li><strong>NETFLIX:</strong> Strive: <code>\(0.4(5) + 0.6(-10) = -4.0\)</code> Relax: <code>\(0.7(-5) + 0.3(1) = -3.2\)</code></li>
@@ -810,26 +807,26 @@ fully determined by the log-normal distribution above.</p>
 <li><strong>Via Dual Variables:</strong> Look for non-zero flow allocations. Due to complementary slackness, any action that is sub-optimal will receive a state-action frequency value of exactly <code>\(0\)</code>. Thus, the policy is deterministically selected via: <code>$$\pi^*(s) = \arg\max_{a \in A} x^*(s, a)$$</code> If <code>\(x^*(\text{NETFLIX}, \text{Strive}) &gt; 0\)</code> and <code>\(x^*(\text{NETFLIX}, \text{Relax}) = 0\)</code>, the optimal decision is unequivocally to <strong>Strive</strong>.</li>
 </ul>
 <h3 id="references">References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-bertsekas2012dynamic" class="csl-entry">
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Bertsekas, Dimitri P. 2012. <em>Dynamic Programming and Optimal Control: Volume i</em>. 4th ed. Vol. 1. Athena Scientific.</p>
-</div>
-<div id="ref-kruger1999unskilled" class="csl-entry">
-<p>Kruger, Justin, and David Dunning. 1999. “<span class="nocase">Unskilled and unaware of it: How difficulties in recognizing one’s own incompetence lead to inflated self-assessments</span>.” <em>Journal of Personality and Social Psychology</em> 77 (6): 1121.</p>
-</div>
-<div id="ref-leibenstein1950bandwagon" class="csl-entry">
-<p>Leibenstein, Harvey. 1950. “<span class="nocase">Bandwagon, snob, and Veblen effects in the theory of consumers’ demand</span>.” <em>The Quarterly Journal of Economics</em> 64 (2): 183–207.</p>
-</div>
-<div id="ref-tversky1971belief" class="csl-entry">
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Kruger, Justin, and David Dunning. 1999. “<!-- raw HTML omitted -->Unskilled and unaware of it: How difficulties in recognizing one’s own incompetence lead to inflated self-assessments<!-- raw HTML omitted -->.” <em>Journal of Personality and Social Psychology</em> 77 (6): 1121.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Leibenstein, Harvey. 1950. “<!-- raw HTML omitted -->Bandwagon, snob, and Veblen effects in the theory of consumers’ demand<!-- raw HTML omitted -->.” <em>The Quarterly Journal of Economics</em> 64 (2): 183–207.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Tversky, Amos, and Daniel Kahneman. 1971. “Belief in the Law of Small Numbers.” <em>Psychological Bulletin</em> 76 (2): 105.</p>
-</div>
-<div id="ref-tversky1974judgment" class="csl-entry">
-<p>Tversky, Amos, and Daniel Kahneman. 1974. “<span class="nocase">Judgment under Uncertainty: Heuristics and Biases: Biases in judgments reveal some heuristics of thinking under uncertainty</span>.” <em>Science</em> 185 (4157): 1124–31.</p>
-</div>
-<div id="ref-wason1960failure" class="csl-entry">
-<p>Wason, Peter C. 1960. “<span class="nocase">On the failure to eliminate hypotheses in a conceptual task</span>.” <em>Quarterly Journal of Experimental Psychology</em> 12 (3): 129–40.</p>
-</div>
-</div>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Tversky, Amos, and Daniel Kahneman. 1974. “<!-- raw HTML omitted -->Judgment under Uncertainty: Heuristics and Biases: Biases in judgments reveal some heuristics of thinking under uncertainty<!-- raw HTML omitted -->.” <em>Science</em> 185 (4157): 1124–31.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>Wason, Peter C. 1960. “<!-- raw HTML omitted -->On the failure to eliminate hypotheses in a conceptual task<!-- raw HTML omitted -->.” <em>Quarterly Journal of Experimental Psychology</em> 12 (3): 129–40.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <div class="footnotes" role="doc-endnotes">
 <hr>
 <ol>
