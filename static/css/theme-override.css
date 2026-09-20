@@ -1,1 +1,55 @@
 footer { font-size: 90%; }
+
+
+/* ============================================================
+   RESPONSIVE (tablet y móvil)
+   ============================================================ */
+html { -webkit-text-size-adjust: 100%; }
+
+img, iframe, video, svg { max-width: 100%; }
+pre, .MathJax_Display, mjx-container[display="true"] { max-width: 100%; overflow-x: auto; }
+table { display: block; max-width: 100%; overflow-x: auto; }
+main, .content-wrapper { overflow-wrap: break-word; }
+
+/* Tablet */
+@media (max-width: 900px) {
+  body { max-width: 90%; }
+  main { max-width: 100%; }
+}
+
+/* Móvil */
+@media (max-width: 640px) {
+  body { max-width: 100%; padding: 0 .6em; }
+  main { font-size: 1rem; max-width: 100%; }
+
+  /* Cabecera: el menú pasa a varias líneas en vez de desbordarse */
+  header { height: auto; padding: .25rem 0; }
+  header nav { padding: 0 .25rem; }
+  header ul { display: flex; flex-wrap: wrap; }
+  header li, header li.pull-left { float: none; }
+  header a { display: block; line-height: 1.9rem; padding: 0 .5rem; }
+
+  /* Foto + título de la portada en columna */
+  .two-columns { flex-direction: column; text-align: center; }
+  .two-columns .right { width: 100%; }
+  .two-columns h1 { font-size: 1.5rem; }
+  .left { flex: none; margin: 0 0 10px 0; }
+
+  .two-columnsC { flex-direction: column; }
+  .leftC, .rightC { max-width: 100%; }
+
+  /* La animación desplazaba el texto fuera de pantalla */
+  .textslide { animation: none; text-align: center; }
+
+  /* Botones 3D: rejilla de 2 columnas */
+  .button-grid { grid-template-columns: repeat(2, 1fr); gap: 14px; width: 100%; }
+  .css-button-3d { min-width: 0; width: 100%; box-sizing: border-box; }
+
+  /* Bloques con anchura en % puesta en línea (imágenes/gráficos en posts) */
+  div[style*="display:inline-block"] { display: block !important; width: 100% !important; height: auto !important; }
+
+  .col2, .col3 { columns: 1; -webkit-columns: 1; -moz-columns: 1; }
+  #main-image { float: none; display: block; margin: 0 auto; }
+  div.just { text-align: left; }
+  .article-meta, .menu a { display: inline-block; margin-bottom: 8px; }
+}

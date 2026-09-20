@@ -139,12 +139,9 @@ y con lo puesto... <br>
 
 - <span class="specialelite"> **Scientific publications** </span>
 
-  + **Fair Vehicle Routing via Bilevel Optimization**. *Ljubić I., Puerto J., Torrejon A.* (2026), Optimization Online.
-  [[https://optimization-online.org/?p=33847](https://optimization-online.org/?p=33847)]
-  + **Revisiting transportation problems under Monge costs with applications to location problems**. *Nickel S., Puerto J., Ramoser S., Torrejon A.* (2026), arXiv.
-  [[doi.org/10.48550/arXiv.2602.15151](https://arxiv.org/abs/2602.15151)]
-  + **Linear, nested, and quadratic ordered measures: Computation and incorporation into optimization problems**. *Blanco V., Pozo M.A., Puerto J., Torrejon A.* (2025), arXiv
-  [[doi.org/10.48550/arXiv.2503.18097](https://doi.org/10.48550/arXiv.2503.18097)]
+  + **Optimization-based computation and integration of ordered measures**. *Blanco V., Pozo M.A., Puerto J., Torrejon A.* (2026), Annals of Operations Research, 1-36. Springer US.
+  [[doi.org/10.1007/s10479-026-07314-7](https://doi.org/10.1007/s10479-026-07314-7)]
+  (Previously circulated on arXiv as *Linear, nested, and quadratic ordered measures: Computation and incorporation into optimization problems* [[doi.org/10.48550/arXiv.2503.18097](https://doi.org/10.48550/arXiv.2503.18097)])
   + **A fresh view on Least Quantile of Squares Regression based on new optimization approaches**. *Puerto J., Torrejon A.* (2025), Expert Systems with Applications
   [[doi.org/10.1016/j.eswa.2025.127705](https://doi.org/10.1016/j.eswa.2025.127705)]
   + **The Ordered Median Tree Location Problem**. *Pozo M.A., Puerto J., Torrejon A.* (2024), Computers & Operations Research 
@@ -152,9 +149,19 @@ y con lo puesto... <br>
   + **Benders decomposition for the Discrete Ordered Median Problem**. *Ljubić I., Pozo M.A., Puerto J., Torrejon A.* (2024), European Journal of Operational Research
   [[doi.org/10.1016/j.ejor.2024.04.030](https://doi.org/10.1016/j.ejor.2024.04.030)]
 
+- <span class="specialelite"> **Ongoing work (preprints and working papers)** </span>
+
+  + **Models for the Discrete Ordered Median Problem based on DC decomposition**. *Nickel S., Puerto J., Ramoser S., Torrejon A.* (2026), SSRN.
+  [[doi.org/10.2139/ssrn.6709169](https://doi.org/10.2139/ssrn.6709169)]
+  + **Fair Vehicle Routing via Bilevel Optimization**. *Ljubić I., Puerto J., Torrejon A.* (2026), Optimization Online.
+  [[https://optimization-online.org/?p=33847](https://optimization-online.org/?p=33847)]
+  + **Revisiting transportation problems under Monge costs with applications to location problems**. *Nickel S., Puerto J., Ramoser S., Torrejon A.* (2026), arXiv.
+  [[doi.org/10.48550/arXiv.2602.15151](https://arxiv.org/abs/2602.15151)]
+
 - <span class="specialelite"> **Teaching** </span>
 
   + **Probability Theory** (2025–2026) – [120h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
+  + **Elements of Probability** (2025–2026) – [12h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
   + **Introduction to Statistics**  
     - (2025–2026) [8h - Practice] Degree in Computer Engineering, University of Seville.
     - (2024-2025) [60h - Theory + Practice], Degree in Health Engineering, University of Sevilla and University of Malaga.
