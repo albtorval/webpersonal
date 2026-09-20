@@ -4,11 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2024-05-31'
 slug: transicion
 categories:
-  - textos
+  - Poemas
 tags:
   - Amor
-  - Ella
-  - Poemas
 description: ''
 ---
 

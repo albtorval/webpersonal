@@ -4,10 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2024-08-01'
 slug: vendra-la-rastrera
 categories:
-  - textos
-tags:
   - Poemas
-  - Muerte
+tags:
+  - Pérdida y memoria
 description: ''
 ---
 

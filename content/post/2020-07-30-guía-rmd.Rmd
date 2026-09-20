@@ -3,9 +3,11 @@ title: Guía RMarkdown
 author: Alberto Torrejón Valenzuela
 date: '2020-07-30'
 tags:
-  - R Markdown
+  - R
 slug: guía-rmd
 mathjax: local
+categories:
+  - Herramientas
 ---
 
 # Uso de Markdown 

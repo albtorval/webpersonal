@@ -4,10 +4,10 @@ author: Alberto Torrejón Valenzuela
 date: '2024-05-06'
 slug: benders-decomposition-for-the-discrete-ordered-median-problem
 categories:
-  - Matemáticas
-tags:
-  - Artículos
   - Investigación
+tags:
+  - Localización
+  - Optimización
 description: ''
 ---
 

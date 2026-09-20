@@ -4,11 +4,10 @@ author: Alberto Torrejón Valenzuela
 date: '2024-03-15'
 slug: aprovecha-mi-pluma
 categories:
-  - textos
-tags:
   - Poemas
-  - Despedida
+tags:
   - Amor
+  - Pérdida y memoria
 description: ''
 ---
 

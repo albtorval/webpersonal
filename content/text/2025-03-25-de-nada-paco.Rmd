@@ -4,10 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2025-03-25'
 slug: de-nada-paco
 categories:
-  - textos
-tags:
-  - Paco
   - Textos
+tags:
+  - Amistad
 description: ''
 ---
 

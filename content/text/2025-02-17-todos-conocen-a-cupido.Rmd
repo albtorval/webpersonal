@@ -3,11 +3,9 @@ title: Todos conocen a Cupido
 author: Alberto Torrejón Valenzuela
 date: '2025-02-17'
 categories:
-  - textos
+  - Textos
 tags:
   - Amor
-  - Ella
-  - Textos
 slug: todos-conocen-a-cupido
 ---
 

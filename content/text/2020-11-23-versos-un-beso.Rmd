@@ -3,11 +3,9 @@ title: Un beso
 author: Alberto Torrejón Valenzuela
 date: '2020-11-22'
 categories:
-  - Versos
+  - Poemas
 tags:
-  - Beso
-  - Ella
-  - Versos
+  - Amor
 slug: versos-un-beso
 ---
 

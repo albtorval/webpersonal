@@ -4,10 +4,8 @@ author: Alberto Torrejón Valenzuela
 date: '2019-02-01'
 slug: experimento-i
 categories:
-  - textos
-tags:
   - Poemas
-  - Versos
+tags: []
 description: ''
 ---
 

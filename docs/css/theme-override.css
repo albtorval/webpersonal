@@ -53,3 +53,67 @@ main, .content-wrapper { overflow-wrap: break-word; }
   div.just { text-align: left; }
   .article-meta, .menu a { display: inline-block; margin-bottom: 8px; }
 }
+
+
+/* ============================================================
+   PORTADA: posición actual, caja de investigación, membresías
+   ============================================================ */
+.now-card {
+  margin: 1.2rem 0;
+  padding: .9rem 1.2rem;
+  background: linear-gradient(135deg, #6495ED 0%, #3d348b 100%);
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,.2);
+}
+.now-card a { color: #fff; text-decoration: underline; }
+.now-label { text-transform: uppercase; letter-spacing: .12em; font-size: .75rem; opacity: .85; }
+.now-role { font-size: 1.3rem; font-weight: bold; margin: .15rem 0; }
+.now-where { font-size: .95rem; opacity: .95; }
+
+.research-box {
+  margin: 1.2rem 0;
+  padding: .2rem 1.2rem;
+  border-left: 5px solid #6495ED;
+  background: #eef3fd;
+  border-radius: 0 8px 8px 0;
+  text-align: left;
+}
+
+ul.badges { list-style: none; padding: 0; margin: .5rem 0 1.2rem; display: flex; flex-wrap: wrap; gap: 8px; }
+ul.badges li {
+  background: #E8DBC5;
+  border: 1px dotted #000;
+  border-radius: 999px;
+  padding: 4px 12px;
+  font-size: .9rem;
+  line-height: 1.4;
+}
+ul.badges li a { font-weight: bold; }
+
+
+/* Portada y agradecimientos de la tesis */
+.tesis { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; align-items: center; margin: 1.5rem 0; }
+.tesis a { display: block; }
+.tesis img { display: block; height: auto; border-radius: 4px; box-shadow: 0 3px 10px rgba(0,0,0,.25); }
+.tesis-portada { width: 260px; max-width: 100%; }
+
+/* Nombre de la portada con la letra de la firma (Zeyada) */
+.two-columns h1.primerapalabra { font-size: 4rem; font-weight: normal; line-height: 1.05; margin: 0 0 .3rem; text-align: left !important; }
+.two-columns .right { margin-right: 20px; }
+.two-columns .textslide { text-align: left !important; margin: 0; }
+@media (max-width: 640px) {
+  .two-columns h1.primerapalabra { font-size: 3.1rem; text-align: left !important; }
+  .two-columns .right { margin-right: 0; }
+  .two-columns .textslide { text-align: left !important; }
+}
+
+/* Poema + foto de la portada: foto completa, centrada verticalmente respecto al poema */
+.two-columnsC { align-items: center; gap: 24px; }
+.leftC { flex: 0 0 auto; max-width: none; font-size: 1.15rem; line-height: 1.6; }
+.leftC > :first-child { margin-top: 0; }
+.leftC > :last-child { margin-bottom: 0; }
+.rightC { flex: 1 1 0; max-width: none; min-width: 0; }
+.rightC p { margin: 0; }
+.rightC img { display: block; width: 75%; height: auto; margin: 0 auto; }
+@media (max-width: 640px) { .leftC { font-size: 1.05rem; } .rightC img { width: 100%; } }

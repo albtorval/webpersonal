@@ -4,12 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2018-09-01'
 slug: tienes-un-mech-n
 categories:
-  - textos
-tags:
   - Poemas
-  - Carta
+tags:
   - Amor
-  - Ella
 description: ''
 ---
 

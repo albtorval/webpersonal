@@ -4,11 +4,11 @@ author: Alberto Torrejón Valenzuela
 date: '2024-12-24'
 slug: mensaje-de-navidad-2024
 categories:
-  - textos
+  - Textos
 tags:
-  - Navidad
   - Amor
-  - Cocina
+  - Navidad
+  - Vida cotidiana
 description: ''
 ---
 

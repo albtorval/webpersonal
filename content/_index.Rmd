@@ -16,17 +16,13 @@ library(fontawesome)
 <!-- ![](images/Sujeto4.png){ width=20% height=20% } -->
 
 <div class="two-columns">
-<div>
-  <img src="images/Sujeto2.png" alt="Foto de Alberto" style="width: 150px;">
-  <!-- <img src="images/Sujeto4.png" alt="Foto de Alberto" style="width: 150px; border-radius: 50%;"> -->
-</div>
-  <!-- <div class="left"> -->
-  <!--   <img src="images/Sujeto4.png" alt="Foto de Alberto" class="foto"> -->
-  <!-- </div> -->
   <div class="right">
-  <center><h1 class = "rocksalt"> Alberto Torrejón Valenzuela </h1></center>
+  <h1 class = "primerapalabra"> Alberto Torrejón Valenzuela </h1>
   <div class = "textslide"> "Y el niño crecía y se fortalecía, y se llenaba de sabiduría; y la gracia de *Dios* era sobre él". <br> **Lucas 2:40** </div>
   </div>
+<div>
+  <img src="images/retrato.png" alt="Retrato de Alberto" style="width: 150px;">
+</div>
 </div>
 
 <div class="just">
@@ -38,14 +34,6 @@ However, **don't despair**. If you're not interested in reading anything that re
 Finally, perhaps you're not here for any of the reasons mentioned above, and you're just reading this for some job selection process, scholarship, or something similar. In that case, I kindly ask you to forget what you have read in the previous paragraphs, check my resume in the **~/cv** tab, and hire me.
 
 Of course, like everything in life should, this page is subject to improvements. If you find any errors or have any advice, please feel free to contact me via the links below.
-
-Thank you very much. 
-
-Sincerely,
-
-<div class="der">
-<span class = "primerapalabra">Alberto Torrejón Valenzuela</span>
-</div>
 
 </div>
 
@@ -80,23 +68,41 @@ Sincerely,
 
 ### <span class="specialelite"> `r emo::ji("bust")` About me... </span>
 
-
-
 > "There is a difference between a thing and talking about a thing."
 > <div class="der">Kurt Gödel</div>
 
+<div class="now-card">
+<div class="now-label">Currently</div>
+<div class="now-role">Assistant Professor at <a href="https://www.wu.ac.at/en/">WU Vienna</a></div>
+<div class="now-where">Department of Finance, Accounting and Statistics &middot; <a href="https://statmath.wu.ac.at/">Institute for Statistics and Mathematics</a></div>
+</div>
+
 <div class="just">
 
-I am PhD in Mathematics (with the specialization in Statistics and Operations Research) by the University of Sevilla in the [Department of Statistics and Operations Research](https://departamento.us.es/destadio/) and the [Institute of Mathematics (IMUS)](https://www.imus.us.es/) at the University of Seville under the supervision of [Justo Puerto](https://scholar.google.it/citations?user=koF66usAAAAJ&hl=en) and [Miguel A. Pozo](https://scholar.google.es/citations?user=lG5nHdsAAAAJ&hl=es).
-I also hold a double degree in Mathematics and Statistics and a Master’s Degree in Mathematics, all from the [University of Seville](https://www.us.es/). 
+I hold a PhD in Mathematics (specialization in Statistics and Operations Research) from the [Institute of Mathematics (IMUS)](https://www.imus.us.es/) and the [Department of Statistics and Operations Research](https://departamento.us.es/destadio/) at the University of Seville, under the supervision of [Prof. Justo Puerto](https://scholar.google.it/citations?user=koF66usAAAAJ&hl=en) and [Prof. Miguel A. Pozo](https://scholar.google.es/citations?user=lG5nHdsAAAAJ&hl=es).
+I also hold a double degree in Mathematics and Statistics and a Master's Degree in Mathematics, all from the [University of Seville](https://www.us.es/). I have carried out two research stays at [ESSEC Business School](https://www.essec.edu/) (Cergy, France), hosted by [Prof. Ivana Ljubić](https://ivanaljubic.github.io/).
 
-My research focuses on mathematical modeling, algorithmic development, and statistical methodologies for data analysis and decision-making problems. These range from robust statistics to location or vehicle routing problems. Specifically, I work on the development of *ordered optimization* approaches through the lens of mathematical programming. A key focus of my work is the design of fair and equitable decision-making strategies and algorithms within these frameworks.
+<div class="research-box">
 
-I am a member of the [Spanish Society of Statistics and Operations Research (SEIO)](https://www.seio.es/), where I serve on the editorial team of the [SEIO Bulletin](https://www.seio.es/revista-beio/), of the [Spanish Location Network (REDLOCA)](https://redloca.netlify.app/), and the [EURO Working Group on Location Analysis (EWGLA)](https://www.euro-online.org/websites/ewgla/).
+**Can we trust the decisions of an algorithm?** My research uses mathematical optimization to provide **optimality guarantees for AI**: making decision-making in *artificial intelligence* and data science fair, robust and provably optimal. I design models and algorithms, with guarantees of optimality, for problems ranging from robust statistics and regression to location and vehicle routing. Specifically, I work on *ordered optimization* through the lens of mathematical programming, with a focus on fair and equitable decision-making.
 
-Beyond academic research, I actively participate in conferences, seminars, and outreach activities aimed at promoting mathematics, statistics, and operations research. I am a strong advocate for open source and maintain a special connection with the R programming language. I am one of the organizers of the [SevillaR group](https://sevillarusers.netlify.app/about/), a local node of the [R-Hispano Community](https://r-es.org/). In my free time, I write and read poetry, just like my father taught me. 
+</div>
 
-My personal motto: *educación, ciencia y cultura*.
+Beyond academic research, I actively participate in conferences, seminars, and outreach activities aimed at promoting mathematics, statistics, and operations research. I am a strong advocate for open source and maintain a special connection with the R programming language. In my free time, I write and read poetry, just like my father taught me. My personal motto: *educación, ciencia y cultura*.
+
+#### Memberships
+
+<ul class="badges">
+<li><a href="https://www.imus.us.es/">IMUS &middot; Institute of Mathematics, University of Seville</a></li>
+<li><a href="https://www.euro-online.org/websites/ewgla/">EWGLA &middot; EURO Working Group on Location Analysis</a></li>
+<li><a href="https://www.imstat.org/">IMS &middot; Institute of Mathematical Statistics</a></li>
+<li><a href="https://www.seio.es/">SEIO &middot; Spanish Society of Statistics, Operations Research and Data Science</a></li>
+<li><a href="https://www.rsme.es/">RSME &middot; Spanish Mathematical Society</a></li>
+<li><a href="https://redloca.netlify.app/">REDLOCA &middot; Spanish Location Network</a></li>
+<li><a href="https://sevillarusers.netlify.app/about/">SevillaR &middot; Seville R Users Group</a></li>
+<li><a href="https://r-es.org/">R-Hispano &middot; Spanish R Community</a></li>
+<li><a href="https://institutoecg.es/">ECG &middot; Instituto de Estudios Campogibraltareños</a></li>
+</ul>
 
 </div>
 
@@ -139,9 +145,8 @@ y con lo puesto... <br>
 
 - <span class="specialelite"> **Scientific publications** </span>
 
-  + **Optimization-based computation and integration of ordered measures**. *Blanco V., Pozo M.A., Puerto J., Torrejon A.* (2026), Annals of Operations Research, 1-36. Springer US.
+  + **Optimization-based computation and integration of ordered measures**. *Blanco V., Pozo M.A., Puerto J., Torrejon A.* (2026), Annals of Operations Research.
   [[doi.org/10.1007/s10479-026-07314-7](https://doi.org/10.1007/s10479-026-07314-7)]
-  (Previously circulated on arXiv as *Linear, nested, and quadratic ordered measures: Computation and incorporation into optimization problems* [[doi.org/10.48550/arXiv.2503.18097](https://doi.org/10.48550/arXiv.2503.18097)])
   + **A fresh view on Least Quantile of Squares Regression based on new optimization approaches**. *Puerto J., Torrejon A.* (2025), Expert Systems with Applications
   [[doi.org/10.1016/j.eswa.2025.127705](https://doi.org/10.1016/j.eswa.2025.127705)]
   + **The Ordered Median Tree Location Problem**. *Pozo M.A., Puerto J., Torrejon A.* (2024), Computers & Operations Research 
@@ -160,8 +165,8 @@ y con lo puesto... <br>
 
 - <span class="specialelite"> **Teaching** </span>
 
-  + **Probability Theory** (2025–2026) – [120h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
-  + **Elements of Probability** (2025–2026) – [12h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
+  + **Elements of Probability** (2026–2027) – [12h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
+  + **Theory of Probability** (2025–2026) – [120h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
   + **Introduction to Statistics**  
     - (2025–2026) [8h - Practice] Degree in Computer Engineering, University of Seville.
     - (2024-2025) [60h - Theory + Practice], Degree in Health Engineering, University of Sevilla and University of Malaga.
@@ -169,6 +174,7 @@ y con lo puesto... <br>
     - (2022–2023) [60h - Theory + Practice], Degree in Health Engineering, University of Sevilla and University of Malaga.
   + **Advanced Linear Models for Biology** (2024) – [18h - Theory + Practice], Institute of Educational Sciences of the University of Sevilla.
   + **Introduction to R and Linear Models for Biology** (2024) – [10h - Theory + Practice], Institute of Educational Sciences of the University of Sevilla.
+  + **Thesis supervision** — Supervisor of two Bachelor's theses (TFG) and one Master's thesis (TFM).
 
 - <span class="specialelite"> **Participation in Research Projects** </span>
 
@@ -183,7 +189,7 @@ PIs: *Prof. Justo Puerto, Prof. Víctor Blanco*. <!-- Funding: *€217,115.* Per
 
 - <span class="specialelite"> **Other academic activities** (organization, editorial work, scientific service, outreach, etc.) </span>
 
-  + [**Outreach Commission, Spanish Society of Statistics, Operations Research and Data Science (SEIO)**](https://www.seio.es/comisiones-seio/) (Mar 2026–present). Role: Member.  
+  + [**Outreach Commission, Spanish Society of Statistics, Operations Research and Data Science (SEIO)**](https://www.seio.es/comisiones-seio/) (Mar 2026–present). Role: Coordinator.  
   <!-- + **III Conference for Young Researchers from Los Barrios** (Mar 2026) — City Hall of Los Barrios, Cádiz, Spain. Role: Organizer of a round table.   -->
   + [**Outreach Commission, IMUS – Institute of Mathematics, University of Seville (María de Maeztu Unit)**](https://www.imus.us.es/www/#organigrama) (Jan 2026–present). Role: Member.  
   + [**1st International New Researchers Conference (IMS)**](https://www.imus.us.es/) (Dec 11–12, 2025) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Chair of the Organizing Committee.  
@@ -194,7 +200,7 @@ PIs: *Prof. Justo Puerto, Prof. Víctor Blanco*. <!-- Funding: *€217,115.* Per
   + [**7th Congress of Young Researchers of the RSME**](https://jovenes2025.rsme.es/paralelaCD04.html) (Jan 13–17, 2025) — University of the Basque Country, Bilbao, Spain. Role: Organizer of the session *CD04: Mathematical Optimization*.  
   + [**III Congreso y XIV Jornadas de Usuarios de R**](https://www.imus.us.es/congresos/IIIRqueR/) (Nov 6–8, 2024) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Chair of the Organizing Committee.  
   + [**XIII International Workshop on Locational Analysis and Related Problems (IWoLoCA)**](https://easychair.org/cfp/iwoloca24#:~:text=The%20XIII%20International%20Workshop%20on,SEIO%20working%20group%20on%20Location) (Sep 4–6, 2024) — Institute of Mathematics, University of Granada, Granada, Spain. Role: Organization and promotion.  
-  + [**Boletín de Estadística e Investigación Operativa (BEIO), Spanish Society of Statistics and Operations Research (SEIO)**](https://www.seio.es/revista-beio/) (2025–present). Role: Technical Editor.  
+  + [**Boletín de Estadística e Investigación Operativa (BEIO), Spanish Society of Statistics and Operations Research (SEIO)**](https://www.seio.es/revista-beio/) (2025–2026). Role: Technical Editor.  
   + [**3rd Sevilla MINLP Workshop**](https://www.imus.us.es/congresos/3sminlp/) (Mar 30–31, 2023) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Organization and promotion.  
   + [**PhD Seminar Series (IMUS)**](https://www.imus.us.es/#actividades/PHD) (2022–2023, full academic year) — Institute of Mathematics, University of Seville, Seville, Spain. Role: Organizer.  
   + **Los Martes Se Investiga (LMSI)** — outreach activity (2022–2023, full academic year) — Faculty of Mathematics, University of Seville, Seville, Spain. Role: Organizer.  
@@ -214,6 +220,10 @@ PIs: *Prof. Justo Puerto, Prof. Víctor Blanco*. <!-- Funding: *€217,115.* Per
 <!-- + [Una breve introducción a CSS](http://torrejonvalenzuela.sytes.net/intro_css/) -->
 
 ... not enough? Have a look to my [CV](pdf/CV.pdf)
+
+<div class="tesis">
+<a href="pdf/PhD.pdf"><img class="tesis-portada" src="images/portada_tesis.png" alt="Portada de la tesis: Ordered Optimization: Theory, Algorithms and Applications"></a>
+</div>
 
 ---
 
@@ -294,4 +304,3 @@ PIs: *Prof. Justo Puerto, Prof. Víctor Blanco*. <!-- Funding: *€217,115.* Per
 ---
 
 ### <span class="specialelite"> `r emo::ji("memo")` What else? </span>
-

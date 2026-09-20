@@ -5,9 +5,7 @@ date: '2020-11-13'
 categories:
   - Estadística
 tags:
-  - ACP
-  - Ejemplo
-  - Minería Estadística
+  - Análisis de datos
   - R
 slug: análisis-de-componentes-principales-datos-usairpollution
 description: Ejemplo de aplicación del Análisis de Componentes Principales a datos

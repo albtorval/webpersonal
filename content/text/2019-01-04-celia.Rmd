@@ -4,11 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2019-01-04'
 slug: celia
 categories:
-  - textos
+  - Poemas
 tags:
   - Amor
-  - Poemas
-  - Ella
 description: ''
 ---
 

@@ -3,10 +3,9 @@ title: A mi hermano III
 author: Alberto Torrejón Valenzuela
 date: '2020-11-21'
 categories:
-  - poemas
-tags:
-  - Hermano
   - Poemas
+tags:
+  - Familia
 slug: poema-a-mi-hermano-iii
 ---
 

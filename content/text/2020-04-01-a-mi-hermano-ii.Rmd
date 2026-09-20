@@ -4,9 +4,8 @@ author: Alberto Torrejón Valenzuela
 date: '2020-04-01'
 slug: a-mi-hermano-ii
 categories:
-  - textos
-tags:
   - Poemas
+tags: []
 description: ''
 ---
 

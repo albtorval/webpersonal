@@ -4,10 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2024-08-19'
 slug: uno-por-cada-letra-del-alfabeto
 categories:
-  - textos
-tags:
   - Textos
-  - Cumpleaños
+tags:
+  - Vida cotidiana
 description: ''
 ---
 

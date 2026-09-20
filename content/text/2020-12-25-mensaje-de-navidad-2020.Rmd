@@ -4,11 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2020-12-25'
 slug: mensaje-de-navidad-2020
 categories:
-  - textos
+  - Textos
 tags:
-  - Mensaje
   - Navidad
-  - Proverbio
 description: ''
 ---
 

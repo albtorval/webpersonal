@@ -4,9 +4,8 @@ author: Alberto Torrejón Valenzuela
 date: '2019-01-05'
 slug: cuando-jug-bamos
 categories:
-  - textos
-tags:
   - Poemas
+tags:
   - Amor
 description: ''
 ---

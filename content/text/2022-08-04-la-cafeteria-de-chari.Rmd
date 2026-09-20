@@ -4,10 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2022-08-04'
 slug: la-cafeteria-de-chari
 categories:
-  - textos
-tags:
   - Poemas
-  - Social
+tags:
+  - Sociedad
 description: ''
 ---
 

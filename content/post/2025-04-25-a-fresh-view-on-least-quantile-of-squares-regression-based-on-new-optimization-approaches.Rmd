@@ -5,10 +5,9 @@ author: Alberto Torrejón Valenzuela
 date: '2025-04-25'
 slug: a-fresh-view-on-least-quantile-of-squares-regression-based-on-new-optimization-approaches
 categories:
-  - Matemáticas
-tags:
-  - Artículos
   - Investigación
+tags:
+  - Optimización
 description: ''
 ---
 

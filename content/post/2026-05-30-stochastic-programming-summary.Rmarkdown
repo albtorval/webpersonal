@@ -4,11 +4,10 @@ author: "Alberto Torrejón Valenzuela"
 date: 2026-05-30
 slug: stochastic-programming-summary
 categories:
-  - Mathematics
+  - Matemáticas
 tags:
-  - Introduction
-  - Optimization
-  - Stochastic Programming
+  - Optimización
+  - Programación estocástica
 description: "Introduction to stochastic programming, dynamic programming and Markov decision processes."
 math: true
 bibliography: ["biblio.bib"]

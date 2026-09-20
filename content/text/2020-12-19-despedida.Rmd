@@ -3,11 +3,10 @@ title: Despedida
 author: Alberto Torrejón Valenzuela
 date: '2020-12-19'
 categories:
-  - poemas
+  - Poemas
 tags:
   - Amor
-  - Despedida
-  - Ella
+  - Pérdida y memoria
 slug: despedida
 ---
 

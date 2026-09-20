@@ -3,10 +3,9 @@ title: Aracena
 author: Alberto Torrejón Valenzuela
 date: '2021-11-05'
 categories:
-  - poemas
+  - Poemas
 tags:
   - Amor
-  - Ella
 slug: aracena
 ---
 

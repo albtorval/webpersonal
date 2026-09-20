@@ -4,9 +4,8 @@ author: Alberto Torrejón Valenzuela
 date: '2024-05-09'
 slug: por-que-Roma
 categories:
-  - textos
-tags:
   - Poemas
+tags:
   - Amor
 description: ''
 ---

@@ -4,10 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2023-06-09'
 slug: jueves-8-de-junio-de-2023
 categories:
-  - textos
-tags:
   - Poemas
-  - Abuela
+tags:
+  - Familia
 description: ''
 ---
 

@@ -4,10 +4,10 @@ author: Alberto Torrejón Valenzuela
 date: '2024-06-29'
 slug: the-ordered-tree-location-problem
 categories:
-  - Matemáticas
-tags:
-  - Artículos
   - Investigación
+tags:
+  - Localización
+  - Optimización
 description: ''
 ---
 

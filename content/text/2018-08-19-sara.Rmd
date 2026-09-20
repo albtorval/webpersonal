@@ -4,11 +4,8 @@ author: Alberto Torrejón Valenzuela
 date: '2018-08-19'
 slug: sara
 categories:
-  - textos
-tags:
   - Poemas
-  - Ella
-  - Versos
+tags:
   - Amor
 description: ''
 ---

@@ -4,12 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2025-02-10'
 slug: comparten-pena-y-alegria
 categories:
-  - textos
-  - poemas
-tags:
-  - Textos
-  - Ella
   - Poemas
+tags:
+  - Amor
 description: ''
 ---
 

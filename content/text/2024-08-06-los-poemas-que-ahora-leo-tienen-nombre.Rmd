@@ -4,7 +4,7 @@ author: Alberto Torrejón Valenzuela
 date: '2024-08-06'
 slug: los-poemas-que-ahora-leo-tienen-nombre
 categories:
-  - textos
+  - Textos
 tags:
   - Amor
 description: ''

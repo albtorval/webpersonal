@@ -3,9 +3,9 @@ title: El cielo no quema
 author: Alberto Torrejón Valenzuela
 date: '2020-11-30'
 categories:
-  - poemas
+  - Poemas
 tags:
-  - Ella
+  - Amor
 slug: el-cielo-no-quema
 ---
 

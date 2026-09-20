@@ -3,9 +3,8 @@ title: Conócete a ti mismo
 author: Alberto Torrejón Valenzuela
 date: '2021-04-02'
 categories:
-  - textos
-tags:
   - Textos
+tags: []
 slug: conocete-a-ti-mismo
 ---
 

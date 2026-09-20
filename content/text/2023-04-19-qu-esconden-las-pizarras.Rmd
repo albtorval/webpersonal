@@ -3,10 +3,9 @@ title: ¿Qué esconden las pizarras?
 author: Alberto Torrejón Valenzuela
 date: '2023-04-19'
 categories:
-  - textos
+  - Textos
 tags:
-  - IMUS
-  - Matemáticas
+  - Universidad
 slug: qu-esconden-las-pizarras
 ---
 

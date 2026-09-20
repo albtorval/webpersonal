@@ -4,9 +4,8 @@ author: Alberto Torrejón Valenzuela
 date: '2023-02-01'
 slug: poeta-trsite
 categories:
-  - textos
-tags:
   - Poemas
+tags:
   - Amor
 description: ''
 ---

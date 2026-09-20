@@ -4,11 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2020-01-03'
 slug: ai-la-ama
 categories:
-  - textos
-tags:
   - Poemas
+tags:
   - Amor
-  - Ella
 description: ''
 ---
 

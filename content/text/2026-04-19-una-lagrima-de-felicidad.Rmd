@@ -4,11 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2026-04-19'
 slug: una-lagrima-de-felicidad
 categories:
-  - poemas
-  - Versos
-  - textos
+  - Poemas
 tags:
-  - Ella
+  - Amor
 description: ''
 ---
 

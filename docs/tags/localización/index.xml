@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Localización on Alberto Torrejón Valenzuela</title>
+    <link>/tags/localizaci%C3%B3n/</link>
+    <description>Recent content in Localización on Alberto Torrejón Valenzuela</description>
+    <generator>Hugo</generator>
+    <language>es-es</language>
+    <lastBuildDate>Sat, 29 Jun 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="/tags/localizaci%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>The Ordered Tree Location Problem</title>
+      <link>/post/2024/06/29/the-ordered-tree-location-problem/</link>
+      <pubDate>Sat, 29 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>/post/2024/06/29/the-ordered-tree-location-problem/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;“If the fool would persist in his folly he would become wise.” - &lt;strong&gt;William Blake&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;After a lot of hard work, we can now present the final results, published in Computers and Operations Research of the &lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0305054824002181&#34;&gt;“The Ordered Tree Location Problem”&lt;/a&gt; - Miguel A. Pozo, Justo Puerto and Alberto Torrejón&lt;/p&gt;&#xA;&lt;p&gt;But what are the implications of our work…?&lt;/p&gt;&#xA;&lt;p&gt;Location problems allow us to optimize the allocation of resources, where to locate the bus stop, where to locate the supermarket, where we should go to vote, which hospital should we go,… One way to generalise all these location problems is through ordered optimization. Through ordered optimization we attend many ways of locating these resources, for example, trying to consider fair criteria. Trying to ensure that the most disadvantaged in the allocation are not so damaged by compensating them in the objective function.&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Benders decomposition for the Discrete Ordered Median Problem</title>
+      <link>/post/2024/05/06/benders-decomposition-for-the-discrete-ordered-median-problem/</link>
+      <pubDate>Mon, 06 May 2024 00:00:00 +0000</pubDate>
+      <guid>/post/2024/05/06/benders-decomposition-for-the-discrete-ordered-median-problem/</guid>
+      <description>&lt;blockquote&gt;&#xA;&lt;p&gt;“I trust in work more than in luck”. &lt;strong&gt;Latin proverb.&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;/blockquote&gt;&#xA;&lt;p&gt;And here is the fruit of that work.&lt;/p&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://www.sciencedirect.com/science/article/pii/S0377221724003291?via%3Dihub&#34;&gt;&lt;strong&gt;‘Benders Decomposition for the Discrete Ordered Median Problem’&lt;/strong&gt;&lt;/a&gt; is available open access in the European Journal of Operational Research. A joint work with Ivana Ljubic, Miguel A. Pozo, Justo Puerto Albandoz and myself.&lt;/p&gt;&#xA;&lt;p&gt;But what have we achieved with this work? Let me give some context.&lt;/p&gt;&#xA;&lt;p&gt;Is a garbage dump necessary? And an electrical station? But… if necessary, where do we want to have them located? Surely somewhere where their distance from our homes compensates the harm we may experience from having them close with the cost of accessing them. This is known as Obnoxious Location Theory. Another example. Towns that are close to large cities tend to have more services than those that are more isolated. How can these resources be distributed in such a way that the isolated ones do not feel that they are being treated inequitably? This is known as Equity Location Theory.&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

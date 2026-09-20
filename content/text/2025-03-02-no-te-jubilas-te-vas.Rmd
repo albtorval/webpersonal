@@ -4,10 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2025-03-02'
 slug: no-te-jubilas-te-vas
 categories:
-  - textos
-tags:
-  - Mama
   - Textos
+tags:
+  - Familia
 description: ''
 ---
 

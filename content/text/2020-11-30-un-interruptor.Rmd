@@ -3,10 +3,9 @@ title: Un interruptor
 author: Alberto Torrejón Valenzuela
 date: '2020-11-30'
 categories:
-  - textos
+  - Textos
 tags:
-  - Ella
-  - Luz
+  - Amor
 slug: un-interruptor
 ---
 

@@ -4,11 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2019-01-03'
 slug: raquel
 categories:
-  - textos
+  - Poemas
 tags:
   - Amor
-  - Ella
-  - Poemas
 description: ''
 ---
 

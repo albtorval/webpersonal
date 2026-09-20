@@ -4,10 +4,10 @@ author: Alberto Torrejón Valenzuela
 date: '2023-06-14'
 slug: una-bonita-historia-de-amor
 categories:
-  - textos
+  - Textos
 tags:
   - Amor
-  - Abuela
+  - Familia
 description: ''
 ---
 

@@ -4,10 +4,8 @@ author: Alberto Torrejón Valenzuela
 date: '2025-04-20'
 slug: el-caf-brasil
 categories:
-  - textos
-tags:
-  - Café
-  - Matemáticas
+  - Divulgación
+tags: []
 description: ''
 ---
 

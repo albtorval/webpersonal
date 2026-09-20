@@ -4,7 +4,7 @@ author: Alberto Torrejón Valenzuela
 date: '2024-09-30'
 slug: yo-ya-he-estado-aqui
 categories:
-  - textos
+  - Textos
 tags:
   - Amor
 description: ''

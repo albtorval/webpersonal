@@ -4,11 +4,10 @@ author: Alberto Torrejón Valenzuela
 date: '2024-06-07'
 slug: dos
 categories:
-  - textos
-tags:
   - Poemas
-  - Recuerdo
+tags:
   - Amor
+  - Pérdida y memoria
 description: ''
 ---
 

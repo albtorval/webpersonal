@@ -4,11 +4,9 @@ author: Alberto Torrejón Valenzuela
 date: '2018-09-02'
 slug: han-callado-tu-voz
 categories:
-  - textos
-tags:
   - Poemas
+tags:
   - Amor
-  - Ella
 description: ''
 ---
 

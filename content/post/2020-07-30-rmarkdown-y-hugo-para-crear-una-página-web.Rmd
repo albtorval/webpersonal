@@ -3,9 +3,11 @@ title: RMarkdown y Hugo para crear un sitio web
 author: Alberto Torrejón Valenzuela
 date: '2020-07-30'
 tags:
-  - HTML
-  - R Markdown
+  - R
+  - Web
 slug: rmarkdown-y-hugo-para-crear-una-página-web
+categories:
+  - Herramientas
 ---
 
 ```{r load_packages, message=FALSE, warning=FALSE, include=FALSE} 
