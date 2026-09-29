@@ -106,15 +106,25 @@ ul.badges li a { font-weight: bold; }
   .two-columns .textslide { text-align: left !important; }
 }
 
-/* Poema + foto de la portada: foto completa, centrada verticalmente respecto al poema */
+/* Texto + foto a dos columnas (posts de /text y portada).
+   Por defecto el texto hace wrap y la foto ocupa todo el ancho de su columna. */
 .two-columnsC { align-items: center; gap: 24px; }
-.leftC { flex: 0 0 auto; max-width: none; font-size: 1.15rem; line-height: 1.6; }
+.leftC { flex: 1.25 1 0; max-width: none; min-width: 0; }
 .leftC > :first-child { margin-top: 0; }
 .leftC > :last-child { margin-bottom: 0; }
 .rightC { flex: 1 1 0; max-width: none; min-width: 0; }
 .rightC p { margin: 0; }
-.rightC img { display: block; width: 75%; height: auto; margin: 0 auto; }
-@media (max-width: 640px) { .leftC { font-size: 1.05rem; } .rightC img { width: 100%; } }
+.rightC img { display: block; width: 100%; height: auto; margin: 0 auto; }
+
+/* Portada: el poema (versos cortos) toma su ancho natural y la foto el resto */
+.two-columnsC.portada .leftC { flex: 0 0 auto; font-size: 1.15rem; line-height: 1.6; }
+.two-columnsC.portada .rightC img { width: 75%; }
+
+@media (max-width: 640px) {
+  .leftC, .rightC, .two-columnsC.portada .leftC { flex: none; width: 100%; }
+  .two-columnsC.portada .leftC { font-size: 1.05rem; }
+  .two-columnsC.portada .rightC img { width: 100%; }
+}
 
 /* "Seek and you shall find...": pandoc mete todos los botones en un <p>, así que
    el reparto se hace con flex-wrap (4 por fila en escritorio, 2 en móvil) */
@@ -127,3 +137,9 @@ ul.badges li a { font-weight: bold; }
   .button-grid > p { gap: 14px; }
   .button-grid .css-button-3d { flex: 0 0 calc(50% - 7px); min-width: 0; box-sizing: border-box; }
 }
+
+/* Imagen centrada entre dos bloques de texto */
+.imagen-central { margin: 1.5rem 0; }
+.imagen-central p { margin: 0; }
+.imagen-central img { display: block; width: 60%; height: auto; margin: 0 auto; }
+@media (max-width: 640px) { .imagen-central img { width: 100%; } }

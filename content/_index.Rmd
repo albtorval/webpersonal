@@ -106,7 +106,7 @@ Beyond academic research, I actively participate in conferences, seminars, and o
 
 </div>
 
-<div class="two-columnsC">
+<div class="two-columnsC portada">
 <div class="leftC">
 
 <!-- <center> -->

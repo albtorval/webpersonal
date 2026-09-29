@@ -19,7 +19,7 @@ slug: quema-tus-barcos
 
 <span class = "primerapalabra">P</span>arece ser que esta historia es una leyenda que contaban sus enemigos. Al parecer, Tariq bin Ziyad ni siquiera tenía barcos. Seguramente sus soldados no hubiesen salido victoriosos si hubiesen tenido miedo. Lucharon porque confiaron en la victoria, en la causa.
 
-Haz que el mundo crea en tu causa primero, luego mándalos a la lucha.
+Haz que el mundo crea en tu causa primero, luego mándalos a la lucha. <br>
 Por cierto, Ŷab al-Tāriq, Yabal Tarik, "Gibraltar"...
 </div>
 
@@ -27,7 +27,7 @@ Por cierto, Ŷab al-Tāriq, Yabal Tarik, "Gibraltar"...
 
 <div class="rightC">
 
-![](/text/Img/gib.jpg){width=70% height=70%}
+![](/text/Img/gib.jpg)
 </div>
 </div>
 
