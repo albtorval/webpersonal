@@ -145,6 +145,8 @@ y con lo puesto... <br>
 
 - <span class="specialelite"> **Scientific publications** </span>
 
+  + **Models for the Discrete Ordered Median Problem based on DC decomposition**. *Nickel S., Puerto J., Ramoser S., Torrejon A.* (2026), Computers & Operations Research
+  [[doi.org/10.1016/j.cor.2026.107695](https://doi.org/10.1016/j.cor.2026.107695)]
   + **Optimization-based computation and integration of ordered measures**. *Blanco V., Pozo M.A., Puerto J., Torrejon A.* (2026), Annals of Operations Research.
   [[doi.org/10.1007/s10479-026-07314-7](https://doi.org/10.1007/s10479-026-07314-7)]
   + **A fresh view on Least Quantile of Squares Regression based on new optimization approaches**. *Puerto J., Torrejon A.* (2025), Expert Systems with Applications
@@ -156,8 +158,6 @@ y con lo puesto... <br>
 
 - <span class="specialelite"> **Ongoing work (preprints and working papers)** </span>
 
-  + **Models for the Discrete Ordered Median Problem based on DC decomposition**. *Nickel S., Puerto J., Ramoser S., Torrejon A.* (2026), SSRN.
-  [[doi.org/10.2139/ssrn.6709169](https://doi.org/10.2139/ssrn.6709169)]
   + **Fair Vehicle Routing via Bilevel Optimization**. *Ljubić I., Puerto J., Torrejon A.* (2026), Optimization Online.
   [[https://optimization-online.org/?p=33847](https://optimization-online.org/?p=33847)]
   + **Revisiting transportation problems under Monge costs with applications to location problems**. *Nickel S., Puerto J., Ramoser S., Torrejon A.* (2026), arXiv.
