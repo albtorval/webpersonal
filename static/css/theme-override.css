@@ -143,3 +143,15 @@ ul.badges li a { font-weight: bold; }
 .imagen-central p { margin: 0; }
 .imagen-central img { display: block; width: 60%; height: auto; margin: 0 auto; }
 @media (max-width: 640px) { .imagen-central img { width: 100%; } }
+
+/* Podcast "El Cajón del Autómata": portada como la de la tesis + botones por plataforma */
+.podcast-portada { width: 520px; max-width: 100%; }
+.podcast-buttons > p { display: flex; flex-wrap: wrap; justify-content: center; gap: 14px; margin: .5rem 0 1rem; }
+.podcast-buttons .css-button-3d { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-width: 150px; }
+.podcast-buttons svg { vertical-align: middle; margin: 0 !important; }
+.youtube { background: #e62117; box-shadow: 0 5px #a3170f; --shadow-color: #a3170f; }
+.spotify { background: #1db954; box-shadow: 0 5px #14833b; --shadow-color: #14833b; }
+.ivoox   { background: #f45a24; box-shadow: 0 5px #b8401a; --shadow-color: #b8401a; }
+@media (max-width: 640px) {
+  .podcast-buttons .css-button-3d { flex: 1 1 100%; }
+}
