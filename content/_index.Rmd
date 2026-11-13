@@ -166,7 +166,7 @@ y con lo puesto... <br>
 - <span class="specialelite"> **Teaching** </span>
 
   + **Statistics** (2026–2027) – [25h - Theory + Practice] Bachelor Programs, WU Vienna University of Economics and Business.
-  + **Data Analytics** (2026–2027) – [34h - Theory + Practice, 2 groups, co-taught with Dr. Gertraud Malsiner-Walli] Specialization in Business Administration, Course II – Data Science, Bachelor Programs, WU Vienna University of Economics and Business.
+  + **Data Analytics** (2026–2027) – [20h - Theory + Practice, 2 groups, co-taught with Dr. Gertraud Malsiner-Walli] Specialization in Business Administration, Course II – Data Science, Bachelor Programs, WU Vienna University of Economics and Business.
   + **Elements of Probability** (2026–2027) – [12h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
   + **Theory of Probability** (2025–2026) – [120h - Theory + Practice] Mathematics, Math–Physics, Math–Statistics, Math–Computer Science degrees, University of Seville.
   + **Introduction to Statistics**  
@@ -176,7 +176,9 @@ y con lo puesto... <br>
     - (2022–2023) [60h - Theory + Practice], Degree in Health Engineering, University of Sevilla and University of Malaga.
   + **Advanced Linear Models for Biology** (2024) – [18h - Theory + Practice], Institute of Educational Sciences of the University of Sevilla.
   + **Introduction to R and Linear Models for Biology** (2024) – [10h - Theory + Practice], Institute of Educational Sciences of the University of Sevilla.
-  + **Thesis supervision** — Supervisor of two Bachelor's theses (TFG) and one Master's thesis (TFM).
+  + **Thesis supervision**
+    - Supervisor of two Bachelor's theses (TFG).
+    - Supervisor of one Master's thesis (TFM).
 
 - <span class="specialelite"> **Contracts and technology transfer** </span>
 
